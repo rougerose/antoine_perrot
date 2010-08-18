@@ -9,8 +9,10 @@
 /* ------------------------------------ */
 /*  Table des matières					*/
 /* ------------------------------------ */
+/*
+	- Structure des pages
 
-
+*/
 /* ------------------------------------ */
 /*  Reset                               */
 /* ------------------------------------ */
@@ -67,3 +69,32 @@ blockquote, q { quotes: "" ""; }
 * html .clearfix { height: 1%; }
 .clearfix { display: block; }
 /* close commented backslash hack */
+
+/* ------------------------------------ */
+/*  Typographie					*/
+/* ------------------------------------ */
+html { font-size: 100.01%; /* pour IE */ }
+body { font: 12px/18px "HelveticaNeue-Light", "Helvetica Neue", Georgia; color: #3e0000; }
+
+/* ------------------------------------ */
+/*  Structure des pages					*/
+/* ------------------------------------ */
+body { position: relative; padding-top: 50px; }
+	#entete {  }
+	#nav { position: absolute;  }
+	#conteneur { display: none; }
+		#conteneur #contenu {}
+		#conteneur #navigation {}
+	#pied { display: none; }
+
+/* ------------------------------------ */
+/*  Entete								*/
+/* ------------------------------------ */
+#entete {}
+	#entete #logo { font-size: 30px;}
+/* ------------------------------------ */
+/*	Navigation principale				*/
+/* ------------------------------------ */
+#nav {}
+	#nav ul { margin-left: 20px;}
+		#nav li {}

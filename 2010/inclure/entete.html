@@ -1,0 +1,8 @@
+<h1 id="logo">
+	[(#ENV{composition}|match{sommaire}|non)
+	<a href="#URL_SITE_SPIP/" rel="start home" title="<:accueil_site:>">]
+	[(#NOM_SITE_SPIP)]
+	[(#ENV{composition}|match{sommaire}|non)
+	</a>]
+</h1>
+[<div id='slogan'>(#SLOGAN_SITE_SPIP|PtoBR)</div>]
