@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<BOUCLE_principale(MOTS){id_mot}>#CACHE{86400}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET"/>
+  
+  <title>#NOM_SITE_SPIP : [(#TITRE|supprimer_numero)]</title>
+  [<meta name="description" content="(#DESCRIPTIF|textebrut|PtoBR)" />]
+  <script type="text/javascript" src="#CHEMIN{plugins/lightbox}/js/prototype.js"></script>
+  <script type="text/javascript" src="#CHEMIN{plugins/lightbox}/js/scriptaculous.js?load=effects"></script>
+  <script type="text/javascript" src="#CHEMIN{plugins/lightbox}/js/lightbox.js"></script>
+  <link rel="stylesheet" href="css/ecran.css" type="text/css" media="screen" title="styles ecran" charset="utf-8" />
+  <link rel="stylesheet" href="#CHEMIN{plugins/lightbox}/css/lightbox.css" type="text/css" media="screen" />
+  <?php $couleur='#000'; ?>
+
+  <style type="text/css" media="screen">
+  a.actif {background-color:<?php echo $couleur; ?>;}
+  ul.menuContextuel a:hover {border-left-color: <?php echo $couleur; ?>;}
+  </style>
+
+</head>
+
+<body id="rubrique" class="theme">
+  <div id="conteneur">
+    <div id="entete">
+      [<h1 id="logo"><a href="/" title="retour &agrave; la page d'accueil">(#LOGO_SITE_SPIP||inserer_attribut{'alt',#NOM_SITE_SPIP})</a></h1>]
+    </div> <!-- fin entete -->
+    <div id="corps">
+      <INCLURE{fond=navigation_principale}{racine}>
+      
+      <div id="enveloppeContenu">
+        <div id="contenu" style="border-color:<?php echo $couleur;?>;">
+          <div id="contenuPrincipal">
+            <div id="hierarchie"><a href="#URL_SITE_SPIP/">accueil</a> &gt; <a href="#URL_MOT">[(#TITRE|supprimer_numero)]</a></div>
+            <div id="infoRubrique">
+              <h2 class="titre">[(#TITRE|supprimer_numero)]</h2>
+              [<div class="descriptif">
+              (#TEXTE)
+              </div>]
+            </div>
+            <div id="contenuRubrique">
+              <B_articles>
+              <div class="section">
+                <h3 class="contenuTheme">les articles li&eacute;s au th&egrave;me [(#TITRE|supprimer_numero)]</h3>
+                [<div class="pagination">
+                  <p>page (#PAGINATION{page})</p>
+                </div>]
+                <BOUCLE_articles(ARTICLES){id_mot}{par date}{inverse}{pagination}>
+                [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{100,0}|inserer_attribut{'class',logoArticle}|inserer_attribut{'alt',#TITRE})</a>]
+                [<p class="surtitre">(#SURTITRE)</p>]
+                <h4 class="titre">[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</h4>
+                [<p class="soustitre">(#SOUSTITRE)</p>]
+                [<p class="descriptif">(#DESCRIPTIF|PtoBR)</p>]
+                <div class="separateur">&nbsp;</div>
+                </BOUCLE_articles>
+              </div>
+              </B_articles>
+              
+              <B_rubriques>
+              <div class="section">
+                <h3 class="contenuTheme">les rubriques li&eacute;s au th&egrave;me [(#TITRE|supprimer_numero)]</h3>
+                [<div class="pagination">
+                  <p>page (#PAGINATION{page})</p>
+                </div>]
+                <BOUCLE_rubriques(RUBRIQUES){id_mot}{par titre}{pagination}>
+                [<a href="#URL_RUBRIQUE">(#LOGO_RUBRIQUE||image_reduire{100,0}|inserer_attribut{'class',logoArticle}|inserer_attribut{'alt',#TITRE})</a>]
+                <h4 class="titre">[<a href="#URL_RUBRIQUE">(#TITRE|supprimer_numero)</a>]</h4>
+                [<p class="descriptif">(#DESCRIPTIF|PtoBR)</p>]
+                <div class="separateur">&nbsp;</div>
+                </BOUCLE_rubriques>
+              </div>
+              </B_rubriques>
+              
+              <B_sites>
+              <div class="section">
+                <h3 class="contenuTheme">les sites web li&eacute;s au th&egrave;me [(#TITRE|supprimer_numero)]</h3>
+                [<div class="pagination">
+                  <p>page (#PAGINATION{page})</p>
+                </div>]
+                <BOUCLE_sites(SITES){id_mot}{par nom_site}{pagination}>
+                [<a href="#URL_RUBRIQUE">(#LOGO_RUBRIQUE||image_reduire{100,0}|inserer_attribut{'class',logoArticle}|inserer_attribut{'alt',#NOM_SITE})</a>]
+                <h4 class="titre">[<a href="#URL_SITE">(#NOM_SITE|supprimer_numero)</a>]</h4>
+                [<p class="descriptif">(#DESCRIPTIF|PtoBR)</p>]
+                <div class="separateur">&nbsp;</div>
+                </BOUCLE_sites>
+              </div>
+              
+              </B_sites>
+
+            </div>
+          </div>
+          <div id="contenuSecondaire">
+            [<p class="logoArticle">(#LOGO_MOT||image_reduire{130,0})</p>]
+          </div>
+        <div class="rien">&nbsp;</div>
+      </div> <!-- fin contenu -->
+    </div> <!-- fin enveloppe contenu -->
+    <INCLURE{fond=piedPage}>
+  </div> <!-- fin corps -->
+</div> <!-- fin conteneur -->
+
+</BOUCLE_principale>
+</body>
+</html>

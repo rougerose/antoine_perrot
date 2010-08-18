@@ -1,0 +1,16 @@
+              <ul class="menuContextuel">
+                <?php
+                  $date=array(<BOUCLE_menu_date2(ARTICLES){id_rubrique}{", "}>
+                  <BOUCLE_documents_date2(DOCUMENTS){id_article}{mode=document}{extension IN png,jpg,gif}{", "}>["(#DATE|annee)"]</BOUCLE_documents_date2></BOUCLE_menu_date2>);
+                  rsort ($date); $date=array_unique($date); 
+                  foreach ($date as $key => $val) {
+                    if ($_GET[annee] == $val) {
+                      echo "<li><a href=\"#URL_RUBRIQUE&amp;annee=$val\" class=\"actif\">".$val."</a></li>\n";
+                    }
+                    else {
+                      echo "<li><a href=\"#URL_RUBRIQUE&amp;annee=".$val."\">".$val."</a></li>\n";
+                    }
+                  }
+                ?>
+              </ul>
+              

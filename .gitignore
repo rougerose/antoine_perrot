@@ -1,0 +1,14 @@
+# fichiers systemes
+.DS_Store
+
+# projet spip : tous les fichiers et dossiers sont ignores
+/*
+
+# excepte
+!.gitignore
+!/squelettes
+!README
+!2006
+!2010
+!/css
+!/images

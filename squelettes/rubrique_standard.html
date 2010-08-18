@@ -1,0 +1,15 @@
+              #CACHE{0}
+              <B_articles>
+              [<div class="pagination">
+                <p>page (#PAGINATION{page})</p>
+              </div>]
+              <BOUCLE_articles(ARTICLES){id_rubrique}{par date}{inverse}{pagination}>
+              [<a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{100,0}|inserer_attribut{'class',logoArticle}|inserer_attribut{'alt',#TITRE})</a>]
+              [<p class="surtitre">(#SURTITRE)</p>]
+              <h3 class="titre">[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</h3>
+              [<p class="soustitre">(#SOUSTITRE)</p>]
+              [<p class="descriptif">(#DESCRIPTIF|PtoBR)</p>]
+              <div class="separateur">&nbsp;</div>
+              </BOUCLE_articles>
+              </B_articles>
+              

@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<BOUCLE_principale(RUBRIQUES){id_rubrique}>#CACHE{86400}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET"/>
+
+  <title>#NOM_SITE_SPIP : [(#TITRE|supprimer_numero)]</title>
+  [<meta name="description" content="(#DESCRIPTIF|textebrut)" />]
+  
+  <script type="text/javascript" src="#CHEMIN{plugins/lightbox}/js/prototype.js"></script>
+  <script type="text/javascript" src="#CHEMIN{plugins/lightbox}/js/scriptaculous.js?load=effects"></script>
+  <script type="text/javascript" src="#CHEMIN{plugins/lightbox}/js/lightbox.js"></script>
+  <link rel="stylesheet" href="css/ecran.css" type="text/css" media="screen" title="styles ecran" charset="utf-8" />
+  <link rel="stylesheet" href="#CHEMIN{plugins/lightbox}/css/lightbox.css" type="text/css" media="screen" />
+  <?php $couleur=<BOUCLE_couleurs(MOTS){id_rubrique}{type=@couleurs}>['(#TITRE|supprimer_numero)']</BOUCLE_couleurs>; ?>
+  
+  <style type="text/css" media="screen">
+  a.actif {background-color:<?php echo $couleur; ?>;}
+  ul.menuContextuel a:hover {border-left-color: <?php echo $couleur; ?>;}
+  </style>
+  
+</head>
+
+<body id="rubrique">
+  <div id="conteneur">
+    <div id="entete">
+      [<h1 id="logo"><a href="/" title="retour &agrave; la page d'accueil">(#LOGO_SITE_SPIP||inserer_attribut{'alt',#NOM_SITE_SPIP})</a></h1>]
+    </div> <!-- fin entete -->
+    <div id="corps">
+      <INCLURE{fond=navigation_principale}{id_rubrique}>
+      <div id="enveloppeContenu">
+        <div id="contenu" style="border-color:<?php echo $couleur;?>;">
+
+          <div id="contenuPrincipal">
+            <div id="hierarchie"><a href="#URL_SITE_SPIP/">accueil</a><BOUCLE_ariane(HIERARCHIE){id_rubrique}> &gt; <a href="#URL_RUBRIQUE">[(#TITRE|supprimer_numero)]</a></BOUCLE_ariane> &gt; [(#TITRE|supprimer_numero)]</div>
+            <div id="infoRubrique">
+              <h2 class="titre">[(#TITRE|supprimer_numero)]</h2>
+              [<div class="descriptif">
+              (#TEXTE)
+              </div>]
+            </div>
+
+            <div id="contenuRubrique"> 
+              <BOUCLE_articles(ARTICLES){id_rubrique}{par date}{inverse}>
+              [(#ENV{theme}|?{'',' '})
+              [(#ENV{annee}|?{'',' '}) <INCLURE{fond=oeuvres_defaut}{id_article}>]
+              [(#ENV{annee}|?{' ',''}) <INCLURE{fond=oeuvres_annee}{id_article}{annee=#ENV{annee}}>]
+              ]
+              [(#ENV{theme}|?{' ',''})<INCLURE{fond=oeuvres_theme}{id_article}{id_mot=#ENV{theme}}>]
+              </BOUCLE_articles>
+            </div>
+          </div>
+          <div id="contenuSecondaire">
+            <ul id="menuChronologique" class="menuContextuel" style="border-color:<?php echo $couleur;?>;">
+              <?php
+                $date=array(<BOUCLE_menu_date(ARTICLES){id_rubrique}{", "}>
+                <BOUCLE_documents_date(DOCUMENTS){id_article}{mode=document}{extension IN png,jpg,gif}{", "}>["(#DATE|annee)"]</BOUCLE_documents_date></BOUCLE_menu_date>);
+                rsort ($date); $date=array_unique($date); 
+                foreach ($date as $key => $val) {
+                  if ($_GET[annee] == $val) {
+                    echo "<li><a href=\"#URL_RUBRIQUE&amp;annee=$val\" class=\"actif\">".$val."</a></li>\n";
+                  }
+                  else {
+                    echo "<li><a href=\"#URL_RUBRIQUE&amp;annee=".$val."\">".$val."</a></li>\n";
+                  }
+                }
+              ?>
+            </ul>
+            <ul id="menuThematique" class="menuContextuel" style="border-color:<?php echo $couleur;?>;">
+              <BOUCLE_menu_themes(RUBRIQUES){id_parent}{par num titre}>
+              [<li><a href="#URL_RUBRIQUE">(#TITRE|supprimer_numero)</a></li>]
+              </BOUCLE_menu_themes>
+            </ul>
+          </div>
+          <div class="rien">&nbsp;</div>
+        </div> <!-- fin contenu -->
+      </div> <!-- fin enveloppe contenu -->
+      <INCLURE{fond=piedPage}>
+    </div> <!-- fin corps -->
+  </div> <!-- fin conteneur -->
+</body>
+</BOUCLE_principale>
+</html>

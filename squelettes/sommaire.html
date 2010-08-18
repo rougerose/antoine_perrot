@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+#CACHE{7200}
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="#LANG" lang="#LANG">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=#CHARSET"/>
+
+  <title>#NOM_SITE_SPIP</title>
+  [<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|textebrut)" />]
+  <link rel="stylesheet" href="css/ecran.css" type="text/css" media="screen" title="styles ecran" charset="utf-8" />
+  <link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="#URL_PAGE{backend}" />
+  <link rel="home" href="#URL_SITE_SPIP" title="Accueil du site" />
+</head>
+
+<body id="accueil">
+  <div id="conteneur">
+    <div id="entete">
+      [<h1 id="logo">(#LOGO_SITE_SPIP||inserer_attribut{'alt',#NOM_SITE_SPIP})</h1>]
+    </div> <!-- fin entete -->
+    <div id="corps">
+      <INCLURE{fond=navigation_principale}{racine}>
+        <div id="enveloppeContenuSommaire">
+          <BOUCLE_articles(ARTICLES){titre_mot=sommaire}{par date}{inverse}>
+          <BOUCLE_evenement(EVENEMENTS){id_article}>
+          <div class="contenuSommaire" style="border-color:<BOUCLE_rubrique_parente(RUBRIQUES){id_rubrique}><BOUCLE_couleur_rubrique(MOTS){id_rubrique}{type=@couleurs}>[(#TITRE)]</BOUCLE_couleur_rubrique></BOUCLE_rubrique_parente>;">
+            <dl class="expos">
+              <dt>[(#DATE_DEBUT|affdate_jourcourt)][&nbsp;/&nbsp;(#DATE_FIN|affdate_jourcourt)]</dt>
+              [<dd class="logo"><a href="#URL_ARTICLE">(#LOGO_ARTICLE||image_reduire{100,0})</a></dd>]
+              <dd class="titre">[<a href="#URL_ARTICLE">(#TITRE|supprimer_numero)</a>]</dd>
+              [<dd class="lieu">(#LIEU)</dd>]
+              [<dd class="descriptif">(#_articles:DESCRIPTIF|PtoBR)</dd>]
+            </dl>
+            <div class="rien">&nbsp;</div>
+          </div>
+          </BOUCLE_evenement>
+          </BOUCLE_articles>
+        </div> <!-- fin enveloppe contenu -->
+        <div id="piedPage">
+          <hr class="invisible">
+          #FORMULAIRE_RECHERCHE
+          <hr class="invisible">
+          <p class="credits"><a href="#URL_PAGE{backend}" title="s'abonner au site"><img src="#CHEMIN{rss.png}" alt="RSS"></a> <a href="http://www.spip.net" title="r&eacute;alis&eacute; avec SPIP #SPIP_VERSION"><img src="#CHEMIN{spip.png}" alt="Spip" /></a></p>
+          <p class="credits">conception graphique et d&eacute;veloppement<br />christophe le drean</p>
+        </div>
+    </div> <!-- fin corps -->
+  </div> <!-- fin conteneur -->
+</body>
+</html>

@@ -1,0 +1,476 @@
+/* 
+Title:    style ecran antoineperrot.net
+Author:   christophe@rouge-rose.net
+*/
+
+/* =structure
+------------------ */
+body {
+  font:80%/140% Georgia, Times, "Times New Roman", serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #333;
+}
+#conteneur {
+  margin: 0 auto ;
+  text-align: left;
+}
+#entete {
+  margin: 40px 0 10px;
+}
+#corps {
+  position: relative;
+  top: auto;
+  left: auto;
+  height: 1%;
+}
+
+/* =définitions générales
+------------------ */
+img {
+  border: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "HelveticaNeue-Light",Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+#enveloppeContenu, #enveloppeContenuSommaire {
+  position: absolute;
+  top: -15px; left: 240px;
+  width: 710px;
+}
+#enveloppeContenuSommaire {
+  width: 550px;
+}
+#contenu, .contenuSommaire {
+  font-size:1.1em;
+  line-height: 1.4em;
+  border-width: 1px; 
+  border-style: solid; 
+  border-left-width: 3px;
+  margin-bottom: 3em;
+  background-color: #fff;
+}
+#contenu {
+  min-height: 300px;
+}
+#contenuPrincipal {
+  margin: 0;
+  float: right;
+  width: 550px;
+  margin: 20px 0 0;
+}
+#contenuSecondaire {
+  font: 1em/1.2em "HelveticaNeue-Light",Helvetica, Arial, sans-serif;
+  float: right;
+  width: 150px;
+  margin: 20px 0 0;
+}
+#contenuSecondaire ul {
+  list-style: none;
+}
+.invisible {
+  display: none;
+}
+.rien {
+  clear: both;
+  height: 0;
+  font-size: 0;
+}
+.section, .sectionAgenda, .recherche, .nosection {
+  position: relative;
+}
+.pagination {
+  font-family: Helvetica,Arial,sans-serif;
+  position: absolute;
+  top: 1em;
+  right: 0;
+}
+.section .pagination {
+  top: 0px;
+}
+.recherche .pagination, .nosection .pagination {
+  top: -2.5em;
+}
+.sectionAgenda .pagination {
+  right: 10px;
+  top: 1em;
+}
+
+/* =liens
+------------------ */
+a, a:link {
+  text-decoration: none;
+  color: #f00;
+}
+a:hover {
+  text-decoration: underline;
+}
+a.actif {
+  font-weight: bold;
+}
+
+/* =entete
+------------------ */
+h1#logo {
+  margin-left: 30px;
+}
+
+/* =navigation principale
+------------------ */
+#navigationPrincipale {
+  padding-top: 10px;
+}
+ul#navigation {
+  font:1.3em/.9em "HelveticaNeue-Light",Helvetica, Arial, sans-serif;
+  list-style: none;
+  padding:0;
+  margin: 0;
+}
+ul#navigation li {
+  padding: 0;
+  padding-bottom:0;
+  margin:.6em 0;
+  width: 100%;
+}
+ul#navigation a {
+  display: block;
+  padding: 10px 0 10px 30px;
+  margin: 0;
+  color: #333;
+}
+ul#navigation li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+ul#navigation li.actif a {
+  color: #fff;
+}
+
+/* =hierarchie
+------------------ */
+#hierarchie {
+  text-align: right;
+  font:1em/1em "HelveticaNeue-Light",Helvetica, Arial, sans-serif;
+  margin: 0 40px 1em 0;
+}
+#hierachie a:visited {
+  color: #f00;
+}
+
+/* =colonne contextuelle (gauche)
+------------------ */
+h3.contextuel {
+  margin: 2em 0 .2em;
+}
+ul.menuContextuel, dl.menuContextuel {
+  margin: 0;
+  padding: 0;
+}
+ul#menuChronologique {
+  margin-top: 3em;
+}
+ul.menuContextuel li {
+  margin: 0 15px 0 0;
+  padding: 0;
+  border-bottom: 1px solid #e4e4e4;
+}
+ul.menuContextuel+ul.menuContextuel {
+  margin-top: 1em;
+}
+ul.menuContextuel a {
+  display: block;
+  padding: 2px 3px 2px 7px;
+  border-left: 2px solid #fff;
+}
+ul.menuContextuel a.actif {
+  color: #333;
+}
+ul.menuContextuel a:hover {
+  border-left-width: 2px;
+  border-left-style: solid;
+  text-decoration: none;
+}
+ul.menuContextuel ul.menuContextuel li a {
+  padding-left: 20px;
+}
+ul.menuContextuel ul.menuContextuel {
+  margin-bottom: .5em;
+}
+dl.menuContextuel {
+  margin-top: 1em;
+}
+dl.menuContextuel dt, dl.menuContextuel dd {
+  margin: 0 15px 0 7px;
+}
+dl.menuContextuel dt.logoDocument {
+  float: left;
+  margin-right: 5px;
+}
+dl.menuContextuel dd.listeFin {
+  margin-bottom: 1.2em;
+  margin-left: 0;
+}
+dl.menuContextuel dd.descriptif {
+  font:.9em Georgia, Times, "Times New Roman", serif;
+}
+/* =pied de page
+------------------ */
+#piedPage .credits {
+  margin: 0 0 0 30px;
+  font-size: .9em;
+  line-height: 1.1em;
+}
+
+/* =page d'accueil
+------------------ */
+#accueil .contenuSommaire {
+  padding: 1em 20px;
+}
+#accueil img.logoArticle {
+  float: left;
+  margin: 0 30px 5px 0;
+}
+#accueil h2.titre {
+  font-size: 1.3em;
+}
+#accueil p.descriptif {
+  margin: .2em 0 1em 0;
+}
+
+/* =rubriques
+------------------ */
+#infoRubrique {
+  margin: 0;
+}
+#infoRubrique .titre {
+  font-size: 1.9em;
+}
+#infoRubrique p {
+  font-size: 1.2em;
+  text-align: justify;
+}
+#contenuRubrique {
+  margin: 2em 40px 0 0;
+}
+#rubrique h3.titre {
+  margin: 0;
+  font-size: 1.3em;
+}
+#rubrique p.descriptif {
+  margin: .2em 0 1em 0;
+}
+#rubrique img.logoArticle {
+  float: left;
+  margin-right: 50px;
+  margin-bottom: 10px;
+}
+#rubrique div.separateur {
+  clear: both;
+  height: 1px;
+  font-size: 0;
+  margin: .5em 0 1em 0;
+  border-bottom: 1px solid #ddd;
+}
+
+/* =portfolio
+------------------ */
+.vignettes {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 5px 12px;
+  background-color: #fff;
+}
+
+/* =rubrique expositions
+------------------ */
+h3.agenda {
+  font-family:"HelveticaNeue",Helvetica, Arial, sans-serif;;
+  margin-bottom: 1em;
+  margin-right: 10px;
+  padding: .3em 5px .3em;
+}
+dl.expos {
+  clear: both;
+  margin: 0 20px 2em 7px;
+}
+dl.expos dt {
+  font-family:"HelveticaNeue", Helvetica,Arial,sans-serif;
+  margin-bottom: .8em;
+}
+dl.expos dd {
+  margin: 0 0 0.3em 150px;
+  font-size: 1em;
+}
+dl.expos dd.logo {
+  float: left;
+  margin: 0;
+  margin-right: 50px;
+}
+dl.expos dd.titre {
+  font:1.2em "HelveticaNeue-Light",Helvetica, Arial, sans-serif;
+}
+dd.listeFin {
+  clear:both;
+  font-size: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1em;
+  margin: 0 0 1em 0;
+  height: 0;
+}
+dl.expos dd.listeFin {
+  font-size: 0;
+  margin: 0 0 1em 0;
+}
+/* =article
+------------------ */
+#article h2.titre {
+  font-size: 1.8em;
+  margin: 0.3em 0 .4em;
+}
+#article #contenuPrincipal h3 {
+  font-size: 1.3em;
+}
+#article .chapo {
+  font-weight: bold;
+}
+.surtitre, .soustitre {
+  font:1.1em "HelveticaNeue-Light",Helvetica, Arial, sans-serif;
+  color: #666;
+  margin: 0;
+}
+#article .chapo, #article .texte, #article .ps, #article .notes, #article div.date, #article .documents, #article .auteurs, #article .evenement {
+  text-align: justify;
+  margin: 1em 40px 1em 0;
+}
+#article .auteurs {
+  font:1.2em "HelveticaNeue-Light",Helvetica, Arial, sans-serif;
+  text-align: right;
+  color: #000;
+}
+#article .ps {
+  color: #666;
+}
+#article div.date {
+  width: 200px;
+  border-top: 1px solid #ddd;
+  font:1.1em "HelveticaNeue-Light",Helvetica, Arial, sans-serif;
+  text-align: left;
+  margin: 1.5em 0;
+  padding: .5em 0 0;
+}
+#article .notes {
+  text-align: left;
+  padding: .5em 0 0;
+}
+#article .notes h3, #article .documents h3 {
+  border-top: 1px solid #ddd;
+  width: 200px;
+  margin: 0 0 .4em;
+  padding-top: .4em;
+}
+#article .notes .spip_note, #article p.date {
+  margin: .2em 0;
+}
+p.logoArticle {
+  margin: 0;
+}
+#article div.documents {
+margin-top: 1.5em;
+}
+.spip_documents {
+  font:1em "HelveticaNeue-Light",Helvetica, Arial, sans-serif;
+  margin: .3em 0 10px;
+}
+.spip_doc_titre, .spip_doc_descriptif {
+  margin: .2em 3px 0;
+}
+.spip_documents_left {
+  margin-right: 15px;
+}
+.spip_documents_right {
+  margin-left: 15px;
+}
+
+hr.spip {
+    height:1px;
+    border:0;
+    background-color:#ddd;
+    color:#ddd;
+    margin:1em 0 1.5em;
+    width:50%;
+    
+}
+
+
+/* =formulaire contact
+------------------ */
+div.formulaire_ecrire_auteur {
+  margin: 1.5em 40px 0 0;
+}
+fieldset {
+  border: 1px solid #ddd;
+  margin: 1.3em 0;
+}
+legend, label {
+  font:1.1em "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+label {
+  font-size: 1em;
+  color: #c00;
+  float: left;
+  width: 30%;
+  margin: 1em 0 0;
+}
+input, textarea {
+  margin: 0 0 0 30%;
+  border: 1px solid #ddd;
+  border-color:#ccc #eee #eee #ccc;
+  font: 1em monospace;
+}
+div.spip_bouton {
+  text-align: right;
+}
+div.spip_bouton input {
+  border-color: #eee #ccc #ccc #eee;
+  font-family: Helvetica,Arial,sans-serif;
+  padding: 3px;
+}
+div.spip_bouton input:hover {
+  background-color: #f00;
+}
+
+/* =formulaire recherche
+------------------ */
+div.formulaire_recherche {
+  text-align:left;
+  margin: 1em 0;
+  font-size: 1.1em;
+}
+div.formulaire_recherche label {
+  display: none;
+}
+input#recherche {
+  margin: 1em 0 0 30px;
+}
+.spip_surligne {
+  background-color: #b4ff88;
+  padding: 3px;
+}
+
+/* =themes
+------------------ */
+h3.contenuTheme {
+  font-size: 1.4em;
+  margin-bottom: .5em;
+}
+h4.titre {
+  font-size: 1.3em;
+}
+#rubrique.theme .surtitre, #rubrique.theme .soustitre, #rubrique.theme h4.titre, #rubrique.theme .descriptif, #rubrique.theme .separateur, #rubrique.theme .logoArticle {
+  margin-left: 10px;
+}
