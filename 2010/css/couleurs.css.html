@@ -1,2 +1,5 @@
 #HTTP_HEADER{Content-Type: text/css}
 [(#REM) css des couleurs des rubriques définies via l'espace privé ]
+<BOUCLE_rubriques(RUBRIQUES){racine}{par num titre, titre}>
+[#rubrique-[(#ID_RUBRIQUE)] { color:#(#ID_RUBRIQUE|couleur_rubrique); }]
+</BOUCLE_rubriques>
