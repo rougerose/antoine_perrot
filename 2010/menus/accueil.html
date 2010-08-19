@@ -1,0 +1,14 @@
+[(#REM) modèle accueil du plugin Menus avec ajout de l'id de la rubrique racine pour paramétrer les couleurs ]
+[(#SET{titre, <:accueil_site:>})]
+[(#ENV{titre}|oui)
+	#SET{titre, #ENV*{titre}|typo}
+]
+
+[(#ENV{appel_formulaire}|oui)
+	<div class="titre">#GET{titre}</div>
+	<div class="infos"><:info_racine_site:></div>
+]
+[(#ENV{appel_menu}|oui)
+	<li id="rubrique-0" class="menu-entree[ (#ENV{css})][(#ENV{env}|table_valeur{type}|=={page}|et{#ENV{env}|table_valeur{composition}|=={sommaire}}) on]">
+		<a href="#URL_SITE_SPIP/" title="[(#GET{titre}|attribut_html)]">#GET{titre}</a>
+]
