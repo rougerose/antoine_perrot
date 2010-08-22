@@ -55,6 +55,7 @@ q:before, q:after { content: ""; }
 
 blockquote, q { quotes: "" ""; }
 
+
 /* ------------------------------------ */
 /*  Réglage des float                   */
 /* ------------------------------------ */
@@ -70,11 +71,13 @@ blockquote, q { quotes: "" ""; }
 .clearfix { display: block; }
 /* close commented backslash hack */
 
+
 /* ------------------------------------ */
 /*  Grille de mise en page				*/
 /*	activable via jquery				*/
 /* ------------------------------------ */
 .grille { background: url('../img/960_grid_12_col.png') repeat-y 0 0; }
+
 
 /* ------------------------------------ */
 /*  Structure des pages					*/
@@ -83,14 +86,15 @@ body { position: relative; padding-top: 36px; }
 	#page {  }
 		#entete { position: fixed; }
 		#nav { position: fixed; top:90px;}
-		#conteneur { 
+		#conteneur { background-color: #fff;
 			position: relative; z-index: 20; top:36px;
 			margin-left:280px;
 			width: 700px; 
 		}
-			#conteneur #contenu {  }
+			#conteneur #contenu { float: left; width: 460px; }
 			#conteneur #navigation {}
 			#pied { display: none; }
+
 
 /* ------------------------------------ */
 /*  Typographie					*/
@@ -109,6 +113,8 @@ a { text-decoration: none; }
 /* ------------------------------------ */
 #entete { margin-left: 40px; margin-bottom: 18px; }
 	#entete #logo { font-size: 30px; line-height: 36px; }
+
+
 /* ------------------------------------ */
 /*	Navigation principale				*/
 /* ------------------------------------ */
@@ -116,7 +122,17 @@ a { text-decoration: none; }
 	#nav ul {  }
 		#nav li { 
 			font-size:16px; line-height: 18px;
-			margin-bottom: 9px; padding-bottom: 5px; padding-top: 4px; padding: 4px 0 5px 40px; }
+			margin-bottom: 9px; }
 			#nav li a {
 				display: block;
-				width: 220px; }
+				padding: 4px 0 5px 40px;
+				width: 220px;
+				/* 	CSS 3 transitions
+				 	non disponibles dans FF3,
+					on laisse entre commentaires et on utilise jQuery */
+				transition: padding-left .6s ease-out;
+				-webkit-transition: padding-left .6s ease-out;
+				-o-transition: padding-left .6s ease-out;
+				-moz-transition: padding-left .6s ease-out; }
+			#nav li a:hover { padding-left: 30px; }
+			#nav li a.ff3:hover { padding-left: 40px; }
