@@ -76,7 +76,7 @@ blockquote, q { quotes: "" ""; }
 /*  Grille de mise en page				*/
 /*	activable via jquery				*/
 /* ------------------------------------ */
-.grille { background: url('../img/960_grid_12_col.png') repeat-y 0 0; }
+.grille { background: url('../img/960_grid_16_col.png') repeat-y 0 0; }
 
 
 /* ------------------------------------ */

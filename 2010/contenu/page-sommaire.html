@@ -1,0 +1,12 @@
+<B_articles>
+<div class="liste articles sommaire">
+	#ANCRE_PAGINATION
+	<h2 class="h2"><:derniers_articles:></h2>
+	<ul class="liste-items">
+		<BOUCLE_articles(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{pagination 8}>
+		#INCLURE{fond=inclure/article-resume,id_article}
+		</BOUCLE_articles>
+	</ul>
+	[<p class="pagination">(#PAGINATION)</p>]
+</div>
+</B_articles>
