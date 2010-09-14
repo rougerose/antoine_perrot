@@ -110,23 +110,26 @@ $(document).ready(function(){
 				// mise en cache de la zone d'agrandissement relative au lien cliqué
 				$zoneAgrandissement = $lien.parents("div.panneau").find(".imgAgrandissement"),
 				$img = $zoneAgrandissement.find("img"),
-				$desc = $zoneAgrandissement.find(".imgDesc");
+				$desc = $zoneAgrandissement.find(".imgDesc"),
+				// récupération de la dimension de l'image indiquée dans son url (de la forme chemin/L...xH.../nomdufichier.extension). L'expression régulière ci-dessous fonctionne mais sort en premier résultat L...xH...
+				dimensions = $urlApercu.match(/L(\d+)xH(\d+)/),
+				largeur = dimensions[1],
+				hauteur = dimensions[2];
 				
-				// TODO : récupérer la largeur et la hauteur de la nouvelle image via son url ?
-			
-			
 			if ($lien.is('.on')) {
 				return false;
 			};
 			
-			$liensApercu.removeClass(".on");
-			$lien.addClass(".on");
+			$liensApercu.removeClass("on");
+			$lien.addClass("on");
 			
 			// changement d'image
 			$img.stop().animate({
-				opacity: 0
+				opacity: 0,
+				width: largeur,
+				height: hauteur
 			}, delai, function(){
-				$(this).attr({ src: $urlApercu });
+				$(this).attr({ src: $urlApercu, width: largeur, height: hauteur });
 				
 				$img.animate({
 					opacity: 1
