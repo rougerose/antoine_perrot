@@ -91,7 +91,7 @@ body { position: relative; padding-top: 36px; }
 			margin-left:280px;
 			width: 700px; 
 		}
-			#conteneur #contenu { float: left; width: 460px; }
+			#conteneur #contenu { float: left; width: 700px; }
 			#conteneur #navigation {}
 			#pied { display: none; }
 
@@ -136,3 +136,57 @@ a { text-decoration: none; }
 				-moz-transition: padding-left .6s ease-out; }
 			#nav li a:hover { padding-left: 30px; }
 			#nav li a.ff3:hover { padding-left: 40px; }
+
+
+/* ------------------------------------ */
+/*	Slider								*/
+/* ------------------------------------ */
+#slider {
+	background-color: #fff;
+	position: relative;
+	width: 700px; }
+	#slider .navigation {}
+		#slider .navigation li {
+			display: inline;
+		}
+	.scroll {
+		position: relative;
+		overflow: auto;
+		overflow-x: hidden;
+		clear: left;
+		xheight: 300px;
+		width: 700px;
+	}
+		.scrollConteneur {}
+			.panneau {
+				xheight: 260px; width: 580px;
+				padding: 20px 60px;
+			}
+				.panneau dl {}
+					.panneau dt {float: left;}
+					.panneau dd { display: none; }
+
+/* ------------------------------------ */
+/*	Visualisation des oeuvres 			*/
+/* ------------------------------------ */
+.visuOeuvres {}
+	.imgAgrandissement { 
+		float: left;
+		overflow: hidden;
+		width: 340px; }
+		.imgAgrandissement .imgDesc { 
+			xdisplay: none; }
+
+	ul.imgApercu { 
+		float: left;
+		margin-left: 20px;
+		width: 220px; }
+		.imgApercu li { 
+			float: left;
+			margin-bottom:10px;
+			width: 100px; }
+			.imgApercu li.numero-0 { 
+				margin-left:20px; }
+				.imgApercu li .imgDesc { 
+					display: none; }
+

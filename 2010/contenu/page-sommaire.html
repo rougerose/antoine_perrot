@@ -1,12 +1,53 @@
-<B_articles>
-<div class="liste articles sommaire">
-	#ANCRE_PAGINATION
-	<h2 class="h2"><:derniers_articles:></h2>
-	<ul class="liste-items">
-		<BOUCLE_articles(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{pagination 8}>
-		#INCLURE{fond=inclure/article-resume,id_article}
-		</BOUCLE_articles>
-	</ul>
-	[<p class="pagination">(#PAGINATION)</p>]
-</div>
-</B_articles>
+[(#REM) articles issus de la rubrique Œuvres ]
+<B_oeuvres>
+<div id="slider" class="liste articles sommaire">
+	<BOUCLE_oeuvres(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{id_secteur=1}>
+	[(#SET_PUSH{oeuvres,#ID_ARTICLE})]
+	</BOUCLE_oeuvres>
+	
+	<BOUCLE_rubrique_oeuvres(RUBRIQUES){id_rubrique=1}>
+	<h2>#TITRE</h2>
+	</BOUCLE_rubrique_oeuvres>
+	<ul class="navigation">
+		
+		<BOUCLE_navigation(ARTICLES){id_article IN #GET{oeuvres}}>
+		<li><a href="#oeuvre-#ID_ARTICLE">image #COMPTEUR_BOUCLE</a></li>
+		</BOUCLE_navigation>
+		
+	</ul><!-- .navigation -->
+	<div class="scroll">
+		<div class="scrollConteneur">
+			<div class="visuOeuvres">
+				<BOUCLE_affichage_oeuvres(ARTICLES){id_article IN #GET{oeuvres}}>
+				<div id="oeuvre-#ID_ARTICLE" class="panneau">
+					<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,1}>
+					[<div class="imgAgrandissement">
+						(#FICHIER|image_reduire{340,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
+						<div class="imgDesc">
+							[<h3>(#TITRE)</h3>]
+							[<p>(#DESCRIPTIF|PtoBR)</p>]
+						</div><!-- .imgDesc -->
+					</div><!-- .imgAgrandissement -->]
+					</BOUCLE_imagePrincipale>
+					<ul class="imgApercu">
+						<BOUCLE_imgApercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}>
+						[<li id="img-#ID_DOCUMENT"[ class="numero-(#COMPTEUR_BOUCLE|modulo{2})"]>
+							<a href="[(#FICHIER|image_reduire{340,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="on"})]>
+								(#FICHIER|image_reduire{200,0}
+									|image_recadre{100,100,center}
+									|inserer_attribut{alt,[(#TITRE|textebrut)]})
+							</a>
+							<div class="imgDesc">
+								[<h3>(#TITRE)</h3>]
+								[<p>(#DESCRIPTIF|PtoBR)</p>]
+							</div><!-- .imgDesc -->
+						</li>]
+						</BOUCLE_imgApercu>
+					</ul><!-- .imgApercu -->
+				</div><!-- #oeuvre-#ID_ARTICLE -->
+				</BOUCLE_affichage_oeuvres>
+			</div><!-- .rotation -->
+		</div><!-- .scrollConteneur -->
+	</div><!-- .scroll -->
+</div><!-- #slider -->
+</B_oeuvres>

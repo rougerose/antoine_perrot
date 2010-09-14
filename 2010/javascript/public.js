@@ -17,6 +17,128 @@ $(document).ready(function(){
 			}
 		);
 	}
+	
+	// Slider
+	// http://jqueryfordesigners.com/coda-slider-effect/
+	var $panneaux = $("#slider .scrollConteneur > div > div"),
+		$conteneur = $("#slider .scrollConteneur"),
+		//pas de barre de défilement
+		$scroll = $("#slider .scroll").css("overflow","hidden"),
+		// défilement horizontal
+		horizontal = true;
+	
+	// pour un défilement horizontal
+	if (horizontal) {
+		$panneaux.css({
+			'float': 'left',
+			'position' : 'relative'
+		});
+		$conteneur.css('width', $panneaux[0].offsetWidth * $panneaux.length);
+	}
+	
+	function selectNav() {
+		$(this)
+			.parents("ul:first")
+				.find("a")
+					.removeClass("on")
+				.end()
+			.end()
+			.addClass("on");
+	}
+	
+	$("#slider .navigation").find("a").click(selectNav);
+	
+	//
+	var scrollOptions = {
+		target: $scroll,
+		items: $panneaux,
+		navigation: '.navigation a',
+		prev: '',
+		next: '',
+		axis: 'xy',
+		duration: 500,
+		easing: 'swing',
+	//	onAfter: trigger,
+		offset: offset
+	}
+	
+	function trigger(data){
+		var el = $("#slider .navigation").find('a[href$="' + data.id + '"]').get(0);
+		selectNav.call(el);
+	}
+	
+	if (window.location.hash) {
+		trigger({ id: window.location.hash.substr(1) });
+	} else {
+	//	$("ul.navigation a:first").click();
+	}
+	
+	$("#slider").serialScroll(scrollOptions);
+	
+	// offset is used to move to *exactly* the right place, since I'm using
+	// padding on my example, I need to subtract the amount of padding to
+	// the offset.  Try removing this to get a good idea of the effect
+	var offset = parseInt((horizontal ? 
+	  $conteneur.css('paddingTop') : 
+	  $conteneur.css('paddingLeft')) 
+	  || 0) * -1;
+	
+	$.localScroll(scrollOptions);
+	
+	// finally, if the URL has a hash, move the slider in to position, 
+	// setting the duration to 1 because I don't want it to scroll in the
+	// very first page load.  We don't always need this, but it ensures
+	// the positioning is absolutely spot on when the pages loads.
+	scrollOptions.duration = 1;
+	$.localScroll.hash(scrollOptions);
+	
+	
+	// Visualisation des oeuvres via un aperçu et agrandissement dans le slider
+	$(".visuOeuvres").each(function(){
+		// récupération de tous les liens de l'aperçu des images
+		var $liensApercu = $(this).find("ul.imgApercu li a"),
+			delai = 500;
+		
+		$liensApercu.click(function(){
+			// mise en cache une copie de l'élément cliqué, puis transformation en objet jQuery 
+			var lien = this,
+				$lien = $(this),
+				// récupération des éléments nécessaires 
+				// pour afficher l'image et sa description dans la zone d'agrandissement
+				$urlApercu = $lien.attr("href"),
+				$descApercu = $lien.parent().find('.imgDesc').html(),
+				// mise en cache de la zone d'agrandissement relative au lien cliqué
+				$zoneAgrandissement = $lien.parents("div.panneau").find(".imgAgrandissement"),
+				$img = $zoneAgrandissement.find("img"),
+				$desc = $zoneAgrandissement.find(".imgDesc");
+				
+				// TODO : récupérer la largeur et la hauteur de la nouvelle image via son url ?
+			
+			
+			if ($lien.is('.on')) {
+				return false;
+			};
+			
+			$liensApercu.removeClass(".on");
+			$lien.addClass(".on");
+			
+			// changement d'image
+			$img.stop().animate({
+				opacity: 0
+			}, delai, function(){
+				$(this).attr({ src: $urlApercu });
+				
+				$img.animate({
+					opacity: 1
+				},delai);
+			});
+			
+			return false;
+		});
+
+	});
+	
+
 });
 
 
