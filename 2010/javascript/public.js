@@ -136,17 +136,16 @@ $(document).ready(function(){
 			$liensApercu.removeClass("on");
 			$lien.addClass("on");
 			
-			// changement de l'image
-			$img.stop().animate({
-				opacity: 0,
-				width: largeur,
-				height: hauteur
-			}, delai, function(){
-				$(this).attr({ src: $urlApercu, width: largeur, height: hauteur });
-				$img.animate({
-					opacity: 1
-				},delai);
+			// changement de l'image et de sa description
+			$zoneAgrandissement.stop().animate({ opacity: 0 },delai,function(){
+				$img.attr({
+					src: $urlApercu,
+					width: largeur,
+					height: hauteur
+				});
+				$desc.html($descApercu);
 			});
+			$zoneAgrandissement.animate({ opacity: 1 },delai);
 			return false;
 		});
 	});
