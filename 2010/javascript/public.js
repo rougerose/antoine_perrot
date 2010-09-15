@@ -1,11 +1,17 @@
 $(document).ready(function(){
-	//Grille de mise en page ajoutée aux boutons d'administration de spip
+	/**
+	 * Grille de mise en page ajoutée aux boutons d'administration de spip
+	 */
+	
 	$("#spip-admin").append("<a id='grille' class='spip-admin-boutons' href='#'>Grille</a>");
 	$("#grille").click(function(){
 		$("body").toggleClass("grille");
 	});
 	
-	// transitions CSS3 non disponibles dans Firefox 3 (max)
+	/**
+	 * transitions CSS3 non disponibles dans Firefox 3 (max)
+	 */
+	
 	if (typeof getStyleProperty('transition') == 'undefined') {
 		// property is supported
 		$("#nav li a").addClass("ff3").hover(
@@ -18,8 +24,11 @@ $(document).ready(function(){
 		);
 	}
 	
-	// Slider
-	// http://jqueryfordesigners.com/coda-slider-effect/
+	/**
+	 * Slider
+	 * http://jqueryfordesigners.com/coda-slider-effect/
+	 */
+	
 	var $panneaux = $("#slider .scrollConteneur > div > div"),
 		$conteneur = $("#slider .scrollConteneur"),
 		//pas de barre de défilement
@@ -48,7 +57,6 @@ $(document).ready(function(){
 	
 	$("#slider .navigation").find("a").click(selectNav);
 	
-	//
 	var scrollOptions = {
 		target: $scroll,
 		items: $panneaux,
@@ -93,7 +101,10 @@ $(document).ready(function(){
 	$.localScroll.hash(scrollOptions);
 	
 	
-	// Visualisation des oeuvres via un aperçu et agrandissement dans le slider
+	/**
+	 * Visualisation des oeuvres via un aperçu et agrandissement dans le slider
+	 */
+	
 	$(".visuOeuvres").each(function(){
 		// récupération de tous les liens de l'aperçu des images
 		var $liensApercu = $(this).find("ul.imgApercu li a"),
@@ -111,7 +122,9 @@ $(document).ready(function(){
 				$zoneAgrandissement = $lien.parents("div.panneau").find(".imgAgrandissement"),
 				$img = $zoneAgrandissement.find("img"),
 				$desc = $zoneAgrandissement.find(".imgDesc"),
-				// récupération de la dimension de l'image indiquée dans son url (de la forme chemin/L...xH.../nomdufichier.extension). L'expression régulière ci-dessous fonctionne mais sort en premier résultat L...xH...
+				// récupération de la dimension de l'image indiquée dans son url
+				// (de la forme chemin/L...xH.../nomdufichier.extension). 
+				// L'expression régulière ci-dessous fonctionne mais sort en premier résultat L...xH...
 				dimensions = $urlApercu.match(/L(\d+)xH(\d+)/),
 				largeur = dimensions[1],
 				hauteur = dimensions[2];
@@ -123,25 +136,21 @@ $(document).ready(function(){
 			$liensApercu.removeClass("on");
 			$lien.addClass("on");
 			
-			// changement d'image
+			// changement de l'image
 			$img.stop().animate({
 				opacity: 0,
 				width: largeur,
 				height: hauteur
 			}, delai, function(){
 				$(this).attr({ src: $urlApercu, width: largeur, height: hauteur });
-				
 				$img.animate({
 					opacity: 1
 				},delai);
 			});
-			
 			return false;
 		});
-
 	});
 	
-
 });
 
 
