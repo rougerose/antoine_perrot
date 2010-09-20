@@ -163,7 +163,7 @@ a { text-decoration: none; }
 				padding: 20px 60px;
 			}
 				.panneau dl {}
-					.panneau dt {float: left;}
+					.panneau dt { float: left; }
 					.panneau dd { display: none; }
 
 /* ------------------------------------ */
@@ -172,21 +172,35 @@ a { text-decoration: none; }
 .visuOeuvres {}
 	.imgAgrandissement { 
 		float: left;
-		overflow: hidden;
-		width: 340px; }
-		.imgAgrandissement .imgDesc { 
-			xdisplay: none; }
+		width: 340px;
+		position: relative; }
+		.imgAgrandissement .conteneurDesc { 
+			width: 100%;
+			position: absolute; left:0px; bottom:-16px; }
+			.imgAgrandissement .afficheInfos { 
+				cursor: pointer;
+				background: url('../img/img-sprites.png') no-repeat 0 0;
+				display:block;
+				position: absolute; right:0; bottom: 0;
+				width:16px; height:16px; }
+			.imgAgrandissement .afficheInfos.actif { background-position: 0 -16px; }
+			.imgAgrandissement .imgDesc { 
+				color: #fff;
+				background-color: rgba(0,0,0,0.75);
+				padding: 3px 16px 3px 6px; }
+				.imgAgrandissement .imgDesc h3 { font-size: 12px; margin-bottom: 9px; }
+				.imgAgrandissement .imgDesc p { font-size: 10px; }
 
 	ul.imgApercu { 
-		float: left;
-		margin-left: 20px;
+		float: right;
 		width: 220px; }
 		.imgApercu li { 
 			float: left;
-			margin-bottom:10px;
-			width: 100px; }
-			.imgApercu li.numero-0 { 
-				margin-left:20px; }
-				.imgApercu li .imgDesc { 
-					display: none; }
-
+			xwidth: 100px; }
+		.imgApercu li {  }
+			.imgApercu li a { display: block; padding: 0 10px 10px 0; }
+			.imgApercu li.numero-0 a { padding-left: 10px; }
+				.imgApercu li a img { xopacity:.5; }
+				.imgApercu li a.actif img, .imgApercu li a:hover img { xopacity:1; }
+			.imgApercu li .imgDesc { 
+				display: none; }

@@ -13,7 +13,7 @@ $(document).ready(function(){
 	 */
 	
 	if (typeof getStyleProperty('transition') == 'undefined') {
-		// property is supported
+		// property is unsupported
 		$("#nav li a").addClass("ff3").hover(
 			function() {
 				$(this).stop().animate({paddingLeft:"30px"},600);
@@ -69,7 +69,7 @@ $(document).ready(function(){
 	//	onAfter: trigger,
 		offset: offset
 	}
-	
+	/*
 	function trigger(data){
 		var el = $("#slider .navigation").find('a[href$="' + data.id + '"]').get(0);
 		selectNav.call(el);
@@ -80,7 +80,7 @@ $(document).ready(function(){
 	} else {
 	//	$("ul.navigation a:first").click();
 	}
-	
+	*/
 	$("#slider").serialScroll(scrollOptions);
 	
 	// offset is used to move to *exactly* the right place, since I'm using
@@ -110,6 +110,12 @@ $(document).ready(function(){
 		var $liensApercu = $(this).find("ul.imgApercu li a"),
 			delai = 500;
 		
+		// Ajout du bouton pour afficher le descriptif de l'œuvre
+		$("div.conteneurDesc").append('<span class="afficheInfos" />');
+		
+		// Le descriptif de l'œuvre dans la zone d'agrandissement est masqué
+		$(".imgAgrandissement .imgDesc").hide();
+		
 		$liensApercu.click(function(){
 			// mise en cache une copie de l'élément cliqué, puis transformation en objet jQuery 
 			var lien = this,
@@ -122,31 +128,38 @@ $(document).ready(function(){
 				$zoneAgrandissement = $lien.parents("div.panneau").find(".imgAgrandissement"),
 				$img = $zoneAgrandissement.find("img"),
 				$desc = $zoneAgrandissement.find(".imgDesc"),
+				// hauteur du bloc descriptif 
+				$descHauteur = $desc.height();
 				// récupération de la dimension de l'image indiquée dans son url
-				// (de la forme chemin/L...xH.../nomdufichier.extension). 
+				// (de la forme chemin/LlargeurxHhauteur/nomdufichier.extension). 
 				// L'expression régulière ci-dessous fonctionne mais sort en premier résultat L...xH...
 				dimensions = $urlApercu.match(/L(\d+)xH(\d+)/),
 				largeur = dimensions[1],
 				hauteur = dimensions[2];
 				
-			if ($lien.is('.on')) {
+			if ($lien.is('.actif')) {
 				return false;
 			};
 			
-			$liensApercu.removeClass("on");
-			$lien.addClass("on");
+			$liensApercu.removeClass("actif");
+			$lien.addClass("actif");
 			
 			// changement de l'image et de sa description
 			$zoneAgrandissement.stop().animate({ opacity: 0 },delai,function(){
-				$img.attr({
+				$img.animate({ width: largeur, height: hauteur }, delai)
+				.attr({
 					src: $urlApercu,
 					width: largeur,
 					height: hauteur
 				});
-				$desc.html($descApercu);
+				$desc.hide().html($descApercu);
 			});
 			$zoneAgrandissement.animate({ opacity: 1 },delai);
 			return false;
+		});
+		
+		$("span.afficheInfos").click(function(){
+			$(this).toggleClass("actif").prev("div.imgDesc").toggleClass("actif").slideToggle(delai);
 		});
 	});
 	
