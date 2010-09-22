@@ -120,7 +120,6 @@ $(document).ready(function(){
 		var $liensApercu = $(this).find("ul.imgApercu li a"),
 			delai = 500;
 		
-	//	console.log($liensApercu);
 		// Ajout du bouton pour afficher le descriptif de l'œuvre
 		$("div.conteneurDesc").append('<span class="afficheInfos" />');
 		

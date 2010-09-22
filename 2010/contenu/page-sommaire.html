@@ -1,6 +1,6 @@
 [(#REM) articles issus de la rubrique Œuvres ]
 <B_oeuvres>
-<div id="slider" class="liste articles sommaire">
+<div id="slider" class="liste articles sommaire groupe">
 	<BOUCLE_oeuvres(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{id_secteur=1}>
 	[(#SET_PUSH{oeuvres,#ID_ARTICLE})]
 	</BOUCLE_oeuvres>
@@ -23,6 +23,7 @@
 					<h3>#TITRE</h3>
 					<div class="oeuvreConteneur clearfix">
 						<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,1}>
+						[(#REM) zone agrandissement]
 						[<div class="imgAgrandissement">
 							(#FICHIER|image_reduire{320,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
 							<div class="conteneurDesc">
@@ -33,12 +34,16 @@
 							</div><!-- .conteneurDesc -->
 						</div><!-- .imgAgrandissement -->]
 						</BOUCLE_imagePrincipale>
+						[(#REM) zone apercu]
+						<B_apercu>
+						[(#ANCRE_PAGINATION)]
+						[<p class="pagination">(#PAGINATION)</p>]
 						<ul class="imgApercu">
-							<BOUCLE_imgApercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}>
+							<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{pagination}>
 							[<li id="img-#ID_DOCUMENT">
 								<a href="[(#FICHIER|image_reduire{320,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
-									(#FICHIER|image_reduire{200,0}
-										|image_recadre{100,100,center}
+									(#FICHIER|image_reduire{100,0}
+										|image_recadre{40,40,center}
 										|inserer_attribut{alt,[(#TITRE|textebrut)]})
 								</a>
 								<div class="imgDesc">
@@ -46,9 +51,11 @@
 									[<p>(#DESCRIPTIF|PtoBR)</p>]
 								</div><!-- .imgDesc -->
 							</li>]
-							</BOUCLE_imgApercu>
+							</BOUCLE_apercu>
 						</ul><!-- .imgApercu -->
-					</div>
+						</B_apercu>
+						
+					</div><!-- .oeuvreConteneur -->
 				</div><!-- #oeuvre-#ID_ARTICLE -->
 				</BOUCLE_affichage_oeuvres>
 			</div><!-- .rotation -->
@@ -56,9 +63,11 @@
 	</div><!-- .scroll -->
 </div><!-- #slider -->
 </B_oeuvres>
+<div class="groupe">
+	<h2>Quelques articles</h2>
+	<BOUCLE_articles(ARTICLES){par date}{0,5}>
+	<h3>#TITRE</h3>
+	<p>#INTRODUCTION</p>
+	</BOUCLE_articles>
+</div><!-- .groupe -->
 
-<h2>Quelques articles</h2>
-<BOUCLE_articles(ARTICLES){par date}{0,5}>
-<h3>#TITRE</h3>
-<p>#INTRODUCTION</p>
-</BOUCLE_articles>

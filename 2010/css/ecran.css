@@ -87,7 +87,6 @@ body { position: relative; padding-top: 36px; }
 		#entete { position: fixed; }
 		#nav { position: fixed; top:90px;}
 		#conteneur {
-			background-color: rgba(255,255,255,0.85);
 			position: relative; z-index: 20; top:36px;
 			margin-left:280px;
 			width: 700px; }
@@ -102,6 +101,7 @@ body { position: relative; padding-top: 36px; }
 html { font-size: 100.01%; /* pour IE */ }
 body { font:  75%/1.5 "HelveticaNeue-Light", "Helvetica Neue", Arial, sans-serif; color: #3e0000; }
 
+
 /* ------------------------------------ */
 /*  Liens				*/
 /* ------------------------------------ */
@@ -110,6 +110,7 @@ a:visited {  }
 a:hover {  }
 a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
 a:active { outline: none; }
+
 
 /* ------------------------------------ */
 /*  Entete								*/
@@ -139,6 +140,9 @@ a:active { outline: none; }
 				-moz-transition: padding-left .6s ease-out; }
 			#nav li a:hover { padding-left: 30px; }
 			#nav li a.ff3:hover { padding-left: 40px; }
+
+
+.groupe { background-color: rgba(255,255,255,0.85); }
 
 
 /* ------------------------------------ */
