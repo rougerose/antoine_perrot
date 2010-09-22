@@ -21,32 +21,34 @@
 				<BOUCLE_affichage_oeuvres(ARTICLES){id_article IN #GET{oeuvres}}>
 				<div id="oeuvre-#ID_ARTICLE" class="panneau">
 					<h3>#TITRE</h3>
-					<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,1}>
-					[<div class="imgAgrandissement">
-						(#FICHIER|image_reduire{320,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
-						<div class="conteneurDesc">
-							<div class="imgDesc">
-								[<h3>(#TITRE)</h3>]
-								[<p>(#DESCRIPTIF|PtoBR)</p>]
-							</div><!-- .imgDesc -->
-						</div><!-- .conteneurDesc -->
-					</div><!-- .imgAgrandissement -->]
-					</BOUCLE_imagePrincipale>
-					<ul class="imgApercu">
-						<BOUCLE_imgApercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}>
-						[<li id="img-#ID_DOCUMENT">
-							<a href="[(#FICHIER|image_reduire{320,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
-								(#FICHIER|image_reduire{200,0}
-									|image_recadre{100,100,center}
-									|inserer_attribut{alt,[(#TITRE|textebrut)]})
-							</a>
-							<div class="imgDesc">
-								[<h3>(#TITRE)</h3>]
-								[<p>(#DESCRIPTIF|PtoBR)</p>]
-							</div><!-- .imgDesc -->
-						</li>]
-						</BOUCLE_imgApercu>
-					</ul><!-- .imgApercu -->
+					<div class="oeuvreConteneur clearfix">
+						<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,1}>
+						[<div class="imgAgrandissement">
+							(#FICHIER|image_reduire{320,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
+							<div class="conteneurDesc">
+								<div class="imgDesc">
+									[<h3>(#TITRE)</h3>]
+									[<p>(#DESCRIPTIF|PtoBR)</p>]
+								</div><!-- .imgDesc -->
+							</div><!-- .conteneurDesc -->
+						</div><!-- .imgAgrandissement -->]
+						</BOUCLE_imagePrincipale>
+						<ul class="imgApercu">
+							<BOUCLE_imgApercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}>
+							[<li id="img-#ID_DOCUMENT">
+								<a href="[(#FICHIER|image_reduire{320,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
+									(#FICHIER|image_reduire{200,0}
+										|image_recadre{100,100,center}
+										|inserer_attribut{alt,[(#TITRE|textebrut)]})
+								</a>
+								<div class="imgDesc">
+									[<h3>(#TITRE)</h3>]
+									[<p>(#DESCRIPTIF|PtoBR)</p>]
+								</div><!-- .imgDesc -->
+							</li>]
+							</BOUCLE_imgApercu>
+						</ul><!-- .imgApercu -->
+					</div>
 				</div><!-- #oeuvre-#ID_ARTICLE -->
 				</BOUCLE_affichage_oeuvres>
 			</div><!-- .rotation -->

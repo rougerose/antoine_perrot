@@ -146,19 +146,18 @@ a:active { outline: none; }
 /* ------------------------------------ */
 #slider {
 	position: relative;
-	clear:both;
 	width: 700px; }
 	#slider .navigation { 
 		position:absolute;
 		z-index: 999; }
-		#slider .navigation li {
-			display: inline; }
+		#slider .navigation li { display: inline; }
 	.scroll {
 		position: relative;
 		overflow: auto;
 		overflow-x: hidden;
 		clear: left;
 		width: 700px; }
+		.scrollConteneur {}
 		.scrollBouton { 
 			display: block; background-color: red;
 			width: 20px; height: 20px;
@@ -166,55 +165,52 @@ a:active { outline: none; }
 			cursor:pointer; }
 		.scrollBouton.gauche { left:0; }
 		.scrollBouton.droite { right:0; }
-		.scrollConteneur {}
-			.panneau {
-				width: 590px;
-				padding: 20px 50px 20px 60px; }
 
 
 /* ------------------------------------ */
 /*	Visualisation des oeuvres 			*/
 /* ------------------------------------ */
 .visuOeuvres {}
-	.panneau {  }
-	.imgAgrandissement { 
-		float: left;
-		width: 340px; text-align:center;
-		position: relative;
-		margin-bottom:20px; }
-		.imgAgrandissement img { background-color: #fff; padding:10px; margin:0 auto; }
-		.imgAgrandissement .conteneurDesc { 
-			text-align:left;
-			width: 100%;
-			position: absolute; left:0px; bottom:-16px; }
-			.imgAgrandissement span.afficheInfos { 
-				cursor: pointer;
-				background: url('../img/img-sprites.png') no-repeat -2px -2px;
-				border: 1px solid #000;
-				display:block;
-				position: absolute; right:0; bottom: 0;
-				width:12px; height:12px; }
-			.imgAgrandissement span:hover { background-position: -18px -2px; }
-			.imgAgrandissement .afficheInfos.actif { background-position: -2px -18px; }
-			.imgAgrandissement .afficheInfos.actif:hover { background-position: -18px -18px; }
-			.imgAgrandissement .afficheInfos:active { bottom:-1px; }
-			.imgAgrandissement .imgDesc { 
-				color: #fff;
-				background-color: rgba(0,0,0,0.85);
-				padding: 3px 16px 3px 6px; }
-				.imgAgrandissement .imgDesc h3 { font-size: 12px; margin-bottom: 9px; }
-				.imgAgrandissement .imgDesc p { font-size: 10px; }
-
-	ul.imgApercu { 
-		float: right;
-		width: 240px; }
-		.imgApercu li { 
-			float: left;
-			xwidth: 100px; }
-		.imgApercu li {  }
-			.imgApercu li a { display: block; padding:7px; margin: 0 3px 6px; }
-			.imgApercu li.numero-0 a {  }
-			.imgApercu li a.actif, .imgApercu li a:hover { background-color: #fff; }
-				.imgApercu li a img {  }
-			.imgApercu li .imgDesc { 
-				display: none; }
+	.panneau {
+		width: 590px;
+		padding: 20px 50px 20px 60px; }
+		.oeuvreConteneur {}
+			/* zone agrandissement */
+			.imgAgrandissement { 
+				float: left;
+				width: 340px; text-align:center;
+				position: relative;
+				margin-bottom:20px; }
+				.imgAgrandissement img { background-color: #fff; padding:10px; margin:0 auto; }
+				.imgAgrandissement .conteneurDesc { 
+					text-align:left;
+					width: 100%;
+					position: absolute; left:0px; bottom:-16px; }
+					.imgAgrandissement span.afficheInfos { 
+						cursor: pointer;
+						background: url('../img/img-sprites.png') no-repeat -2px -2px;
+						border: 1px solid #000;
+						display:block;
+						position: absolute; right:0; bottom: 0;
+						width:12px; height:12px; }
+					.imgAgrandissement span:hover { background-position: -18px -2px; }
+					.imgAgrandissement .afficheInfos.actif { background-position: -2px -18px; }
+					.imgAgrandissement .afficheInfos.actif:hover { background-position: -18px -18px; }
+					.imgAgrandissement .afficheInfos:active { bottom:-1px; }
+					.imgAgrandissement .imgDesc { 
+						color: #fff;
+						background-color: rgba(0,0,0,0.85);
+						padding: 3px 16px 3px 6px; }
+						.imgAgrandissement .imgDesc h3 { font-size: 12px; margin-bottom: 9px; }
+						.imgAgrandissement .imgDesc p { font-size: 10px; }
+			/* zone aperçu */
+			ul.imgApercu { 
+				float: right;
+				width: 240px; }
+				.imgApercu li { float: left; }
+				.imgApercu li {  }
+					.imgApercu li a { display: block; padding:7px; margin: 0 3px 6px; }
+					.imgApercu li.numero-0 a {  }
+					.imgApercu li a.actif, .imgApercu li a:hover { background-color: #fff; }
+						.imgApercu li a img {  }
+					.imgApercu li .imgDesc { display: none; }
