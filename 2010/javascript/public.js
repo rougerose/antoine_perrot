@@ -26,7 +26,10 @@ $(document).ready(function(){
 	
 	/**
 	 * Slider
+	 * script est un mix entre deux sources principales : 
 	 * http://jqueryfordesigners.com/coda-slider-effect/
+	 * et
+	 * http://jqueryfordesigners.com/jquery-infinite-carousel/
 	 */
 	
 	$("#slider").each(function(){
