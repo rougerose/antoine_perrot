@@ -103,6 +103,12 @@ $(document).ready(function(){
 				gotoPage(a + 1);
 			});
 		});
+		
+		// l'url comporte un hash, on affiche l'œuvre directement
+		if (window.location.hash) {
+			var afficher = '[hash=' + window.location.hash + ']';
+			$("#slider .navigation a").filter(afficher).click();
+		}
 	});
 	
 	/**
