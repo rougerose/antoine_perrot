@@ -20,9 +20,10 @@
 			<div class="visuOeuvres clearfix">
 				<BOUCLE_affichage_oeuvres(ARTICLES){id_article IN #GET{oeuvres}}>
 				<div id="oeuvre-#ID_ARTICLE" class="panneau">
+					<h3>#TITRE</h3>
 					<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,1}>
 					[<div class="imgAgrandissement">
-						(#FICHIER|image_reduire{340,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
+						(#FICHIER|image_reduire{320,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
 						<div class="conteneurDesc">
 							<div class="imgDesc">
 								[<h3>(#TITRE)</h3>]
@@ -33,8 +34,8 @@
 					</BOUCLE_imagePrincipale>
 					<ul class="imgApercu">
 						<BOUCLE_imgApercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}>
-						[<li id="img-#ID_DOCUMENT"[ class="numero-(#COMPTEUR_BOUCLE|modulo{2})"]>
-							<a href="[(#FICHIER|image_reduire{340,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
+						[<li id="img-#ID_DOCUMENT">
+							<a href="[(#FICHIER|image_reduire{320,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
 								(#FICHIER|image_reduire{200,0}
 									|image_recadre{100,100,center}
 									|inserer_attribut{alt,[(#TITRE|textebrut)]})
@@ -53,3 +54,9 @@
 	</div><!-- .scroll -->
 </div><!-- #slider -->
 </B_oeuvres>
+
+<h2>Quelques articles</h2>
+<BOUCLE_articles(ARTICLES){par date}{0,5}>
+<h3>#TITRE</h3>
+<p>#INTRODUCTION</p>
+</BOUCLE_articles>

@@ -86,11 +86,11 @@ body { position: relative; padding-top: 36px; }
 	#page {  }
 		#entete { position: fixed; }
 		#nav { position: fixed; top:90px;}
-		#conteneur { background-color: #fff;
+		#conteneur {
+			background-color: rgba(255,255,255,0.85);
 			position: relative; z-index: 20; top:36px;
 			margin-left:280px;
-			width: 700px; 
-		}
+			width: 700px; }
 			#conteneur #contenu { float: left; width: 700px; }
 			#conteneur #navigation {}
 			#pied { display: none; }
@@ -106,7 +106,10 @@ body { font:  75%/1.5 "HelveticaNeue-Light", "Helvetica Neue", Arial, sans-serif
 /*  Liens				*/
 /* ------------------------------------ */
 a { text-decoration: none; }
-
+a:visited {  }
+a:hover {  }
+a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
+a:active { outline: none; }
 
 /* ------------------------------------ */
 /*  Entete								*/
@@ -142,65 +145,76 @@ a { text-decoration: none; }
 /*	Slider								*/
 /* ------------------------------------ */
 #slider {
-	background-color: #fff;
 	position: relative;
+	clear:both;
 	width: 700px; }
-	#slider .navigation {}
+	#slider .navigation { 
+		position:absolute;
+		z-index: 999; }
 		#slider .navigation li {
-			display: inline;
-		}
+			display: inline; }
 	.scroll {
 		position: relative;
 		overflow: auto;
 		overflow-x: hidden;
 		clear: left;
-		xheight: 300px;
-		width: 700px;
-	}
+		width: 700px; }
+		.scrollBouton { 
+			display: block; background-color: red;
+			width: 20px; height: 20px;
+			position: absolute; top:100px; z-index:999;
+			cursor:pointer; }
+		.scrollBouton.gauche { left:0; }
+		.scrollBouton.droite { right:0; }
 		.scrollConteneur {}
 			.panneau {
-				xheight: 260px; width: 580px;
-				padding: 20px 60px;
-			}
-				.panneau dl {}
-					.panneau dt { float: left; }
-					.panneau dd { display: none; }
+				width: 590px;
+				padding: 20px 50px 20px 60px; }
+
 
 /* ------------------------------------ */
 /*	Visualisation des oeuvres 			*/
 /* ------------------------------------ */
 .visuOeuvres {}
+	.panneau {  }
 	.imgAgrandissement { 
 		float: left;
-		width: 340px;
-		position: relative; }
+		width: 340px; text-align:center;
+		position: relative;
+		margin-bottom:20px; }
+		.imgAgrandissement img { background-color: #fff; padding:10px; margin:0 auto; }
 		.imgAgrandissement .conteneurDesc { 
+			text-align:left;
 			width: 100%;
 			position: absolute; left:0px; bottom:-16px; }
-			.imgAgrandissement .afficheInfos { 
+			.imgAgrandissement span.afficheInfos { 
 				cursor: pointer;
-				background: url('../img/img-sprites.png') no-repeat 0 0;
+				background: url('../img/img-sprites.png') no-repeat -2px -2px;
+				border: 1px solid #000;
 				display:block;
 				position: absolute; right:0; bottom: 0;
-				width:16px; height:16px; }
-			.imgAgrandissement .afficheInfos.actif { background-position: 0 -16px; }
+				width:12px; height:12px; }
+			.imgAgrandissement span:hover { background-position: -18px -2px; }
+			.imgAgrandissement .afficheInfos.actif { background-position: -2px -18px; }
+			.imgAgrandissement .afficheInfos.actif:hover { background-position: -18px -18px; }
+			.imgAgrandissement .afficheInfos:active { bottom:-1px; }
 			.imgAgrandissement .imgDesc { 
 				color: #fff;
-				background-color: rgba(0,0,0,0.75);
+				background-color: rgba(0,0,0,0.85);
 				padding: 3px 16px 3px 6px; }
 				.imgAgrandissement .imgDesc h3 { font-size: 12px; margin-bottom: 9px; }
 				.imgAgrandissement .imgDesc p { font-size: 10px; }
 
 	ul.imgApercu { 
 		float: right;
-		width: 220px; }
+		width: 240px; }
 		.imgApercu li { 
 			float: left;
 			xwidth: 100px; }
 		.imgApercu li {  }
-			.imgApercu li a { display: block; padding: 0 10px 10px 0; }
-			.imgApercu li.numero-0 a { padding-left: 10px; }
-				.imgApercu li a img { xopacity:.5; }
-				.imgApercu li a.actif img, .imgApercu li a:hover img { xopacity:1; }
+			.imgApercu li a { display: block; padding:7px; margin: 0 3px 6px; }
+			.imgApercu li.numero-0 a {  }
+			.imgApercu li a.actif, .imgApercu li a:hover { background-color: #fff; }
+				.imgApercu li a img {  }
 			.imgApercu li .imgDesc { 
 				display: none; }
