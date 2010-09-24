@@ -38,7 +38,9 @@ $(document).ready(function(){
 			conteneur = $(".scrollConteneur"),
 			panneaux = $(".panneau"),
 			pages = panneaux.length,
+			nav = $(".navigation a"),
 			pageCourante = 1,
+			p = 1,
 			panneauLargeur = panneaux.outerWidth(),
 			horizontal = true,
 			delai = 700;
@@ -56,6 +58,9 @@ $(document).ready(function(){
 		// hauteur du premier panneau
 		var panneauHauteur = panneaux.eq((pageCourante - 1)).outerHeight();
 		
+		// premier bouton de la navigation sélectionné
+		nav.eq(0).addClass("actif");
+		
 		// boutons de navigation gauche et droite
 		// et application de la hauteur du premier panneau
 		scroll
@@ -68,9 +73,13 @@ $(document).ready(function(){
 		
 		// navigation via les boutons
 		$('span.scrollBouton.gauche', this).click(function () {
+			p--; if (p < 1) p = pages;
+			var el = nav.eq(p-1); selectNav.call(el); console.log("p",p,"el",el);
 			return gotoPage(pageCourante - 1);
 		});
 		$('span.scrollBouton.droite', this).click(function () {
+			p++; if (p > pages) p = 1;
+			var el = nav.eq(p-1); selectNav.call(el);console.log("p",p,"el",el);
 			return gotoPage(pageCourante + 1);
 		});
 		
@@ -78,7 +87,7 @@ $(document).ready(function(){
 			var dir = page < pageCourante ? -1 : 1,
 				n = Math.abs(pageCourante - page),
 				left = panneauLargeur * dir * n;
-			
+				
 			if (page < 1) {
 				left = Math.abs(left*pages);
 				page = pages;
@@ -86,7 +95,7 @@ $(document).ready(function(){
 				left = - (panneauLargeur * pages);
 				page = 1;
 			}
-			
+			p = page;
 			pageCourante = page;
 			
 			// modification de la hauteur du scroll en fonction de celle du panneau affiché
@@ -98,11 +107,22 @@ $(document).ready(function(){
 			},delai);
 		}
 		
-		$("#slider .navigation a").each(function (a) {
+		nav.each(function (a) {
 			$(this).bind("click",function(){
+				selectNav.call($(this));
 				gotoPage(a + 1);
 			});
 		});
+		
+		function selectNav () {
+			$(this)
+				.parents("ul")
+					.find("a")
+						.removeClass("actif")
+					.end()
+				.end()
+			.addClass("actif");
+		}
 		
 		// l'url comporte un hash, on affiche l'œuvre directement
 		if (window.location.hash) {
@@ -174,7 +194,9 @@ $(document).ready(function(){
 					width: largeur,
 					height: hauteur
 				});
+				
 				$desc.hide().html($descApercu).next("span").removeClass("actif");
+				
 			});
 			$zoneAgrandissement.animate({ opacity: 1 },delai);
 			return false;
