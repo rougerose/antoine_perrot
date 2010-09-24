@@ -74,12 +74,12 @@ $(document).ready(function(){
 		// navigation via les boutons
 		$('span.scrollBouton.gauche', this).click(function () {
 			p--; if (p < 1) p = pages;
-			var el = nav.eq(p-1); selectNav.call(el); console.log("p",p,"el",el);
+			var el = nav.eq(p-1); selectNav.call(el);
 			return gotoPage(pageCourante - 1);
 		});
 		$('span.scrollBouton.droite', this).click(function () {
 			p++; if (p > pages) p = 1;
-			var el = nav.eq(p-1); selectNav.call(el);console.log("p",p,"el",el);
+			var el = nav.eq(p-1); selectNav.call(el);
 			return gotoPage(pageCourante + 1);
 		});
 		
