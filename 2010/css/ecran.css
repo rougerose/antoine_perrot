@@ -100,7 +100,7 @@ body { position: relative; padding-top: 36px; }
 /* ------------------------------------ */
 html { font-size: 100.01%; /* pour IE */ }
 body { font:  75%/1.5 "HelveticaNeue-Light", "Helvetica Neue", Arial, sans-serif; color: #3e0000; }
-
+h1,h2,h3,h4,h5,h6 { text-rendering: optimizeLegibility; }
 
 /* ------------------------------------ */
 /*  Liens				*/
@@ -142,12 +142,14 @@ a:active { outline: none; }
 			#nav li a.ff3:hover { padding-left: 40px; }
 
 
-.groupe { 
+.section {
 	background-color: rgba(253,253,253,.98);
 	margin-bottom:3em; }
-.groupe h2.titre { 
-	font-size:24px;
-	margin-left:60px; }
+	.section h2.titre { 
+		font-size:24px;
+		margin-left:60px; }
+		.section .titre a { color: #000; padding:0 2px; }
+		.section .titre a:hover { background-color: #000; color: #fff; }
 
 /* ------------------------------------ */
 /*	Slider								*/
@@ -193,7 +195,7 @@ a:active { outline: none; }
 	.panneau {
 		width: 590px;
 		padding: 20px 50px 20px 60px; }
-		.visuOeuvres h3.titre { font-size:20px; font-style: italic; }
+		.visuOeuvres h3.titre { font-size:20px; font-style: italic; margin-bottom:1.5em; }
 		.oeuvreConteneur {}
 			/* zone agrandissement */
 			.imgAgrandissement { 
@@ -232,3 +234,12 @@ a:active { outline: none; }
 					.imgApercu li a { display: block; padding:3px; margin: 0 7px 10px; }
 					.imgApercu li a.actif, .imgApercu li a:hover { background-color: #000; }
 					.imgApercu li .imgDesc { display: none; }
+
+
+/* -------------------------------- */
+/*	entry	(sommaire)				*/
+/* -------------------------------- */
+.page_sommaire li.hentry {
+	float: left;
+	width: 340px; }
+.page_sommaire li.hentry.numero-0 { margin-left:20px; }
