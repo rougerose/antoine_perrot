@@ -6,7 +6,7 @@
 	</BOUCLE_oeuvres>
 	
 	<BOUCLE_rubrique_oeuvres(RUBRIQUES){id_rubrique=1}>
-	<h2>#TITRE</h2>
+	<h2 class="titre">#TITRE</h2>
 	</BOUCLE_rubrique_oeuvres>
 	<ul class="navigation">
 		
@@ -20,15 +20,15 @@
 			<div class="visuOeuvres clearfix">
 				<BOUCLE_affichage_oeuvres(ARTICLES){id_article IN #GET{oeuvres}}>
 				<div id="oeuvre-#ID_ARTICLE" class="panneau">
-					<h3>#TITRE</h3>
+					<h3 class="titre">#TITRE</h3>
 					<div class="oeuvreConteneur clearfix">
 						<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,1}>
 						[(#REM) zone agrandissement]
 						[<div class="imgAgrandissement">
-							(#FICHIER|image_reduire{320,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
+							(#FICHIER|image_reduire{400,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
 							<div class="conteneurDesc">
 								<div class="imgDesc">
-									[<h3>(#TITRE)</h3>]
+									[<h3>(#TITRE|sinon{description})</h3>]
 									[<p>(#DESCRIPTIF|PtoBR)</p>]
 								</div><!-- .imgDesc -->
 							</div><!-- .conteneurDesc -->
