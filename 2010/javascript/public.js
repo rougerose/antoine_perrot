@@ -99,11 +99,11 @@ $(document).ready(function(){
 			pageCourante = page;
 			
 			// modification de la hauteur du scroll en fonction de celle du panneau affiché
-			var hauteur = panneaux.eq(pageCourante-1).outerHeight();
+			var hauteurPanneau = panneaux.eq(pageCourante-1).outerHeight();
 			
 			scroll.animate({
 				scrollLeft: '+=' + left,
-				height: hauteur
+				height: hauteurPanneau
 			},delai);
 		}
 		
@@ -150,17 +150,17 @@ $(document).ready(function(){
 			// mise en cache une copie de l'élément cliqué, puis transformation en objet jQuery 
 			var lien = this,
 				$lien = $(this),
+				$panneau = $lien.parents("div.panneau"),
 				// récupération des éléments nécessaires 
 				// pour afficher l'image et sa description dans la zone d'agrandissement
 				$urlApercu = $lien.attr("href"),
 				$descApercu = $lien.parent().find('.imgDesc').html(),
 				// mise en cache de la zone d'agrandissement relative au lien cliqué
-				$zoneAgrandissement = $lien.parents("div.panneau").find(".imgAgrandissement"),
+				$zoneAgrandissement = $panneau.find(".imgAgrandissement"),
+				$desc = $zoneAgrandissement.find(".imgDesc"),
 				$img = $zoneAgrandissement.find("img"),
 				imgHauteur = $img.outerHeight(),
-				$desc = $zoneAgrandissement.find(".imgDesc"),
-				// hauteur du bloc descriptif 
-				$descHauteur = $desc.height();
+				panneauHauteur = $panneau.outerHeight(),
 				// récupération de la dimension de l'image indiquée dans son url
 				// (de la forme chemin/LlargeurxHhauteur/nomdufichier.extension). 
 				// L'expression régulière ci-dessous fonctionne mais sort en premier résultat L...xH...
@@ -170,7 +170,10 @@ $(document).ready(function(){
 				hauteur = parseInt(dimensions[2]),
 				hauteurPanneau = $lien.parents(".panneau").height(),
 				scroll = $lien.parents(".scroll"),
-				hauteurScroll = scroll.height();
+				hauteurScroll = scroll.height(),
+				
+				// difference pour le réajustement de la hauteur du div.scroll
+				difference = hauteurScroll - imgHauteur + hauteur;
 				
 			if ($lien.is('.actif')) {
 				return false;
@@ -186,13 +189,9 @@ $(document).ready(function(){
 			
 			// changement de l'image et de sa description
 			$zoneAgrandissement.stop().animate({ opacity: 0 },delai,function(){
-				// si le total de la hauteur de l'image + 20 padding + 20 marge basse + 40 padding du panneau
-				// est plus grand que la hauteur du scroll, on modifie la hauteur du scroll en conséquence.
-				// Mais pas de réduction pour éviter un effet yoyo à chaque clic.
-				difference = (hauteur + 80) - hauteurScroll;
-				if (difference > 0 ) {
-					scroll.animate({ height: '+=' + difference });
-				}
+				// on ajuste la hauteur du div.scroll
+				scroll.animate({ height: difference });
+				
 				$img.animate({ width: largeur, height: hauteur }, delai)
 				.attr({
 					src: $urlApercu,
@@ -201,8 +200,8 @@ $(document).ready(function(){
 				});
 				
 				$desc.hide().html($descApercu).next("span").removeClass("actif");
-				
 			});
+			
 			$zoneAgrandissement.animate({ opacity: 1 },delai);
 			return false;
 		});
