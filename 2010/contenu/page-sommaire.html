@@ -41,7 +41,7 @@
 						<ul class="imgApercu">
 							<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{pagination}>
 							[<li id="img-#ID_DOCUMENT">
-								<a href="[(#FICHIER|image_reduire{320,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
+								<a href="[(#FICHIER|image_reduire{400,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
 									(#FICHIER|image_reduire{100,0}
 										|image_recadre{40,40,center}
 										|inserer_attribut{alt,[(#TITRE|textebrut)]})
