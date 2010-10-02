@@ -176,8 +176,13 @@ $(document).ready(function(){
 				return false;
 			};
 			
-			$liensApercu.removeClass("actif");
-			$lien.addClass("actif");
+			$lien
+				.parents("ul")
+					.find("a")
+						.removeClass("actif")
+					.end()
+				.end()
+			.addClass("actif");
 			
 			// changement de l'image et de sa description
 			$zoneAgrandissement.stop().animate({ opacity: 0 },delai,function(){
