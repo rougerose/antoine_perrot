@@ -25,7 +25,7 @@
 						<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,1}>
 						[(#REM) zone agrandissement]
 						[<div class="imgAgrandissement">
-							(#FICHIER|image_reduire{400,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
+							(#FICHIER|image_reduire{390,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
 							<div class="conteneurDesc">
 								<div class="imgDesc">
 									[<h3>(#TITRE|sinon{description})</h3>]
@@ -34,14 +34,13 @@
 							</div><!-- .conteneurDesc -->
 						</div><!-- .imgAgrandissement -->]
 						</BOUCLE_imagePrincipale>
+						
 						[(#REM) zone apercu]
 						<B_apercu>
-						[(#ANCRE_PAGINATION)]
-						[<p class="pagination">(#PAGINATION)</p>]
 						<ul class="imgApercu">
-							<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{pagination}>
+							<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}>
 							[<li id="img-#ID_DOCUMENT">
-								<a href="[(#FICHIER|image_reduire{400,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
+								<a href="[(#FICHIER|image_reduire{390,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
 									(#FICHIER|image_reduire{100,0}
 										|image_recadre{40,40,center}
 										|inserer_attribut{alt,[(#TITRE|textebrut)]})
@@ -58,6 +57,7 @@
 					</div><!-- .oeuvreConteneur -->
 				</div><!-- #oeuvre-#ID_ARTICLE -->
 				</BOUCLE_affichage_oeuvres>
+				
 			</div><!-- .rotation -->
 		</div><!-- .scrollConteneur -->
 	</div><!-- .scroll -->
