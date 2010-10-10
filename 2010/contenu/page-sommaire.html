@@ -1,12 +1,12 @@
 [(#REM) articles issus de la rubrique Œuvres ]
 <B_oeuvres>
-<div id="slider" class="section">
+<div id="slider" class="section item">
 	<BOUCLE_oeuvres(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{id_secteur=1}{doublons}>
 	[(#SET_PUSH{oeuvres,#ID_ARTICLE})]
 	</BOUCLE_oeuvres>
 	
 	<BOUCLE_rubrique_oeuvres(RUBRIQUES){id_rubrique=1}>
-	<h2 class="titre"><a href="#URL_RUBRIQUE">#TITRE</a></h2>
+	<h2 class="titre rubrique-#ID_RUBRIQUE"><a href="#URL_RUBRIQUE">#TITRE</a></h2>
 	</BOUCLE_rubrique_oeuvres>
 	<ul class="navigation">
 		
@@ -64,15 +64,5 @@
 </div><!-- #slider -->
 </B_oeuvres>
 
-<B_articles>
-<div class="liste articles sommaire">
-	#ANCRE_PAGINATION
-	<h2 class="h2"><:derniers_articles:></h2>
-	<ul class="liste-items clearfix">
-		<BOUCLE_articles(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{!par date}{pagination}{doublons}>
-		[(#INCLURE{fond=inclure/article-resume,id_article,compteur=[(#COMPTEUR_BOUCLE|modulo{2})]})]
-		</BOUCLE_articles>
-	</ul>
-	[<p class="pagination">(#PAGINATION)</p>]
-</div>
-</B_articles>
+[(#REM) articles mis en avant, au format hentry ]
+<INCLURE{fond=inclure/articles-hentry,env,ajax,doublons}>

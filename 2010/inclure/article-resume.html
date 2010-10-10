@@ -1,17 +1,29 @@
 [(#REM)
 
-  Squelette Presentation d'un article dans une liste
-  (c) 2009 Zpip
-  Distribue sous licence GPL
+Squelette Presentation d'un article dans une liste
+(c) 2009 Zpip
+Distribue sous licence GPL
 
 ]
-<BOUCLE_articles(ARTICLES) {id_article} {statut?}>
-<li id="#article-#ID_ARTICLE" class="item hentry section[ numero-(#ENV{compteur})]">
-	<h3 class="h3 entry-title"><a href="#URL_ARTICLE" rel="bookmark">[(#LOGO_ARTICLE_RUBRIQUE||image_reduire{150,100})]#TITRE</a></h3>
-	<div class="info-publi">[<abbr class="published" title="[(#DATE|date_iso)]">(#DATE|affdate_jourcourt)</abbr>][<span class="sep">, </span><span class="auteurs"><:par_auteur:> (#LESAUTEURS)</span>]</div>
-	[<div class="#EDIT{intro} introduction entry-content">(#INTRODUCTION)</div>]
-	<div class="meta-publi">
-	<a class="lire-la-suite" href="#URL_ARTICLE"><:zpip:lire_la_suite:><span class="lire-la-suite-titre"><:zpip:lire_la_suite_de:> <em>#TITRE</em></span></a>
+
+<BOUCLE_articles(ARTICLES){id_article}{statut?}>
+<li id="article-#ID_ARTICLE" class="item hentry [ numero-(#ENV{compteur})]">
+	<BOUCLE_titre_rubrique(RUBRIQUES){id_rubrique}>
+	[(#ENV{composition}|match{sommaire}|oui)
+	<h2 class="titre"><a href="#URL_RUBRIQUE">#TITRE</a></h2>
+	]
+	</BOUCLE_titre_rubrique>
+	<h3 class="entry-title titre"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
+	<div class="#EDIT{intro} introduction entry-content clearfix">
+		[(#LOGO_ARTICLE|image_reduire{100,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})]
+		<BOUCLE_evenement(EVENEMENTS){id_article}>
+		[(#INCLURE{fond=inclure/article-evenement-resume,id_article,id_evenement})]
+		</BOUCLE_evenement>
+		[(#INTRODUCTION)]
+		<ul class="meta-publi">
+			<li class="info-publi updated published">[<span class="value" title="[(#DATE|date_iso)]">(#DATE|affdate_jourcourt)</span>]</li>
+			<li class="lire-suite"><a href="#URL_ARTICLE" title="<:lire_la_suite:>"><:lire_la_suite:></a></li>
+		</ul>
 	</div>
 </li>
 </BOUCLE_articles>
