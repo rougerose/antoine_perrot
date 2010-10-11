@@ -1,6 +1,6 @@
 <BOUCLE_evenement(EVENEMENTS){id_evenement}>
 [(#DATE_DEBUT|jour|=={[(#DATE_FIN|jour)]}|oui)
-<p class="date infos">
+<p class="date dateEvenement infos">
 	<:_le:> <span class="dtstart"><span class="value-title" title="[(#DATE_DEBUT|affdate{c})]"></span>[(#DATE_DEBUT|affdate)]
 	[(#HORAIRE|=={oui}|oui)
 	[(#REM) mêmes heures ? ]
@@ -11,7 +11,7 @@
 </p>
 ]
 [(#DATE_DEBUT|jour|=={[(#DATE_FIN|jour)]}|non)
-<p class="date infos">
+<p class="date dateEvenement infos">
 	<:_du:> <span class="dtstart"><span class="value-title" title="[(#DATE_DEBUT|affdate{c})]"></span>[(#DATE_DEBUT|affdate)]
 	[(#HORAIRE|=={oui}|oui)[(#DATE_DEBUT|heures)]h[(#DATE_DEBUT|minutes)]]</span>
 	<:_au:> [<span class="dtend"><span class="value-title" title="[(#DATE_FIN|affdate{c})]"></span>(#DATE_FIN|affdate)
@@ -19,7 +19,7 @@
 	]
 </p>
 ]
-[<p class="location infos"> 
+[<p class="location locationEvenement infos"> 
 	<span[ class="(#EDIT{lieu})"]>(#LIEU|PtoBR)</span>
 	[<br /><span[ class="(#EDIT{adresse})"]>(#ADRESSE|PtoBR)</span>]
 </p>]

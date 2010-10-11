@@ -14,6 +14,7 @@ $(document).ready(function(){
 	
 	if (typeof getStyleProperty('transition') == 'undefined') {
 		// property is unsupported
+		// simulation CSS3 pour firefox 3
 		$("#nav li a").addClass("ff3").hover(
 			function() {
 				$(this).stop().animate({paddingLeft:"30px"},600);
