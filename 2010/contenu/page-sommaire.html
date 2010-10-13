@@ -25,7 +25,7 @@
 						<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,1}>
 						[(#REM) zone agrandissement]
 						[<div class="imgAgrandissement">
-							(#FICHIER|image_reduire{390,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
+							(#FICHIER|image_reduire{440,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
 							<div class="conteneurDesc">
 								<div class="imgDesc">
 									[<h3>(#TITRE|sinon{description})</h3>]

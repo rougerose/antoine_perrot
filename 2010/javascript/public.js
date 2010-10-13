@@ -71,7 +71,7 @@ $(document).ready(function(){
 			.css({ height:panneauHauteur });
 		
 		// ajustement du positionnement en hauteur des boutons de navigation
-		$("span.scrollBouton").css({ top: Math.round(panneauHauteur/2) })
+	//	$("span.scrollBouton").css({ top: Math.round(panneauHauteur/2) })
 		
 		// navigation via les boutons
 		$('span.scrollBouton.gauche', this).click(function () {

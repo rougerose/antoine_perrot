@@ -166,7 +166,7 @@ a:active { outline: none; }
 	margin-bottom:3em; }
 	.section .titre {  }
 	.section h2.titre {
-		margin-bottom:1em; padding-left:2px; }
+		margin-bottom:1em; padding-left:10px; }
 	.section h3.titre {  }
 		.section .titre a { 
 			color:#000;
@@ -190,7 +190,8 @@ a:active { outline: none; }
 		font-size: 20px; line-height: 1em;
 		margin-bottom:1em; }
 	#slider .navigation { 
-		position:absolute; bottom:5px; left:60px; 
+		position:absolute; right: 10px; top: 9px;
+		padding-right: 40px;
 		z-index: 30; }
 		#slider .navigation li { display: inline; }
 			#slider .navigation li a { 
@@ -210,14 +211,14 @@ a:active { outline: none; }
 		.scrollConteneur {}
 		.scrollBouton { 
 			display: block;
-			background: #fff url('../img/img-sprites.png') no-repeat -32px 2px;
-			width: 40px; height: 24px;
-			position: absolute; top:100px; z-index:30;
+			background: #fff url('../img/img-sprites.png') no-repeat -48px 0;
+			width: 17px; height: 17px;
+			position: absolute; z-index:33; right: 10px; top: 5px;
 			cursor:pointer; }
-		.scrollBouton.gauche { left:0; background-position: -65px 1px; }
-		.scrollBouton.droite { right:0; background-position: -65px -31px; }
-		.scrollBouton.gauche:hover { background-position: -113px 1px; background-color: #000; }
-		.scrollBouton.droite:hover { background-position: -113px -31px; background-color: #000; }
+		.scrollBouton.gauche { right: 30px; background-position: -48px 0; }
+		.scrollBouton.droite { background-position: -64px 0; }
+		.scrollBouton.gauche:hover { background-position: -48px -16px; background-color: #000; }
+		.scrollBouton.droite:hover { background-position: -64px -16px; background-color: #000; }
 
 
 /* ------------------------------------ */
@@ -225,14 +226,14 @@ a:active { outline: none; }
 /* ------------------------------------ */
 .visuOeuvres {}
 	.panneau {
-		width: 590px;
-		padding: 0 50px 20px 60px; }
+		width: 680px;
+		padding: 0 10px 20px 10px; }
 		.visuOeuvres h3.titre { font-size:20px; font-style: italic; margin-bottom:1.5em; }
 		.oeuvreConteneur {}
 			/* zone agrandissement */
 			.imgAgrandissement { 
 				float: left;
-				width: 400px; text-align:center;
+				width: 450px; text-align:center;
 				position: relative;
 				margin-bottom:20px; }
 				.imgAgrandissement img { background-color: #fff; margin:0 auto; padding: 5px; }
