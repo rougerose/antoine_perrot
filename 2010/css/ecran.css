@@ -275,8 +275,12 @@ a:active { outline: none; }
 	.hentry .info-publi {  }
 	.hentry .auteurs {  }
 	.hentry .entry-content {  }
-		.entry-content p.dateEvenement, .entry-content p.locationEvenement { font-weight: bold; }
-		.entry-content p.locationEvenement { margin-bottom:1.5em; }
+		.entry-content .infos { 
+			font-weight: bold; 
+			border-bottom:1px dotted #000;
+			margin: 0; }
+		.entry-content .intro { margin: 0 0 0.75em; }
+		.entry-content .infos + .intro { margin: 0.75em 0 0.75em; }
 		.entry-content ul.meta-publi { 
 			float: right;
 			margin-top: .75em;
@@ -327,16 +331,16 @@ a:active { outline: none; }
 /*	agenda (vcalendar)				*/
 /* -------------------------------- */
 .vevent { width: 450px; margin-bottom: 1.5em; }
-	.summary { 
+	.vevent .summary { 
 		border-bottom:1px solid #000;
 		font-weight: bold; font-size: 15px; }
-	.dateEvenement {  }
-	.locationEvenement {  }
-	.dateEvenement, .locationEvenement {  }
-	.infos { 
+	.vevent .dateEvenement {  }
+	.vevent .locationEvenement {  }
+	.vevent .dateEvenement, .locationEvenement {  }
+	.vevent .infos { 
 		border-bottom:1px dotted #000;
 		margin: .75em 0; padding-left: 5em; }
-		.infos .label { 
+		.vevent .infos .label { 
 			font-weight:bold;
 			display: block; float: left; width:5em; margin-left:-5em; }
 

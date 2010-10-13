@@ -19,7 +19,7 @@ Distribue sous licence GPL
 		<BOUCLE_evenement(EVENEMENTS){id_article}>
 		[(#INCLURE{fond=inclure/article-evenement-resume,id_article,id_evenement})]
 		</BOUCLE_evenement>
-		[(#INTRODUCTION)]
+		[<p class="intro">(#INTRODUCTION|PtoBR)</p>]
 		<ul class="meta-publi">
 			<li class="info-publi updated published">[<span class="value" title="[(#DATE|date_iso)]">(#DATE|affdate_jourcourt)</span>]</li>
 			<li class="lire-suite"><a href="#URL_ARTICLE" title="<:lire_la_suite:>"><:lire_la_suite:></a></li>
