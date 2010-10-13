@@ -118,6 +118,8 @@ body { position: relative; padding-top: 36px; }
 html { font-size: 100.01%; /* pour IE */ }
 body { font:  75%/1.5 "HelveticaNeue-Light", "Helvetica Neue", Arial, sans-serif; color: #3e0000; }
 h1,h2,h3,h4,h5,h6 { text-rendering: optimizeLegibility; }
+p { font-size: 13px; margin-bottom: 1.5em; }
+
 
 /* ------------------------------------ */
 /*  Liens				*/
@@ -134,12 +136,13 @@ a:active { outline: none; }
 /* ------------------------------------ */
 #entete { margin-left: 40px; margin-bottom: 36px; }
 	#entete #logo { font-size: 30px; line-height: 36px; }
+		#entete #logo a { color:#000; }
 
 
 /* ------------------------------------ */
 /*	Navigation principale				*/
 /* ------------------------------------ */
-#nav { width: 100%; }
+#nav { width: 100%; xdisplay:none; }
 	#nav ul {  }
 		#nav li { 
 			font-size:16px; line-height: 18px;
@@ -270,11 +273,9 @@ a:active { outline: none; }
 .hentry {  }
 	.hentry .entry-title {  }
 	.hentry .info-publi {  }
-	.hentry .auteurs { margin-left: 470px; }
+	.hentry .auteurs {  }
 	.hentry .entry-content {  }
-		.entry-content p.dateEvenement, .entry-content p.locationEvenement { 
-			font-weight: bold;
-			border-bottom: 1px solid #000; }
+		.entry-content p.dateEvenement, .entry-content p.locationEvenement { font-weight: bold; }
 		.entry-content p.locationEvenement { margin-bottom:1.5em; }
 		.entry-content ul.meta-publi { 
 			float: right;
@@ -323,24 +324,51 @@ a:active { outline: none; }
 			width: 210px; }
 
 /* -------------------------------- */
+/*	agenda (vcalendar)				*/
+/* -------------------------------- */
+.vevent { width: 450px; margin-bottom: 1.5em; }
+	.summary { 
+		border-bottom:1px solid #000;
+		font-weight: bold; font-size: 15px; }
+	.dateEvenement {  }
+	.locationEvenement {  }
+	.dateEvenement, .locationEvenement {  }
+	.infos { 
+		border-bottom:1px dotted #000;
+		margin: .75em 0; padding-left: 5em; }
+		.infos .label { 
+			font-weight:bold;
+			display: block; float: left; width:5em; margin-left:-5em; }
+
+
+/* -------------------------------- */
 /*	article							*/
 /* -------------------------------- */
 .page_article #contenu { border-top: 1px solid #000; }
-.titre {  }
-	.titre h2 { font-size:28px; line-height: 36px; }
-.page_article .hentry .info-publi { margin-left: 470px; }
+	.titre {  }
+		.titre h2 { font-size:28px; line-height: 36px; margin-bottom: 1em; }
+	.page_article .hentry .info-publi { 
+		margin: 0 0 1.5em 470px; }
+	.page_article .hentry .info-publi p { margin-bottom: 0; }
+	.chapo {  }
 
 /* -------------------------------- */
 /*	documents (portfolio)			*/
 /* -------------------------------- */
 .documents {  }
-	.documents dl { margin-bottom: 3em; }
+	.documents h2 { 
+		font-size: 20px;
+		border-bottom: 1px solid #000;
+		float: left;
+		margin-bottom: 1.5em;
+		width: 450px; }
+	.documents dl { clear: left; margin-bottom: 3em; }
 		.documents dl dt { float: left; }
 		.documents dl dd {
 			float: right;
 			width: 210px; }
 			.documents dd h3 { 
-				font-size: 11px; font-style: italic;
+				font-size: 12px; font-style: italic;
 				text-indent: -15px;
 				padding-left: 15px;
 				margin-top: 3px;
