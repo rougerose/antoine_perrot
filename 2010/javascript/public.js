@@ -25,7 +25,6 @@ $(document).ready(function(){
 		);
 	}
 	
-	
 	/**
 	 * Slider
 	 * script est un mix entre deux sources principales : 

@@ -97,7 +97,9 @@ body { position: relative; padding-top: 36px; }
 			.page_sommaire #conteneur #contenu { 
 				padding: 0;
 				width: 700px; }
-			#conteneur #navigation {  }
+			#conteneur #navigation { 
+				position:absolute; top: -2em;
+				width: 700px; }
 			#pied {
 				position: relative;
 				text-align:center;
@@ -118,7 +120,7 @@ body { position: relative; padding-top: 36px; }
 html { font-size: 100.01%; /* pour IE */ }
 body { font:  75%/1.5 "HelveticaNeue-Light", "Helvetica Neue", Arial, sans-serif; color: #3e0000; }
 h1,h2,h3,h4,h5,h6 { text-rendering: optimizeLegibility; }
-p { font-size: 13px; margin-bottom: 1.5em; }
+.contenu-principal p { font-size: 13px; margin-bottom: 1.5em; }
 
 
 /* ------------------------------------ */
@@ -179,6 +181,8 @@ a:active { outline: none; }
 			padding: 0px 1px 2px; }
 		.section .titre a:hover { color:#fff; background-color: #000; }
 .item { border: 2px solid #000; border-width: 1px 0 0; }
+
+.invisible { display:none; }
 
 /* ------------------------------------ */
 /*	Slider (sommaire)					*/
@@ -357,6 +361,7 @@ a:active { outline: none; }
 	.page_article .hentry .info-publi p { margin-bottom: 0; }
 	.chapo {  }
 
+
 /* -------------------------------- */
 /*	documents (portfolio)			*/
 /* -------------------------------- */
@@ -385,6 +390,31 @@ a:active { outline: none; }
 				font-size: 10px;
 				margin-left: 14px; }
 
+/* -------------------------------- */
+/*	#navigation					*/
+/* -------------------------------- */
+#navigation {  }
+	#navigation ul {
+		position: relative; }
+		#navigation li {
+			position: absolute; right: 0;
+			xtext-indent: -99999px;
+			xheight: 16px; xwidth:16px;
+			float:left;
+			display:inline;
+			xbackground: #fff url('../img/img-sprites.png') no-repeat 0 0; }
+		#navigation li.back { right: auto; left: 0; }
+		#navigation li.next {  }
+			#navigation li a {
+				text-indent: -99999px;
+				background: #fff url('../img/img-sprites.png') no-repeat 0 0;
+				outline: 0;
+				display: block; float: left;
+				height: 16px; width:16px; }
+			#navigation li.back a { background-position: 0 -48px; }
+			#navigation li.next a { background-position: right -48px; }
+			#navigation li.back a:hover { background-position: 0 -64px; background-color: #000; }
+			#navigation li.next a:hover { background-position: right -64px; background-color: #000; }
 
 /* -------------------------------- */
 /*	pied de page					*/
