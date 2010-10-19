@@ -92,8 +92,8 @@ body { position: relative; padding-top: 36px; }
 			width: 700px; }
 			#conteneur #contenu { 
 				float: left; 
-				padding: 0 10px;
-				width: 680px; }
+				xpadding: 0 10px;
+				width: 700px; }
 			.page_sommaire #conteneur #contenu { 
 				padding: 0;
 				width: 700px; }
@@ -108,11 +108,14 @@ body { position: relative; padding-top: 36px; }
 				z-index: 20; }
 
 /* ------------------------------------ */
-/*  Fond de page						*/
+/*  mise en page : principes généraux	*/
 /* ------------------------------------ */
-.page_article #contenu,
-.item { background-color: rgba(253,253,253,0.95); }
+.contenu-principal,
+.page_sommaire .item { background-color: rgba(253,253,253,0.95); }
 
+.contenu-principal { 
+	border-top: 1px solid #000;
+	padding: 0 10px; }
 
 /* ------------------------------------ */
 /*  Typographie					*/
@@ -353,9 +356,8 @@ a:active { outline: none; }
 /* -------------------------------- */
 /*	article							*/
 /* -------------------------------- */
-.page_article #contenu { border-top: 1px solid #000; }
-	.titre {  }
-		.titre h2 { font-size:28px; line-height: 36px; margin-bottom: 1em; }
+.titre {  }
+	.titre h2 { font-size:28px; line-height: 36px; margin-bottom: 1em; }
 	.page_article .hentry .info-publi { 
 		margin: 0 0 1.5em 470px; }
 	.page_article .hentry .info-publi p { margin-bottom: 0; }

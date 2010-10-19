@@ -1,9 +1,8 @@
 <BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}>
 <div class="contenu-principal">
-	<div class="rubrique">
+	<div class="titre">
 		[(#LOGO_RUBRIQUE||image_reduire{200,200})]
-		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
-		[<p class="info-publi"><span class="published"><:dernier_ajout:> : (#DATE|affdate_jourcourt).</span></p>]
+		<h2[ class="(#EDIT{titre})"]>#TITRE</h2>
 
 		[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
 	</div><!-- .rubrique -->
@@ -11,18 +10,9 @@
 	[(#REM) Gestion du portfolio et des documents ]
 	[(#INCLURE{fond=inclure/documents}{id_rubrique})]
 	
-	<B_articles>
-	<div class="liste articles">
-		#ANCRE_PAGINATION
-		<h2 class="h2"><:articles_rubrique:></h2>
-		<ul class="liste-items">
-			<BOUCLE_articles(ARTICLES){id_rubrique} {!par date} {pagination 5}>
-			#INCLURE{fond=inclure/article-resume,id_article}
-			</BOUCLE_articles>
-		</ul>
-		[<p class="pagination">(#PAGINATION)</p>]
-	</div><!-- .liste .article -->
-	</B_articles>
+	[(#REM) articles mis en avant, au format hentry ]
+	<INCLURE{fond=inclure/articles-hentry,env,ajax,doublons}>
+	
 	
 	[(#REM) Sites de la rubrique ]
 	<B_sites>
