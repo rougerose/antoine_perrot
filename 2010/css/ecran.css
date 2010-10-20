@@ -111,12 +111,13 @@ body { position: relative; padding-top: 36px; }
 /*  mise en page : principes généraux	*/
 /* ------------------------------------ */
 .contenu-principal,
-.page_sommaire .item { background-color: rgba(253,253,253,0.95); }
+.page_sommaire .item {  }
 
 .contenu-principal { 
-	border-top: 1px solid #000;
+	xborder-top: 1px solid #000;
 	xpadding: 0 10px; }
 
+.item { border-top: 1px solid #000; background-color: rgba(253,253,253,0.95); }
 
 /* ------------------------------------ */
 /*  Typographie					*/
@@ -289,16 +290,16 @@ a:active { outline: none; }
 	.hentry h2.titre { 
 		/* titre de la rubrique parente */
 		font-size:15px; }
-	.hentry .entry-title {  }
 	.hentry .entry-title { 
 		font-size:15px; line-height: 18px;
-		margin: 0 0 1em 5px; }
+		margin-bottom: 1em; }
+	.hentry.item .entry-title, .hentry.item .entry-content { margin-left: 5px; margin-right: 10px; }
 	.hentry .info-publi {  }
 	.hentry .auteurs {  }
-	.hentry .entry-content { margin-bottom: 1.5em; padding: 0 10px 0 5px; }
-	.hentry.mineur .entry-content p { 
-		float: right;
-		width: 210px; }
+	.hentry .entry-content { margin-bottom: 1.5em; }
+	.hentry.item .entry-content p { float: right; }
+	.hentry.item .entry-content p { width: 450px; }
+	.hentry.mineur .entry-content p { width: 210px; }
 		.entry-content .infos { 
 			font-weight: bold; 
 			border-bottom:1px dotted #000;
@@ -307,8 +308,9 @@ a:active { outline: none; }
 		.entry-content .infos + .intro { margin: 0.75em 0 0.75em; }
 		.entry-content ul.meta-publi { 
 			float: right;
-			margin-top: .75em;
-			width: 210px; }
+			margin-top: .75em; }
+		.hentry.majeur .entry-content ul.meta-publi { width: 450px; }
+		.hentry.mineur .entry-content ul.meta-publi { width: 210px; }
 			.entry-content ul.meta-publi li { 
 				font-size:10px; line-height: 1.1em;
 				float: left;
@@ -319,11 +321,11 @@ a:active { outline: none; }
 			.entry-content ul.meta-publi li.lire-suite { border-right-width: 0; }
 				.entry-content ul.meta-publi li.lire-suite a { 
 					text-indent: -9999px;
-					background: #fff url(../img/img-sprites.png) no-repeat 0 -34px;
+					background: #fff url(../img/img-sprites.png) no-repeat -16px -50px;
 					display: block;
 					outline:0;
 					height: 12px; width: 16px; }
-				.entry-content ul.meta-publi li.lire-suite a:hover { background-position: -16px -34px; background-color: #000; }
+				.entry-content ul.meta-publi li.lire-suite a:hover { background-position: -16px -66px; background-color: #000; }
 
 .hentry img.spip_logos { 
 	background-color: #fff;
@@ -351,14 +353,18 @@ a:active { outline: none; }
 
 
 /* -------------------------------- */
+/*	rubrique						*/
+/* -------------------------------- */
+.page_rubrique .titre h2 { font-size: 28px; line-height:36px; margin-bottom: 1em; }
+
+/* -------------------------------- */
 /*	article							*/
 /* -------------------------------- */
-.titre {  }
-	.titre h2 { font-size:28px; line-height: 36px; margin-bottom: 1em; }
+	.page_article .hentry div { margin: 0 10px 0 5px; }
+	.page_article .hentry .titre .entry-title { font-size:28px; line-height: 36px; }
 	.page_article .hentry .info-publi { 
-		margin: 0 0 1.5em 470px; }
+		margin: 0 0 1.5em 480px; }
 	.page_article .hentry .info-publi p { margin-bottom: 0; }
-	.chapo {  }
 
 
 /* -------------------------------- */
@@ -411,9 +417,9 @@ a:active { outline: none; }
 				display: block; float: left;
 				height: 16px; width:16px; }
 			#navigation li.back a { background-position: 0 -48px; }
-			#navigation li.next a { background-position: right -48px; }
+			#navigation li.next a { background-position: -16px -48px; }
 			#navigation li.back a:hover { background-position: 0 -64px; background-color: #000; }
-			#navigation li.next a:hover { background-position: right -64px; background-color: #000; }
+			#navigation li.next a:hover { background-position: -16px -64px; background-color: #000; }
 
 /* -------------------------------- */
 /*	pied de page					*/
