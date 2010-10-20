@@ -7,7 +7,7 @@ Distribue sous licence GPL
 ]
 
 <BOUCLE_articles(ARTICLES){id_article}{statut?}>
-<li id="article-#ID_ARTICLE" class="item hentry [ numero-(#ENV{compteur})]">
+<div id="article-#ID_ARTICLE" class="item hentry[ numero-(#ENV{compteur})][ (#ENV{format})]">
 	<BOUCLE_titre_rubrique(RUBRIQUES){id_rubrique}>
 	[(#ENV{composition}|match{sommaire}|oui)
 	<h2 class="titre"><a href="#URL_RUBRIQUE">#TITRE</a></h2>
@@ -24,6 +24,6 @@ Distribue sous licence GPL
 			<li class="info-publi updated published">[<span class="value" title="[(#DATE|date_iso)]">(#DATE|affdate_jourcourt)</span>]</li>
 			<li class="lire-suite"><a href="#URL_ARTICLE" title="<:lire_la_suite:>"><:lire_la_suite:></a></li>
 		</ul>
-	</div>
-</li>
+	</div><!-- .entry-content -->
+</div><!-- #article-#ID_ARTICLE .hentry -->
 </BOUCLE_articles>

@@ -10,9 +10,33 @@
 	[(#REM) Gestion du portfolio et des documents ]
 	[(#INCLURE{fond=inclure/documents}{id_rubrique})]
 	
-	[(#REM) articles mis en avant, au format hentry ]
-	<INCLURE{fond=inclure/articles-hentry,env,ajax,doublons}>
 	
+	<div class="hfeed liste articles clearfix">
+		<div class="section">
+			[(#REM) articles mis en avant, au format hentry ]
+			<BOUCLE_articlesUne(ARTICLES pb_selection){spip_pb_selection.id_rubrique=#ENV{id_rubrique}}{par ordre}{doublons}>
+			<div id="article-#ID_ARTICLE" class="hentry majeur item">
+				<h3 class="entry-title titre"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
+				<div class="#EDIT{intro} introduction entry-content clearfix">
+					[(#LOGO_ARTICLE|image_reduire{100,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})]
+					<BOUCLE_evenement(EVENEMENTS){id_article}>
+					[(#INCLURE{fond=inclure/article-evenement-resume,id_article,id_evenement})]
+					</BOUCLE_evenement>
+					[<p class="intro">(#INTRODUCTION|PtoBR)</p>]
+					<ul class="meta-publi">
+						<li class="info-publi updated published">[<span class="value" title="[(#DATE|date_iso)]">(#DATE|affdate_jourcourt)</span>]</li>
+						<li class="lire-suite"><a href="#URL_ARTICLE" title="<:lire_la_suite:>"><:lire_la_suite:></a></li>
+					</ul>
+				</div><!-- .entry-content -->
+			</div><!-- #article-#ID_ARTICLE .hentry -->
+			</BOUCLE_articlesUne>
+		</div><!-- .section -->
+		
+		
+		[(#REM) articles de la rubrique, au format hentry ]
+		<INCLURE{fond=inclure/articles-hentry,env,ajax,doublons,format=mineur}>
+		
+	</div><!-- .hfeed -->
 	
 	[(#REM) Sites de la rubrique ]
 	<B_sites>

@@ -1,11 +1,11 @@
+[(#SET{format,[(#ENV{format}|sinon{''})]})]
+
 <B_articles>
-<div class="liste articles section">
-	#ANCRE_PAGINATION
-	<ul class="liste-items hfeed clearfix">
-		<BOUCLE_articles(ARTICLES){id_rubrique}{pagination}>
-		[(#INCLURE{fond=inclure/article-resume,id_article,env,compteur=[(#COMPTEUR_BOUCLE|modulo{2})]})]
-		</BOUCLE_articles>
-	</ul>
-	[<p class="pagination">(#PAGINATION)</p>]
-</div>
+#ANCRE_PAGINATION
+<div class="section clearfix">
+	<BOUCLE_articles(ARTICLES){id_rubrique}{pagination}{!par date}{doublons}>
+	[(#INCLURE{fond=inclure/article-resume,id_article,env,format=#GET{format},compteur=[(#COMPTEUR_BOUCLE|modulo{2})]})]
+	</BOUCLE_articles>
+</div><!-- .section -->
+[<p class="pagination">(#PAGINATION)</p>]
 </B_articles>

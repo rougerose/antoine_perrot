@@ -115,7 +115,8 @@ body { position: relative; padding-top: 36px; }
 
 .contenu-principal { 
 	border-top: 1px solid #000;
-	padding: 0 10px; }
+	xpadding: 0 10px; }
+
 
 /* ------------------------------------ */
 /*  Typographie					*/
@@ -167,11 +168,10 @@ a:active { outline: none; }
 			#nav li a.ff3:hover { padding-left: 40px; }
 
 
-.section {
-	margin-bottom:3em; }
+.section { margin-bottom:3em; }
 	.section .titre {  }
 	.section h2.titre {
-		margin-bottom:1em; padding-left:10px; }
+		margin-bottom:1em; }
 	.section h3.titre {  }
 		.section .titre a { 
 			color:#000;
@@ -183,7 +183,7 @@ a:active { outline: none; }
 			font-weight:bold;
 			padding: 0px 1px 2px; }
 		.section .titre a:hover { color:#fff; background-color: #000; }
-.item { border: 2px solid #000; border-width: 1px 0 0; }
+.item { margin-bottom: 3em; }
 
 .invisible { display:none; }
 
@@ -279,10 +279,26 @@ a:active { outline: none; }
 /*	hentry	(styles communs)		*/
 /* -------------------------------- */
 .hentry {  }
+.hentry.mineur { 
+	border-top:1px solid #000;
+	float: left;
+	margin-bottom: 3em;
+	width: 340px; }
+.hentry.mineur.numero-1 { clear:left; }
+.hentry.mineur.numero-0 { margin-left:20px; }
+	.hentry h2.titre { 
+		/* titre de la rubrique parente */
+		font-size:15px; }
 	.hentry .entry-title {  }
+	.hentry .entry-title { 
+		font-size:15px; line-height: 18px;
+		margin: 0 0 1em 5px; }
 	.hentry .info-publi {  }
 	.hentry .auteurs {  }
-	.hentry .entry-content {  }
+	.hentry .entry-content { margin-bottom: 1.5em; padding: 0 10px 0 5px; }
+	.hentry.mineur .entry-content p { 
+		float: right;
+		width: 210px; }
 		.entry-content .infos { 
 			font-weight: bold; 
 			border-bottom:1px dotted #000;
@@ -308,32 +324,13 @@ a:active { outline: none; }
 					outline:0;
 					height: 12px; width: 16px; }
 				.entry-content ul.meta-publi li.lire-suite a:hover { background-position: -16px -34px; background-color: #000; }
+
 .hentry img.spip_logos { 
 	background-color: #fff;
 	float:left;
 	padding: 3px; }
 	.hentry .entry-content img.spip_logos { margin-right:9px; }
-
-
-/* -------------------------------- */
-/*	hentry page sommaire			*/
-/* -------------------------------- */
-.page_sommaire .hentry {
-	float: left;
-	margin-bottom: 3em;
-	width: 340px; }
-.page_sommaire .hentry.numero-1 { clear:left; }
-.page_sommaire .hentry.numero-0 { margin-left:20px; }
-	.page_sommaire .hentry h2.titre { font-size:15px; }
-	.page_sommaire .entry-title {
-		font-size:15px; line-height: 18px;
-		margin-left:5px; margin-bottom: 1em; }
-	.page_sommaire .entry-content { 
-		font-size:13px;
-		margin-bottom: 1.5em; padding: 0 10px 0 5px; }
-		.page_sommaire .entry-content p { 
-			float: right;
-			width: 210px; }
+		
 
 /* -------------------------------- */
 /*	agenda (vcalendar)				*/
