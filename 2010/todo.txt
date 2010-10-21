@@ -3,5 +3,6 @@ TODO styles chapo + texte + notes + ps
 TODO pied de page
 TODO article : logo d'article
 TODO article : styles spip
+TODO partout : pagination
 
 DONE gestion des couleurs via l'interface privée (id des rubriques dans le menu)

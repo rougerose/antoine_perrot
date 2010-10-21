@@ -1,5 +1,7 @@
 <?php
 $GLOBALS[$GLOBALS['idx_lang']] = array(
+	// C
+	'afficher_site' => 'afficher le site',
 	// I
 	'informations' => 'informations',
 	
