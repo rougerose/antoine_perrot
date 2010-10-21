@@ -2,5 +2,6 @@ TODO styles des documents autre que le portfolio
 TODO styles chapo + texte + notes + ps
 TODO pied de page
 TODO article : logo d'article
+TODO article : styles spip
 
 DONE gestion des couleurs via l'interface privée (id des rubriques dans le menu)
