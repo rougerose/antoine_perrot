@@ -110,32 +110,56 @@ body { position: relative; padding-top: 36px; }
 /* ------------------------------------ */
 /*  mise en page : principes généraux	*/
 /* ------------------------------------ */
-.contenu-principal,
-.page_sommaire .item {  }
-
-.contenu-principal { 
-	xborder-top: 1px solid #000;
-	xpadding: 0 10px; }
+.contenu-principal {  }
 
 .item { border-top: 1px solid #000; background-color: rgba(253,253,253,0.95); }
+.section { margin-bottom: 3em; }
+	.section h2.titre { margin-left: 5px; margin-bottom: 1em; }
 
 /* ------------------------------------ */
 /*  Typographie					*/
 /* ------------------------------------ */
 html { font-size: 100.01%; /* pour IE */ }
-body { font:  75%/1.5 "HelveticaNeue-Light", "Helvetica Neue", Arial, sans-serif; color: #3e0000; }
-h1,h2,h3,h4,h5,h6 { text-rendering: optimizeLegibility; }
+body { 
+	font:  75%/1.5 "HelveticaNeue","Helvetica Neue", "Helvetica", Arial, sans-serif;
+	color: #444; }
+h1,h2,h3,h4,h5,h6 { 
+	font-family: "HelveticaNeue-Light", "Helvetica Neue";
+	font-weight: 200; /* equivalent du light pour Firefox */
+	text-rendering: optimizeLegibility; }
+h3.titre { 
+	font-family: "HelveticaNeue-LightItalic", "Helvetica Neue"; 
+	font-weight: 200; font-style:italic; }
+	
+.entry-content .infos,
+.vevent .summary,
+.vevent .infos .label { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
+
 .contenu-principal p { font-size: 13px; margin-bottom: 1.5em; }
 
 
 /* ------------------------------------ */
-/*  Liens				*/
+/*  Liens (règles générales)			*/
 /* ------------------------------------ */
 a { text-decoration: none; }
 a:visited {  }
 a:hover {  }
 a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
 a:active { outline: none; }
+
+
+/* ------------------------------------ */
+/*  Liens (règles spécifique)			*/
+/* ------------------------------------ */
+.section .titre a { 
+	color:#000;
+	transition: color .6s ease-out, background-color .6s ease-out;
+	-webkit-transition: color .6s ease-out, background-color .6s ease-out;
+	-o-transititon: color .6s ease-out, background-color .6s ease-out;
+	-moz-transition: color .6s ease-out, background-color .6s ease-out;; }
+.section h3.titre a {
+	padding: 0px 1px 2px; }
+.section .titre a:hover { color:#fff; background-color: #000; }
 
 
 /* ------------------------------------ */
@@ -169,23 +193,6 @@ a:active { outline: none; }
 			#nav li a.ff3:hover { padding-left: 40px; }
 
 
-.section { margin-bottom:3em; }
-	.section .titre {  }
-	.section h2.titre {
-		margin-bottom:1em; }
-	.section h3.titre {  }
-		.section .titre a { 
-			color:#000;
-			transition: color .6s ease-out, background-color .6s ease-out;
-			-webkit-transition: color .6s ease-out, background-color .6s ease-out;
-			-o-transititon: color .6s ease-out, background-color .6s ease-out;
-			-moz-transition: color .6s ease-out, background-color .6s ease-out;; }
-		.section h3.titre a {
-			font-weight:bold;
-			padding: 0px 1px 2px; }
-		.section .titre a:hover { color:#fff; background-color: #000; }
-.item { margin-bottom: 3em; }
-
 .invisible { display:none; }
 
 /* ------------------------------------ */
@@ -196,9 +203,9 @@ a:active { outline: none; }
 	width: 700px; }
 	#slider h2.titre {
 		font-size: 20px; line-height: 1em;
-		margin-bottom:1em; }
+		margin-bottom:1em; margin-top: .5em; }
 	#slider .navigation { 
-		position:absolute; right: 10px; top: 9px;
+		position:absolute; right: 10px; top: 18px;
 		padding-right: 40px;
 		z-index: 30; }
 		#slider .navigation li { display: inline; }
@@ -212,8 +219,7 @@ a:active { outline: none; }
 			#slider .navigation li a.actif { background-position: -32px -2px; }
 	.scroll {
 		position: relative;
-		overflow: auto;
-		overflow-x: hidden;
+		overflow: auto; overflow-x: hidden;
 		clear: left;
 		width: 700px; }
 		.scrollConteneur {}
@@ -221,7 +227,7 @@ a:active { outline: none; }
 			display: block;
 			background: #fff url('../img/img-sprites.png') no-repeat -48px 0;
 			width: 17px; height: 17px;
-			position: absolute; z-index:33; right: 10px; top: 5px;
+			position: absolute; z-index:33; right: 10px; top: 14px;
 			cursor:pointer; }
 		.scrollBouton.gauche { right: 30px; background-position: -48px 0; }
 		.scrollBouton.droite { background-position: -64px 0; }
@@ -236,7 +242,7 @@ a:active { outline: none; }
 	.panneau {
 		width: 680px;
 		padding: 0 10px 20px 10px; }
-		.visuOeuvres h3.titre { font-size:20px; font-style: italic; margin-bottom:1.5em; }
+		.visuOeuvres h3.titre { font-size:20px; margin-bottom:1.5em; }
 		.oeuvreConteneur {}
 			/* zone agrandissement */
 			.imgAgrandissement { 
@@ -271,7 +277,7 @@ a:active { outline: none; }
 				float: right; margin-top:5px;
 				width: 180px; }
 				.imgApercu li { float: left; }
-				.imgApercu li {}
+				.imgApercu li {  }
 					.imgApercu li a { display: block; padding:3px; margin: 0 7px 10px; }
 					.imgApercu li a.actif, .imgApercu li a:hover { background-color: #000; }
 					.imgApercu li .imgDesc { display: none; }
@@ -279,29 +285,30 @@ a:active { outline: none; }
 /* -------------------------------- */
 /*	hentry	(styles communs)		*/
 /* -------------------------------- */
-.hentry {  }
+.hentry { margin-bottom: 1.5em; padding-bottom: 1.5em; }
 .hentry.mineur { 
 	border-top:1px solid #000;
 	float: left;
-	margin-bottom: 3em;
 	width: 340px; }
 .hentry.mineur.numero-1 { clear:left; }
 .hentry.mineur.numero-0 { margin-left:20px; }
 	.hentry h2.titre { 
 		/* titre de la rubrique parente */
 		font-size:15px; }
-	.hentry .entry-title { 
-		font-size:15px; line-height: 18px;
-		margin-bottom: 1em; }
-	.hentry.item .entry-title, .hentry.item .entry-content { margin-left: 5px; margin-right: 10px; }
+	.hentry div.titre { margin: .5em 0 1em; }
+		.hentry .entry-title { 
+			font-size:18px; line-height: 1em;
+			xmargin-bottom: 1em; xmargin-top: .5em; }
+		.hentry.majeur .entry-title { font-size: 20px; }
+		.hentry.item .entry-title, .hentry.item .entry-content { margin-left: 5px; margin-right: 10px; }
+		.hentry.item .entry-title { margin-top: .5em; margin-bottom: 1em; }
 	.hentry .info-publi {  }
 	.hentry .auteurs {  }
-	.hentry .entry-content { margin-bottom: 1.5em; }
+	.hentry .entry-content {  }
 	.hentry.item .entry-content p { float: right; }
 	.hentry.item .entry-content p { width: 450px; }
 	.hentry.mineur .entry-content p { width: 210px; }
-		.entry-content .infos { 
-			font-weight: bold; 
+		.entry-content .infos {  
 			border-bottom:1px dotted #000;
 			margin: 0; }
 		.entry-content .intro { margin: 0 0 0.75em; }
@@ -312,7 +319,7 @@ a:active { outline: none; }
 		.hentry.majeur .entry-content ul.meta-publi { width: 450px; }
 		.hentry.mineur .entry-content ul.meta-publi { width: 210px; }
 			.entry-content ul.meta-publi li { 
-				font-size:10px; line-height: 1.1em;
+				font-size:11px; line-height: 1.1em;
 				float: left;
 				display: inline;
 				border-right: 1px solid #000;
@@ -340,16 +347,16 @@ a:active { outline: none; }
 .vevent { width: 450px; margin-bottom: 1.5em; }
 	.vevent .summary { 
 		border-bottom:1px solid #000;
-		font-weight: bold; font-size: 15px; }
+		font-size: 15px; }
 	.vevent .dateEvenement {  }
 	.vevent .locationEvenement {  }
 	.vevent .dateEvenement, .locationEvenement {  }
 	.vevent .infos { 
 		border-bottom:1px dotted #000;
-		margin: .75em 0; padding-left: 5em; }
+		margin: .25em 0; padding-left: 5em; padding-bottom: .25em; }
 		.vevent .infos .label { 
-			font-weight:bold;
-			display: block; float: left; width:5em; margin-left:-5em; }
+			display: block; float: left; 
+			width:5em; margin-left:-5em; }
 
 
 /* -------------------------------- */
@@ -357,14 +364,26 @@ a:active { outline: none; }
 /* -------------------------------- */
 .page_rubrique .titre h2 { font-size: 28px; line-height:36px; margin-bottom: 1em; }
 
+
+
 /* -------------------------------- */
 /*	article							*/
 /* -------------------------------- */
-	.page_article .hentry div { margin: 0 10px 0 5px; }
-	.page_article .hentry .titre .entry-title { font-size:28px; line-height: 36px; }
-	.page_article .hentry .info-publi { 
+	.page_article .hentry > div,
+	.rubrique_biographie .hentry > div { margin: 0 10px 0 5px; }
+	
+	.page_article .hentry div.titre { margin-bottom: 1em; margin-top: .5em; }
+	.page_article .hentry .titre .entry-title,
+	.rubrique_biographie .hentry .titre .entry-title { font-size:28px; line-height: 36px; margin-top: 0; }
+	
+	.page_article .hentry .info-publi,
+	.rubrique_biographie .hentry .info-publi { 
+		color: #8c8b99;
 		margin: 0 0 1.5em 480px; }
+	
 	.page_article .hentry .info-publi p { margin-bottom: 0; }
+	
+	.page_article .hentry .texte p { padding-left: 20px; padding-right: 40px; }
 
 
 /* -------------------------------- */
@@ -403,11 +422,8 @@ a:active { outline: none; }
 		position: relative; }
 		#navigation li {
 			position: absolute; right: 0;
-			xtext-indent: -99999px;
-			xheight: 16px; xwidth:16px;
 			float:left;
-			display:inline;
-			xbackground: #fff url('../img/img-sprites.png') no-repeat 0 0; }
+			display:inline; }
 		#navigation li.back { right: auto; left: 0; }
 		#navigation li.next {  }
 			#navigation li a {
@@ -426,3 +442,34 @@ a:active { outline: none; }
 /* -------------------------------- */
 #pied {  }
 #pied ul li { display: inline; float:left; }
+
+/* -------------------------------- */
+/*	Styles propres à spip			*/
+/* -------------------------------- */
+
+/* titre */
+p.surtitre { 
+	font-size: 17px;
+	font-variant: small-caps;
+	margin-bottom: 0; }
+p.soustitre { font-size: 18px; margin-bottom: 0; margin-top: .5em; }
+p.surtitre, p.soustitre {
+	color: #8c8b99; }
+
+
+/* Intertitres */
+h2.spip, h3.spip, h4.spip, h5.spip, h6.spip {  }
+h2.spip { font-size: 24px; line-height: 28px; margin-bottom: .5em; margin-top: 1em; }
+h3.spip { font-size: 20px; line-height: 22px; margin-bottom: .5em; margin-top: 1em; }
+h4.spip { font-size: 18px; }
+h5.spip { font-size: 16px; }
+h6.spip { font-size: 14px; }
+
+
+/* Divers */
+hr.spip { 
+	background-color: #000;
+	border: none;
+	height: 1px; width: 60%;
+	margin: 3em auto; }
+.spip_code { font-family: "Lucida Grande"; }
