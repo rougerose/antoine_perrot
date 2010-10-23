@@ -285,23 +285,21 @@ a:active { outline: none; }
 /* -------------------------------- */
 /*	hentry	(styles communs)		*/
 /* -------------------------------- */
-.hentry { margin-bottom: 1.5em; padding-bottom: 1.5em; }
-.hentry.mineur { 
+.hentry, .sites .item { margin-bottom: 1.5em; padding-bottom: 1.5em; }
+.hentry.mineur, .sites .mineur { 
 	border-top:1px solid #000;
 	float: left;
 	width: 340px; }
-.hentry.mineur.numero-1 { clear:left; }
-.hentry.mineur.numero-0 { margin-left:20px; }
+.hentry.mineur.numero-1, .sites .numero-1 { clear:left; }
+.hentry.mineur.numero-0, .sites .numero-0 { margin-left:20px; }
 	.hentry h2.titre { 
 		/* titre de la rubrique parente */
 		font-size:15px; }
 	.hentry div.titre { margin: .5em 0 1em; }
-		.hentry .entry-title { 
-			font-size:18px; line-height: 1em;
-			xmargin-bottom: 1em; xmargin-top: .5em; }
+		.hentry .entry-title, .sites .titre { font-size:18px; line-height: 1em; }
 		.hentry.majeur .entry-title { font-size: 20px; }
-		.hentry.item .entry-title, .hentry.item .entry-content { margin-left: 5px; margin-right: 10px; }
-		.hentry.item .entry-title { margin-top: .5em; margin-bottom: 1em; }
+		.hentry.item .entry-title, .hentry.item .entry-content, .sites .titre, .sites .introduction { margin-left: 5px; margin-right: 10px; }
+		.hentry.item .entry-title, .sites .titre { margin-top: .5em; margin-bottom: 1em; }
 	.hentry .info-publi {  }
 	.hentry .auteurs {  }
 	.hentry .entry-content {  }
@@ -313,33 +311,33 @@ a:active { outline: none; }
 			margin: 0; }
 		.entry-content .intro { margin: 0 0 0.75em; }
 		.entry-content .infos + .intro { margin: 0.75em 0 0.75em; }
-		.entry-content ul.meta-publi { 
+		.entry-content ul.meta-publi, .sites .introduction ul.meta-publi { 
 			float: right;
 			margin-top: .75em; }
 		.hentry.majeur .entry-content ul.meta-publi { width: 450px; }
-		.hentry.mineur .entry-content ul.meta-publi { width: 210px; }
-			.entry-content ul.meta-publi li { 
+		.hentry.mineur .entry-content ul.meta-publi, .sites .introduction ul.meta-publi { width: 210px; }
+			.entry-content ul.meta-publi li, .sites .introduction ul.meta-publi li { 
 				font-size:11px; line-height: 1.1em;
 				float: left;
 				display: inline;
 				border-right: 1px solid #000;
 				margin-right: 5px; padding-right: 5px; }
-			.entry-content ul.meta-publi li.info-publi { margin-left:0; }
-			.entry-content ul.meta-publi li.lire-suite { border-right-width: 0; }
-				.entry-content ul.meta-publi li.lire-suite a { 
+			.introduction ul.meta-publi li.info-publi { margin-left:0; }
+			.introduction ul.meta-publi li.lire-suite { border-right-width: 0; }
+				ul.meta-publi li.lire-suite a { 
 					text-indent: -9999px;
 					background: #fff url(../img/img-sprites.png) no-repeat -16px -50px;
 					display: block;
 					outline:0;
 					height: 12px; width: 16px; }
-				.entry-content ul.meta-publi li.lire-suite a:hover { background-position: -16px -66px; background-color: #000; }
+				ul.meta-publi li.lire-suite a:hover { background-position: -16px -66px; background-color: #000; }
 
-.hentry img.spip_logos { 
+.hentry img.spip_logos, .sites .item img.spip_logos { 
 	background-color: #fff;
 	float:left;
 	padding: 3px; }
-	.hentry .entry-content img.spip_logos { margin-right:9px; }
-		
+	.hentry .entry-content img.spip_logos, .sites .item img.spip_logos { margin-right:9px; }
+	.sites .item img.spip_logos { border: 1px solid #d7ccdd; border-color: #f3e6f9 #d4c8d8 #d4c8d8 #f3e6f9; }
 
 /* -------------------------------- */
 /*	agenda (vcalendar)				*/
