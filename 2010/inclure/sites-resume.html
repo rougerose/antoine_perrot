@@ -5,12 +5,13 @@
 <div class="liste sites">
 	#ANCRE_PAGINATION
 	<div class="section clearfix">
-		<BOUCLE_sites(SITES){id_rubrique}{par num nom_site, nom_site}{pagination}>
+		<BOUCLE_sites(SITES){id_rubrique}{par num nom_site, nom_site}{pagination}{doublons}>
 		<div id="site-#ID_SYNDIC" class="item[ numero-(#COMPTEUR_BOUCLE|modulo{2})][ (#ENV{format})]">
 			<h3 class="titre"><a href="#URL_SITE" class="spip_out">#NOM_SITE</a></h3>
 			<div class="introduction clearfix">
 				[(#LOGO_SITE|image_reduire{[(#GET{tailleImage})],0}|inserer_attribut{alt,[(#TITRE|textebrut)]})]
 				[<p class="intro">(#DESCRIPTIF|PtoBR)</p>]
+				[<p class="#EDIT{url_site} hyperlien"><a href="#URL_SITE" class="spip_out">(#URL_SITE)</a></p>]
 				<ul class="meta-publi clearfix">
 					[<li class="info-publi">(#DATE|affdate)</li>]
 					<li class="lire-suite"><a href="#URL_SITE" class="spip_out" title="<:afficher_site:>"><:afficher_site:></a></li>

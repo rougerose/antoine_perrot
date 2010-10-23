@@ -133,7 +133,8 @@ h3.titre {
 	
 .entry-content .infos,
 .vevent .summary,
-.vevent .infos .label { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
+.vevent .infos .label,
+.item .chapo { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
 
 .contenu-principal p { font-size: 13px; margin-bottom: 1.5em; }
 
@@ -141,7 +142,7 @@ h3.titre {
 /* ------------------------------------ */
 /*  Liens (règles générales)			*/
 /* ------------------------------------ */
-a { text-decoration: none; }
+a { color: #444; text-decoration: none; }
 a:visited {  }
 a:hover {  }
 a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
@@ -303,9 +304,9 @@ a:active { outline: none; }
 	.hentry .info-publi {  }
 	.hentry .auteurs {  }
 	.hentry .entry-content {  }
-	.hentry.item .entry-content p { float: right; }
+	.hentry.item .entry-content p, .sites .introduction p { float: right; }
 	.hentry.item .entry-content p { width: 450px; }
-	.hentry.mineur .entry-content p { width: 210px; }
+	.hentry.mineur .entry-content p, .sites .introduction p { width: 210px; }
 		.entry-content .infos {  
 			border-bottom:1px dotted #000;
 			margin: 0; }
@@ -332,12 +333,18 @@ a:active { outline: none; }
 					height: 12px; width: 16px; }
 				ul.meta-publi li.lire-suite a:hover { background-position: -16px -66px; background-color: #000; }
 
-.hentry img.spip_logos, .sites .item img.spip_logos { 
+.hentry img.spip_logos,
+.sites .item img.spip_logos,
+.item .texte p.logo img { 
 	background-color: #fff;
 	float:left;
 	padding: 3px; }
-	.hentry .entry-content img.spip_logos, .sites .item img.spip_logos { margin-right:9px; }
-	.sites .item img.spip_logos { border: 1px solid #d7ccdd; border-color: #f3e6f9 #d4c8d8 #d4c8d8 #f3e6f9; }
+	
+	.hentry .entry-content img.spip_logos, 
+	.sites .item img.spip_logos { margin-right:9px; }
+	
+	.sites .item img.spip_logos,
+	.item .texte p.logo img { border: 1px solid #d7ccdd; border-color: #f3e6f9 #d4c8d8 #d4c8d8 #f3e6f9; }
 
 /* -------------------------------- */
 /*	agenda (vcalendar)				*/
@@ -367,21 +374,28 @@ a:active { outline: none; }
 /* -------------------------------- */
 /*	article							*/
 /* -------------------------------- */
-	.page_article .hentry > div,
-	.rubrique_biographie .hentry > div { margin: 0 10px 0 5px; }
+	.item .hentry { margin: 0; padding: 0; }
+	.item .hentry > div, .item > div.titre { margin: 0 10px 0 5px; }
 	
-	.page_article .hentry div.titre { margin-bottom: 1em; margin-top: .5em; }
-	.page_article .hentry .titre .entry-title,
-	.rubrique_biographie .hentry .titre .entry-title { font-size:28px; line-height: 36px; margin-top: 0; }
+	.item div.titre { margin-bottom: 1em; }
+	.item div.titre h2 { font-size:28px; line-height: 36px; margin-top: 0; }
 	
+	.item .info-publi,
 	.page_article .hentry .info-publi,
 	.rubrique_biographie .hentry .info-publi { 
 		color: #8c8b99;
 		margin: 0 0 1.5em 480px; }
 	
-	.page_article .hentry .info-publi p { margin-bottom: 0; }
+	.item .info-publi p { margin-bottom: 0; }
 	
-	.page_article .hentry .texte p { padding-left: 20px; padding-right: 40px; }
+	.page_site .item .texte { padding-bottom: 1.5em; }
+	.item .chapo p, .item .texte p { padding-left: 20px; padding-right: 40px; }
+	
+	.item .texte p.logo { 
+		float:left;
+		padding: 0; margin: 0 20px 0 10px; }
+	
+	.item .texte p.logo a { display: block; }
 
 
 /* -------------------------------- */

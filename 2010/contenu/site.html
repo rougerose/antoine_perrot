@@ -1,0 +1,23 @@
+<BOUCLE_site(SITES){id_syndic}{doublons}>
+<div class="contenu-principal item">
+	<div class="titre">
+		<h2 class="#EDIT{nom_site}">#NOM_SITE</h2>
+	</div>
+	<div class="info-publi">
+		<p class="updated published">
+			[<:publie:> (#DATE|jour)][/(#DATE|mois)][/(#DATE|annee)]
+		</p>
+	</div><!-- .info-publi -->
+	<div class="#EDIT{descriptif} texte clearfix">
+		<p class="logo"><a href="#URL_SITE">[(#LOGO_SITE)]</a></p>
+		[(#DESCRIPTIF)]
+		[<p class="#EDIT{url_site} hyperlien"><a href="#URL_SITE" class="spip_out">(#URL_SITE|couper{80})</a></p>]
+	</div>
+</div>
+
+[(#REM) Sites de la rubrique ]
+<INCLURE{fond=inclure/sites-resume,env,ajax,format=mineur,doublons}>
+
+
+[<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
+</BOUCLE_site>
