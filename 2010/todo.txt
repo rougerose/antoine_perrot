@@ -4,5 +4,6 @@ TODO pied de page
 TODO article : logo d'article
 TODO article : styles spip
 TODO partout : pagination
+TODO partout : couleurs des liens (et aussi la couleur de transition en survol)
 
 DONE gestion des couleurs via l'interface privée (id des rubriques dans le menu)
