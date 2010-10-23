@@ -15,7 +15,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'publie' => 'publi&eacute; le',
 	
 	// Q
-	'quand' => 'quand&nbsp;?'
+	'quand' => 'quand&nbsp;?',
+	
+	// V
+	'voir_serie' => 'voir la s&eacute;rie'
 );
 
 ?>

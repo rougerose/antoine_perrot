@@ -276,12 +276,20 @@ a:active { outline: none; }
 			/* zone aperçu */
 			ul.imgApercu { 
 				float: right; margin-top:5px;
-				width: 180px; }
+				width: 210px; }
 				.imgApercu li { float: left; }
 				.imgApercu li {  }
 					.imgApercu li a { display: block; padding:3px; margin: 0 7px 10px; }
 					.imgApercu li a.actif, .imgApercu li a:hover { background-color: #000; }
 					.imgApercu li .imgDesc { display: none; }
+				.imgApercu li.lire-suite { 
+					position: relative;
+					border-top: 1px dotted #444;
+					margin: 1em 7px 0;
+					width: 196px; }
+					.imgApercu li.lire-suite a { 
+						position: absolute; right: 0; top: .5em;
+						margin: 0; padding: 0; }
 
 /* -------------------------------- */
 /*	hentry	(styles communs)		*/
@@ -325,13 +333,13 @@ a:active { outline: none; }
 				margin-right: 5px; padding-right: 5px; }
 			.introduction ul.meta-publi li.info-publi { margin-left:0; }
 			.introduction ul.meta-publi li.lire-suite { border-right-width: 0; }
-				ul.meta-publi li.lire-suite a { 
+				ul.meta-publi li.lire-suite a, .imgApercu li.lire-suite a { 
 					text-indent: -9999px;
 					background: #fff url(../img/img-sprites.png) no-repeat -16px -50px;
 					display: block;
 					outline:0;
 					height: 12px; width: 16px; }
-				ul.meta-publi li.lire-suite a:hover { background-position: -16px -66px; background-color: #000; }
+				ul.meta-publi li.lire-suite a:hover, .imgApercu li.lire-suite a:hover { background-position: -16px -66px; background-color: #000; }
 
 .hentry img.spip_logos,
 .sites .item img.spip_logos,

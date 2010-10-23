@@ -42,7 +42,7 @@
 							[<li id="img-#ID_DOCUMENT">
 								<a href="[(#FICHIER|image_reduire{440,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
 									(#FICHIER|image_reduire{100,0}
-										|image_recadre{40,40,center}
+										|image_recadre{50,50,center}
 										|inserer_attribut{alt,[(#TITRE|textebrut)]})
 								</a>
 								<div class="imgDesc">
@@ -51,6 +51,7 @@
 								</div><!-- .imgDesc -->
 							</li>]
 							</BOUCLE_apercu>
+							<li class="lire-suite"><a href="#URL_ARTICLE" title="<:voir_serie:>"><:voir_serie:></a></li>
 						</ul><!-- .imgApercu -->
 						</B_apercu>
 						
