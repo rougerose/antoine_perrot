@@ -112,7 +112,9 @@ body { position: relative; padding-top: 36px; }
 /* ------------------------------------ */
 .contenu-principal {  }
 
-.item { border-top: 1px solid #000; background-color: rgba(253,253,253,0.95); }
+.item, 
+#slider,
+.rubrique_oeuvres .panneau { border-top: 1px solid #000; background-color: rgba(253,253,253,0.95); }
 .section { margin-bottom: 3em; }
 	.section h2.titre { margin-left: 5px; margin-bottom: 1em; }
 

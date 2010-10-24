@@ -1,0 +1,48 @@
+#SET{self,#SELF|parametre_url{id_mot,''}}
+[(#REM) en fonction du critère de tri, il sera croissant (1) par titre et décroissant (-1) par date ]
+#SET{sens,-1}
+[(#ENV{tri_oeuvres}|=={titre}|oui)
+	[(#SET{sens,1})]
+]
+[(#REM) sélection des mots-clés]
+<BOUCLE_articles(ARTICLES){id_rubrique}>
+<BOUCLE_mots(MOTS){id_article}{doublons mots}{par titre}> </BOUCLE_mots>
+</BOUCLE_articles>
+
+<B_oeuvres>
+<ul class="optionsTri">
+	<B_affichage_mots>
+	<li class="critere themes">
+		<dl>
+			<dt><:voir:></dt>
+			<dd>
+				<ul>
+					<li><a href="#GET{self}"><:toutes_les_oeuvres:></a></li>
+					<BOUCLE_affichage_mots(MOTS){!doublons mots}{par titre}>
+					<li><a href="[(#GET{self}|parametre_url{id_mot,#ID_MOT})]" class="ajax">#TITRE</a></li>
+					</BOUCLE_affichage_mots>
+				</ul>
+			</dd>
+		</dl>
+	</li>
+	</B_affichage_mots>
+	
+	<li class="critere tri">
+		<dl>
+			<dt><:trier:></dt>
+			<dd>
+				<ul>
+					[<li>(#TRI{date,<:date:>})</li>]
+					[<li>(#TRI{titre,<:titre:>})</li>]
+				</ul>
+			</dd>
+		</dl>
+	</li>
+</ul>
+
+<div class="visuOeuvres clearfix">
+	<BOUCLE_oeuvres(ARTICLES){id_rubrique}{id_mot ?}{tri titre,#GET{sens}}{pagination}>
+	[(#INCLURE{fond=inclure/oeuvre,id_article})]
+	</BOUCLE_oeuvres>
+</div><!-- .visuOeuvres -->
+</B_oeuvres>

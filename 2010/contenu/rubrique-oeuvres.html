@@ -4,26 +4,12 @@
 		[(#LOGO_RUBRIQUE||image_reduire{200,200})]
 		<h2[ class="(#EDIT{titre})"]>#TITRE</h2>
 
-		[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
+		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 	</div><!-- .rubrique -->
 	
-	[(#REM) Gestion du portfolio et des documents ]
-	[(#INCLURE{fond=inclure/documents}{id_rubrique})]
-	
-	
-	<div class="hfeed liste articles clearfix">
-		<div class="section">
-			[(#REM) articles mis en avant, au format hentry ]
-			<BOUCLE_articlesUne(ARTICLES pb_selection){spip_pb_selection.id_rubrique=#ENV{id_rubrique}}{par ordre}{doublons}>
-			[(#INCLURE{fond=inclure/article-resume,id_article,env,format=majeur,tailleImage=220})]
-			</BOUCLE_articlesUne>
-		</div><!-- .section -->
-		
-		
-		[(#REM) articles de la rubrique, au format hentry ]
-		<INCLURE{fond=inclure/articles-hentry,env,ajax,doublons,format=mineur}>
-		
-	</div><!-- .hfeed -->
+	<div class="liste oeuvres">
+		<INCLURE{fond=inclure/oeuvres,env,ajax}>
+	</div><!-- .liste .oeuvres -->
 	
 </div>
 [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]

@@ -1,6 +1,6 @@
 [(#REM) articles issus de la rubrique Œuvres ]
 <B_oeuvres>
-<div id="slider" class="section item">
+<div id="slider" class="section">
 	<BOUCLE_oeuvres(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{id_secteur=1}{doublons}>
 	[(#SET_PUSH{oeuvres,#ID_ARTICLE})]
 	</BOUCLE_oeuvres>
@@ -19,47 +19,8 @@
 		<div class="scrollConteneur clearfix">
 			<div class="visuOeuvres clearfix">
 				<BOUCLE_affichage_oeuvres(ARTICLES){id_article IN #GET{oeuvres}}>
-				<div id="oeuvre-#ID_ARTICLE" class="panneau">
-					<h3 class="titre"><a href="#URL_ARTICLE">#TITRE</a></h3>
-					<div class="oeuvreConteneur clearfix">
-						<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,1}>
-						[(#REM) zone agrandissement]
-						[<div class="imgAgrandissement">
-							(#FICHIER|image_reduire{440,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
-							<div class="conteneurDesc">
-								<div class="imgDesc">
-									[<h3>(#TITRE|sinon{description})</h3>]
-									[<p>(#DESCRIPTIF|PtoBR)</p>]
-								</div><!-- .imgDesc -->
-							</div><!-- .conteneurDesc -->
-						</div><!-- .imgAgrandissement -->]
-						</BOUCLE_imagePrincipale>
-						
-						[(#REM) zone apercu]
-						<B_apercu>
-						<ul class="imgApercu">
-							[(#REM) les aperçus des œuvres : 12 images au maximum ]
-							<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,12}>
-							[<li id="img-#ID_DOCUMENT">
-								<a href="[(#FICHIER|image_reduire{440,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
-									(#FICHIER|image_reduire{100,0}
-										|image_recadre{50,50,center}
-										|inserer_attribut{alt,[(#TITRE|textebrut)]})
-								</a>
-								<div class="imgDesc">
-									[<h3>(#TITRE)</h3>]
-									[<p>(#DESCRIPTIF|PtoBR)</p>]
-								</div><!-- .imgDesc -->
-							</li>]
-							</BOUCLE_apercu>
-							<li class="lire-suite"><a href="#URL_ARTICLE" title="<:voir_serie:>"><:voir_serie:></a></li>
-						</ul><!-- .imgApercu -->
-						</B_apercu>
-						
-					</div><!-- .oeuvreConteneur -->
-				</div><!-- #oeuvre-#ID_ARTICLE -->
+				[(#INCLURE{fond=inclure/oeuvre,id_article})]
 				</BOUCLE_affichage_oeuvres>
-				
 			</div><!-- .visuOeuvres -->
 		</div><!-- .scrollConteneur -->
 	</div><!-- .scroll -->
