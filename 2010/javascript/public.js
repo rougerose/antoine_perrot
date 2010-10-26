@@ -26,6 +26,11 @@ $(document).ready(function(){
 	}
 	
 	/**
+	 * Menus de tri pour la rubrique Œuvres
+	 */
+	
+	
+	/**
 	 * Slider
 	 * script est un mix entre deux sources principales : 
 	 * http://jqueryfordesigners.com/coda-slider-effect/
@@ -133,54 +138,82 @@ $(document).ready(function(){
 	});
 	
 	/**
-	 * Visualisation des oeuvres via un aperçu et agrandissement dans le slider
+	 * Agrandissement des images des œuvres via plugin "visu"
 	 */
+	$(".page_sommaire .visuOeuvres").visu({conteneur:".scroll"});
 	
-	$(".visuOeuvres").each(function(){
-		// récupération de tous les liens de l'aperçu des images
-		var $liensApercu = $(this).find("ul.imgApercu li a"),
-			delai = 500;
-		
-		// Ajout du bouton pour afficher le descriptif de l'œuvre
-		$("div.conteneurDesc").append('<span class="afficheInfos" />');
-		
-		// Le descriptif de l'œuvre dans la zone d'agrandissement est masqué
-		$(".imgAgrandissement .imgDesc").hide();
+	$(".rubrique_oeuvres .visuOeuvres").visu({conteneur: ".panneau"});
+	
+	// rechargement des plugins, après changement de page en ajax
+	$(".rubrique_oeuvres .ajaxbloc").ajaxSuccess(function(){
+		$(".visuOeuvres").visu({conteneur: ".panneau"});
+	});
+});
 
-		$liensApercu.click(function(){
-			// mise en cache une copie de l'élément cliqué, puis transformation en objet jQuery 
-			var lien = this,
-				$lien = $(this),
-				$panneau = $lien.parents("div.panneau"),
-				// récupération des éléments nécessaires 
-				// pour afficher l'image et sa description dans la zone d'agrandissement
-				$urlApercu = $lien.attr("href"),
-				$descApercu = $lien.parent().find('.imgDesc').html(),
-				// mise en cache de la zone d'agrandissement relative au lien cliqué
-				$zoneAgrandissement = $panneau.find(".imgAgrandissement"),
-				$desc = $zoneAgrandissement.find(".imgDesc"),
-				$img = $zoneAgrandissement.find("img"),
-				imgHauteur = $img.outerHeight(),
-				panneauHauteur = $panneau.outerHeight(),
-				// récupération de la dimension de l'image indiquée dans son url
-				// (de la forme chemin/LlargeurxHhauteur/nomdufichier.extension). 
-				// L'expression régulière ci-dessous fonctionne mais sort en premier résultat L...xH...
-				// le résultat est une chaîne, donc on converti en nombre (nécessaire pour le test sur la hauteur)
-				dimensions = $urlApercu.match(/L(\d+)xH(\d+)/),
-				largeur = parseInt(dimensions[1]),
-				hauteur = parseInt(dimensions[2]),
-				hauteurPanneau = $lien.parents(".panneau").height(),
-				scroll = $lien.parents(".scroll"),
-				hauteurScroll = scroll.height(),
-				
-				// difference pour le réajustement de la hauteur du div.scroll
-				difference = hauteurScroll - imgHauteur + hauteur;
-				
-			if ($lien.is('.actif')) {
-				return false;
-			};
+/**
+ * plugin "visu"
+ */
+
+(function($){
+  $.fn.visu = function(options) {
+	
+	var defaults = {
+		conteneur: '.scroll'
+	}
+	
+	var opts = $.extend(defaults, options);
+	
+	return this.each(function(){
+		var obj = $(this);
+		var delai = 500;
+		
+		// DESCRIPTIF DE L'ŒUVRE
+		// ----------------------
+		
+		// descriptif de l'œuvre affichée en grand format
+		var descriptif = $('.conteneurDesc, obj');
+		var texteDescriptif = $(descriptif.find('.imgDesc'), obj);
+		
+		// Ajout du bouton pour afficher le conteneur du descriptif de l'œuvre
+		descriptif.append('<span class="afficheInfos" />')
+		
+		// on masque le texte du descriptif
+		texteDescriptif.hide();
+		
+		// affichage du descriptif
+		$('span.afficheInfos').click(function(){
+			$(this).toggleClass('actif').prev('.imgDesc').toggleClass('actif').slideToggle(delai);
+		});
+		
+		// AGRANDISSEMENT DES APERÇUS
+		// --------------------------
+		
+		var liensApercu = $('ul.imgApercu li a', obj);
 			
-			$lien
+		liensApercu.click(function(){
+			
+		//	if ($(this).is('.actif')) { return false; };
+			
+			// url de l'image à agrandir
+			var imgUrl = $(this).attr('href');
+			
+			// le descriptif également
+			var imgDescriptif = $(this).parent().find('.imgDesc').html();
+			
+			var conteneur = $(this).parents("'" + options.conteneur + "'"),
+				panneau = $(this).parents('div.panneau'),
+				imgAgrandie = panneau.find('.imgAgrandissement'),
+				img = imgAgrandie.find('img'),
+				descriptif = imgAgrandie.find('.imgDesc'),
+				imgHauteur = img.outerHeight(),
+				dimension = imgUrl.match(/L(\d+)xH(\d+)/),
+				calcLargeur = parseInt(dimension[1]),
+				calcHauteur = parseInt(dimension[2]),
+				calcHauteurConteneur = conteneur.outerHeight(),
+				// hauteur du conteneur avec l'image qui va être affichée
+				hauteurConteneur = calcHauteurConteneur - imgHauteur + calcHauteur;
+			
+			$(this)
 				.parents("ul")
 					.find("a")
 						.removeClass("actif")
@@ -189,30 +222,25 @@ $(document).ready(function(){
 			.addClass("actif");
 			
 			// changement de l'image et de sa description
-			$zoneAgrandissement.stop().animate({ opacity: 0 },delai,function(){
-				// on ajuste la hauteur du div.scroll
-				scroll.animate({ height: difference });
+			imgAgrandie.stop().animate({ opacity: 0 }, delai, function(){
 				
-				$img.animate({ width: largeur, height: hauteur }, delai)
-				.attr({
-					src: $urlApercu,
-					width: largeur,
-					height: hauteur
-				});
+				if (conteneur == '.scroll') {
+					conteneur.animate({ height: hauteurConteneur });
+				}
 				
-				$desc.hide().html($descApercu).next("span").removeClass("actif");
+				img
+					.animate({ width: calcLargeur, height: calcHauteur }, delai)
+					.attr({src: imgUrl, width: calcLargeur, height: calcHauteur});
+				
+				descriptif.hide().html(imgDescriptif).next("span").removeClass("actif");
 			});
+			imgAgrandie.animate({ opacity: 1 }, delai);
 			
-			$zoneAgrandissement.animate({ opacity: 1 },delai);
 			return false;
 		});
-		
-		$("span.afficheInfos").click(function(){
-			$(this).toggleClass("actif").prev("div.imgDesc").toggleClass("actif").slideToggle(delai);
-		});
 	});
-});
-
+  };
+})( jQuery );
 
 /**
  * @method getStyleProperty
