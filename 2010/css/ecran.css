@@ -245,6 +245,7 @@ a:active { outline: none; }
 	.panneau {
 		width: 680px;
 		padding: 0 10px 20px 10px; }
+	#slider .panneau { border-top-width: 0; background-color: transparent; }
 		.visuOeuvres h3.titre { font-size:20px; margin-bottom:1.5em; }
 		.oeuvreConteneur {}
 			/* zone agrandissement */
@@ -296,7 +297,7 @@ a:active { outline: none; }
 /* -------------------------------- */
 /*	hentry	(styles communs)		*/
 /* -------------------------------- */
-.hentry, .sites .item { margin-bottom: 1.5em; padding-bottom: 1.5em; }
+.hentry, .sites .item, .oeuvres .item { margin-bottom: 1.5em; padding-bottom: 1.5em; }
 .hentry.mineur, .sites .mineur { 
 	border-top:1px solid #000;
 	float: left;
@@ -379,6 +380,46 @@ a:active { outline: none; }
 /* -------------------------------- */
 .page_rubrique .titre h2 { font-size: 28px; line-height:36px; margin-bottom: 1em; }
 
+
+/* -------------------------------- */
+/*	rubrique œuvres					*/
+/* -------------------------------- */
+.oeuvres { position: relative; }
+
+/* menu de tri */
+ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
+	.optionsTri li { 
+		float:left;
+		padding-right: 10px; }
+	.optionsTri li.dernier { padding-right:0; }
+		.optionsTri li dl dt { 
+			float: left;
+			font-size:12px; line-height: 16px;
+			color: #999;
+			margin-right: 6px; }
+		.optionsTri li dl dd { float: left; }
+			.optionsTri li .dropdown {
+				background: url('../img/icones.png') no-repeat right top;
+				border: 1px solid #ccc;
+				width: 12em; }
+			.optionsTri li .dropdown.ouvert, .optionsTri li .dropdown:hover { 
+				background-color: #444;
+				background-position: right -16px;
+				border-color: #000; }
+				.optionsTri li .dropdown div { 
+					font-size: 12px; line-height:16px;
+					cursor:pointer;
+					padding-left: 7px; }
+				.optionsTri li .dropdown ul { display: none; }
+					.optionsTri li .dropdown li {
+						white-space: nowrap;
+						float:none;
+						border-top: 1px solid #726f6a;
+						padding-left:7px; padding: .5em 0 .5em 7px; }
+						.optionsTri li .dropdown.ouvert *, .optionsTri li .dropdown:hover * { color:#fff; }
+						.optionsTri li .dropdown li a, .optionsTri li .dropdown li strong { 
+							font-size: 12px; line-height:18px;
+							display: block; }
 
 
 /* -------------------------------- */

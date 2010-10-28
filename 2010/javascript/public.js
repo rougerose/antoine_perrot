@@ -24,12 +24,8 @@ $(document).ready(function(){
 			}
 		);
 	}
-	
-	/**
-	 * Menus de tri pour la rubrique Œuvres
-	 */
-	
-	
+
+
 	/**
 	 * Slider
 	 * script est un mix entre deux sources principales : 
@@ -138,69 +134,115 @@ $(document).ready(function(){
 	});
 	
 	/**
+	 * Menus de tri pour la rubrique Œuvres
+	 */
+	$(".rubrique_oeuvres .optionsTri").menuTri();
+	
+	/**
 	 * Agrandissement des images des œuvres via plugin "visu"
 	 */
 	$(".page_sommaire .visuOeuvres").visu({conteneur:".scroll"});
 	
 	$(".rubrique_oeuvres .visuOeuvres").visu({conteneur: ".panneau"});
 	
-	// rechargement des plugins, après changement de page en ajax
+	/**
+	 * Rechargement des plugins, après changement de page en ajax
+	 */
+	
+	// 
 	$(".rubrique_oeuvres .ajaxbloc").ajaxSuccess(function(){
 		$(".visuOeuvres").visu({conteneur: ".panneau"});
+		$(".rubrique_oeuvres .optionsTri").menuTri();
 	});
+	
+	
+	
 });
+
+/**
+ * plugin "menu tri"
+ */
+(function( $ ){
+	$.fn.menuTri = function() {
+		return this.each(function(){
+			var obj = $(this);
+			
+			var dropdown = $('.dropdown',obj);
+			
+			dropdown.each(function(){
+				var selection = $(this).find("ul li strong.on").html();
+				$(this).prepend('<div>' + selection + '</div>');
+			});
+			
+			dropdown.click(function(){
+				if($(this).is('.ouvert')) {
+					$(this).children("ul.options").slideUp({
+						duration:300,
+						easing:"swing",
+						complete:function(){
+							$(this).parent(".dropdown").removeClass("ouvert");
+						}
+					});
+				} else {
+					$(this).addClass("ouvert").children("ul.options").slideDown({
+						duration: 300, easing: "swing"
+					});
+				}
+			});
+		});
+	};
+})( jQuery );
 
 /**
  * plugin "visu"
  */
 
 (function($){
-  $.fn.visu = function(options) {
-	
-	var defaults = {
-		conteneur: '.scroll'
-	}
-	
-	var opts = $.extend(defaults, options);
-	
-	return this.each(function(){
-		var obj = $(this);
-		var delai = 500;
-		
-		// DESCRIPTIF DE L'ŒUVRE
-		// ----------------------
-		
-		// descriptif de l'œuvre affichée en grand format
-		var descriptif = $('.conteneurDesc, obj');
-		var texteDescriptif = $(descriptif.find('.imgDesc'), obj);
-		
-		// Ajout du bouton pour afficher le conteneur du descriptif de l'œuvre
-		descriptif.append('<span class="afficheInfos" />')
-		
-		// on masque le texte du descriptif
-		texteDescriptif.hide();
-		
-		// affichage du descriptif
-		$('span.afficheInfos').click(function(){
-			$(this).toggleClass('actif').prev('.imgDesc').toggleClass('actif').slideToggle(delai);
-		});
-		
-		// AGRANDISSEMENT DES APERÇUS
-		// --------------------------
-		
-		var liensApercu = $('ul.imgApercu li a', obj);
-			
-		liensApercu.click(function(){
-			
-		//	if ($(this).is('.actif')) { return false; };
-			
-			// url de l'image à agrandir
-			var imgUrl = $(this).attr('href');
-			
-			// le descriptif également
-			var imgDescriptif = $(this).parent().find('.imgDesc').html();
-			
-			var conteneur = $(this).parents("'" + options.conteneur + "'"),
+	$.fn.visu = function(options) {
+		var defaults = {
+			conteneur: '.scroll'
+		}
+
+		var opts = $.extend(defaults, options);
+
+		return this.each(function(){
+			var obj = $(this);
+			var delai = 500;
+
+			// DESCRIPTIF DE L'ŒUVRE
+			// ----------------------
+
+			// descriptif de l'œuvre affichée en grand format
+			var descriptif = $('.conteneurDesc, obj');
+			var texteDescriptif = $(descriptif.find('.imgDesc'), obj);
+
+			// Ajout du bouton pour afficher le conteneur du descriptif de l'œuvre
+			descriptif.append('<span class="afficheInfos" />')
+
+			// on masque le texte du descriptif
+			texteDescriptif.hide();
+
+			// affichage du descriptif
+			$('span.afficheInfos').click(function(){
+				$(this).toggleClass('actif').prev('.imgDesc').toggleClass('actif').slideToggle(delai);
+			});
+
+			// AGRANDISSEMENT DES APERÇUS
+			// --------------------------
+
+			var liensApercu = $('ul.imgApercu li a', obj);
+
+			liensApercu.click(function(){
+
+				//	if ($(this).is('.actif')) { return false; };
+
+				// url de l'image à agrandir
+				var imgUrl = $(this).attr('href');
+
+				// le descriptif également
+				var imgDescriptif = $(this).parent().find('.imgDesc').html();
+
+				var conteneur = $(this).parents("'" + options.conteneur + "'"),
 				panneau = $(this).parents('div.panneau'),
 				imgAgrandie = panneau.find('.imgAgrandissement'),
 				img = imgAgrandie.find('img'),
@@ -212,34 +254,34 @@ $(document).ready(function(){
 				calcHauteurConteneur = conteneur.outerHeight(),
 				// hauteur du conteneur avec l'image qui va être affichée
 				hauteurConteneur = calcHauteurConteneur - imgHauteur + calcHauteur;
-			
-			$(this)
+
+				$(this)
 				.parents("ul")
-					.find("a")
-						.removeClass("actif")
-					.end()
+				.find("a")
+				.removeClass("actif")
 				.end()
-			.addClass("actif");
-			
-			// changement de l'image et de sa description
-			imgAgrandie.stop().animate({ opacity: 0 }, delai, function(){
-				
-				if (conteneur == '.scroll') {
-					conteneur.animate({ height: hauteurConteneur });
-				}
-				
-				img
+				.end()
+				.addClass("actif");
+
+				// changement de l'image et de sa description
+				imgAgrandie.stop().animate({ opacity: 0 }, delai, function(){
+
+					if (conteneur == '.scroll') {
+						conteneur.animate({ height: hauteurConteneur });
+					}
+
+					img
 					.animate({ width: calcLargeur, height: calcHauteur }, delai)
 					.attr({src: imgUrl, width: calcLargeur, height: calcHauteur});
-				
-				descriptif.hide().html(imgDescriptif).next("span").removeClass("actif");
+
+					descriptif.hide().html(imgDescriptif).next("span").removeClass("actif");
+				});
+				imgAgrandie.animate({ opacity: 1 }, delai);
+
+				return false;
 			});
-			imgAgrandie.animate({ opacity: 1 }, delai);
-			
-			return false;
 		});
-	});
-  };
+	};
 })( jQuery );
 
 /**

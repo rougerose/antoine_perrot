@@ -25,7 +25,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// T
 	'titre' => 'titre',
 	'toutes_les_oeuvres' => 'toutes les &oelig;uvres',
-	'trier' => 'trier',
+	'trier_par' => 'trier par',
 	
 	// V
 	'voir' => 'voir',
