@@ -129,7 +129,7 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue";
 	font-weight: 200; /* equivalent du light pour Firefox */
 	text-rendering: optimizeLegibility; }
-h3.titre { 
+.item div.titre h2, h3.titre { 
 	font-family: "HelveticaNeue-LightItalic", "Helvetica Neue"; 
 	font-weight: 200; font-style:italic; }
 	
@@ -465,17 +465,17 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 			float: right;
 			width: 210px; }
 			.documents dd h3 { 
-				font-size: 12px; font-style: italic;
-				text-indent: -15px;
-				padding-left: 15px;
+				font-size: 12px; xfont-style: italic;
+				text-indent: -16px;
 				margin-top: 3px;
+				padding-left: 16px; xpadding-top: 8px;
 				float: left;
 				border-top: 1px solid #000; }
-			.documents dd h3:before { content: "\2190\2003"; }
+			.documents dd h3:before { content: url(../img/fleche-gauche.png); }
 			.documents dd p.descriptif { 
 				clear: left;
 				font-size: 10px;
-				margin-left: 14px; }
+				margin-left: 16px; }
 
 /* -------------------------------- */
 /*	#navigation					*/
