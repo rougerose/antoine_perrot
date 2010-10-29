@@ -129,7 +129,7 @@ h1,h2,h3,h4,h5,h6 {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue";
 	font-weight: 200; /* equivalent du light pour Firefox */
 	text-rendering: optimizeLegibility; }
-.item div.titre h2, h3.titre { 
+.item div.titre h2, h3.titre, .documents dd h3 { 
 	font-family: "HelveticaNeue-LightItalic", "Helvetica Neue"; 
 	font-weight: 200; font-style:italic; }
 	
