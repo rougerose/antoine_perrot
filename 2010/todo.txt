@@ -6,6 +6,6 @@ TODO article : styles spip
 TODO partout : pagination
 TODO partout : couleurs des liens (et aussi la couleur de transition en survol)
 TODO rubrique liens : captures sites en grisé, puis couleurs en hover ?
-TODO ajouter l'affichage des dates pour les documents (et particulièrement pour les images des œuvres)
+TODO gestion du tooltip next lorsqu'il n'y a pas d'article suivant (fleche grisée ?)
 
 DONE gestion des couleurs via l'interface privée (id des rubriques dans le menu)
