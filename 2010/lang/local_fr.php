@@ -1,7 +1,9 @@
 <?php
 $GLOBALS[$GLOBALS['idx_lang']] = array(
-	// C
+	
+	// A
 	'afficher_site' => 'afficher le site',
+	'article_suivant' => 'article suivant&thinsp;:',
 	
 	// D
 	
@@ -21,6 +23,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	// Q
 	'quand' => 'quand&nbsp;?',
+	
+	// R
+	'retour' => 'retour',
 	
 	// T
 	'titre' => 'titre',

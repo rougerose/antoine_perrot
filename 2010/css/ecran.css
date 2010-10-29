@@ -91,6 +91,7 @@ body { position: relative; padding-top: 36px; }
 			margin-left:280px; margin-bottom: 2em;
 			width: 700px; }
 			#conteneur #contenu { 
+				position:relative; z-index:20;
 				float: left; 
 				xpadding: 0 10px;
 				width: 700px; }
@@ -98,7 +99,7 @@ body { position: relative; padding-top: 36px; }
 				padding: 0;
 				width: 700px; }
 			#conteneur #navigation { 
-				position:absolute; top: -2em;
+				position:absolute; top: -2em; z-index:0;
 				width: 700px; }
 			#pied {
 				position: relative;
@@ -435,7 +436,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 	.page_article .hentry .info-publi,
 	.rubrique_biographie .hentry .info-publi { 
 		color: #8c8b99;
-		margin: 0 0 1.5em 480px; }
+		margin: 0 0 3em 480px; }
 	
 	.item .info-publi p { margin-bottom: 0; }
 	
@@ -485,20 +486,29 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 		position: relative; }
 		#navigation li {
 			position: absolute; right: 0;
+			font-size: 12px; line-height:14px;
 			float:left;
 			display:inline; }
 		#navigation li.back { right: auto; left: 0; }
 		#navigation li.next {  }
+			#navigation li div.info {
+				color: #fff; background-color: #000;
+				white-space: nowrap; margin-top:0;
+				padding:1px 4px 3px;
+				position:absolute; z-index: 0; }
+			#navigation li.back div.info { margin-left:16px; }
+			#navigation li.next div.info {  }
 			#navigation li a {
 				text-indent: -99999px;
 				background: #fff url('../img/img-sprites.png') no-repeat 0 0;
 				outline: 0;
 				display: block; float: left;
-				height: 16px; width:16px; }
+				height: 18px; width:16px; }
 			#navigation li.back a { background-position: 0 -48px; }
-			#navigation li.next a { background-position: -16px -48px; }
+			#navigation li.next a { background-position: -16px -48px; right:0; }
 			#navigation li.back a:hover { background-position: 0 -64px; background-color: #000; }
 			#navigation li.next a:hover { background-position: -16px -64px; background-color: #000; }
+
 
 /* -------------------------------- */
 /*	pied de page					*/

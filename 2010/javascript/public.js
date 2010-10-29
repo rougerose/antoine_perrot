@@ -134,6 +134,78 @@ $(document).ready(function(){
 	});
 	
 	/**
+	 * Animation de pseudo tooltips
+	 * inspiré de http://jqueryfordesigners.com/coda-popup-bubbles/
+	 */
+	$(".tooltip").each(function(){
+		var trigger = $("a",this);
+		var texteInfo = trigger.html();
+		
+		var delai = 250;
+		var hideDelay = 500;
+		var hideDelayTimer = null;
+		var beingShown = false;
+		var shown = false;
+		var direction;
+		var marge;
+		
+		if ($(this).is(".next")) {
+			$(this).prepend('<div class="next info">'+ texteInfo +'</div>');
+			largeurNext = $(".next.info").outerWidth();
+			$(".next.info").addClass("a").css({
+				marginLeft: '-' + largeurNext + 'px',
+				top:30
+			});
+		}
+		if ($(this).is(".back")) {
+			$(this).append('<div class="back info">'+ texteInfo +'</div>');
+			largeurBack = $(".back.info").outerWidth();
+			$(".back.info").css({top:30});
+		}
+		
+		var info = $(".info",this).css('opacity',0);
+		
+		trigger.mouseover(function(){
+			if (hideDelayTimer) clearTimeout(hideDelayTimer);
+			if (beingShown || shown) {
+				// don't trigger the animation again
+				return;
+			} else {
+				// reset position of info box
+				beingShown = true;
+				
+				info.show().animate({
+					display: 'block',
+					top:0,
+					opacity: 1
+				}, delai, 'swing', function(){
+					beingShown = false;
+					shown = true;
+				});
+			}
+		}).mouseout(function(){
+			if (hideDelayTimer) clearTimeout(hideDelayTimer);
+			hideDelayTimer = setTimeout(function () {
+				hideDelayTimer = null;
+				
+				if (info.is(".next")) {
+					direction = '+=';
+				} else {
+					direction = '-='
+				}
+				
+				info.animate({
+					top:30,
+					opacity: 0
+				}, delai, 'swing', function () {
+					shown = false;
+					info.css('display', 'none');
+				});
+			}, hideDelay);
+		});
+	});
+	
+	/**
 	 * Menus de tri pour la rubrique Œuvres
 	 */
 	$(".rubrique_oeuvres .optionsTri").menuTri();
@@ -154,8 +226,6 @@ $(document).ready(function(){
 		$(".visuOeuvres").visu({conteneur: ".panneau"});
 		$(".rubrique_oeuvres .optionsTri").menuTri();
 	});
-	
-	
 	
 });
 

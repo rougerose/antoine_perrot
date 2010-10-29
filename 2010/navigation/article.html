@@ -2,12 +2,12 @@
 
 <ul class="article">
 	<BOUCLE_retour_rubrique(RUBRIQUES){id_rubrique}>
-	<li class="back tooltip"><a href="#URL_RUBRIQUE" title='retour #TITRE'>retour #TITRE</a></li>
+	<li class="back tooltip"><a href="#URL_RUBRIQUE"><:retour:> #TITRE</a></li>
 	</BOUCLE_retour_rubrique>
 	<BOUCLE_art(ARTICLES){id_article}>
 	<BOUCLE_suivant(ARTICLES){age_relatif<0}{par date}{0,1}>
 	<li class="next tooltip">
-		<a href="#URL_ARTICLE"[ title='article suivant : (#TITRE|textebrut)']>suivant&thinsp;: #TITRE</a>
+		<a href="#URL_ARTICLE"><:article_suivant:> #TITRE</a>
 	</li>
 	</BOUCLE_suivant>
 	</BOUCLE_art>
