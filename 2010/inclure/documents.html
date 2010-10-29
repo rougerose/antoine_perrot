@@ -31,6 +31,12 @@
 		[<dd>
 			<h3>(#TITRE)</h3>
 			[<p class="descriptif">(#DESCRIPTIF|PtoBR)</p>]
+			[<p class="descriptif date">
+				[(#DATE|affdate{'d'}|=={01}|?{'',[(#DATE|jour) ]})]
+				[(#DATE|affdate{'m'}|=={01}|?{'',[(#DATE|nom_mois) ]})]
+				(#DATE|annee)
+			</p>]
+			[<p class="descriptif credits">(#CREDITS)</p>]
 		</dd>]
 	</dl>
 	
