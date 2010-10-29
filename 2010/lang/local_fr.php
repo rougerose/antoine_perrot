@@ -3,7 +3,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	// A
 	'afficher_site' => 'afficher le site',
-	'article_suivant' => 'article suivant&thinsp;:',
+	'article_suivant' => 'article suivant',
 	
 	// D
 	
@@ -25,7 +25,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'quand' => 'quand&nbsp;?',
 	
 	// R
-	'retour' => 'retour',
+	'retour_rubrique' => 'retour &agrave; la rubrique',
 	
 	// T
 	'titre' => 'titre',
