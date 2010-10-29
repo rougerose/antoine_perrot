@@ -1,0 +1,30 @@
+/* -------------------------------- */
+/*	Styles propres à spip			*/
+/* -------------------------------- */
+
+/* titre */
+p.surtitre { 
+	font-size: 17px;
+	xfont-variant: small-caps;
+	margin-bottom: 0; }
+p.soustitre { font-size: 18px; margin-bottom: 0; margin-top: .5em; }
+p.surtitre, p.soustitre {
+	color: #8c8b99; }
+
+
+/* Intertitres */
+h2.spip, h3.spip, h4.spip, h5.spip, h6.spip {  }
+h2.spip { font-size: 24px; line-height: 28px; margin-bottom: .5em; margin-top: 1em; }
+h3.spip { font-size: 20px; line-height: 22px; margin-bottom: .5em; margin-top: 1em; }
+h4.spip { font-size: 18px; }
+h5.spip { font-size: 16px; }
+h6.spip { font-size: 14px; }
+
+
+/* Divers */
+hr.spip { 
+	background-color: #000;
+	border: none;
+	height: 1px; width: 60%;
+	margin: 3em auto; }
+.spip_code { font-family: "Lucida Grande"; }
