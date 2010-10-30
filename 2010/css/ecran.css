@@ -123,21 +123,41 @@ body { position: relative; padding-top: 36px; }
 /*  Typographie					*/
 /* ------------------------------------ */
 html { font-size: 100.01%; /* pour IE */ }
+
 body { 
 	font:  75%/1.5 "HelveticaNeue","Helvetica Neue", "Helvetica", Arial, sans-serif;
 	color: #444; }
-h1,h2,h3,h4,h5,h6 { 
+
+h1,h2,h3,h4,h5,h6,
+.titre p.surtitre { 
 	font-family: "HelveticaNeue-Light", "Helvetica Neue";
 	font-weight: 200; /* equivalent du light pour Firefox */
 	text-rendering: optimizeLegibility; }
-.item div.titre h2, h3.titre, .documents dd h3 { 
+
+.texte p i,
+.texte p q,
+.texte blockquote, .texte blockquote:before {
+	font-family: "HelveticaNeue-Italic", "Helvetica Neue";
+	font-style: italic; font-weight: 400; }
+
+.texte blockquote p i {
+	font-family: "HelveticaNeue", "Helvetica Neue";
+	font-style: normal;
+}
+
+.item div.titre h2,
+h3.titre, 
+.documents dd h3 { 
 	font-family: "HelveticaNeue-LightItalic", "Helvetica Neue"; 
 	font-weight: 200; font-style:italic; }
 	
+.texte p strong,
 .entry-content .infos,
 .vevent .summary,
 .vevent .infos .label,
-.item .chapo { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
+.item .chapo,
+table.spip caption,
+table.spip th { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
 
 .contenu-principal p { font-size: 13px; margin-bottom: 1.5em; }
 
@@ -441,7 +461,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 	.item .info-publi p { margin-bottom: 0; }
 	
 	.page_site .item .texte { padding-bottom: 1.5em; }
-	.item .chapo p, .item .texte p { padding-left: 20px; padding-right: 40px; }
+	.item .chapo p, .item .texte p { padding-left: 40px; padding-right: 60px; }
 	
 	.item .texte p.logo { 
 		float:left;

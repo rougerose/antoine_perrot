@@ -3,22 +3,85 @@
 /* -------------------------------- */
 
 /* titre */
-p.surtitre { 
-	font-size: 17px;
-	xfont-variant: small-caps;
+.titre p.surtitre { 
+	font-size: 20px;
 	margin-bottom: 0; }
-p.soustitre { font-size: 18px; margin-bottom: 0; margin-top: .5em; }
+.titre p.soustitre { 
+	font-size: 18px; 
+	margin-bottom: 0; margin-top: .5em; }
 p.surtitre, p.soustitre {
 	color: #8c8b99; }
 
 
 /* Intertitres */
-h2.spip, h3.spip, h4.spip, h5.spip, h6.spip {  }
+h2.spip, h3.spip, h4.spip, h5.spip, h6.spip { margin-left: 20px; }
 h2.spip { font-size: 24px; line-height: 28px; margin-bottom: .5em; margin-top: 1em; }
 h3.spip { font-size: 20px; line-height: 22px; margin-bottom: .5em; margin-top: 1em; }
 h4.spip { font-size: 18px; }
 h5.spip { font-size: 16px; }
 h6.spip { font-size: 14px; }
+
+/* Listes */
+ul.spip, ol.spip {
+	font-size: 13px;
+	margin: 0 60px 1.5em 40px; }
+ul.spip {
+	list-style-image: url(img/puce.png);
+	list-style-position: outside; }
+	ul.spip ul.spip { margin-bottom: 0; margin-left: 20px; }
+ol.spip {
+	list-style-type: decimal;
+	list-style-position: outside; }
+	ul.spip li, ol.spip li { margin-left: 1.4em; }
+
+/* Tableaux */
+table.spip { 
+	margin: 0 0 0 40px;
+	border-collapse: collapse; border-spacing: 0; 
+	width: 645px; }
+	table.spip caption { 
+		caption-side: top; /* bottom pas pris en compte par IE */
+		text-align: left; font-size: 14px;
+		margin-bottom: .5em; }
+	table.spip tr.row_first {  }
+	table.spip tr.row_odd { background: rgb(240,240,240); }
+	table.spip tr.row_even {  }
+	table.spip th, table.spip td { 
+		text-align: left;
+		padding: 0.20em 0.40em;
+		border: 1px solid #444; border-width: 1px 0; }
+	table.spip th:first-child, table.spip td:first-child { border-left-width: 1px; }
+	table.spip th:last-child, table.spip td:last-child { border-right-width: 1px; }
+	table.spip th { 
+		vertical-align: bottom; 
+		color: #fff; background-color: #444; }
+	table.spip td { vertical-align: top; }
+
+
+/* Citations */
+.texte p q { }
+.texte blockquote { 
+	background-color: #fff;
+	display: block;
+	margin: 0 60px 0 40px; }
+.texte blockquote:before {
+	content: '“';
+	font-size: 700%; line-height: 80%;
+	color: #ddd;
+	height:0;
+	display: inline-block; }
+.item .texte blockquote p { padding-left: 50px; padding-right: 0; }
+
+/* Logos, documents et images */
+
+/*img, .spip_logos { margin: 0; padding: 0; border: 0; }
+.spip_documents { text-align: center; line-height: normal; }
+.spip_documents p { margin: 0.10em; padding: 0; }
+.spip_documents_center { display: block;display: table; clear: both; margin: 1em auto; }
+.spip_documents_left { float: left; margin-right: 15px; margin-bottom: 5px; }
+.spip_documents_right { float: right; margin-left: 15px; margin-bottom: 5px; }
+.spip_doc_titre { margin-right: auto; margin-left: auto; font-weight: bold; font-size: 0.90em; }
+.spip_doc_descriptif { clear: both; margin-right: auto; margin-left: auto; font-size: 0.90em; }*/
 
 
 /* Divers */
