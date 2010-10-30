@@ -20,6 +20,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	// P
 	'publie' => 'publi&eacute; le',
+	'ps' => 'Post-scriptum',
 	
 	// Q
 	'quand' => 'quand&nbsp;?',

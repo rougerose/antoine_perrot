@@ -126,7 +126,7 @@ html { font-size: 100.01%; /* pour IE */ }
 
 body { 
 	font:  75%/1.5 "HelveticaNeue","Helvetica Neue", "Helvetica", Arial, sans-serif;
-	color: #444; }
+	color: #333; }
 
 h1,h2,h3,h4,h5,h6,
 .titre p.surtitre { 
@@ -147,14 +147,15 @@ h1,h2,h3,h4,h5,h6,
 
 .item div.titre h2,
 h3.titre, 
-.documents dd h3 { 
+.documents dd h3,
+.spip_documents dd h3 { 
 	font-family: "HelveticaNeue-LightItalic", "Helvetica Neue"; 
 	font-weight: 200; font-style:italic; }
 	
 .texte p strong,
 .entry-content .infos,
 .vevent .summary,
-.vevent .infos .label,
+.label,
 .item .chapo,
 table.spip caption,
 table.spip th { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
@@ -165,7 +166,7 @@ table.spip th { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weigh
 /* ------------------------------------ */
 /*  Liens (règles générales)			*/
 /* ------------------------------------ */
-a { color: #444; text-decoration: none; }
+a { color: #333; text-decoration: none; }
 a:visited {  }
 a:hover {  }
 a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
@@ -474,11 +475,11 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /*	documents (portfolio)			*/
 /* -------------------------------- */
 .documents {  }
-	.documents h2 { 
-		font-size: 20px;
+	.documents h3 { 
+		xfont-size: 20px;
 		border-bottom: 1px solid #000;
 		float: left;
-		margin-bottom: 1.5em;
+		margin-bottom: 1.5em; margin: 0 0 1.5em;
 		width: 450px; }
 	.documents dl { clear: left; margin-bottom: 3em; }
 		.documents dl dt { float: left; }
