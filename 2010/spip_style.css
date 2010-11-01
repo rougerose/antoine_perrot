@@ -2,6 +2,9 @@
 /*	Styles propres à spip			*/
 /* -------------------------------- */
 
+/* liens propres au texte */
+
+
 /* titre */
 .titre p.surtitre { 
 	font-size: 20px;
@@ -12,24 +15,27 @@
 p.surtitre, p.soustitre {
 	color: #8c8b99; }
 
+/* paragraphes */
+
+
 
 /* Intertitres */
 h2.spip, h3.spip, h4.spip, h5.spip, h6.spip {
 	color:#000;
 	line-height: 18px;
 	clear: left;
-	margin-bottom: .5em; margin-top: 1em; margin-left: 20px; }
+	margin-bottom: .5em; margin-top: 1em; }
+.item h2.spip, .item h3.spip, .item h4.spip, .item h5.spip, .item h6.spip { margin-left: 20px; } /* uniquement pour l'espace public */
 h2.spip { font-size: 24px; line-height: 28px; }
 h3.spip { font-size: 20px; line-height: 22px; }
 h4.spip { font-size: 18px; }
 h5.spip { font-size: 16px; }
 h6.spip { font-size: 14px; }
-.ps h3 { border-bottom: 1px solid #000; }
 
 /* Listes */
 ul.spip, ol.spip {
-	font-size: 13px;
-	margin: 0 60px 1.5em 40px; }
+	font-size: 13px; }
+.item ul.spip, .item ol.spip { margin: 0 60px 1.5em 40px; } /* uniquement pour l'espace public */
 ul.spip {
 	list-style-image: url(img/puce.png);
 	list-style-position: outside; }
@@ -41,9 +47,10 @@ ol.spip {
 
 /* Tableaux */
 table.spip { 
-	margin: 0 0 0 40px;
+	margin:0;
 	border-collapse: collapse; border-spacing: 0; 
-	width: 645px; }
+	width: 100%; }
+.item table.spip { width:645px; margin-left: 40px; } /* uniquement pour l'espace public */
 	table.spip caption { 
 		caption-side: top; /* bottom pas pris en compte par IE */
 		text-align: left; font-size: 14px;
@@ -67,8 +74,8 @@ table.spip {
 .texte p q { }
 .texte blockquote { 
 	background-color: #fff;
-	display: block;
-	margin: 0 60px 0 40px; }
+	display: block; }
+.item blockquote { margin: 0 60px 0 40px; }
 .texte blockquote:before {
 	content: '“';
 	font-size: 700%; line-height: 80%;
@@ -96,6 +103,14 @@ dl.spip_documents { padding-left: 40px; }
 
 
 /* Divers */
+.invisible { display: none; }
+.texte abbr, .texte acronym { border-bottom: 1px dotted #444; }
+.texte sub {
+	font-size: 80%;
+	vertical-align: sub; }
+.texte sup {
+	font-size: 80%;
+	vertical-align: super; }
 p.hyperlien { 
 	background-color: #fff;
 	margin:0 70px 0 45px; padding: 3px 3px 4px; }
@@ -104,4 +119,4 @@ hr.spip {
 	border: none;
 	height: 1px; width: 60%;
 	margin: 3em auto; }
-.spip_code { font-family: "Lucida Grande"; }
+.spip_code { font-family: "Lucida Grande"; font-size: 90%; }

@@ -160,13 +160,18 @@ h3.titre,
 table.spip caption,
 table.spip th { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
 
+.texte a {
+	font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
+	font-weight: 800;
+}
+
 .contenu-principal p { font-size: 13px; margin-bottom: 1.5em; }
 
 
 /* ------------------------------------ */
 /*  Liens (règles générales)			*/
 /* ------------------------------------ */
-a { color: #333; text-decoration: none; }
+a { color: #000; text-decoration: none; }
 a:visited {  }
 a:hover {  }
 a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
@@ -176,15 +181,20 @@ a:active { outline: none; }
 /* ------------------------------------ */
 /*  Liens (règles spécifique)			*/
 /* ------------------------------------ */
-.section .titre a { 
+.section .titre a,
+.texte a { 
 	color:#000;
 	transition: color .6s ease-out, background-color .6s ease-out;
 	-webkit-transition: color .6s ease-out, background-color .6s ease-out;
 	-o-transititon: color .6s ease-out, background-color .6s ease-out;
 	-moz-transition: color .6s ease-out, background-color .6s ease-out;; }
-.section h3.titre a {
-	padding: 0px 1px 2px; }
-.section .titre a:hover { color:#fff; background-color: #000; }
+.section h3.titre a { padding: 0px 1px 2px; }
+.texte a.spip_out, .texte a.spip_glossaire {
+	padding-right: 14px;
+	background: url('../img/spip-out.png') no-repeat 99% 2px; }
+.section .titre a:hover,
+.texte a:hover { color:#fff; background-color: #000; }
+.texte a.spip_out:hover, .texte a.spip_glossaire:hover { background-position: 99% -17px; }
 
 
 /* ------------------------------------ */
@@ -217,8 +227,6 @@ a:active { outline: none; }
 			#nav li a:hover { padding-left: 30px; }
 			#nav li a.ff3:hover { padding-left: 40px; }
 
-
-.invisible { display:none; }
 
 /* ------------------------------------ */
 /*	Slider (sommaire)					*/
@@ -386,6 +394,7 @@ a:active { outline: none; }
 	.vevent .summary { 
 		border-bottom:1px solid #000;
 		font-size: 15px; }
+	.vevent dt, .vevent dd { margin-left: 40px; }
 	.vevent .dateEvenement {  }
 	.vevent .locationEvenement {  }
 	.vevent .dateEvenement, .locationEvenement {  }
@@ -449,6 +458,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 	.item .hentry { margin: 0; padding: 0; }
 	.item .hentry > div, .item > div.titre { margin: 0 10px 0 5px; }
+	.item .hentry .surlignable, .item p.hyperlien { margin-bottom: 3em; }
 	
 	.item div.titre { margin-bottom: 1em; }
 	.item div.titre h2 { font-size:28px; line-height: 36px; margin-top: 0; }
@@ -462,7 +472,11 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 	.item .info-publi p { margin-bottom: 0; }
 	
 	.page_site .item .texte { padding-bottom: 1.5em; }
-	.item .chapo p, .item .texte p { padding-left: 40px; padding-right: 60px; }
+	
+	.item .chapo p, 
+	.item .texte p,
+	.item .ps p,
+	.item .notes p { padding-left: 40px; padding-right: 60px; }
 	
 	.item .texte p.logo { 
 		float:left;
@@ -475,7 +489,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /*	documents (portfolio)			*/
 /* -------------------------------- */
 .documents {  }
-	.documents h3 { 
+	.documents h3.spip { 
 		xfont-size: 20px;
 		border-bottom: 1px solid #000;
 		float: left;
