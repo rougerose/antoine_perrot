@@ -15,10 +15,6 @@
 p.surtitre, p.soustitre {
 	color: #8c8b99; }
 
-/* paragraphes */
-
-
-
 /* Intertitres */
 h2.spip, h3.spip, h4.spip, h5.spip, h6.spip {
 	color:#000;
@@ -73,7 +69,7 @@ table.spip {
 /* Citations */
 .texte p q { }
 .texte blockquote { 
-	background-color: #fff;
+	background-color: rgba(253,253,253,0.7);
 	display: block; }
 .item blockquote { margin: 0 60px 0 40px; }
 .texte blockquote:before {
@@ -111,7 +107,7 @@ dl.spip_documents { padding-left: 40px; }
 .texte sup {
 	font-size: 80%;
 	vertical-align: super; }
-p.hyperlien { 
+.hentry p.hyperlien { 
 	background-color: #fff;
 	margin:0 70px 0 45px; padding: 3px 3px 4px; }
 hr.spip { 

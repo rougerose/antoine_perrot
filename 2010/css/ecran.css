@@ -92,8 +92,8 @@ body { position: relative; padding-top: 36px; }
 			width: 700px; }
 			#conteneur #contenu { 
 				position:relative; z-index:20;
-				float: left; 
-				xpadding: 0 10px;
+				float: left;
+				xmargin-bottom: 1.5em;
 				width: 700px; }
 			.page_sommaire #conteneur #contenu { 
 				padding: 0;
@@ -101,6 +101,9 @@ body { position: relative; padding-top: 36px; }
 			#conteneur #navigation { 
 				position:absolute; top: -2em; z-index:0;
 				width: 700px; }
+			#conteneur #hierarchie { 
+				clear: both;
+				padding: 1.5em 10px 0 5px; }
 			#pied {
 				position: relative;
 				text-align:center;
@@ -111,13 +114,19 @@ body { position: relative; padding-top: 36px; }
 /* ------------------------------------ */
 /*  mise en page : principes généraux	*/
 /* ------------------------------------ */
-.contenu-principal {  }
 
 .item, 
 #slider,
-.rubrique_oeuvres .panneau { border-top: 1px solid #000; background-color: rgba(253,253,253,0.95); }
-.section { margin-bottom: 3em; }
+.rubrique_oeuvres .panneau,
+#hierarchie { border-top: 1px solid #000; background-color: rgba(253,253,253,0.95); }
+
+.section {  }
 	.section h2.titre { margin-left: 5px; margin-bottom: 1em; }
+
+.page_article .item { padding-bottom: 1.5em; }
+
+.page_site .item { margin-bottom: 1.5em; }
+
 
 /* ------------------------------------ */
 /*  Typographie					*/
@@ -136,7 +145,8 @@ h1,h2,h3,h4,h5,h6,
 
 .texte p i,
 .texte p q,
-.texte blockquote, .texte blockquote:before {
+.texte blockquote, .texte blockquote:before,
+#hierarchie p strong {
 	font-family: "HelveticaNeue-Italic", "Helvetica Neue";
 	font-style: italic; font-weight: 400; }
 
@@ -160,7 +170,9 @@ h3.titre,
 table.spip caption,
 table.spip th { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
 
-.texte a {
+.texte a, 
+.item .hyperlien a,
+#hierarchie a {
 	font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
 	font-weight: 800;
 }
@@ -182,19 +194,25 @@ a:active { outline: none; }
 /*  Liens (règles spécifique)			*/
 /* ------------------------------------ */
 .section .titre a,
-.texte a { 
+.item a,
+#hierarchie a { 
+	padding: 0 2px 2px;
 	color:#000;
 	transition: color .6s ease-out, background-color .6s ease-out;
 	-webkit-transition: color .6s ease-out, background-color .6s ease-out;
 	-o-transititon: color .6s ease-out, background-color .6s ease-out;
 	-moz-transition: color .6s ease-out, background-color .6s ease-out;; }
 .section h3.titre a { padding: 0px 1px 2px; }
-.texte a.spip_out, .texte a.spip_glossaire {
+
+a.spip_out, a.spip_glossaire {
 	padding-right: 14px;
 	background: url('../img/spip-out.png') no-repeat 100% 2px; }
+
 .section .titre a:hover,
-.texte a:hover { color:#fff; background-color: #000; }
-.texte a.spip_out:hover, .texte a.spip_glossaire:hover { background-position: 100% -17px; }
+.item a:hover,
+#hierarchie a:hover { color:#fff; background-color: #000; }
+
+.item a.spip_out:hover, .item a.spip_glossaire:hover { background-position: 100% -17px; }
 
 
 /* ------------------------------------ */
@@ -208,7 +226,7 @@ a:active { outline: none; }
 /* ------------------------------------ */
 /*	Navigation principale				*/
 /* ------------------------------------ */
-#nav { width: 100%; xdisplay:none; }
+#nav { width: 100%; }
 	#nav ul {  }
 		#nav li { 
 			font-size:16px; line-height: 18px;
@@ -317,7 +335,7 @@ a:active { outline: none; }
 					.imgApercu li .imgDesc { display: none; }
 				.imgApercu li.lire-suite { 
 					position: relative;
-					border-top: 1px dotted #444;
+					border-top: 1px dotted #999;
 					margin: 1em 7px 0;
 					width: 196px; }
 					.imgApercu li.lire-suite a { 
@@ -349,7 +367,7 @@ a:active { outline: none; }
 	.hentry.item .entry-content p { width: 450px; }
 	.hentry.mineur .entry-content p, .sites .introduction p { width: 210px; }
 		.entry-content .infos {  
-			border-bottom:1px dotted #000;
+			border-bottom:1px dotted #999;
 			margin: 0; }
 		.entry-content .intro { margin: 0 0 0.75em; }
 		.entry-content .infos + .intro { margin: 0.75em 0 0.75em; }
@@ -391,16 +409,16 @@ a:active { outline: none; }
 /*	agenda (vcalendar)				*/
 /* -------------------------------- */
 .vcalendar.float { float:left; }
-.vevent { width: 450px; margin-bottom: 6em; }
+.vevent { width: 450px; }
 	.vevent .summary { 
-		border-bottom:1px solid #000;
+		border-bottom:1px solid #666;
 		font-size: 15px; }
 	.vevent dt, .vevent dd { margin-left: 40px; }
 	.vevent .dateEvenement {  }
 	.vevent .locationEvenement {  }
 	.vevent .dateEvenement, .locationEvenement {  }
 	.vevent .infos { 
-		border-bottom:1px dotted #000;
+		border-bottom:1px dotted #666;
 		margin: .25em 0; padding-left: 6em; padding-bottom: .25em; }
 		.vevent .infos .label { 
 			display: block; float: left; 
@@ -457,9 +475,18 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 /*	article							*/
 /* -------------------------------- */
-	.item .hentry { margin: 0; padding: 0; }
+
+.item .hentry { margin: 0; padding: 0; }
 	.item .hentry > div, .item > div.titre { margin: 0 10px 0 5px; }
-	.item .hentry .surlignable, .item p.hyperlien { margin-bottom: 3em; }
+	
+	.item .hentry .info-publi,
+	.item .hentry .vcalendar,
+	.item .hentry .chapo,
+	.item .hentry .texte,
+	.item .hentry p.hyperlien,
+	.item .hentry .ps,
+	.item .hentry .documents,
+	.item .hentry .notes  { margin-bottom: 3em; }
 	
 	.item div.titre { margin-bottom: 1em; }
 	.item div.titre h2 { font-size:28px; line-height: 36px; margin-top: 0; }
@@ -497,7 +524,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 .documents {  }
 	.documents h3.spip { 
-		border-bottom: 1px solid #000;
+		border-bottom: 1px solid #666;
 		float: left;
 		margin-bottom: 1.5em; margin: 0 0 1.5em;
 		width: 450px; }
@@ -512,7 +539,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 				margin-top: 3px;
 				padding-left: 16px;
 				float: left;
-				border-top: 1px solid #000; }
+				border-top: 1px solid #666; }
 			.documents dd h3:before { content: url(../img/fleche-gauche.png); }
 			.documents dd p.descriptif { 
 				clear: left;
@@ -567,6 +594,15 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 			#navigation li.back a:hover { background-position: 0 -64px; background-color: #000; }
 			#navigation li.next a:hover { background-position: -16px -64px; background-color: #000; }
 
+
+/* -------------------------------- */
+/*	hierarchie						*/
+/* -------------------------------- */
+#hierarchie { xborder-top-width: 2px; }
+	#hierarchie p { 
+		color:#999;
+		padding-bottom: 1.5em; }
+		#hierarchie strong {  }
 
 /* -------------------------------- */
 /*	pied de page					*/
