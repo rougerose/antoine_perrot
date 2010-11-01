@@ -6,8 +6,11 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'article_suivant' => 'article suivant',
 	
 	// D
-	
 	'date' => 'date',
+	'document_sans_titre' => 'document sans titre',
+	
+	// F
+	'fichier' => 'fichier',
 	
 	// I
 	'informations' => 'informations',

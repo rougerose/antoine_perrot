@@ -1,4 +1,3 @@
-TODO styles des documents autre que le portfolio
 TODO styles chapo + texte + notes + ps
 TODO pied de page
 TODO article : logo d'article
@@ -10,3 +9,4 @@ TODO gestion du tooltip next lorsqu'il n'y a pas d'article suivant (fleche gris√
 TODO styles sur la page d'identification ecrire
 
 DONE gestion des couleurs via l'interface priv√©e (id des rubriques dans le menu)
+DONE styles des documents autre que le portfolio

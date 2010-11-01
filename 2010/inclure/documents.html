@@ -2,18 +2,25 @@
 	Liste des autres documents joints
 ]
 <B_documents_joints>
-	<div class="liste documents documents_joints">
+<div class="liste documents documents_joints">
 	<h3 class="spip"><:titre_documents_joints:></h3>
-	<ul class="liste-items">
-		<BOUCLE_documents_joints(DOCUMENTS) {id_article?}{id_rubrique?} {extension !IN gif,jpg,png} {vu=non}{par num titre, date}>[
-		<li class="item">
-			<strong><a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:info_document:>})]</a></strong>
-			<span class="small">(<span>#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)]</span>)</span>
-			#DESCRIPTIF
-		]</li>
-		</BOUCLE_documents_joints>
-	</ul>
-	</div>
+	<BOUCLE_documents_joints(DOCUMENTS){id_article?}{id_rubrique?}{extension !IN gif,jpg,png}{vu=non}{par num titre, date}>
+	<dl class="document clearfix">
+		<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT)]</dt>
+		<dd>
+			[<h3><a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:document_sans_titre:>})]</a></h3>]
+			<p class="descriptif">
+				[(#DESCRIPTIF|PtoBR)] <span><:fichier:> #TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)]</span>
+			</p>
+			[<p class="descriptif date">
+				[(#DATE|affdate{'d'}|=={01}|?{'',[(#DATE|jour) ]})]
+				[(#DATE|affdate{'m'}|=={01}|?{'',[(#DATE|nom_mois) ]})]
+				(#DATE|annee)
+			</p>]
+		</dd>
+	</dl>
+	</BOUCLE_documents_joints>
+</div>
 </B_documents_joints>
 
 [(#REM) Portfolio : album d'images ]

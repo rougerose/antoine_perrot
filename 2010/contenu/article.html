@@ -1,4 +1,7 @@
 <BOUCLE_contenu(ARTICLES){id_article}>
+
+[(#SET{logoArticle,[(#LOGO_ARTICLE|image_reduire{204,0})]})]
+
 <div class="hfeed contenu-principal item">
 	<div class="hentry">
 		<div class="titre">
@@ -6,8 +9,9 @@
 			<h2 class="#EDIT{titre} entry-title">#TITRE</h2>
 			[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 		</div><!-- .titre -->
-
+		
 		<div class="info-publi">
+			
 			<p class="updated published">
 				<span class="value-title" title="[(#DATE|date_iso)]">[<:publie:> (#DATE|affdate{'d'})][/(#DATE|mois)][/(#DATE|annee)]</span>
 			</p>
@@ -17,19 +21,22 @@
 			#MODELE{article_traductions}
 
 		</div><!-- .info-publi -->
+		
+		[<p class="logo">(#GET{logoArticle})</p>]
 
 		<B_evenement>
-		<div class="evenement vcalendar">
+		<div class="evenement vcalendar[(#GET{logoArticle}|oui) float]">
 			<BOUCLE_evenement(EVENEMENTS){id_article}>
 			[(#INCLURE{fond=inclure/article-evenement,id_evenement,id_article})]
 			</BOUCLE_evenement>
 		</div><!-- .evenement -->
 		</B_evenement>
 
-		<div class="surlignable">
-			[<div class="#EDIT{chapo} chapo">(#CHAPO|image_reduire{200,0})</div>]
-			[<div class="#EDIT{texte} texte entry-content">(#TEXTE|image_reduire{200,0})</div>]
-		</div><!-- .info-publi -->
+		[<div class="#EDIT{chapo} chapo surlignable[(#GET{logoArticle}|oui) float]">
+			(#CHAPO|image_reduire{200,0})
+		</div>]
+		
+		[<div class="#EDIT{texte} texte entry-content surlignable">(#TEXTE|image_reduire{200,0})</div>]
 
 		[<p class="#EDIT{hyperlien} hyperlien"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
 

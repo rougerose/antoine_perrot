@@ -191,10 +191,10 @@ a:active { outline: none; }
 .section h3.titre a { padding: 0px 1px 2px; }
 .texte a.spip_out, .texte a.spip_glossaire {
 	padding-right: 14px;
-	background: url('../img/spip-out.png') no-repeat 99% 2px; }
+	background: url('../img/spip-out.png') no-repeat 100% 2px; }
 .section .titre a:hover,
 .texte a:hover { color:#fff; background-color: #000; }
-.texte a.spip_out:hover, .texte a.spip_glossaire:hover { background-position: 99% -17px; }
+.texte a.spip_out:hover, .texte a.spip_glossaire:hover { background-position: 100% -17px; }
 
 
 /* ------------------------------------ */
@@ -390,7 +390,8 @@ a:active { outline: none; }
 /* -------------------------------- */
 /*	agenda (vcalendar)				*/
 /* -------------------------------- */
-.vevent { width: 450px; margin-bottom: 1.5em; }
+.vcalendar.float { float:left; }
+.vevent { width: 450px; margin-bottom: 6em; }
 	.vevent .summary { 
 		border-bottom:1px solid #000;
 		font-size: 15px; }
@@ -400,10 +401,10 @@ a:active { outline: none; }
 	.vevent .dateEvenement, .locationEvenement {  }
 	.vevent .infos { 
 		border-bottom:1px dotted #000;
-		margin: .25em 0; padding-left: 5em; padding-bottom: .25em; }
+		margin: .25em 0; padding-left: 6em; padding-bottom: .25em; }
 		.vevent .infos .label { 
 			display: block; float: left; 
-			width:5em; margin-left:-5em; }
+			width:6em; margin-left:-6em; }
 
 
 /* -------------------------------- */
@@ -463,6 +464,8 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 	.item div.titre { margin-bottom: 1em; }
 	.item div.titre h2 { font-size:28px; line-height: 36px; margin-top: 0; }
 	
+	.item p.logo { float:right; width: 220px; }
+	
 	.item .info-publi,
 	.page_article .hentry .info-publi,
 	.rubrique_biographie .hentry .info-publi { 
@@ -470,6 +473,10 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 		margin: 0 0 3em 480px; }
 	
 	.item .info-publi p { margin-bottom: 0; }
+	
+	.item .chapo.float { float: left; width: 450px; }
+	
+	.item .texte { clear: both; }
 	
 	.page_site .item .texte { padding-bottom: 1.5em; }
 	
@@ -486,11 +493,10 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 
 
 /* -------------------------------- */
-/*	documents (portfolio)			*/
+/*	documents (dans le portfolio)	*/
 /* -------------------------------- */
 .documents {  }
 	.documents h3.spip { 
-		xfont-size: 20px;
 		border-bottom: 1px solid #000;
 		float: left;
 		margin-bottom: 1.5em; margin: 0 0 1.5em;
@@ -512,6 +518,23 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 				clear: left;
 				font-size: 10px;
 				margin-left: 16px; margin-bottom:0; }
+
+/* -------------------------------- */
+/*	documents joints				*/
+/*	(style idem précédent			*/
+/*	avec quelques différences)		*/
+/* -------------------------------- */
+.documents_joints dl dt { width:450px; }
+	
+	.documents_joints dl dt a { 
+		background-color: #fff;
+		width:450px; display: block; }
+	.documents_joints dl dt a:hover { background-color: #000; }
+		.documents_joints dl dt a img.spip_logos { float: none; background-color: transparent; }
+
+.documents_joints dl dd p.descriptif span { color:#666; display: block; }
+
+
 
 /* -------------------------------- */
 /*	#navigation					*/
