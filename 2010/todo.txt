@@ -1,3 +1,4 @@
+TODO page sommaire > 3 œuvres présentées : la hauteur ne s'ajuste pas comme il faut : à revoir
 TODO styles chapo + texte + notes + ps
 TODO pied de page
 TODO article : logo d'article
