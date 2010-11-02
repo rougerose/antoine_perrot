@@ -596,7 +596,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 #formulaire_recherche { 
 	border:	1px solid #ddd;
-	border-color: #ddd #eee #eee #ddd;
+	border-color: #ccc #eee #eee #ccc;
 	margin-left: 40px;
 	width:220px; }
 	#formulaire_recherche label { display:none; }
