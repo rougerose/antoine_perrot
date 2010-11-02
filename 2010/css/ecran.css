@@ -495,11 +495,9 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 	
 	.item .info-publi,
 	.page_article .hentry .info-publi,
-	.rubrique_biographie .hentry .info-publi { 
-		color: #8c8b99;
-		margin: 0 0 3em 480px; }
+	.rubrique_biographie .hentry .info-publi { margin: 0 0 3em 480px; }
 	
-	.item .info-publi p { margin-bottom: 0; }
+	.item .info-publi p { margin-bottom: 0; font-size:11px; }
 	
 	.item .chapo.float { float: left; width: 450px; }
 	
@@ -562,7 +560,6 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 .documents_joints dl dd p.descriptif span { color:#666; display: block; }
 
 
-
 /* -------------------------------- */
 /*	#navigation					*/
 /* -------------------------------- */
@@ -594,11 +591,40 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 			#navigation li.back a:hover { background-position: 0 -64px; background-color: #000; }
 			#navigation li.next a:hover { background-position: -16px -64px; background-color: #000; }
 
+/* -------------------------------- */
+/*	Recherche (formulaire)			*/
+/* -------------------------------- */
+#formulaire_recherche { 
+	border:	1px solid #ddd;
+	border-color: #ddd #eee #eee #ddd;
+	margin-left: 40px;
+	width:220px; }
+	#formulaire_recherche label { display:none; }
+	#formulaire_recherche #recherche, #formulaire_recherche .bouton { 
+		border: none;
+		float: left; }
+	#formulaire_recherche #recherche {
+		background: transparent url(../img/icone_recherche.png) no-repeat 0 0;
+		padding: 0.4em 0 0.4em 2.5em;
+		width: 11em; }
+	#formulaire_recherche #recherche:focus { 
+		background-position: 0 -41px; }
+	#formulaire_recherche .bouton { 
+		color: #999; background-color: #fff;
+		font-size: 9px; line-height: 18px;
+		text-transform: uppercase;
+		cursor: pointer;
+		overflow: visible;
+		float:right;
+		padding: .5em 0;
+		width: 7em; }
+	#formulaire_recherche .bouton:hover { color: #000; }
+
 
 /* -------------------------------- */
 /*	hierarchie						*/
 /* -------------------------------- */
-#hierarchie { xborder-top-width: 2px; }
+#hierarchie { xborder-top-width: 2px; padding: 0 10px 0 5px; }
 	#hierarchie p { 
 		color:#999;
 		padding-bottom: 1.5em; }
