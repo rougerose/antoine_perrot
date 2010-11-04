@@ -4,13 +4,13 @@
 
 <div class="hfeed contenu-principal item">
 	<div class="hentry">
-		<div class="titre">
+		<div class="titre section">
 			[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
 			<h2 class="#EDIT{titre} entry-title">#TITRE</h2>
 			[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 		</div><!-- .titre -->
 		
-		<div class="info-publi">
+		<div class="info-publi section">
 			
 			<p class="updated published">
 				<span class="value-title" title="[(#DATE|date_iso)]">[<:publie:> (#DATE|affdate{'d'})][/(#DATE|mois)][/(#DATE|annee)]</span>
@@ -25,22 +25,22 @@
 		[<p class="logo">(#GET{logoArticle})</p>]
 
 		<B_evenement>
-		<div class="evenement vcalendar[(#GET{logoArticle}|oui) float]">
+		<div class="evenement vcalendar[(#GET{logoArticle}|oui) float] section">
 			<BOUCLE_evenement(EVENEMENTS){id_article}>
 			[(#INCLURE{fond=inclure/article-evenement,id_evenement,id_article})]
 			</BOUCLE_evenement>
 		</div><!-- .evenement -->
 		</B_evenement>
 
-		[<div class="#EDIT{chapo} chapo surlignable[(#GET{logoArticle}|oui) float]">
+		[<div class="#EDIT{chapo} chapo surlignable[(#GET{logoArticle}|oui) float] section">
 			(#CHAPO|image_reduire{200,0})
 		</div>]
 		
-		[<div class="#EDIT{texte} texte entry-content surlignable">(#TEXTE|image_reduire{200,0})</div>]
+		[<div class="#EDIT{texte} texte entry-content surlignable section">(#TEXTE|image_reduire{200,0})</div>]
 
-		[<p class="#EDIT{hyperlien} hyperlien"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+		[<p class="#EDIT{hyperlien} hyperlien section"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
 
-		[<div class="ps">
+		[<div class="ps section">
 			<h3 class="spip"><:ps:></h3>
 			<div class="#EDIT{ps} surlignable">(#PS|image_reduire{200,0})</div>
 		</div><!-- .ps -->]
@@ -48,7 +48,7 @@
 		[(#REM) Gestion du portfolio et des documents ]
 		[(#INCLURE{fond=inclure/documents}{id_article})]
 
-		[<div class="notes surlignable"><h3 class="spip pas_surlignable"><:info_notes:></h3>(#NOTES)</div>]
+		[<div class="notes surlignable section"><h3 class="spip pas_surlignable"><:info_notes:></h3>(#NOTES)</div>]
 		
 	</div><!-- .hentry -->
 	

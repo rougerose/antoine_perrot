@@ -1,0 +1,30 @@
+<B_documents>
+<div class="resultats documents section">
+	#ANCRE_PAGINATION
+	<h2 class="spip">[[(#GRAND_TOTAL) ](#GRAND_TOTAL|singulier_ou_pluriel{local:document,local:documents})]</h2>
+	<ul class="liste clearfix">
+		<BOUCLE_documents(DOCUMENTS){recherche}{par points}{inverse}{pagination}{!extension IN png,gif,jpg}>
+		
+		[(#REM) calcul de l'url de l'objet parent ]
+		<BOUCLE_lien_article(documents_liens){id_document}{objet=article}>
+			<BOUCLE_url_article(ARTICLES){id_objet}>#SET{url, #URL_ARTICLE}</BOUCLE_url_article>
+		</BOUCLE_lien_article>
+		<BOUCLE_lien_rubrique(documents_liens){id_document}{objet=rubrique}>
+			<BOUCLE_url_rubrique(RUBRIQUES){id_objet}>#SET{url,#URL_RUBRIQUE}</BOUCLE_url_rubrique>
+		</BOUCLE_lien_rubrique>
+		
+		<li class="clearfix">
+			<h3 class="spip">[[(#COMPTEUR_BOUCLE|<{10}|oui)0](#COMPTEUR_BOUCLE)].&ensp;<a href="[(#GET{url})#document-#ID_DOCUMENT]">[(#TITRE|sinon{<:document_sans_titre:>})]</a></h3>
+			[(#LOGO_DOCUMENT|image_reduire{95,0}|inserer_attribut{alt,[(#TITRE|sinon{<:document_sans_titre:>})]})]
+			[<p class="intro">(#INTRODUCTION|PtoBR)</p>]
+			
+			<ul class="meta-publi">
+				<li class="info-publi">[(#DATE|affdate)]</li>
+				<li class="lire-suite"><a href="[(#GET{url})#document-#ID_DOCUMENT]" title="<:afficher_document:>"><:afficher_document:></a></li>
+			</ul>
+		</li>
+		</BOUCLE_documents>
+	</ul>
+	[<p class="pagination">(#PAGINATION{page})</p>]
+</div>
+</B_documents>

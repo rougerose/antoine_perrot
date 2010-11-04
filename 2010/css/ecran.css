@@ -84,7 +84,7 @@ blockquote, q { quotes: "" ""; }
 /* ------------------------------------ */
 body { position: relative; padding-top: 36px; }
 	#page {  }
-		#entete { position: fixed; }
+		#entete { position: fixed; top: 36px; }
 		#nav { position: fixed; top:108px; z-index:0; }
 		#conteneur {
 			position: relative;
@@ -103,7 +103,7 @@ body { position: relative; padding-top: 36px; }
 				width: 700px; }
 			#conteneur #hierarchie { 
 				clear: both;
-				padding: 1.5em 10px 0 5px; }
+				xpadding: 1.5em 10px 0 5px; }
 			#pied {
 				position: relative;
 				text-align:center;
@@ -116,12 +116,14 @@ body { position: relative; padding-top: 36px; }
 /* ------------------------------------ */
 
 .item, 
-#slider,
-.rubrique_oeuvres .panneau,
-#hierarchie { border-top: 1px solid #000; background-color: rgba(253,253,253,0.95); }
+#slider { border-top: 1px solid #000; xbackground-color: rgba(253,253,253,0.95); }
 
-.section {  }
-	.section h2.titre { margin-left: 5px; margin-bottom: 1em; }
+#contenu,
+#hierarchie { background-color: rgba(253,253,253,0.95); }
+
+
+/*.section {  }
+	.section h2.titre { margin-left: 5px; margin-bottom: 1em; }*/
 
 .page_article .item { padding-bottom: 1.5em; }
 
@@ -155,8 +157,6 @@ h1,h2,h3,h4,h5,h6,
 	font-style: normal;
 }
 
-.item div.titre h2,
-h3.titre, 
 .documents dd h3,
 .spip_documents dd h3 { 
 	font-family: "HelveticaNeue-LightItalic", "Helvetica Neue"; 
@@ -171,8 +171,10 @@ table.spip caption,
 table.spip th { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
 
 .texte a, 
+.auteurs a,
 .item .hyperlien a,
-#hierarchie a {
+#hierarchie a,
+p.pagination a {
 	font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
 	font-weight: 800;
 }
@@ -216,10 +218,12 @@ a:active { outline: none; }
 .item a.spip_out:hover { background-position: right -80px; }
 .item a.spip_glossaire:hover { background-position: right -112px; }
 
+a[name] { padding:0; color: transparent; }
+
 /* ------------------------------------ */
 /*  Entete								*/
 /* ------------------------------------ */
-#entete { margin-left: 40px; margin-bottom: 36px; }
+#entete { margin-left: 40px; float: left; }
 	#entete #logo { font-size: 30px; line-height: 36px; }
 		#entete #logo a { color:#000; }
 
@@ -254,8 +258,9 @@ a:active { outline: none; }
 	position: relative;
 	width: 700px; }
 	#slider h2.titre {
-		font-size: 20px; line-height: 1em;
-		margin-bottom:1em; margin-top: .5em; }
+		font-size: 28px; line-height: 36px;
+		margin-left: 5px;
+		margin-bottom:1em; xmargin-top: .5em; }
 	#slider .navigation { 
 		position:absolute; right: 10px; top: 18px;
 		padding-right: 40px;
@@ -292,17 +297,22 @@ a:active { outline: none; }
 /* ------------------------------------ */
 .visuOeuvres {}
 	.panneau {
-		width: 680px;
-		padding: 0 10px 20px 10px; }
+		width: 700px;
+		xpadding: 0 10px 20px 5px; }
+	.panneau h3.titre { margin-left: 5px; margin-right: 10px; }
 	#slider .panneau { border-top-width: 0; background-color: transparent; }
-		.visuOeuvres h3.titre { font-size:20px; margin-bottom:1.5em; }
-		.oeuvreConteneur {}
+		.visuOeuvres h3.titre { 
+			font-size:22px; line-height: 1em;
+			border-top: 1px solid #000;
+			width: 455px;
+			margin-bottom:1.25em; padding-top: .25em; }
+		.oeuvreConteneur { padding: 0 10px 20px 5px; }
 			/* zone agrandissement */
 			.imgAgrandissement { 
 				float: left;
-				width: 450px; text-align:center;
+				width: 455px; text-align:center;
 				position: relative;
-				margin-bottom:20px; }
+				margin-bottom: 20px; }
 				.imgAgrandissement img { background-color: #fff; margin:0 auto; padding: 5px; }
 				.imgAgrandissement .conteneurDesc { 
 					text-align:left;
@@ -346,21 +356,20 @@ a:active { outline: none; }
 /* -------------------------------- */
 /*	hentry	(styles communs)		*/
 /* -------------------------------- */
+.hfeed .item { border-top: 0; }
 .hentry, .sites .item, .oeuvres .item { margin-bottom: 1.5em; padding-bottom: 1.5em; }
-.hentry.mineur, .sites .mineur { 
-	border-top:1px solid #000;
-	float: left;
-	width: 340px; }
+.hentry.mineur, .sites .mineur { float: left; width: 340px; }
 .hentry.mineur.numero-1, .sites .numero-1 { clear:left; }
 .hentry.mineur.numero-0, .sites .numero-0 { margin-left:20px; }
-	.hentry h2.titre { 
-		/* titre de la rubrique parente */
-		font-size:15px; }
-	.hentry div.titre { margin: .5em 0 1em; }
-		.hentry .entry-title, .sites .titre { font-size:18px; line-height: 1em; }
-		.hentry.majeur .entry-title { font-size: 20px; }
+	.hentry .titre-rubrique { /* titre de la rubrique parente */ font-size:15px; }
+	.hentry.mineur .titre-rubrique { border-top: 1px solid #000; margin-left: 5px; margin-right: 10px; }
+	.hentry div.titre { xmargin-top: .5em; margin-bottom: 1em; }
+		.hentry .entry-title, .sites .titre { font-size: 20px; line-height: 1em; }
+		.page_rubrique .hentry .entry-title, .sites h3.titre { 
+			border-top: 1px solid #000;
+			padding-top: .5em; }
 		.hentry.item .entry-title, .hentry.item .entry-content, .sites .titre, .sites .introduction { margin-left: 5px; margin-right: 10px; }
-		.hentry.item .entry-title, .sites .titre { margin-top: .5em; margin-bottom: 1em; }
+		.hentry.item .entry-title, .sites .titre { xmargin-top: .5em; margin-bottom: 1em; }
 	.hentry .info-publi {  }
 	.hentry .auteurs {  }
 	.hentry .entry-content {  }
@@ -377,25 +386,27 @@ a:active { outline: none; }
 			margin-top: .75em; }
 		.hentry.majeur .entry-content ul.meta-publi { width: 450px; }
 		.hentry.mineur .entry-content ul.meta-publi, .sites .introduction ul.meta-publi { width: 210px; }
-			.entry-content ul.meta-publi li, .sites .introduction ul.meta-publi li { 
+			.entry-content ul.meta-publi li, .sites .introduction ul.meta-publi li, .resultats ul li ul.meta-publi li { 
 				font-size:11px; line-height: 1.1em;
 				float: left;
 				display: inline;
 				border-right: 1px solid #000;
 				margin-right: 5px; padding-right: 5px; }
 			.introduction ul.meta-publi li.info-publi { margin-left:0; }
-			.introduction ul.meta-publi li.lire-suite { border-right-width: 0; }
+			.introduction ul.meta-publi li.lire-suite, .resultats ul.meta-publi li.lire-suite { border-right-width: 0; }
 				ul.meta-publi li.lire-suite a, .imgApercu li.lire-suite a { 
 					text-indent: -9999px;
 					background: #fff url(../img/img-sprites.png) no-repeat -16px -50px;
 					display: block;
 					outline:0;
-					height: 12px; width: 16px; }
+					height: 13px; width: 16px;
+					padding: 0; }
 				ul.meta-publi li.lire-suite a:hover, .imgApercu li.lire-suite a:hover { background-position: -16px -66px; background-color: #000; }
 
 .hentry img.spip_logos,
 .sites .item img.spip_logos,
-.item .texte p.logo img { 
+.item .texte p.logo img,
+.resultats li img.spip_logos { 
 	background-color: #fff;
 	float:left;
 	padding: 3px; }
@@ -427,15 +438,25 @@ a:active { outline: none; }
 
 
 /* -------------------------------- */
-/*	rubrique						*/
+/*	rubriques						*/
 /* -------------------------------- */
-.page_rubrique .titre h2 { font-size: 28px; line-height:36px; margin-bottom: 1em; }
+.page_rubrique .titre { 
+	border-top: 1px solid #000; }
+	.page_rubrique .titre h2 { 
+		font-size: 28px; line-height:36px; 
+		margin-bottom: 1em; margin-left: 7px; }
 
+.rubrique_biographie .hentry .entry-title,
+.rubrique_biographie .titre { border-top: none; padding-top: 0; }
 
+.rubrique_liens .sites .item { border-top: none; }
+.rubrique_liens .sites .item .info-publi { margin-bottom: 0; }
 /* -------------------------------- */
 /*	rubrique œuvres					*/
 /* -------------------------------- */
-.oeuvres { position: relative; }
+.rubrique_oeuvres .panneau.item { border-top-width: 0; }
+
+div.oeuvres { position: relative; }
 
 /* menu de tri */
 ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
@@ -478,16 +499,8 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 
 .item .hentry { margin: 0; padding: 0; }
-	.item .hentry > div, .item > div.titre { margin: 0 10px 0 5px; }
-	
-	.item .hentry .info-publi,
-	.item .hentry .vcalendar,
-	.item .hentry .chapo,
-	.item .hentry .texte,
-	.item .hentry p.hyperlien,
-	.item .hentry .ps,
-	.item .hentry .documents,
-	.item .hentry .notes  { margin-bottom: 3em; }
+
+	.item .section { margin: 0 10px 1.5em 5px; }
 	
 	.item div.titre { margin-bottom: 1em; }
 	.item div.titre h2 { font-size:28px; line-height: 36px; margin-top: 0; }
@@ -516,16 +529,21 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 		padding: 0; margin: 0 20px 0 10px; }
 	
 	.item .texte p.logo a { display: block; }
-
+	
+	.item .notes { width: 450px; }
+	.item .notes h3 { 
+		border-bottom: 1px solid #666;
+		margin-left: 0; }
 
 /* -------------------------------- */
 /*	documents (dans le portfolio)	*/
 /* -------------------------------- */
 .documents {  }
+	.documents dl a { padding:0; }
 	.documents h3.spip { 
 		border-bottom: 1px solid #666;
 		float: left;
-		margin-bottom: 1.5em; margin: 0 0 1.5em;
+		margin-bottom: 1.5em; margin-left: 0;
 		width: 450px; }
 	.documents dl { clear: left; margin-bottom: 3em; }
 		.documents dl dt { float: left; }
@@ -623,13 +641,49 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 
 
 /* -------------------------------- */
+/*	Recherche (page résultats)		*/
+/* -------------------------------- */
+.resulats {  }
+	.resultats h2.spip { 
+		border-top: 1px solid #333;
+		margin-left: 0;
+		float: right;
+		width: 564px; }
+	.resultats ul.liste { clear: left; } 
+	.resultats ul li { margin-bottom: 1.5em; }
+		.resultats ul li h3.spip {
+			font-size: 18px; 
+			text-indent: -30px; margin-left: 30px; margin-top: 0;
+			float: right; clear: none;
+			width: 534px; }
+		.resultats ul li p, .resultats ul li ul { float: right; width: 532px; }
+		.resultats ul li p { margin-bottom: 1em; }
+		.resultats ul li ul li.info-publi { margin-left:0; }
+	
+
+
+/* -------------------------------- */
 /*	hierarchie						*/
 /* -------------------------------- */
 #hierarchie { xborder-top-width: 2px; padding: 0 10px 0 5px; }
 	#hierarchie p { 
 		color:#999;
-		padding-bottom: 1.5em; }
-		#hierarchie strong {  }
+		border-top: 1px solid #000;
+		padding-bottom: 1em; padding-top: .5em; }
+
+
+/* -------------------------------- */
+/*	pagination						*/
+/* -------------------------------- */
+p.pagination { 
+	font-size: 12px;
+	border-top: 1px solid #000;
+	margin: 0 0 0 340px; padding-top: .25em;
+	width: 340px; }
+	p.pagination strong { 
+		font-size: 1em; 
+		color: #fff; background-color: #000; 
+		padding: 0 2px 2px; }
 
 /* -------------------------------- */
 /*	pied de page					*/

@@ -1,0 +1,19 @@
+<B_rubriques>
+<div class="resultats rubriques section">
+	#ANCRE_PAGINATION
+	<h2 class="spip">[[(#GRAND_TOTAL) ](#GRAND_TOTAL|singulier_ou_pluriel{local:rubrique,local:rubriques})]</h2>
+	<ul class="liste clearfix">
+		<BOUCLE_rubriques(RUBRIQUES){recherche}{par points}{inverse}{pagination 5}>
+		<li>
+			<h3 class="spip">[[(#COMPTEUR_BOUCLE|<{10}|oui)0](#COMPTEUR_BOUCLE)].&ensp;<a href="#URL_RUBRIQUE">#TITRE</a></h3>
+			[<p class="intro">(#INTRODUCTION|PtoBR)</p>]
+			<ul class="meta-publi">
+				<li class="info-publi">[(#DATE|affdate)]</li>
+				<li class="lire-suite"><a href="#URL_ARTICLE" title="<:lire_la_suite:>"><:lire_la_suite:></a></li>
+			</ul>
+		</li>
+		</BOUCLE_rubriques>
+	</ul>
+	[<p class="pagination">(#PAGINATION)</p>]
+</div>
+</B_rubriques>

@@ -12,7 +12,7 @@ Distribue sous licence GPL
 <div id="article-#ID_ARTICLE" class="item hentry[ numero-(#ENV{compteur})][ (#ENV{format})]">
 	<BOUCLE_titre_rubrique(RUBRIQUES){id_rubrique}>
 	[(#ENV{composition}|match{sommaire}|oui)
-	<h2 class="titre"><a href="#URL_RUBRIQUE">#TITRE</a></h2>
+	<h4 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE</a></h4>
 	]
 	</BOUCLE_titre_rubrique>
 	<h3 class="entry-title titre"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>

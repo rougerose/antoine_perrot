@@ -22,7 +22,7 @@ h2.spip, h3.spip, h4.spip, h5.spip, h6.spip {
 	clear: left;
 	margin-bottom: .5em; margin-top: 1em; }
 .item h2.spip, .item h3.spip, .item h4.spip, .item h5.spip, .item h6.spip { margin-left: 20px; } /* uniquement pour l'espace public */
-h2.spip { font-size: 24px; line-height: 28px; }
+h2.spip { font-size: 23px; line-height: 26px; }
 h3.spip { font-size: 20px; line-height: 22px; }
 h4.spip { font-size: 18px; }
 h5.spip { font-size: 16px; }

@@ -2,10 +2,10 @@
 	Liste des autres documents joints
 ]
 <B_documents_joints>
-<div class="liste documents documents_joints">
+<div class="liste documents documents_joints section">
 	<h3 class="spip"><:titre_documents_joints:></h3>
 	<BOUCLE_documents_joints(DOCUMENTS){id_article?}{id_rubrique?}{extension !IN gif,jpg,png}{vu=non}{par num titre, date}>
-	<dl class="document clearfix">
+	<dl id="document-#ID_DOCUMENT" class="document clearfix">
 		<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT)]</dt>
 		<dd>
 			[<h3><a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:document_sans_titre:>})]</a></h3>]
@@ -25,10 +25,10 @@
 
 [(#REM) Portfolio : album d'images ]
 <B_documents_portfolio>
-<div class="documents documents_portfolio">
+<div class="documents documents_portfolio section">
 	<h3 class="spip"><:info_portfolio:></h3>
 	<BOUCLE_documents_portfolio(DOCUMENTS) {id_article?}{id_rubrique?} {mode=document}{extension IN png,jpg,gif} {par num titre, date}{vu=non}>
-	<dl class="clearfix">
+	<dl id="document-#ID_DOCUMENT" class="clearfix">
 		<dt>
 			[(#FICHIER
 				|image_reduire{444,0}
@@ -46,9 +46,6 @@
 			[<p class="descriptif credits">(#CREDITS)</p>]
 		</dd>]
 	</dl>
-	
-	
-	
 	</BOUCLE_documents_portfolio>
 </div>
 </B_documents_portfolio>
