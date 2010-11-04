@@ -645,7 +645,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 .resulats {  }
 	.resultats h2.spip { 
-		border-top: 1px solid #333;
+		border-top: 1px solid #666;
 		margin-left: 0;
 		float: right;
 		width: 564px; }
@@ -653,10 +653,12 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 	.resultats ul li { margin-bottom: 1.5em; }
 		.resultats ul li h3.spip {
 			font-size: 18px; 
-			text-indent: -30px; margin-left: 30px; margin-top: 0;
+			text-indent: -33px; 
+			margin-left: 33px; margin-top: 0; margin-bottom: .5em;
+			border-bottom: none;
 			float: right; clear: none;
-			width: 534px; }
-		.resultats ul li p, .resultats ul li ul { float: right; width: 532px; }
+			width: 531px; }
+		.resultats ul li p, .resultats ul li ul { float: right; width: 531px; }
 		.resultats ul li p { margin-bottom: 1em; }
 		.resultats ul li ul li.info-publi { margin-left:0; }
 	
@@ -677,8 +679,8 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 p.pagination { 
 	font-size: 12px;
-	border-top: 1px solid #000;
-	margin: 0 0 0 340px; padding-top: .25em;
+	border-top: 1px solid #666;
+	margin: 0 0 0 345px; padding-top: .25em;
 	width: 340px; }
 	p.pagination strong { 
 		font-size: 1em; 
