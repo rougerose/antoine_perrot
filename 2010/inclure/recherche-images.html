@@ -14,11 +14,9 @@
 		</BOUCLE_lien_rubrique>
 		
 		<li class="clearfix">
-			<h3 class="spip">[[(#COMPTEUR_BOUCLE|<{10}|oui)0](#COMPTEUR_BOUCLE)].&ensp;<a href="[(#GET{url})#document-#ID_DOCUMENT]">[(#TITRE|sinon{<:document_sans_titre:>})]</a></h3>
+			<h3 class="spip">[[(#COMPTEUR_BOUCLE|<{10}|oui)0](#COMPTEUR_BOUCLE)]. <a href="[(#GET{url})#document-#ID_DOCUMENT]">[(#TITRE|sinon{<:document_sans_titre:>})]</a></h3>
 			[(#LOGO_DOCUMENT|image_reduire{95,0}|inserer_attribut{alt,[(#TITRE|sinon{<:document_sans_titre:>})]})]
-			[<p class="intro">(#INTRODUCTION|PtoBR)</p>]
-			
-			<p>#GET{objet}</p>
+			[<p class="intro">(#DESCRIPTIF|PtoBR)</p>]
 			<ul class="meta-publi">
 				<li class="info-publi">[(#DATE|affdate)]</li>
 				<li class="lire-suite"><a href="[(#GET{url})#document-#ID_DOCUMENT]" title="<:afficher_image:>"><:afficher_image:></a></li>
