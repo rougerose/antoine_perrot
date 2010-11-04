@@ -114,9 +114,6 @@ body { position: relative; padding-top: 36px; }
 
 .item, 
 #slider { border-top: 1px solid #333; }
-/*
-#contenu,
-#hierarchie { background-color: rgba(253,253,253,0.95); }*/
 
 #conteneur { background-color: rgba(253,253,253,0.95); }
 
@@ -336,7 +333,7 @@ a[name] { padding:0; color: transparent; }
 					.imgApercu li .imgDesc { display: none; }
 				.imgApercu li.lire-suite { 
 					position: relative;
-					border-top: 1px dotted #999;
+					border-top: 1px dotted #666;
 					margin: 1em 7px 0;
 					width: 196px; }
 					.imgApercu li.lire-suite a { 
@@ -377,7 +374,7 @@ a[name] { padding:0; color: transparent; }
 	.hentry.item .entry-content p { width: 450px; }
 	.hentry.mineur .entry-content p, .sites .introduction p { width: 210px; }
 		.entry-content .infos {  
-			border-bottom:1px dotted #999;
+			border-bottom:1px dotted #666;
 			margin: 0; }
 		.entry-content .intro { margin: 0 0 0.75em; }
 		.entry-content .infos + .intro { margin: 0.75em 0 0.75em; }
@@ -390,7 +387,7 @@ a[name] { padding:0; color: transparent; }
 				font-size:11px; line-height: 1.1em;
 				float: left;
 				display: inline;
-				border-right: 1px solid #000;
+				border-right: 1px solid #666;
 				margin-right: 5px; padding-right: 5px; }
 			.introduction ul.meta-publi li.info-publi { margin-left:0; }
 			.introduction ul.meta-publi li.lire-suite, .resultats ul.meta-publi li.lire-suite { border-right-width: 0; }
@@ -415,7 +412,7 @@ a[name] { padding:0; color: transparent; }
 	.sites .item img.spip_logos { margin-right:9px; }
 	
 	.sites .item img.spip_logos,
-	.item .texte p.logo img { border: 1px solid #d7ccdd; border-color: #f3e6f9 #d4c8d8 #d4c8d8 #f3e6f9; }
+	.item .texte p.logo img { border: 1px solid #eee; }
 
 /* -------------------------------- */
 /*	agenda (vcalendar)				*/
