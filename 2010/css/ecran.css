@@ -93,7 +93,6 @@ body { position: relative; padding-top: 36px; }
 			#conteneur #contenu { 
 				position:relative; z-index:20;
 				float: left;
-				xmargin-bottom: 1.5em;
 				width: 700px; }
 			.page_sommaire #conteneur #contenu { 
 				padding: 0;
@@ -101,9 +100,7 @@ body { position: relative; padding-top: 36px; }
 			#conteneur #navigation { 
 				position:absolute; top: -2em; z-index:0;
 				width: 700px; }
-			#conteneur #hierarchie { 
-				clear: both;
-				xpadding: 1.5em 10px 0 5px; }
+			#conteneur #hierarchie { clear: both; }
 			#pied {
 				position: relative;
 				text-align:center;
@@ -116,7 +113,7 @@ body { position: relative; padding-top: 36px; }
 /* ------------------------------------ */
 
 .item, 
-#slider { border-top: 1px solid #000; xbackground-color: rgba(253,253,253,0.95); }
+#slider { border-top: 1px solid #000; }
 
 #contenu,
 #hierarchie { background-color: rgba(253,253,253,0.95); }
@@ -260,7 +257,7 @@ a[name] { padding:0; color: transparent; }
 	#slider h2.titre {
 		font-size: 28px; line-height: 36px;
 		margin-left: 5px;
-		margin-bottom:1em; xmargin-top: .5em; }
+		margin-bottom:1em; }
 	#slider .navigation { 
 		position:absolute; right: 10px; top: 18px;
 		padding-right: 40px;
@@ -296,9 +293,7 @@ a[name] { padding:0; color: transparent; }
 /*	Visualisation des oeuvres 			*/
 /* ------------------------------------ */
 .visuOeuvres {}
-	.panneau {
-		width: 700px;
-		xpadding: 0 10px 20px 5px; }
+	.panneau { width: 700px; }
 	.panneau h3.titre { margin-left: 5px; margin-right: 10px; }
 	#slider .panneau { border-top-width: 0; background-color: transparent; }
 		.visuOeuvres h3.titre { 
@@ -364,13 +359,13 @@ a[name] { padding:0; color: transparent; }
 .hentry.mineur.numero-0, .sites .numero-0 { margin-left:20px; }
 	.hentry .titre-rubrique { /* titre de la rubrique parente */ font-size:15px; }
 	.hentry.mineur .titre-rubrique { border-top: 1px solid #000; margin-left: 5px; margin-right: 10px; }
-	.hentry div.titre { xmargin-top: .5em; margin-bottom: 1em; }
+	.hentry div.titre { margin-bottom: 1em; }
 		.hentry .entry-title, .sites .titre { font-size: 20px; line-height: 1em; }
 		.page_rubrique .hentry .entry-title, .sites h3.titre { 
 			border-top: 1px solid #000;
 			padding-top: .5em; }
 		.hentry.item .entry-title, .hentry.item .entry-content, .sites .titre, .sites .introduction { margin-left: 5px; margin-right: 10px; }
-		.hentry.item .entry-title, .sites .titre { xmargin-top: .5em; margin-bottom: 1em; }
+		.hentry.item .entry-title, .sites .titre { margin-bottom: 1em; }
 	.hentry .info-publi {  }
 	.hentry .auteurs {  }
 	.hentry .entry-content {  }
@@ -616,7 +611,6 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 #formulaire_recherche { 
 	border:	1px solid #ccc;
-	xborder-color: #ccc #eee #eee #ccc;
 	margin-left: 40px;
 	width:236px; }
 	#formulaire_recherche label { display:none; }
@@ -668,7 +662,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 /*	hierarchie						*/
 /* -------------------------------- */
-#hierarchie { xborder-top-width: 2px; padding: 0 10px 0 5px; }
+#hierarchie { padding: 0 10px 0 5px; }
 	#hierarchie p { 
 		color:#999;
 		border-top: 1px solid #000;
