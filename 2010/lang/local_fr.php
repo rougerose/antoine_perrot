@@ -33,7 +33,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'ou' => 'o&ugrave;&nbsp;?',
 	
 	// P
-	'pages' => 'pages',
+	'page' => 'page',
 	'publie' => 'publi&eacute; le',
 	'ps' => 'Post-scriptum',
 	

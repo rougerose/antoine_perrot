@@ -5,7 +5,7 @@
 #SET{pages,#GET{premiere}|range{#GET{derniere}}}
 #SET{separateur,#ENV{separateur,'|'}}
 <B_pages>
-<span class='pagination_label'><:pages:></span>
+<span class='pagination_label'><:page:></span>
 [<a href='[(#ENV{url}|parametre_url{#ENV{debut},''})]##ENV{ancre}' class='lien_pagination' rel='nofollow'>(#GET{premiere}|>{1}|?{'...',''})</a> [<span class='sep separateur'>(#GET*{separateur})</span>]]
 <BOUCLE_pages(POUR){tableau #GET{pages}}>
 [(#SET{item, #VALEUR|moins{1}|mult{#ENV{pas}} })]
