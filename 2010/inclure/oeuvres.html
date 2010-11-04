@@ -45,8 +45,10 @@
 </ul>
 
 <div class="visuOeuvres clearfix">
-	<BOUCLE_oeuvres(ARTICLES){id_rubrique}{id_mot ?}{tri date,#GET{sens}}{pagination}>
+	#ANCRE_PAGINATION
+	<BOUCLE_oeuvres(ARTICLES){id_rubrique}{id_mot ?}{tri date,#GET{sens}}{pagination 5}>
 	[(#INCLURE{fond=inclure/oeuvre,id_article})]
 	</BOUCLE_oeuvres>
+	[<p class="pagination">(#PAGINATION{page})</p>]
 </div><!-- .visuOeuvres -->
 </B_oeuvres>

@@ -302,10 +302,11 @@ a[name] { padding:0; color: transparent; }
 	.panneau h3.titre { margin-left: 5px; margin-right: 10px; }
 	#slider .panneau { border-top-width: 0; background-color: transparent; }
 		.visuOeuvres h3.titre { 
-			font-size:22px; line-height: 1em;
+			font-size:20px; line-height: 1em;
 			border-top: 1px solid #000;
 			width: 455px;
 			margin-bottom:1.25em; padding-top: .25em; }
+		.page_sommaire .visuOeuvres h3.titre { font-size: 22px; }
 		.oeuvreConteneur { padding: 0 10px 20px 5px; }
 			/* zone agrandissement */
 			.imgAgrandissement { 
