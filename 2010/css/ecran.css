@@ -673,11 +673,6 @@ p.pagination {
 	width: 685px;
 	margin: 0 10px 1.5em 5px; padding: .25em 0; }
 	
-.xresultats p.pagination { 
-	float: right;
-	width: 100%;
-	margin: 0 0 1.5em;
-	margin-bottom: 1.5em; }
 	p.pagination strong { 
 		font-size: 1em; 
 		color: #fff; background-color: #000; 
