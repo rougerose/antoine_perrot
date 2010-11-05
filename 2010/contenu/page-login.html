@@ -9,6 +9,8 @@
 		[<h2>(#GET{prive}|?{<:login_acces_prive:>,<:lien_connecter:>})</h2>]
 	</div><!-- .titre -->
 	
-	[(#FORMULAIRE_LOGIN{#ENV{url}|sinon{#URL_ECRIRE{accueil}}})]
+	<div class="ajax section">
+		[(#FORMULAIRE_LOGIN{#ENV{url}|sinon{#URL_ECRIRE{accueil}}})]
+	</div>
 
 </div><!-- .contenu-principal -->

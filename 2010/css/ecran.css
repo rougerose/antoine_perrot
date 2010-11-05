@@ -156,13 +156,18 @@ h1,h2,h3,h4,h5,h6,
 .label,
 .item .chapo,
 table.spip caption,
-table.spip th { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
+table.spip th,
+.formulaire_spip legend,
+.formulaire_login input.submit { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
 
 .texte a, 
 .auteurs a,
 .item .hyperlien a,
 #hierarchie a,
-p.pagination a {
+p.pagination a,
+.formulaire_spip a,
+.reponse_formulaire_erreur,
+.erreur_message {
 	font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
 	font-weight: 800;
 }
@@ -191,7 +196,7 @@ a:active { outline: none; }
 	transition: color .6s ease-out, background-color .6s ease-out;
 	-webkit-transition: color .6s ease-out, background-color .6s ease-out;
 	-o-transititon: color .6s ease-out, background-color .6s ease-out;
-	-moz-transition: color .6s ease-out, background-color .6s ease-out;; }
+	-moz-transition: color .6s ease-out, background-color .6s ease-out; }
 .section h3.titre a { padding: 0px 1px 2px; }
 
 .item a.spip_out, .item a.spip_glossaire {
@@ -501,7 +506,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 
 	.item .section { margin: 0 10px 0 5px; }
 	
-	.item div.titre { margin-bottom: 1em; }
+	.item div.titre { margin-bottom: 1.5em; }
 	.item div.titre h2 { font-size:28px; line-height: 36px; margin-top: 0; }
 	
 	.item p.logo { float:right; width: 220px; }
@@ -660,6 +665,97 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 		.resultats ul li p, .resultats ul li ul { float: right; width: 531px; }
 		.resultats ul li p { margin-bottom: 1em; }
 		.resultats ul li ul li.info-publi { margin-left:0; }
+
+/* -------------------------------- */
+/*	formulaires						*/
+/* -------------------------------- */
+
+/* Reponses, previsu et erreurs
+----------------------------------------------- */
+
+.formulaire_spip li { position: relative; }
+
+/* Champs obligatoires */
+.formulaire_spip li.obligatoire {}
+.formulaire_spip li.obligatoire label {}
+
+/* Previsualisation du message */
+.formulaire_spip fieldset.previsu { margin-bottom: 2em; padding: 1em; border: 2px dashed #F57900; }
+.formulaire_spip fieldset.previsu legend { padding: 0 0.50em; font-weight: bold; color: #F57900; }
+.formulaire_spip fieldset.previsu li { padding: 3px; border: none; }
+.formulaire_spip fieldset.previsu p { margin: 1em 0; } 
+
+/* Reponse du formulaire */
+.reponse_formulaire { color: #e86519; }
+fieldset.reponse_formulaire { border-color: #e86519; }
+fieldset.reponse_formulaire.reponse_formulaire legend { color: #F57900; } /* Preciser la couleur des legend et du fond pour IE/Win */
+
+/* * Erreurs */
+.formulaire_spip li.erreur .erreur_message { 
+	display: block; float: left;
+	position: absolute; right: 0; top: 2px; }
+
+.formulaire_spip li.erreur input[type="text"],
+.formulaire_spip li.erreur input[type="password"],
+.formulaire_spip li.erreur textarea { background-color: #FCC; border-style: solid; border-color: #C30; }
+
+.reponse_formulaire_erreur {
+	margin-left: 190px;
+	width: 363px; }
+	
+.formulaire_spip li.erreur .erreur_message,
+.reponse_formulaire_erreur {
+	color: #fff; background-color: #c30;
+	padding: 2px 2px 3px;
+	box-shadow: 2px 2px 2px #999;
+	-moz-box-shadow: 2px 2px 2px #999;
+	-webkit-box-shadow: 2px 2px 2px #999;
+}
+
+/* * OK */
+.reponse_formulaire_ok { margin: 0; color: #53AD20; }
+
+
+/* formulaire login */
+.formulaire_login { 
+	background-color: #fff;
+	margin: 0 30px 0 35px; }
+	.formulaire_login fieldset {  }
+		.formulaire_login legend { 
+			font-size: 16px;
+			padding-left: 190px; padding-bottom: 1em; }
+		.formulaire_login ul { margin: 0 20px; }
+			.formulaire_login li { margin-bottom: 1.5em; }
+				.formulaire_login label { 
+					font-size: 12px;
+					display: block; float: left;
+					margin: 2px 0; padding: 2px 0;
+					width: 170px; }
+				.formulaire_login label.nofx { margin: 0; padding: 0; }
+				.formulaire_login span.details { 
+					display: block;
+					margin: 1em 0 1em 170px; }
+				.formulaire_login input { 
+					font-size: 14px;
+					border: 1px solid #999; }
+				.formulaire_login input[type="text"], .formulaire_login input[type="password"] { margin: 2px 0; padding: 2px 0; }
+				.formulaire_login p.boutons { margin-left: 190px; padding-bottom: 1.5em; }
+					.formulaire_login p.boutons input { 
+						background-color: #fff; color: #666;
+						padding: auto; }
+						
+				/* transitions */
+				.formulaire_login input { 
+					transition: color .6s ease-out, background-color .6s ease-out;
+					-webkit-transition: color .6s ease-out, background-color .6s ease-out, border-color .6s ease-out;
+					-o-transititon: color .6s ease-out, background-color .6s ease-out;
+					-moz-transition: color .6s ease-out, background-color .6s ease-out; }
+				.formulaire_login input:focus { border-color: #000; }
+				.formulaire_login p.boutons input:hover { 
+					border-color: #000;
+					color: #fff; background-color: #000; }
+
+
 
 
 /* -------------------------------- */
