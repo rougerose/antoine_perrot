@@ -1,5 +1,5 @@
 <composition>
 	<nom>Rubrique biographie</nom>
-	<description>Composition adaptée pour la rubrique Biographie (affiche directement le contenu de l'article qu'elle contient)</description>
+	<description>Composition adaptée pour la rubrique Biographie (affiche directement le contenu de l'article désigné comme article d'accueil).</description>
 	<icon>images/article-portfolio.png</icon>
 </composition>

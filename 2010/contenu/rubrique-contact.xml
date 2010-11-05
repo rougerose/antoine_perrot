@@ -1,0 +1,5 @@
+<composition>
+	<nom>Rubrique contact</nom>
+	<description>Composition adaptée pour la rubrique Contact (affiche directement le contenu de l'article désigné comme article d'accueil).</description>
+	<icon>images/article-portfolio.png</icon>
+</composition>

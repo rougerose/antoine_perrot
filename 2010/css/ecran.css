@@ -670,10 +670,51 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /*	formulaires						*/
 /* -------------------------------- */
 
-/* Reponses, previsu et erreurs
------------------------------------------------ */
-
+/* généralités */
 .formulaire_spip li { position: relative; }
+
+.contenu-principal .formulaire_spip { margin: 0 30px 0 35px; }
+	.contenu-principal .formulaire_spip fieldset {  }
+		.contenu-principal .formulaire_spip legend { 
+			font-size: 16px;
+			padding-left: 190px; padding-bottom: 1em; }
+		.contenu-principal .formulaire_spip ul { margin: 0 20px; }
+			.contenu-principal .formulaire_spip li { margin-bottom: 1.5em; }
+				.contenu-principal .formulaire_spip label { 
+					font-size: 12px;
+					display: block; float: left;
+					margin: 2px 0; padding: 2px 0;
+					width: 170px; }
+				
+				.contenu-principal .formulaire_spip input { 
+					font-size: 14px;
+					border: 1px solid #999; }
+				.contenu-principal .formulaire_spip input[type="text"], .contenu-principal .formulaire_spip input[type="password"] { margin: 2px 0; padding: 2px 0; }
+				.contenu-principal .formulaire_spip p.boutons { margin-left: 190px; padding-bottom: 1.5em; }
+					.contenu-principal .formulaire_spip p.boutons input { 
+						background-color: #fff; color: #666;
+						padding: auto; }
+						
+				/* transitions */
+				.contenu-principal .formulaire_spip input { 
+					transition: color .6s ease-out, background-color .6s ease-out;
+					-webkit-transition: color .6s ease-out, background-color .6s ease-out, border-color .6s ease-out;
+					-o-transititon: color .6s ease-out, background-color .6s ease-out;
+					-moz-transition: color .6s ease-out, background-color .6s ease-out; }
+				.contenu-principal .formulaire_spip input:focus { border-color: #000; }
+				.contenu-principal .formulaire_spip p.boutons input:hover { 
+					border-color: #000;
+					color: #fff; background-color: #000; }
+
+
+/* formulaire login */
+.formulaire_login label.nofx { margin: 0; padding: 0; }
+.formulaire_login span.details { 
+	display: block;
+	margin: 1em 0 1em 170px; }
+
+
+/* Reponses, previsu et erreurs */
 
 /* Champs obligatoires */
 .formulaire_spip li.obligatoire {}
@@ -686,7 +727,9 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 .formulaire_spip fieldset.previsu p { margin: 1em 0; } 
 
 /* Reponse du formulaire */
-.reponse_formulaire { color: #e86519; }
+.reponse_formulaire { 
+	margin-left: 190px;
+	width: 363px; }
 fieldset.reponse_formulaire { border-color: #e86519; }
 fieldset.reponse_formulaire.reponse_formulaire legend { color: #F57900; } /* Preciser la couleur des legend et du fond pour IE/Win */
 
@@ -713,48 +756,12 @@ fieldset.reponse_formulaire.reponse_formulaire legend { color: #F57900; } /* Pre
 }
 
 /* * OK */
-.reponse_formulaire_ok { margin: 0; color: #53AD20; }
-
-
-/* formulaire login */
-.formulaire_login { 
-	background-color: #fff;
-	margin: 0 30px 0 35px; }
-	.formulaire_login fieldset {  }
-		.formulaire_login legend { 
-			font-size: 16px;
-			padding-left: 190px; padding-bottom: 1em; }
-		.formulaire_login ul { margin: 0 20px; }
-			.formulaire_login li { margin-bottom: 1.5em; }
-				.formulaire_login label { 
-					font-size: 12px;
-					display: block; float: left;
-					margin: 2px 0; padding: 2px 0;
-					width: 170px; }
-				.formulaire_login label.nofx { margin: 0; padding: 0; }
-				.formulaire_login span.details { 
-					display: block;
-					margin: 1em 0 1em 170px; }
-				.formulaire_login input { 
-					font-size: 14px;
-					border: 1px solid #999; }
-				.formulaire_login input[type="text"], .formulaire_login input[type="password"] { margin: 2px 0; padding: 2px 0; }
-				.formulaire_login p.boutons { margin-left: 190px; padding-bottom: 1.5em; }
-					.formulaire_login p.boutons input { 
-						background-color: #fff; color: #666;
-						padding: auto; }
-						
-				/* transitions */
-				.formulaire_login input { 
-					transition: color .6s ease-out, background-color .6s ease-out;
-					-webkit-transition: color .6s ease-out, background-color .6s ease-out, border-color .6s ease-out;
-					-o-transititon: color .6s ease-out, background-color .6s ease-out;
-					-moz-transition: color .6s ease-out, background-color .6s ease-out; }
-				.formulaire_login input:focus { border-color: #000; }
-				.formulaire_login p.boutons input:hover { 
-					border-color: #000;
-					color: #fff; background-color: #000; }
-
+.reponse_formulaire_ok {
+	background-color: #53ad20; color: #fff;
+	padding: 2px 4px 3px;
+	box-shadow: 2px 2px 2px #999;
+	-moz-box-shadow: 2px 2px 2px #999;
+	-webkit-box-shadow: 2px 2px 2px #999; }
 
 
 
