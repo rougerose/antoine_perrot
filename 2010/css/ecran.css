@@ -354,7 +354,7 @@ a[name] { padding:0; color: transparent; }
 .hentry.mineur, .sites .mineur { float: left; width: 340px; }
 .hentry.mineur.numero-1, .sites .numero-1 { clear:left; }
 .hentry.mineur.numero-0, .sites .numero-0 { margin-left:20px; }
-	.hentry .titre-rubrique { /* titre de la rubrique parente */ font-size:15px; }
+	.hentry .titre-rubrique { /* titre de la rubrique parente */ font-size:15px; margin-bottom: .5em; }
 	.hentry.mineur .titre-rubrique { border-top: 1px solid #666; margin-left: 5px; margin-right: 10px; }
 	.hentry div.titre { margin-bottom: 1em; }
 		.hentry .entry-title, .sites .titre { font-size: 20px; line-height: 1em; }
@@ -363,12 +363,14 @@ a[name] { padding:0; color: transparent; }
 			padding-top: .5em; }
 		.hentry.item .entry-title, .hentry.item .entry-content, .sites .titre, .sites .introduction { margin-left: 5px; margin-right: 10px; }
 		.hentry.numero-1 .entry-title, 
-		.hentry.numero-1 .entry-content, 
+		.hentry.numero-1 .entry-content,
+		.hentry.numero-1  .titre-rubrique,
 		.sites .numero-1 .titre, 
 		.sites .numero-1 .introduction { margin-right: 0; }
 		
 		.hentry.numero-0 .entry-title, 
-		.hentry.numero-0 .entry-content, 
+		.hentry.numero-0 .entry-content,
+		.hentry.numero-0 .titre-rubrique, 
 		.sites .numero-0 .titre, 
 		.sites .numero-0 .introduction { margin-left: 0; }
 		
@@ -424,7 +426,7 @@ a[name] { padding:0; color: transparent; }
 /*	agenda (vcalendar)				*/
 /* -------------------------------- */
 .vcalendar.float { float:left; }
-.vevent { width: 450px; }
+.vevent { width: 450px; margin-bottom: 1.5em; }
 	.vevent .summary { 
 		border-bottom:1px solid #666;
 		font-size: 15px; }
@@ -516,7 +518,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 	
 	.item .info-publi,
 	.page_article .hentry .info-publi,
-	.rubrique_biographie .hentry .info-publi { xmargin: 0 0 0 480px; margin-left: 480px; }
+	.rubrique_biographie .hentry .info-publi { margin-left: 480px; margin-bottom: 1.5em; }
 	
 	.item .info-publi p { margin-bottom: 0; font-size:11px; }
 	
