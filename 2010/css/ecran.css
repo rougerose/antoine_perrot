@@ -449,7 +449,9 @@ a[name] { padding:0; color: transparent; }
 		margin-bottom: 1em; margin-left: 7px; }
 
 .rubrique_biographie .hentry .entry-title,
-.rubrique_biographie .titre { border-top: none; padding-top: 0; }
+.rubrique_biographie .titre,
+.rubrique_contact .hentry .entry-title,
+.rubrique_contact .titre { border-top: none; padding-top: 0; margin-left: 0; }
 
 .sites .item { border-top: none; }
 .sites .item .info-publi { margin-bottom: 0; }
@@ -673,24 +675,24 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* généralités */
 .formulaire_spip li { position: relative; }
 
-.contenu-principal .formulaire_spip { margin: 0 30px 0 35px; }
+.contenu-principal .formulaire_spip { margin: 0 10px 0 20px; }
 	.contenu-principal .formulaire_spip fieldset {  }
 		.contenu-principal .formulaire_spip legend { 
 			font-size: 16px;
-			padding-left: 190px; padding-bottom: 1em; }
-		.contenu-principal .formulaire_spip ul { margin: 0 20px; }
+			padding-left: 170px; padding-bottom: 1em; }
+		.contenu-principal .formulaire_spip ul {  }
 			.contenu-principal .formulaire_spip li { margin-bottom: 1.5em; }
 				.contenu-principal .formulaire_spip label { 
 					font-size: 12px;
 					display: block; float: left;
 					margin: 2px 0; padding: 2px 0;
 					width: 170px; }
-				
-				.contenu-principal .formulaire_spip input { 
+				.contenu-principal .formulaire_spip input, .contenu-principal .formulaire_spip textarea { 
 					font-size: 14px;
 					border: 1px solid #999; }
-				.contenu-principal .formulaire_spip input[type="text"], .contenu-principal .formulaire_spip input[type="password"] { margin: 2px 0; padding: 2px 0; }
-				.contenu-principal .formulaire_spip p.boutons { margin-left: 190px; padding-bottom: 1.5em; }
+				.contenu-principal .formulaire_spip input[type="text"], .contenu-principal .formulaire_spip input[type="password"], .contenu-principal .formulaire_spip textarea { margin: 2px 0; padding: 2px 0; }
+				.contenu-principal .formulaire_spip textarea { width: 400px; }
+				.contenu-principal .formulaire_spip p.boutons { margin-left: 170px; padding-bottom: 1.5em; }
 					.contenu-principal .formulaire_spip p.boutons input { 
 						background-color: #fff; color: #666;
 						padding: auto; }
@@ -708,6 +710,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 
 
 /* formulaire login */
+.contenu-principal .formulaire_login { margin: 0; }
 .formulaire_login label.nofx { margin: 0; padding: 0; }
 .formulaire_login span.details { 
 	display: block;

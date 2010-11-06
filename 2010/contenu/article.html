@@ -37,6 +37,10 @@
 		</div>]
 		
 		[<div class="#EDIT{texte} texte entry-content surlignable section">(#TEXTE|image_reduire{200,0})</div>]
+		
+		[(#ID_RUBRIQUE|=={7}|oui)
+			#FORMULAIRE_ECRIRE_AUTEUR
+		]
 
 		[<p class="#EDIT{hyperlien} hyperlien section"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
 

@@ -9,6 +9,17 @@ $(document).ready(function(){
 	});
 	
 	/**
+	 * Les messages d'erreur des formulaires sont cachés
+	 * quand l'utilisateur clique à nouveau dans le champs
+	 */
+	
+	$(".formulaire_spip").delegate("li.erreur","click",function(){
+		$(this).find("span").hide();
+		$(this).removeClass("erreur");
+	});
+	
+	
+	/**
 	 * transitions CSS3 non disponibles dans Firefox 3 (max)
 	 */
 	
@@ -226,7 +237,6 @@ $(document).ready(function(){
 		$(".visuOeuvres").visu({conteneur: ".panneau"});
 		$(".rubrique_oeuvres .optionsTri").menuTri();
 	});
-	
 });
 
 /**
