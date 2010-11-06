@@ -681,42 +681,42 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 	.contenu-principal .formulaire_spip fieldset {  }
 		.contenu-principal .formulaire_spip legend { 
 			font-size: 16px;
-			padding-left: 170px; padding-bottom: 1em; }
+			padding-left: 180px; padding-bottom: 1em; }
 		.contenu-principal .formulaire_spip ul {  }
 			.contenu-principal .formulaire_spip li { margin-bottom: 1.5em; }
 				.contenu-principal .formulaire_spip label { 
-					font-size: 12px;
+					font-size: 13px;
 					display: block; float: left;
 					margin: 2px 0; padding: 2px 0;
-					width: 170px; }
+					width: 180px; }
 				.contenu-principal .formulaire_spip input, .contenu-principal .formulaire_spip textarea { 
 					font-size: 14px;
 					border: 1px solid #999; }
 				.contenu-principal .formulaire_spip input[type="text"], .contenu-principal .formulaire_spip input[type="password"], .contenu-principal .formulaire_spip textarea { margin: 2px 0; padding: 2px 0; }
-				.contenu-principal .formulaire_spip textarea { width: 400px; }
-				.contenu-principal .formulaire_spip p.boutons { margin-left: 170px; padding-bottom: 1.5em; }
+				.contenu-principal .formulaire_spip textarea { width: 380px; }
+				.contenu-principal .formulaire_spip p.boutons { margin-left: 180px; padding-bottom: 1.5em; }
 					.contenu-principal .formulaire_spip p.boutons input { 
 						background-color: #fff; color: #666;
 						padding: auto; }
 						
 				/* transitions */
-				.contenu-principal .formulaire_spip input { 
+				.contenu-principal .formulaire_spip input, .contenu-principal .formulaire_spip textarea { 
 					transition: color .6s ease-out, background-color .6s ease-out;
 					-webkit-transition: color .6s ease-out, background-color .6s ease-out, border-color .6s ease-out;
 					-o-transititon: color .6s ease-out, background-color .6s ease-out;
 					-moz-transition: color .6s ease-out, background-color .6s ease-out; }
-				.contenu-principal .formulaire_spip input:focus { border-color: #000; }
+				.contenu-principal .formulaire_spip input:focus, .contenu-principal .formulaire_spip textarea:focus { border-color: #000; }
 				.contenu-principal .formulaire_spip p.boutons input:hover { 
 					border-color: #000;
 					color: #fff; background-color: #000; }
 
 
 /* formulaire login */
-.contenu-principal .formulaire_login { margin: 0; }
+.contenu-principal .formulaire_login { xmargin: 0; }
 .formulaire_login label.nofx { margin: 0; padding: 0; }
 .formulaire_login span.details { 
 	display: block;
-	margin: 1em 0 1em 170px; }
+	margin: 1em 0 1em 180px; }
 
 
 /* Reponses, previsu et erreurs */
