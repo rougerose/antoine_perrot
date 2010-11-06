@@ -140,7 +140,8 @@ h1,h2,h3,h4,h5,h6,
 	font-family: "HelveticaNeue-Italic", "Helvetica Neue";
 	font-style: italic; font-weight: 400; }
 
-.texte blockquote p i {
+.texte blockquote p i,
+textarea, input {
 	font-family: "HelveticaNeue", "Helvetica Neue";
 	font-style: normal;
 }
@@ -675,6 +676,7 @@ ul.optionsTri { position:absolute; right:0; top: -4.25em; z-index:99; }
 /* généralités */
 .formulaire_spip li { position: relative; }
 
+/* les formulaires dans la colonne principale */
 .contenu-principal .formulaire_spip { margin: 0 10px 0 20px; }
 	.contenu-principal .formulaire_spip fieldset {  }
 		.contenu-principal .formulaire_spip legend { 
