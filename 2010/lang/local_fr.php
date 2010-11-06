@@ -17,11 +17,13 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	// F
 	'fichier' => 'fichier',
+	'form_prop_envoyer' => 'Envoyer votre message',
 	
 	// I
 	'image' => 'image',
 	'images' => 'images',
 	'informations' => 'informations',
+	'info_texte_message' => 'Texte de votre message',
 	
 	// L
 	'lire_la_suite' => 'lire la suite',
