@@ -241,8 +241,10 @@ a[name] { padding:0; color: transparent; }
 				-webkit-transition: padding-left .6s ease-out;
 				-o-transition: padding-left .6s ease-out;
 				-moz-transition: padding-left .6s ease-out; }
-			#nav li a:hover { padding-left: 30px; }
-			#nav li a.ff3:hover { padding-left: 40px; }
+			#nav li.on a { padding-left: 30px; }
+			#nav li.off a:hover { padding-left: 30px; }
+			#nav li.off a.ff3:hover { padding-left: 40px; }
+			#nav li a:active, #nav li a:focus { top:0; }
 
 
 /* ------------------------------------ */
