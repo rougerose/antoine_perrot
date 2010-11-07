@@ -2,12 +2,16 @@
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	// A
+	'abonner' => 's&#x27;abonner',
 	'afficher_document' => 'afficher le document',
 	'afficher_image' => 'afficher l&#x27;image',
 	'afficher_site' => 'afficher le site',
 	'article' => 'article',
 	'articles' => 'articles',
 	'article_suivant' => 'article suivant',
+	
+	// C
+	'conception_christophe_le_drean' => 'conception graphique par christophe le drean',
 	
 	// D
 	'date' => 'date',

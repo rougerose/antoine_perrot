@@ -88,7 +88,7 @@ body { position: relative; padding-top: 36px; }
 		#nav { position: fixed; top:108px; z-index:0; }
 		#conteneur {
 			position: relative;
-			margin-left:280px; margin-bottom: 2em;
+			margin-left:280px; xmargin-bottom: 2em;
 			width: 700px; }
 			#conteneur #contenu { 
 				position:relative; z-index:20;
@@ -115,7 +115,7 @@ body { position: relative; padding-top: 36px; }
 .item, 
 #slider { border-top: 1px solid #333; }
 
-#conteneur { background-color: rgba(253,253,253,0.95); }
+#conteneur, #pied { background-color: rgba(253,253,253,0.95); }
 
 
 /* ------------------------------------ */
@@ -141,7 +141,8 @@ h1,h2,h3,h4,h5,h6,
 	font-style: italic; font-weight: 400; }
 
 .texte blockquote p i,
-textarea, input {
+textarea, input,
+#pied h3 {
 	font-family: "HelveticaNeue", "Helvetica Neue";
 	font-style: normal;
 }
@@ -797,13 +798,40 @@ p.pagination {
 #hierarchie { padding: 0 10px 0 5px; }
 	#hierarchie p { 
 		color:#999;
-		border-top: 2px solid #000;
-		padding-bottom: 1em; padding-top: .5em; }
+		border-top: 1px solid #666;
+		padding-bottom: 1em; padding-top: 1em; }
 
 
 /* -------------------------------- */
 /*	pied de page					*/
 /* -------------------------------- */
-#pied {  }
-#pied ul li { display: inline; float:left; }
+#pied { text-align: left; font-size: 11px; }
+#pied div.groupe { 
+	border-top: 1px solid #666;
+	border-bottom: 2px solid #000;
+	margin: 0 10px 0 5px;
+	padding: 1em 0;  }
+	#pied .dernieresPublications { 
+		float: left;
+		margin-right: 20px;
+		width: 340px; }
+	#pied .dernieresPublications dt { 
+		float: left; }
+	#pied .dernieresPublications dt:after { content: "\2003\2192" }
+	#pied .dernieresPublications dd { 
+		max-width: 160px;
+		float: left; }
+	#pied .dernieresPublications dd h3:before { content: "\2003"; }
+	#pied ul.credits {
+		margin-left: 300px; margin-right: 20px;
+		width: 220px; }
+	#pied ul.communication {
+		xbackground-color: blue;
+		float: left;
+		width: 140px;
+		xborder-left: 1px solid #666;
+		xpadding-left: 10px; }
+#pied ul li { 
+	xfont-size: 10px;
+	text-align: left; }
 

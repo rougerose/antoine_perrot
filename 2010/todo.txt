@@ -8,6 +8,7 @@ TODO partout : couleurs des liens (et aussi la couleur de transition en survol)
 TODO rubrique liens : captures sites en grisé, puis couleurs en hover ?
 TODO gestion du tooltip next lorsqu'il n'y a pas d'article suivant (fleche grisée ?)
 TODO styles sur la page d'identification ecrire
+TODO favicon
 
 DONE gestion des couleurs via l'interface privée (id des rubriques dans le menu)
 DONE styles des documents autre que le portfolio
