@@ -16,13 +16,13 @@
 		<div class="section">
 			[(#REM) articles mis en avant, au format hentry ]
 			<BOUCLE_articlesUne(ARTICLES pb_selection){spip_pb_selection.id_rubrique=#ENV{id_rubrique}}{par ordre}{doublons}>
-			[(#INCLURE{fond=inclure/article-resume,id_article,env,format=majeur,tailleImage=220})]
+			[(#INCLURE{fond=inclure/article-resume,id_article,env,format=majeur,tailleImage=214})]
 			</BOUCLE_articlesUne>
 		</div><!-- .section -->
 		</B_articlesUne>
 		
 		[(#REM) articles de la rubrique, au format hentry ]
-		<INCLURE{fond=inclure/articles-hentry,env,ajax,doublons,format=mineur}>
+		<INCLURE{fond=inclure/articles-hentry,env,ajax,doublons,format=mineur,tailleImage=94}>
 		
 	</div><!-- .hfeed -->
 	

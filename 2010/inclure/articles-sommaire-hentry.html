@@ -1,9 +1,6 @@
 [(#SET{format,
 	[(#ENV{format}|sinon{''})]
 })]
-[(#SET{tailleImage,
-	[(#ENV{tailleImage}|sinon{''})]
-})]
 
 <B_articles>
 <div class="hfeed articles sommaire">
@@ -14,8 +11,8 @@
 			id_article,
 			env,
 			format=#GET{format},
-			tailleImage=#GET{tailleImage},
-			compteur=[(#COMPTEUR_BOUCLE|modulo{2})]
+			compteur=[(#COMPTEUR_BOUCLE|modulo{2})],
+			tailleImage=#ENV{tailleImage}
 		})]
 		</BOUCLE_articles>
 	</div><!-- .section clearfix -->

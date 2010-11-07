@@ -5,9 +5,7 @@ Squelette Presentation d'un article dans une liste
 Distribue sous licence GPL
 
 ]
-[(#SET{
-	tailleImage, [(#ENV{tailleImage}|sinon{'100'})]
-})]
+
 <BOUCLE_articles(ARTICLES){id_article}{statut?}>
 <div id="article-#ID_ARTICLE" class="item hentry[ numero-(#ENV{compteur})][ (#ENV{format})]">
 	<BOUCLE_titre_rubrique(RUBRIQUES){id_rubrique}>
@@ -17,7 +15,7 @@ Distribue sous licence GPL
 	</BOUCLE_titre_rubrique>
 	<h3 class="entry-title titre"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
 	<div class="#EDIT{intro} introduction entry-content clearfix">
-		[(#LOGO_ARTICLE|image_reduire{[(#GET{tailleImage})],0}|inserer_attribut{alt,[(#TITRE|textebrut)]})]
+		[(#LOGO_ARTICLE|image_reduire{[(#ENV{tailleImage})],0}|inserer_attribut{alt,[(#TITRE|textebrut)]})]
 		<BOUCLE_evenement(EVENEMENTS){id_article}>
 		[(#INCLURE{fond=inclure/article-evenement-resume,id_article,id_evenement})]
 		</BOUCLE_evenement>

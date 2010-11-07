@@ -2,12 +2,12 @@ $(document).ready(function(){
 	/**
 	 * Grille de mise en page ajoutée aux boutons d'administration de spip
 	 */
-	
+	/*
 	$("#spip-admin").append("<a id='grille' class='spip-admin-boutons' href='#'>Grille</a>");
 	$("#grille").click(function(){
 		$("body").toggleClass("grille");
 	});
-	
+	*/ $("body").toggleClass("grille");
 	/**
 	 * Les messages d'erreur des formulaires sont cachés
 	 * quand l'utilisateur clique à nouveau dans le champs
