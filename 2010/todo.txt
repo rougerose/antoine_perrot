@@ -9,6 +9,10 @@ TODO rubrique liens : captures sites en grisé, puis couleurs en hover ?
 TODO gestion du tooltip next lorsqu'il n'y a pas d'article suivant (fleche grisée ?)
 TODO styles sur la page d'identification ecrire
 TODO favicon
+TODO slider : ajouter nombre de photos disponible avant le lien suite (et aussi dans la rubrique oeuvres)
+TODO rubriques : ajouter le lien de l'article sur les logos
+TODO style surlignable
+TODO loupe et agrandissement des images
 
 DONE gestion des couleurs via l'interface privée (id des rubriques dans le menu)
 DONE styles des documents autre que le portfolio

@@ -7,7 +7,7 @@ $(document).ready(function(){
 	$("#grille").click(function(){
 		$("body").toggleClass("grille");
 	});
-	*/ $("body").toggleClass("grille");
+	*/// $("body").toggleClass("grille");
 	/**
 	 * Les messages d'erreur des formulaires sont cachés
 	 * quand l'utilisateur clique à nouveau dans le champs

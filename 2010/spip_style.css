@@ -21,7 +21,7 @@ h2.spip, h3.spip, h4.spip, h5.spip, h6.spip {
 	line-height: 18px;
 	clear: left;
 	margin-bottom: .5em; margin-top: 1em; }
-.item h2.spip, .item h3.spip, .item h4.spip, .item h5.spip, .item h6.spip { margin-left: 20px; } /* uniquement pour l'espace public */
+.item h2.spip, .item h3.spip, .item h4.spip, .item h5.spip, .item h6.spip {  } /* uniquement pour l'espace public */
 h2.spip { font-size: 23px; line-height: 26px; }
 h3.spip { font-size: 20px; line-height: 22px; }
 h4.spip { font-size: 18px; }
@@ -31,7 +31,7 @@ h6.spip { font-size: 14px; }
 /* Listes */
 ul.spip, ol.spip {
 	font-size: 13px; }
-.item ul.spip, .item ol.spip { margin: 0 60px 1.5em 40px; } /* uniquement pour l'espace public */
+.item ul.spip, .item ol.spip { margin: 0 60px 1.5em 22px; } /* uniquement pour l'espace public */
 ul.spip {
 	list-style-image: url(img/puce.png);
 	list-style-position: outside; }
@@ -46,7 +46,7 @@ table.spip {
 	margin:0;
 	border-collapse: collapse; border-spacing: 0; 
 	width: 100%; }
-.item table.spip { width:645px; margin-left: 40px; } /* uniquement pour l'espace public */
+.item table.spip { width:645px; margin-left: 20px; } /* uniquement pour l'espace public */
 	table.spip caption { 
 		caption-side: top; /* bottom pas pris en compte par IE */
 		text-align: left; font-size: 14px;
@@ -71,7 +71,7 @@ table.spip {
 .texte blockquote { 
 	background-color: rgba(253,253,253,0.7);
 	display: block; }
-.item blockquote { margin: 0 60px 0 40px; }
+.item blockquote { margin: 0 60px 0 20px; }
 .texte blockquote:before {
 	content: '“';
 	font-size: 700%; line-height: 80%;
@@ -84,9 +84,9 @@ table.spip {
 
 img, .spip_logos { margin: 0; padding: 0; border: 0; }
 .spip_documents { text-align: left; line-height: 18px; margin-top: .25em; }
-dl.spip_documents { padding-left: 40px; }
+dl.spip_documents { padding-left: 20px; }
 	dl.spip_documents dd:first-child { padding-top: 5px; background-color: red; }
-		dl.spip_documents dt a { display:block; }
+		.spip_documents a { display:block; }
 		dl.spip_documents dd { font-size: 10px; padding: 0 3px; }
 			dl.spip_documents dd h3 { font-size: 11px; }
 	.spip_documents img { background-color: #fff; padding: 3px;}
@@ -109,7 +109,7 @@ dl.spip_documents { padding-left: 40px; }
 	vertical-align: super; }
 .hentry p.hyperlien { 
 	background-color: #fff;
-	margin:0 70px 0 45px; padding: 3px 3px 4px; }
+	margin:0 60px 0 20px; padding: 3px 6px 4px; }
 hr.spip { 
 	background-color: #000;
 	border: none;

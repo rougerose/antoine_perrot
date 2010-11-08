@@ -1,9 +1,10 @@
 <BOUCLE_contenu(ARTICLES){id_article}>
 
-[(#SET{logoArticle,[(#LOGO_ARTICLE|image_reduire{154,0})]})]
+[(#SET{logoArticle,[(#LOGO_ARTICLE|image_reduire{94,0})]})]
 
 <div class="hfeed contenu-principal item">
 	<div class="hentry">
+		[<p class="logo">(#GET{logoArticle})</p>]
 		<div class="titre section">
 			[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
 			<h2 class="#EDIT{titre} entry-title">#TITRE</h2>
@@ -23,18 +24,16 @@
 
 		</div><!-- .info-publi -->
 		]
-		
-		[<p class="logo">(#GET{logoArticle})</p>]
 
 		<B_evenement>
-		<div class="evenement vcalendar[(#GET{logoArticle}|oui) float] section">
+		<div class="evenement vcalendar section">
 			<BOUCLE_evenement(EVENEMENTS){id_article}>
 			[(#INCLURE{fond=inclure/article-evenement,id_evenement,id_article})]
 			</BOUCLE_evenement>
 		</div><!-- .evenement -->
 		</B_evenement>
 
-		[<div class="#EDIT{chapo} chapo surlignable[(#GET{logoArticle}|oui) float] section">
+		[<div class="#EDIT{chapo} chapo surlignable section">
 			(#CHAPO|image_reduire{200,0})
 		</div>]
 		
