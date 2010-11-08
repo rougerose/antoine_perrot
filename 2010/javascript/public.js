@@ -8,9 +8,13 @@ $(document).ready(function(){
 		$("body").toggleClass("grille");
 	});
 	*/// $("body").toggleClass("grille");
+	
+	
 	/**
-	 * Les messages d'erreur des formulaires sont cachés
-	 * quand l'utilisateur clique à nouveau dans le champs
+	 *	Les messages d'informations sur les erreurs de saisies
+	 *	des formulaires masque les champs. 
+	 *	Lorsque l'utilisateur clique dans le champ pour corriger,
+	 *	le message d'erreur est automatique masqué.
 	 */
 	
 	$(".formulaire_spip").delegate("li.erreur","click",function(){
