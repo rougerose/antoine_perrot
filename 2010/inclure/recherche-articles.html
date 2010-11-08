@@ -6,7 +6,7 @@
 		<BOUCLE_articles(ARTICLES){recherche}{par points}{inverse}{pagination}>
 		<li class="clearfix">
 			<h3 class="spip">[[(#COMPTEUR_BOUCLE|<{10}|oui)0](#COMPTEUR_BOUCLE)].&ensp;<a href="#URL_ARTICLE">#TITRE</a></h3>
-			[(#LOGO_ARTICLE|image_reduire{95,0}|inserer_attribut{alt,#TITRE})]
+			[<a href="#URL_ARTICLE" class="logoArticle">(#LOGO_ARTICLE|image_reduire{95,0}|inserer_attribut{alt,#TITRE})</a>]
 			[<p class="intro">(#INTRODUCTION|PtoBR)</p>]
 			<ul class="meta-publi">
 				<li class="info-publi">[(#DATE|affdate)]</li>

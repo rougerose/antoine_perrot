@@ -10,7 +10,7 @@ TODO gestion du tooltip next lorsqu'il n'y a pas d'article suivant (fleche gris√
 TODO styles sur la page d'identification ecrire
 TODO favicon
 TODO slider : ajouter nombre de photos disponible avant le lien suite (et aussi dans la rubrique oeuvres)
-TODO rubriques : ajouter le lien de l'article sur les logos
+DONE rubriques : ajouter le lien de l'article sur les logos
 TODO style surlignable
 TODO loupe et agrandissement des images
 

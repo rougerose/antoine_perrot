@@ -199,7 +199,8 @@ a:active { outline: none; }
 	-moz-transition: color .6s ease-out, background-color .6s ease-out; }
 .section h3.titre a { padding: 0px 1px 2px; }
 
-.item .spip_documents a { padding: 0; }
+.item .spip_documents a, a.logoArticle { padding: 0; }
+a.logoArticle { display: block; }
 
 .item a.spip_out, .item a.spip_glossaire {
 	padding-right: 14px;

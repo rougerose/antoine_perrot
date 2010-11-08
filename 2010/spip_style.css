@@ -86,11 +86,13 @@ img, .spip_logos { margin: 0; padding: 0; border: 0; }
 .spip_documents { text-align: left; line-height: 18px; margin-top: .25em; }
 dl.spip_documents { padding-left: 20px; }
 	dl.spip_documents dd:first-child { padding-top: 5px; background-color: red; }
-		.spip_documents a { display:block; }
 		dl.spip_documents dd { font-size: 10px; padding: 0 3px; }
 			dl.spip_documents dd h3 { font-size: 11px; }
+	
+	.spip_documents a { display:block; }
 	.spip_documents img { background-color: #fff; padding: 3px;}
 	.spip_documents p { margin: 0.10em; padding: 0; }
+
 .spip_documents_left { float: left; margin-right: 20px; margin-bottom: 5px; }
 .spip_documents_center { display: block; display: table; clear: both; margin: 0 auto 1.5em; }
 .spip_documents_right { float: right; margin-left: 20px; margin-bottom: 5px; }
