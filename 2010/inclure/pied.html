@@ -1,37 +1,23 @@
-<div class="groupe clearfix">
-	<dl class="dernieresPublications">
-		<dt>Dernières publications</dt>
-		<dd>
-			<ul>
-				<BOUCLE_articles(ARTICLES pb_selection){spip_pb_selection.id_rubrique=0}{par ordre}{0,5}>
-				<li>
-					<h3><a href="#URL_ARTICLE">#TITRE</a></h3>
-				</li>
-				</BOUCLE_articles>
-				<BOUCLE_suite(ARTICLES pb_selection){spip_pb_selection.id_rubrique=0}{par ordre}{5,1}>
-				<li>
-					<h3><a href="#URL_SITE_SPIP">&hellip;#TITRE</a></h3>
-				</li>
-				</BOUCLE_suite>
-			</ul>
-		</dd>
-	</dl>
+<div class="raccourcis groupe clearfix">
 	
-	<!-- <ul class="credits">
-			<li><a href="http://www.spip.net/"><:site_realise_avec_spip:></a></li>
-			<li><a href="http://www.rouge-rose.net"><:conception_christophe_le_drean:></a></li>
-		</ul> -->
+	<ul class="liens">
+		<li><a href="">&#x2192; à propos d'Antoine Perrot</a></li>
+		<li><a href="">&#x2192; envoyer un message</a></li>
+	</ul>
+	<ul class="utiles">
+		
+		<li><a href="">&#x2192; plan du site</a></li>
+		<li><a href="">&#x2192; mentions légales &amp; crédits</a></li>
+	</ul>
 	<ul class="communication">
 		<li>
 			<a href="http://www.facebook.com/pages/Antoine-Perrot/173570883725">Facebook &#x2192; Antoine Perrot</a>
 		</li>
 		<li>
-			<a href="http://fr.wikipedia.org/wiki/Antoine_Perrot">Wikipedia &#x2192; Antoine Perrot</a>
-		</li>
-		<li>
 			<a href="#URL_PAGE{backend}" rel="alternate">RSS &#x2192; <:abonner:></a>
 		</li>
 	</ul>
+	
 </div><!-- .groupe -->
 <p id="copyright">
 	&copy; #NOM_SITE_SPIP. Tous droits r&eacute;serv&eacute;s / All rights reserved. <a href="#page">Haut de page</a>.

@@ -13,6 +13,7 @@ TODO slider : ajouter nombre de photos disponible avant le lien suite (et aussi 
 DONE rubriques : ajouter le lien de l'article sur les logos
 TODO style surlignable
 TODO loupe et agrandissement des images
+TODO plan du site ?
 
 DONE gestion des couleurs via l'interface privée (id des rubriques dans le menu)
 DONE styles des documents autre que le portfolio
