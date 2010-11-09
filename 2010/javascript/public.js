@@ -9,6 +9,15 @@ $(document).ready(function(){
 	});
 	*/// $("body").toggleClass("grille");
 	
+	/**
+	 *	Plugin Mediabox (colorbox)
+	 *	petite fonction pour afficher titre et descriptif de l'image 
+	 */
+	
+	$(".documents_portfolio a").colorbox({title: function(){
+		var titre = $(this).attr("title").match(/^(.+)\*(.+)$/);
+		return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
+	}});
 	
 	/**
 	 *	Les messages d'informations sur les erreurs de saisies
