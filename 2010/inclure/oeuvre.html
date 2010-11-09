@@ -2,7 +2,7 @@
 <div id="oeuvre-#ID_ARTICLE" class="panneau item">
 	<h3 class="titre"><a href="#URL_ARTICLE">#TITRE</a></h3>
 	<div class="oeuvreConteneur clearfix">
-		<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,1}>
+		<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,1}>
 		[(#REM) zone agrandissement]
 		[<div class="imgAgrandissement">
 			(#FICHIER|image_reduire{450,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
@@ -19,7 +19,7 @@
 		<B_apercu>
 		<ul class="imgApercu">
 			[(#REM) les aperçus des œuvres : 12 images au maximum ]
-			<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{0,12}>
+			<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,12}>
 			[<li id="img-#ID_DOCUMENT">
 				<a href="[(#FICHIER|image_reduire{450,0}|extraire_attribut{src})]"[(#COMPTEUR_BOUCLE|=={1}|?{ class="actif"})]>
 					(#FICHIER|image_reduire{100,0}

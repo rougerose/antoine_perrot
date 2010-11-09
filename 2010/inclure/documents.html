@@ -27,7 +27,7 @@
 <B_documents_portfolio>
 <div class="documents documents_portfolio section clearfix">
 	<h3 class="spip"><:info_portfolio:></h3>
-	<BOUCLE_documents_portfolio(DOCUMENTS) {id_article?}{id_rubrique?} {mode=document}{extension IN png,jpg,gif} {par num titre, date}{vu=non}>
+	<BOUCLE_documents_portfolio(DOCUMENTS){id_article?}{id_rubrique?}{mode=document}{extension IN png,jpg,gif}{par num titre, date}{vu=non}>
 	<dl id="document-#ID_DOCUMENT" class="clearfix">
 		<dt>
 			[<a href="#URL_DOCUMENT" type="#MIME_TYPE" title="[(#TITRE|attribut_html)][ * (#DESCRIPTIF|attribut_html)]" rel="groupe">(#FICHIER
