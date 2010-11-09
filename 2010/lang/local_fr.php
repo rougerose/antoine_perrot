@@ -8,6 +8,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'afficher_site' => 'afficher le site',
 	'article' => 'article',
 	'articles' => 'articles',
+	'article_precedent' => 'article pr&eacute;c&eacute;dent',
 	'article_suivant' => 'article suivant',
 	
 	// C
