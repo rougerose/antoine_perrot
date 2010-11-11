@@ -1,7 +1,7 @@
 <B_oeuvres>
 <div class="visuOeuvres clearfix">
 	#ANCRE_PAGINATION
-	<BOUCLE_oeuvres(ARTICLES){id_rubrique}{id_mot ?}{tri date,#GET{sens}}{pagination 5}>
+	<BOUCLE_oeuvres(ARTICLES){id_rubrique}{id_mot ?}{!par date}{pagination 5}>
 	[(#INCLURE{fond=inclure/oeuvre,id_article})]
 	</BOUCLE_oeuvres>
 	[<p class="pagination">(#PAGINATION{page})</p>]
