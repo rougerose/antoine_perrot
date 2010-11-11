@@ -1,49 +1,4 @@
-#SET{self,#SELF|parametre_url{id_mot,''}}
-[(#REM) en fonction du critère de tri, il sera croissant (1) par titre et décroissant (-1) par date ]
-#SET{sens,-1}
-[(#ENV{tri_oeuvres}|=={titre}|oui)
-	[(#SET{sens,1})]
-]
-[(#REM) sélection des mots-clés]
-<BOUCLE_articles(ARTICLES){id_rubrique}>
-<BOUCLE_mots(MOTS){id_article}{doublons mots}{par titre}> </BOUCLE_mots>
-</BOUCLE_articles>
-
 <B_oeuvres>
-<ul class="optionsTri clearfix">
-	<B_affichage_mots>
-	<li class="critere themes">
-		<dl>
-			<dt><:voir:></dt>
-			<dd>
-				<div class="dropdown">
-					<ul class="options">
-						[<li>(#GET{self}|parametre_url{id_mot,''}|aoustrong{<:toutes_les_oeuvres:>, #ENV{id_mot}|=={''}, ajax})</li>]
-						<BOUCLE_affichage_mots(MOTS){!doublons mots}{par titre}>
-						[<li>(#GET{self}|parametre_url{id_mot,#ID_MOT}|aoustrong{#TITRE, #ENV{id_mot}|=={#ID_MOT}, ajax})</li>]
-						</BOUCLE_affichage_mots>
-					</ul>
-				</div>
-			</dd>
-		</dl>
-	</li>
-	</B_affichage_mots>
-	
-	<li class="critere tri dernier">
-		<dl>
-			<dt><:trier_par:></dt>
-			<dd>
-				<div class="dropdown">
-					<ul class="options">
-						[<li>(#TRI{date,<:date:>})</li>]
-						[<li>(#TRI{titre,<:titre:>})</li>]
-					</ul>
-				</div>
-			</dd>
-		</dl>
-	</li>
-</ul>
-
 <div class="visuOeuvres clearfix">
 	#ANCRE_PAGINATION
 	<BOUCLE_oeuvres(ARTICLES){id_rubrique}{id_mot ?}{tri date,#GET{sens}}{pagination 5}>
