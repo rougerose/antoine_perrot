@@ -24,10 +24,10 @@
 				<div class="visuOeuvres clearfix">
 					<BOUCLE_affichage(ARTICLES){id_article IN #GET{une}}>
 					<B_expos><BOUCLE_expos(EVENEMENTS){id_article}{id_rubrique=2}{age_debut<=0}>
-					[(#INCLURE{fond=inclure/slider-exposition,id_article,id_rubrique})]
+					[(#INCLURE{fond=inclure/slider-exposition,env,id_article,id_rubrique})]
 					</BOUCLE_expos></B_expos>
 					<B_oeuvres><BOUCLE_oeuvres(ARTICLES){id_article}{id_rubrique=1}>
-					[(#INCLURE{fond=inclure/slider-oeuvre,id_article,id_rubrique})]
+					[(#INCLURE{fond=inclure/slider-oeuvre,env,id_article,id_rubrique})]
 					</BOUCLE_oeuvres></B_oeuvres>
 					</BOUCLE_affichage>
 				</div><!-- .visuOeuvres -->
