@@ -1,3 +1,4 @@
+TODO menu principal : couleur des entrées -> virer inversion et caler tout sur le blanc
 TODO style gras > italique à corriger
 TODO style surlignable
 TODO loupe et agrandissement des images = colorbox
@@ -5,6 +6,10 @@ TODO plan du site ?
 TODO favicon
 TODO slider : ajouter nombre de photos disponible avant le lien suite (et aussi dans la rubrique oeuvres) => SI ÇA RESTE EN L'ÉTAT
 TODO page sommaire > 3 œuvres présentées : la hauteur ne s'ajuste pas comme il faut : à revoir => SI ÇA RESTE EN L'ÉTAT ?
+TODO liens réseaux sociaux
+
+
+TODO documentation > page d'accueil : si une expo avec une date de fin passée, l'expo ne sera affichée nulle part, même si elle fait partie de la sélection
 
 DONE gestion des couleurs via l'interface privée (id des rubriques dans le menu)
 DONE styles des documents autre que le portfolio

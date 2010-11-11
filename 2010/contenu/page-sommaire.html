@@ -1,31 +1,42 @@
-[(#REM) articles issus de la rubrique Œuvres ]
-<B_oeuvres>
-<div id="slider" class="section">
-	<BOUCLE_oeuvres(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{id_secteur=1}{doublons}>
-	[(#SET_PUSH{oeuvres,#ID_ARTICLE})]
-	</BOUCLE_oeuvres>
-	
-	<BOUCLE_rubrique_oeuvres(RUBRIQUES){id_rubrique=1}>
-	<h2 class="titre rubrique-#ID_RUBRIQUE"><a href="#URL_RUBRIQUE">#TITRE</a></h2>
-	</BOUCLE_rubrique_oeuvres>
-	<ul class="navigation">
-		
-		<BOUCLE_navigation(ARTICLES){id_article IN #GET{oeuvres}}>
-		<li><a href="#oeuvre-#ID_ARTICLE">image #COMPTEUR_BOUCLE</a></li>
-		</BOUCLE_navigation>
-		
-	</ul><!-- .navigation -->
-	<div class="scroll">
-		<div class="scrollConteneur clearfix">
-			<div class="visuOeuvres clearfix">
-				<BOUCLE_affichage_oeuvres(ARTICLES){id_article IN #GET{oeuvres}}>
-				[(#INCLURE{fond=inclure/oeuvre,id_article})]
-				</BOUCLE_affichage_oeuvres>
-			</div><!-- .visuOeuvres -->
-		</div><!-- .scrollConteneur -->
-	</div><!-- .scroll -->
-</div><!-- #slider -->
-</B_oeuvres>
+<div class="contenu-principal">
+	[(#REM) articles issus de la rubrique Œuvres et de la rubrique Expositions (uniquement celles à venir) ]
+	<B_une>
+	<div id="slider" class="hfeed section">
+		<BOUCLE_une(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{id_secteur IN 1,2}{doublons}>
+		[(#SET_PUSH{une,#ID_ARTICLE})]
+		</BOUCLE_une>
 
-[(#REM) articles mis en avant, au format hentry ]
-<INCLURE{fond=inclure/articles-sommaire-hentry,env,ajax,doublons,format=mineur,tailleImage=94}>
+		<ul class="navigation">	
+
+			<BOUCLE_navigation(ARTICLES){id_article IN #GET{une}}>
+			<B_ex><BOUCLE_ex(EVENEMENTS){id_article}{id_rubrique=2}{age_fin<=0}>
+			<li><a href="#exposition-#ID_ARTICLE">exposition #COMPTEUR_BOUCLE</a></li>
+			</BOUCLE_ex></B_ex>
+			<B_oe><BOUCLE_oe(ARTICLES){id_article}{id_rubrique=1}>
+			<li><a href="#image-#ID_ARTICLE">image #COMPTEUR_BOUCLE</a></li>
+			</BOUCLE_oe></B_oe>
+			</BOUCLE_navigation>
+
+		</ul><!-- .navigation -->
+
+		<div class="scroll">
+			<div class="scrollConteneur clearfix">
+				<div class="visuOeuvres clearfix">
+					<BOUCLE_affichage(ARTICLES){id_article IN #GET{une}}>
+					<B_expos><BOUCLE_expos(EVENEMENTS){id_article}{id_rubrique=2}{age_debut<=0}>
+					[(#INCLURE{fond=inclure/slider-exposition,id_article,id_rubrique})]
+					</BOUCLE_expos></B_expos>
+					<B_oeuvres><BOUCLE_oeuvres(ARTICLES){id_article}{id_rubrique=1}>
+					[(#INCLURE{fond=inclure/slider-oeuvre,id_article,id_rubrique})]
+					</BOUCLE_oeuvres></B_oeuvres>
+					</BOUCLE_affichage>
+				</div><!-- .visuOeuvres -->
+			</div><!-- .scrollConteneur -->
+		</div><!-- .scroll -->
+	</div><!-- #slider -->
+	</B_une>
+
+	[(#REM) articles mis en avant, au format hentry ]
+	<INCLURE{fond=inclure/articles-sommaire-hentry,env,ajax,doublons,format=mineur,tailleImage=94}>
+	
+</div><!-- .contenu-principal -->

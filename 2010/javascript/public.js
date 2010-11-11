@@ -42,7 +42,7 @@ $(document).ready(function(){
 		$("#nav li a").addClass("ff3");
 		$("#nav li.off a.ff3").hover(
 			function() {
-				$(this).stop().animate({paddingLeft:"30px"},600);
+				$(this).stop().animate({paddingLeft:"20px"},600);
 			},
 			function() {
 				$(this).stop().animate({paddingLeft:"40px"},600);
@@ -238,9 +238,9 @@ $(document).ready(function(){
 	/**
 	 * Agrandissement des images des œuvres via plugin "visu"
 	 */
-	$(".page_sommaire .visuOeuvres").visu({conteneur:".scroll"});
+//	$(".page_sommaire .visuOeuvres").visu({conteneur:".scroll"});
 	
-	$(".rubrique_oeuvres .visuOeuvres").visu({conteneur: ".panneau"});
+//	$(".rubrique_oeuvres .visuOeuvres").visu({conteneur: ".panneau"});
 	
 	/**
 	 * Rechargement des plugins, après changement de page en ajax
@@ -248,7 +248,7 @@ $(document).ready(function(){
 	
 	// 
 	$(".rubrique_oeuvres .ajaxbloc").ajaxSuccess(function(){
-		$(".visuOeuvres").visu({conteneur: ".panneau"});
+	//	$(".visuOeuvres").visu({conteneur: ".panneau"});
 		$(".rubrique_oeuvres .optionsTri").menuTri();
 	});
 });

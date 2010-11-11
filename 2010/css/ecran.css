@@ -83,6 +83,7 @@ blockquote, q { quotes: "" ""; }
 /*  Structure des pages					*/
 /* ------------------------------------ */
 body { position: relative; padding-top: 36px; }
+body.page_sommaire { padding-top: 14px; }
 	#page {  }
 		#entete { position: fixed; top: 36px; }
 		#nav { position: fixed; top:108px; z-index:0; }
@@ -123,10 +124,10 @@ html { font-size: 100.01%; /* pour IE */ }
 
 body { 
 	font: 400 75%/1.5 "HelveticaNeue","Helvetica Neue", "Helvetica", Arial, sans-serif;
-	color: #333; }
+	color: #555; }
 
 h1,h2,h3,h4,h5,h6,
-.titre p.surtitre { 
+.titre p.surtitre, .titre p.soustitre { 
 	font-family: "HelveticaNeue-Light", "Helvetica Neue";
 	font-weight: 200; /* equivalent du light pour Firefox */
 	text-rendering: optimizeLegibility; }
@@ -201,8 +202,11 @@ a:active { outline: none; }
 	-moz-transition: color .6s ease-out, background-color .6s ease-out; }
 .section h3.titre a, #pied a { padding: 0px 1px 2px; }
 
-.item .spip_documents a, a.logoArticle { padding: 0; }
-a.logoArticle { display: block; }
+a[name] { color: transparent; }
+.item .spip_documents a,
+a.logo-article,
+a[name] { padding: 0; }
+a.logo-article { display: block; float: left; }
 
 .item a.spip_out, .item a.spip_glossaire {
 	padding-right: 14px;
@@ -217,7 +221,9 @@ a.logoArticle { display: block; }
 .item a.spip_out:hover { background-position: right -80px; }
 .item a.spip_glossaire:hover { background-position: right -112px; }
 
-a[name] { padding:0; color: transparent; }
+a[name]:hover,
+a.logo-article:hover { background-color: transparent; }
+
 
 /* ------------------------------------ */
 /*  Entete								*/
@@ -246,10 +252,10 @@ a[name] { padding:0; color: transparent; }
 				-webkit-transition: padding-left .6s ease-out;
 				-o-transition: padding-left .6s ease-out;
 				-moz-transition: padding-left .6s ease-out; }
-			#nav li.on a { padding-left: 30px; }
-			#nav li.off a:hover { padding-left: 30px; }
+			#nav li.on a { padding-left: 20px; }
+			#nav li.off a:hover { padding-left: 20px; }
 			#nav li.off a.ff3:hover { padding-left: 40px; }
-			#nav li a:active, #nav li a:focus { top:0; }
+			#nav li a:active, #nav li a:focus { top: 0; }
 
 
 /* ------------------------------------ */
@@ -258,11 +264,9 @@ a[name] { padding:0; color: transparent; }
 #slider {
 	position: relative;
 	width: 700px; }
-	#slider h2.titre {
-		font-size: 28px; line-height: 36px;
-		margin-bottom:1em; }
+	#slider h2.titre { font-size: 28px; line-height: 36px; }
 	#slider .navigation { 
-		position:absolute; right: 0px; top: 18px;
+		position:absolute; right: 0; top: 9px;
 		padding-right: 40px;
 		z-index: 30; }
 		#slider .navigation li { display: inline; }
@@ -284,7 +288,7 @@ a[name] { padding:0; color: transparent; }
 			display: block;
 			background: #fff url('../img/img-sprites.png') no-repeat -48px 0;
 			width: 17px; height: 17px;
-			position: absolute; z-index:33; right: 0; top: 14px;
+			position: absolute; z-index:33; right: 0; top: 5px;
 			cursor:pointer; }
 		.scrollBouton.gauche { right: 20px; background-position: -48px 0; }
 		.scrollBouton.droite { background-position: -64px 0; }
@@ -334,7 +338,7 @@ a[name] { padding:0; color: transparent; }
 						padding: 3px 16px 3px 6px; }
 						.imgAgrandissement .imgDesc h3 { font-size: 12px; margin-bottom: 9px; }
 						.imgAgrandissement .imgDesc p { font-size: 10px; }
-			/* zone aperçu */
+			/* zone aperçu pour les œuvres */
 			ul.imgApercu { 
 				float: right; margin-top:5px;
 				width: 220px; }
@@ -351,6 +355,20 @@ a[name] { padding:0; color: transparent; }
 					.imgApercu li.lire-suite a { 
 						position: absolute; right: 0; top: .5em;
 						margin: 0; padding: 0; }
+				.imgApercu li.suite { 
+					 }
+					.imgApercu li.suite a {
+						font-size: 10px; line-height:10px; color: #666;
+						border: 1px solid #666;
+						padding: 0; margin: 3px;
+						height: 55px; width: 55px;
+						position: relative; }
+					.imgApercu li.suite a:focus { outline: 0; }
+						.imgApercu li.suite a span { position: absolute; bottom: 0; right: 0; }
+			/* zone entry-content pour les expos */
+			.oeuvreConteneur .entry-content { 
+				float: right;
+				width: 220px; }
 
 /* -------------------------------- */
 /*	hentry	(styles communs)		*/
@@ -361,27 +379,36 @@ a[name] { padding:0; color: transparent; }
 .hentry.mineur.numero-1, .sites .numero-1 { clear:left; }
 .hentry.mineur.numero-0, .sites .numero-0 { margin-left:20px; }
 	.hentry .titre-rubrique { /* titre de la rubrique parente */ font-size:15px; margin-bottom: .5em; }
+	#slider .hentry .titre-rubrique { margin-bottom: 0; }
 	.hentry.mineur .titre-rubrique { border-top: 1px solid #666; }
 	.hentry div.titre { margin-bottom: 1em; }
-		.hentry .entry-title, .sites .titre { font-size: 20px; line-height: 1em; }
+		.hentry .entry-title, .sites .titre { font-size: 20px; line-height: 1.2em; }
 		.page_rubrique .hentry .entry-title, .sites h3.titre { 
 			border-top: 1px solid #666;
 			padding-top: .5em; }
 		.hentry.item .entry-title, .sites .titre { margin-bottom: 1em; }
 	.hentry .info-publi {  }
+	.hentry span.info-publi { margin:0; }
 	.hentry .auteurs {  }
 	.hentry .entry-content {  }
 	.hentry.item .entry-content p, .sites .introduction p { float: right; }
 	.hentry.item .entry-content p { width: 460px; }
+	/* #slider > exposition > entry-content */
+	.hentry .oeuvreConteneur .entry-content p { 
+		float: none;
+		width: auto; }
 	.hentry.mineur .entry-content p, .sites .introduction p { width: 220px; }
 		.entry-content .infos {  
 			border-bottom:1px dotted #666;
 			margin: 0; }
 		.entry-content .intro { margin: 0 0 0.75em; }
+		.oeuvreConteneur .entry-content .intro { margin-bottom: 1.5em !important; }
 		.entry-content .infos + .intro { margin: 0.75em 0 0.75em; }
 		.entry-content ul.meta-publi, .sites .introduction ul.meta-publi { 
 			float: right;
 			margin-top: .75em; }
+		/* #slider > exposition > entry-content */
+		.oeuvreConteneur .entry-content ul.meta-publi { float: none; }
 		.hentry.majeur .entry-content ul.meta-publi { width: 460px; }
 		.hentry.mineur .entry-content ul.meta-publi, .sites .introduction ul.meta-publi { width: 220px; }
 			.entry-content ul.meta-publi li, .sites .introduction ul.meta-publi li, .resultats ul li ul.meta-publi li { 
@@ -390,16 +417,18 @@ a[name] { padding:0; color: transparent; }
 				display: inline;
 				border-right: 1px solid #666;
 				margin-right: 5px; padding-right: 5px; }
+			.oeuvreConteneur .entry-content ul.meta-publi li { 
+				margin-left: 0; }
 			.introduction ul.meta-publi li.info-publi { margin-left:0; }
 			.introduction ul.meta-publi li.lire-suite, .resultats ul.meta-publi li.lire-suite { border-right-width: 0; }
-				ul.meta-publi li.lire-suite a, .imgApercu li.lire-suite a { 
+				ul.meta-publi li.lire-suite a, .imgApercu li.lire-suite a, .imgApercu li.suite a span { 
 					text-indent: -9999px;
 					background: #fff url(../img/img-sprites.png) no-repeat -16px -50px;
 					display: block;
 					outline:0;
 					height: 13px; width: 16px;
 					padding: 0; }
-				ul.meta-publi li.lire-suite a:hover, .imgApercu li.lire-suite a:hover { background-position: -16px -66px; background-color: #000; }
+				ul.meta-publi li.lire-suite a:hover, .imgApercu li.lire-suite a:hover, .imgApercu li.suite a:hover span { background-position: -16px -66px; background-color: #000; }
 
 .hentry img.spip_logos,
 .sites .item img.spip_logos,
@@ -431,10 +460,10 @@ a[name] { padding:0; color: transparent; }
 	.vevent .dateEvenement, .locationEvenement {  }
 	.vevent .infos { 
 		border-bottom:1px dotted #666;
-		margin: .25em 0; padding-left: 6em; padding-bottom: .25em; }
+		margin: .25em 0; padding-left: 6.5em; padding-bottom: .25em; }
 		.vevent .infos .label { 
 			display: block; float: left; 
-			width:6em; margin-left:-6em; }
+			width:6.5em; margin-left:-6.5em; }
 
 
 /* -------------------------------- */
@@ -442,7 +471,8 @@ a[name] { padding:0; color: transparent; }
 /* -------------------------------- */
 .page_rubrique .titre { 
 	border-top: 1px solid #333; }
-	.page_rubrique .titre h2 { 
+	.page_rubrique .titre h2 {
+		color: #000;
 		font-size: 28px; line-height:36px; 
 		margin-bottom: 1em; }
 
@@ -504,8 +534,13 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 
 .item .hentry { margin: 0; padding: 0; }
 
-	.item div.titre { margin-bottom: 1.5em; }
-	.item div.titre h2 { font-size:28px; line-height: 36px; margin-top: 0; }
+	.item div.titre { 
+		background-color: #fff;
+		margin-bottom: 1.5em; }
+	.item div.titre h2 { 
+		font-size:28px; line-height: 36px;
+		color: #000;
+		margin-top: 0; }
 	
 	.item p.logo { 
 		float:left; 
@@ -593,7 +628,7 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 	#navigation ul {
 		position: relative; }
 		#navigation li {
-			position: absolute; right: 10px;
+			position: absolute; right: 10px; z-index: 4;
 			font-size: 12px; line-height:14px;
 			float:left;
 			display:inline; }
@@ -603,7 +638,7 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 				color: #fff; background-color: #000;
 				white-space: nowrap; margin-top:0;
 				padding:1px 4px 3px;
-				position:absolute; z-index: 0; }
+				position:absolute; }
 			#navigation li.back div.info { margin-left:16px; }
 			#navigation li.next div.info {  }
 			#navigation li a {
@@ -791,7 +826,7 @@ p.pagination {
 /* -------------------------------- */
 #hierarchie { padding: 0 10px 0 10px; }
 	#hierarchie p { 
-		color:#999;
+		color:#666;
 		border-top: 1px solid #666;
 		padding-bottom: 1em; padding-top: 1em; }
 

@@ -1,13 +1,24 @@
 <hr class="invisible" />
 
+[(#SET{precedent, <:article_precedent:>})]
+[(#SET{suivant, <:article_suivant:>})]
+
+[(#REM) rubrique Oeuvres ? ]
+[(#ENV{id_rubrique}|=={1}|oui)[(#SET{precedent,<:serie_precedente:>})][(#SET{suivant,<:serie_suivante:>})]]
+
+[(#REM) rubrique Expositions ?]
+[(#ENV{id_rubrique}|=={2}|oui)[(#SET{precedent,<:expo_precedente:>})][(#SET{suivant,<:expo_suivante:>})]]
+
 <ul class="article">
 	<BOUCLE_art(ARTICLES){id_article}>
 	<BOUCLE_precedent(ARTICLES){id_rubrique}{age_relatif>=0}{par date}{inverse}{1,1}>
-	<li class="back tooltip"><a href="#URL_ARTICLE"><:article_precedent:> &laquo;&thinsp;#TITRE&thinsp;&raquo;</a></li>
+	<li class="back tooltip">
+		<a href="#URL_ARTICLE">[(#GET{precedent}) ]&laquo;&thinsp;#TITRE&thinsp;&raquo;</a>
+	</li>
 	</BOUCLE_precedent>
 	<BOUCLE_suivant(ARTICLES){id_rubrique}{age_relatif<0}{par date}{0,1}>
 	<li class="next tooltip">
-		<a href="#URL_ARTICLE"><:article_suivant:> &laquo;&thinsp;#TITRE&thinsp;&raquo;</a>
+		<a href="#URL_ARTICLE">[(#GET{suivant}) ]&laquo;&thinsp;#TITRE&thinsp;&raquo;</a>
 	</li>
 	</BOUCLE_suivant>
 	</BOUCLE_art>

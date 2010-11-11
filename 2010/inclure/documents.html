@@ -2,8 +2,8 @@
 	Liste des autres documents joints
 ]
 <B_documents_joints>
-<div class="liste documents documents_joints section clearfix">
-	<h3 class="spip"><:titre_documents_joints:></h3>
+<div id="docs" class="liste documents documents_joints section clearfix">
+	<h3 class="spip"><:titre_documents_joints:>[ / (#TOTAL_BOUCLE)[ (#TOTAL_BOUCLE|singulier_ou_pluriel{local:document,local:documents})]]</h3>
 	<BOUCLE_documents_joints(DOCUMENTS){id_article?}{id_rubrique?}{extension !IN gif,jpg,png}{vu=non}{par num titre, date}>
 	<dl id="document-#ID_DOCUMENT" class="document clearfix">
 		<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT)]</dt>
@@ -25,12 +25,12 @@
 
 [(#REM) Portfolio : album d'images ]
 <B_documents_portfolio>
-<div class="documents documents_portfolio section clearfix">
-	<h3 class="spip"><:info_portfolio:></h3>
+<div id="images" class="documents documents_portfolio section clearfix">
+	<h3 class="spip"><:info_portfolio:>[ / (#TOTAL_BOUCLE)[ (#TOTAL_BOUCLE|singulier_ou_pluriel{local:image,local:images})]]</h3>
 	<BOUCLE_documents_portfolio(DOCUMENTS){id_article?}{id_rubrique?}{mode=document}{extension IN png,jpg,gif}{par num titre, date}{vu=non}>
 	<dl id="document-#ID_DOCUMENT" class="clearfix">
 		<dt>
-			[<a href="#URL_DOCUMENT" type="#MIME_TYPE" title="[(#TITRE|attribut_html)][ * (#DESCRIPTIF|attribut_html)]" rel="groupe">(#FICHIER
+			[<a href="#URL_DOCUMENT" type="#MIME_TYPE" title="[(#TITRE|attribut_html)][ * (#DESCRIPTIF|textebrut)]" class="mediabox" rel="portfolio">(#FICHIER
 				|image_reduire{454,0}
 				|inserer_attribut{class,spip_logos}
 				|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})</a>]

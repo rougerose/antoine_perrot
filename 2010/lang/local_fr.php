@@ -20,6 +20,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'documents' => 'documents',
 	'document_sans_titre' => 'document sans titre',
 	
+	// E
+	'expo_precedente' => 'exposition pr&eacute;c&eacute;dente',
+	'expo_suivante' => 'exposition suivante',
+	
 	// F
 	'fichier' => 'fichier',
 	'form_prop_envoyer' => 'Envoyer votre message',
@@ -55,6 +59,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'rubrique' => 'rubrique',
 	'rubriques' => 'rubriques',
 	
+	// S
+	'serie_precedente' => 's&eacute;rie pr&eacute;c&eacute;dente',
+	'serie_suivante' => 's&eacute;rie suivante',
+	
 	// T
 	'titre' => 'titre',
 	'toutes_les_oeuvres' => 'toutes les &oelig;uvres',
@@ -62,7 +70,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	// V
 	'voir' => 'voir',
-	'voir_serie' => 'voir la s&eacute;rie'
+	'voir_serie' => 'voir toute la s&eacute;rie'
 );
 
 ?>

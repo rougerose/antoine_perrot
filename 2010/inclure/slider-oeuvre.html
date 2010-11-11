@@ -1,0 +1,50 @@
+<BOUCLE_article(ARTICLES){id_article}>
+<div id="image-#ID_ARTICLE" class="hentry panneau item">
+	<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
+	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE</a></h3>
+	</BOUCLE_rubrique>
+	<h2 class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
+	<div class="oeuvreConteneur entry-content clearfix">
+		<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,1}>
+		[(#REM) zone agrandissement]
+		[<div class="imgAgrandissement">
+			<a href="#URL_DOCUMENT" type="#MIME_TYPE" title="[(#TITRE|attribut_html)][ * (#DESCRIPTIF|attribut_html)]" class="mediabox" rel="portfolio#ID_ARTICLE">
+				(#FICHIER|image_reduire{450,0}
+					|inserer_attribut{alt,[(#TITRE|textebrut)]}
+					|inserer_attribut{title,[(#DESCRIPTIF|textebrut)]}
+				)
+			</a>
+			<div class="conteneurDesc">
+				<div class="imgDesc">
+					[<h3>(#TITRE|sinon{description})</h3>]
+					[<p>(#DESCRIPTIF|PtoBR)</p>]
+				</div><!-- .imgDesc -->
+			</div><!-- .conteneurDesc -->
+		</div><!-- .imgAgrandissement -->]
+		</BOUCLE_imagePrincipale>
+		
+		[(#REM) zone apercu]
+		<B_apercu>
+		<ul class="imgApercu">
+			[(#REM) les aperçus des œuvres : 12 images au maximum ]
+			<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,12}>
+			[<li id="img-#ID_DOCUMENT">
+				<a href="[(#FICHIER|image_reduire{450,0}|extraire_attribut{src})]"class="[(#COMPTEUR_BOUCLE|=={1}|?{' actif','mediabox'})]" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE">
+					(#FICHIER|image_reduire{200,0}
+						|image_recadre{56,56,center}
+						|inserer_attribut{alt,[(#TITRE|textebrut)]}
+						|inserer_attribut{title,[(#DESCRIPTIF|textebrut)]}
+					)
+				</a>
+				<div class="imgDesc">
+					[<h3>(#TITRE)</h3>]
+					[<p>(#DESCRIPTIF|PtoBR)</p>]
+				</div><!-- .imgDesc -->
+			</li>]
+			</BOUCLE_apercu>
+			<li class="suite"><a href="#URL_ARTICLE#images" title="<:voir_serie:>"><span><:voir_serie:></span></a></li>
+		</ul><!-- .imgApercu -->
+		</B_apercu>
+	</div><!-- .oeuvreConteneur -->
+</div><!-- #image-#ID_ARTICLE -->
+</BOUCLE_article>
