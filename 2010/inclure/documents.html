@@ -27,25 +27,44 @@
 <B_documents_portfolio>
 <div id="images" class="documents documents_portfolio section clearfix">
 	<h3 class="spip"><:info_portfolio:>[ / (#TOTAL_BOUCLE)[ (#TOTAL_BOUCLE|singulier_ou_pluriel{local:image,local:images})]]</h3>
-	<BOUCLE_documents_portfolio(DOCUMENTS){id_article?}{id_rubrique?}{mode=document}{extension IN png,jpg,gif}{par num titre, date}{vu=non}>
-	<dl id="document-#ID_DOCUMENT" class="clearfix">
-		<dt>
-			[<a href="#URL_DOCUMENT" type="#MIME_TYPE" title="[(#TITRE|attribut_html)][ * (#DESCRIPTIF|textebrut)]" class="mediabox" rel="portfolio">(#FICHIER
-				|image_reduire{454,0}
-				|inserer_attribut{class,spip_logos}
-				|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})</a>]
-		</dt>
-		[<dd>
-			<h3>(#TITRE)</h3>
-			[<p class="descriptif">(#DESCRIPTIF|PtoBR)</p>]
-			[<p class="descriptif date">
-				[(#DATE|affdate{'d'}|=={01}|?{'',[(#DATE|jour) ]})]
-				[(#DATE|affdate{'m'}|=={01}|?{'',[(#DATE|nom_mois) ]})]
-				(#DATE|annee)
-			</p>]
-			[<p class="descriptif credits">(#CREDITS)</p>]
-		</dd>]
-	</dl>
-	</BOUCLE_documents_portfolio>
+	
+	<div class="oeuvreConteneur clearfix">
+		[(#REM) zone apercu]
+		<ul class="imgApercu">
+			[(#REM) les aperçus des œuvres : 12 images au maximum ]
+			<BOUCLE_documents_portfolio(DOCUMENTS){id_article}{par num titre, date}{mode=document}{extension IN png,jpg,gif}{vu=non}>
+			[<li id="document-#ID_DOCUMENT">
+				<a href="[(#FICHIER|image_reduire{450,0}|extraire_attribut{src})]"class="[(#COMPTEUR_BOUCLE|=={1}|?{'actif '})]mediabox" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE">
+					(#FICHIER|image_reduire{200,0}
+						|image_recadre{56,56,center}
+						|inserer_attribut{alt,[(#TITRE|textebrut)]}
+						|inserer_attribut{title,[(#DESCRIPTIF|textebrut)]}
+					)
+				</a>
+				<div class="imgDesc">
+					[<h3>(#TITRE)</h3>]
+					[<p>(#DESCRIPTIF|PtoBR)</p>]
+				</div><!-- .imgDesc -->
+			</li>]
+			</BOUCLE_documents_portfolio>
+		</ul><!-- .imgApercu -->
+		
+		<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, date}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,1}>
+		[(#REM) zone agrandissement]
+		[<div class="imgAgrandissement">
+				(#FICHIER|image_reduire{450,0}
+					|inserer_attribut{alt,[(#TITRE|textebrut)]}
+					|inserer_attribut{title,[(#DESCRIPTIF|textebrut)]}
+				)
+			<div class="conteneurDesc">
+				<div class="imgDesc">
+					[<h3>(#TITRE|sinon{description})</h3>]
+					[<p>(#DESCRIPTIF|PtoBR)</p>]
+				</div><!-- .imgDesc -->
+			</div><!-- .conteneurDesc -->
+		</div><!-- .imgAgrandissement -->]
+		</BOUCLE_imagePrincipale>
+		
+	</div><!-- .oeuvreConteneur -->
 </div>
 </B_documents_portfolio>
