@@ -338,6 +338,7 @@ a.logo-article:hover { background-color: transparent; }
 						padding: 3px 16px 3px 6px; }
 						.imgAgrandissement .imgDesc h3 { font-size: 12px; margin-bottom: 9px; }
 						.imgAgrandissement .imgDesc p { font-size: 10px; }
+						.page_sommaire .hentry .imgAgrandissement .imgDesc p, .rubrique_oeuvres .hentry .imgAgrandissement .imgDesc p { float: none; width: auto; }
 			/* zone aperçu pour les œuvres */
 			ul.imgApercu { 
 				float: right; margin-top:5px;

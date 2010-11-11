@@ -1,3 +1,7 @@
+#SET{titre-serie,h2} #SET{titre-image,h3}
+[(#ENV{composition}|=={sommaire}|non)
+	[(#SET{titre-serie,h3})] [(#SET{titre-image,h4})]
+]
 <BOUCLE_article(ARTICLES){id_article}>
 <div id="image-#ID_ARTICLE" class="hentry panneau item">
 	<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
@@ -5,7 +9,7 @@
 	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE</a></h3>
 	]
 	</BOUCLE_rubrique>
-	<h2 class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
+	<[(#GET{titre-serie}) ]class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></[(#GET{titre-serie})]>
 	<div class="oeuvreConteneur entry-content clearfix">
 		
 		[(#REM) zone apercu]
@@ -22,7 +26,7 @@
 					)
 				</a>
 				<div class="imgDesc">
-					[<h3>(#TITRE)</h3>]
+					[<#GET{titre-image}>(#TITRE)</#GET{titre-image}>]
 					[<p>(#DESCRIPTIF|PtoBR)</p>]
 				</div><!-- .imgDesc -->
 			</li>]
@@ -40,7 +44,7 @@
 			)
 			<div class="conteneurDesc">
 				<div class="imgDesc">
-					[<h3>(#TITRE|sinon{description})</h3>]
+					[<#GET{titre-image}>(#TITRE)</#GET{titre-image}>]
 					[<p>(#DESCRIPTIF|PtoBR)</p>]
 				</div><!-- .imgDesc -->
 			</div><!-- .conteneurDesc -->

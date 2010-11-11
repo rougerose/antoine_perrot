@@ -7,7 +7,7 @@ $(document).ready(function(){
 	$("#grille").click(function(){
 		$("body").toggleClass("grille");
 	});
-	*/ $("body").toggleClass("grille");
+	*/// $("body").toggleClass("grille");
 	
 	/**
 	 *	Plugin Mediabox (colorbox)
@@ -19,6 +19,20 @@ $(document).ready(function(){
 		return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
 	}});
 	*/
+	
+	/**
+	 *	Affichage des titre et descriptif des œuvres 
+	 *
+	 **/
+	// ajout d'un bouton et on masque le descriptif
+	$(".imgAgrandissement .conteneurDesc").append('<span class="afficheInfos" />').find(".imgDesc").hide();
+	
+	// affichage
+	$("span.afficheInfos").click(function(){
+		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
+	});
+	
+	
 	/**
 	 *	Les messages d'informations sur les erreurs de saisies
 	 *	des formulaires masque les champs. 
