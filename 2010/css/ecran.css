@@ -114,7 +114,7 @@ body.page_sommaire { padding-top: 14px; }
 .item, 
 #slider { border-top: 1px solid #333; }
 
-#conteneur, #pied { background-color: #fff; }
+#conteneur, #pied { background-color: #fff; xopacity: 0.8; }
 
 
 /* ------------------------------------ */
@@ -577,48 +577,38 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 		margin-left: 0; }
 
 /* -------------------------------- */
-/*	documents (dans le portfolio)	*/
+/*	documents						*/
 /* -------------------------------- */
-.documents {  }
-	.documents dl a { padding:0; }
+.documents { margin-bottom: 1.5em; }
 	.documents h3.spip { 
 		border-bottom: 1px solid #666;
 		float: left;
-		margin-bottom: 1.5em; margin-left: 0;
+		margin-bottom: 1em; margin-left: 0; margin-right: 240px;
 		width: 460px; }
-	.documents dl { clear: left; margin-bottom: 3em; }
-	.documents dl:last-child { margin-bottom:1.5em; }
-		.documents dl dt { float: left; }
-		.documents dl dd {
-			float: right;
-			width: 220px; }
+	.documents ul.imgApercu { clear: left; }
+	.documents dl { 
+		border-bottom: 1px solid #666;
+		float: left; 
+		margin-right: 20px; margin-bottom: 1em;
+		width: 220px; }
+	.documents dl.numero-0 { margin-right: 0; }
+	.documents dl.numero-1 { clear: left; }
+		.documents dl a { padding:0; }
+		.documents_joints dl dt a { display: block; }
+			.documents_joints dl dt a img.spip_logos { float: none; background-color: transparent; }
+		.documents dl dt { 
+			float: left;
+			margin-right: 2px; }
+		.documents dl dd { float: left; }
 			.documents dd h3 { 
 				font-size: 12px;
-				text-indent: -16px;
 				margin-top: 3px;
-				padding-left: 16px;
-				float: left;
-				border-top: 1px solid #666; }
-			.documents dd h3:before { content: url(../img/fleche-gauche.png); }
+				float: left; }
 			.documents dd p.descriptif { 
 				clear: left;
 				font-size: 10px;
-				margin-left: 16px; margin-bottom:0; }
-
-/* -------------------------------- */
-/*	documents joints				*/
-/*	(style idem précédent			*/
-/*	avec quelques différences)		*/
-/* -------------------------------- */
-.documents_joints dl dt { width:460px; }
-	
-	.documents_joints dl dt a { 
-		background-color: #fff;
-		width:460px; display: block; }
-	.documents_joints dl dt a:hover { background-color: #000; }
-		.documents_joints dl dt a img.spip_logos { float: none; background-color: transparent; }
-
-.documents_joints dl dd p.descriptif span { color:#666; display: block; }
+				margin-bottom:0; }
+				.documents_joints dl dd p.descriptif span { color:#666; display: block; }
 
 
 /* -------------------------------- */
