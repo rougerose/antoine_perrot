@@ -13,12 +13,17 @@ $(document).ready(function(){
 	 *	Plugin Mediabox (colorbox)
 	 *	petite fonction pour afficher titre et descriptif de l'image 
 	 */
-	/*
-	$(".documents_portfolio a").colorbox({title: function(){
-		var titre = $(this).attr("title").match(/^(.+)\*(.+)$/);
+	$("a.mediabox").colorbox({title: function(){
+	/*	var titre = $(this).attr("title").match(/^(.+)\*(.+)$/);
 		return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
-	}});
 	*/
+		description = $(this).next(".imgDesc");
+		var titre = description.html();
+		return titre;
+	}});
+	
+//	var test = $("a.mediabox").next(".imgDesc").find("h4").html(); //.next(".imgDesc").find("h3");
+//	console.log(test);
 	
 	/**
 	 *	Affichage des titre et descriptif des œuvres 
