@@ -18,7 +18,7 @@
 			[(#REM) les aperçus des œuvres : 12 images au maximum ]
 			<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,12}>
 			[<li id="img-#ID_DOCUMENT">
-				<a href="[(#FICHIER|image_reduire{450,0}|extraire_attribut{src})]"class="[(#COMPTEUR_BOUCLE|=={1}|?{'actif '})]mediabox" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE">
+				<a href="[(#FICHIER|image_reduire{450,0}|extraire_attribut{src})]"class="[(#COMPTEUR_BOUCLE|=={1}|?{'actif '})]mediabox" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE"[ title="(#TITRE|textebrut|sinon{'document sans titre'})[*(#DESCRIPTIF|textebrut)][(#DATE|affdate)]"]>
 					(#FICHIER|image_reduire{200,0}
 						|image_recadre{56,56,center}
 						|inserer_attribut{alt,[(#TITRE|textebrut)]}
@@ -26,8 +26,11 @@
 					)
 				</a>
 				<div class="imgDesc">
-					[<#GET{titre-image}>(#TITRE)</#GET{titre-image}>]
-					[<p>(#DESCRIPTIF|PtoBR)</p>]
+					[<#GET{titre-image}>(#TITRE|sinon{<:document_sans_titre:>})</#GET{titre-image}>]
+					[<p>
+						(#DESCRIPTIF|PtoBR)
+						[&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]
+					</p>]
 				</div><!-- .imgDesc -->
 			</li>]
 			</BOUCLE_apercu>
@@ -45,7 +48,10 @@
 			<div class="conteneurDesc">
 				<div class="imgDesc">
 					[<#GET{titre-image}>(#TITRE)</#GET{titre-image}>]
-					[<p>(#DESCRIPTIF|PtoBR)</p>]
+					[<p>
+						(#DESCRIPTIF|PtoBR)
+						[&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]
+					</p>]
 				</div><!-- .imgDesc -->
 			</div><!-- .conteneurDesc -->
 		</div><!-- .imgAgrandissement -->]
