@@ -868,46 +868,44 @@ p.pagination {
     The following rules are ordered and tabbed in a way that represents the
     order/nesting of the generated HTML, so that the structure easier to understand.
 */
-#cboxOverlay {background:#111;}
+#cboxOverlay {background:#000;}
 
 #colorBox {}
 		#cboxContent {  }
 		#cboxLoadedContent {
-			margin: 12px 8px 40px 8px;
-			padding: 10px;
-			background-color: rgba(0,0,0,0.5);
-			box-shadow: 0 0 8px #000;
-			-moz-box-shadow: 0 0 8px #000;
-			-webkit-box-shadow: 0 0 8px #000; }
+			xmargin: 12px 8px 40px 8px;
+			margin-bottom: 40px;
+			padding: 20px;
+			background-color: #000; }
         #cboxTitle {
 			position:absolute; bottom:0; left:0; 
 			color:#fff; 
 			font-size: 11px; 
 			margin: 0 8px 0 13px; }
-			#cboxTitle h3, cboxTitle h4 { font-size: 13px; }
+			#cboxTitle h3, #cboxTitle h4 { font-size: 13px; }
         #cboxCurrent {position:absolute; bottom:0px; left:100px; color:#ddd; display: none !important;}
         #cboxSlideshow {position:absolute; bottom:0px; right:42px; color:#444; display: none !important;}
         #cboxNext, #cboxPrevious {
 			position:absolute; top:50%;
 			color:#fff;
 			text-indent: -9999px;
-			background: #000 url('../img/img-sprites.png') no-repeat -48px -16px;
+			background: transparent url('../img/img-sprites.png') no-repeat -48px -16px;
 			height: 17px; width: 17px;
 			margin-top: -22px; }
 		#cboxPrevious {
-			left: 0; }
+			left: 0px; }
         #cboxNext { 
-			right: 0;
+			right: 0px;
 	 		background-position: -64px -16px;}
 		#cboxPrevious:hover { background-position: -48px 0; background-color: #fff; }
 		#cboxNext:hover { background-position: -64px 0; background-color: #fff; }
 		
-        #cboxLoadingOverlay { background:url('../img/loading.gif') center center no-repeat rgba(0,0,0,0.5); }
+        #cboxLoadingOverlay { background: #000 url('../img/loading.gif') 50% 40% no-repeat; }
         #cboxClose {
-			position:absolute; top: 6px; left: 2px; 
+			position:absolute; top: 0px; left: 0px; 
 			display:block; 
 			color:#ddd;
 			text-indent: -9999px;
 			height: 16px; width: 16px;
-			background: #000 url('../img/img-sprites.png') no-repeat 0 -16px; }
-		#cboxClose:hover { background-position: -16px -16px; }
+			background: transparent url('../img/img-sprites.png') no-repeat 0 -32px; }
+		#cboxClose:hover { background-position: -16px -32px; }
