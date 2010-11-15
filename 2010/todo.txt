@@ -9,6 +9,9 @@ TODO page sommaire > 3 œuvres présentées : la hauteur ne s'ajuste pas comme i
 TODO liens réseaux sociaux
 
 
+TODO modeles images et doc ajouter fonction pour récupérer les titre et descriptif = modifier la fonction déjà utilisée pour le div.imgDesc qui n'existe pas dans ce cas.
+
+
 TODO documentation > page d'accueil : si une expo avec une date de fin passée, l'expo ne sera affichée nulle part, même si elle fait partie de la sélection
 
 DONE gestion des couleurs via l'interface privée (id des rubriques dans le menu)

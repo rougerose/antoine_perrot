@@ -14,16 +14,10 @@ $(document).ready(function(){
 	 *	petite fonction pour afficher titre et descriptif de l'image 
 	 */
 	$("a.mediabox").colorbox({title: function(){
-	/*	var titre = $(this).attr("title").match(/^(.+)\*(.+)$/);
-		return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
-	*/
 		description = $(this).next(".imgDesc");
 		var titre = description.html();
 		return titre;
 	}});
-	
-//	var test = $("a.mediabox").next(".imgDesc").find("h4").html(); //.next(".imgDesc").find("h3");
-//	console.log(test);
 	
 	/**
 	 *	Affichage des titre et descriptif des œuvres 
@@ -37,6 +31,22 @@ $(document).ready(function(){
 		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
 	});
 	
+	/**
+	 *	Ajout d'une icone "loupe" sur les images cliquables
+	 *
+	 **/
+	$("a.icone-lien").append('<span class="icone-loupe"></span>').children("span").css({ 'opacity':0 });
+	$("a.icone-lien").hover(
+		function(){
+			$(this).children("span.icone-loupe").stop().show().animate({
+				opacity: 1
+			},500);
+		},
+		function(){
+			$(this).children("span.icone-loupe").stop().animate({
+				opacity: 0
+			}, 500);
+		}).hide;
 	
 	/**
 	 *	Les messages d'informations sur les erreurs de saisies

@@ -151,6 +151,13 @@ textarea, input,
 	font-family: "HelveticaNeue-LightItalic", "Helvetica Neue"; 
 	font-weight: 200; font-style:italic; }
 	
+.texte a, 
+.auteurs a,
+.item a,
+#hierarchie a,
+p.pagination a,
+.formulaire_spip a,
+#pied a, 
 .texte p strong,
 .entry-content .infos,
 .vevent .summary,
@@ -159,15 +166,9 @@ textarea, input,
 table.spip caption,
 table.spip th,
 .formulaire_spip legend,
-.formulaire_login input.submit,
-#pied a { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
+.formulaire_login input.submit { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
 
-.texte a, 
-.auteurs a,
-.item .hyperlien a,
-#hierarchie a,
-p.pagination a,
-.formulaire_spip a,
+
 .reponse_formulaire_erreur,
 .erreur_message {
 	font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
@@ -222,6 +223,7 @@ a.logo-article { display: block; float: left; }
 .item a.spip_glossaire:hover { background-position: right -112px; }
 
 a[name]:hover,
+a[type="image/jpeg"]:hover, a[type="image/gif"], a[type="image/png"],
 a.logo-article:hover { background-color: transparent; }
 
 
@@ -370,6 +372,16 @@ a.logo-article:hover { background-color: transparent; }
 				float: right;
 				width: 220px; }
 
+
+/* icone loupe */
+a.icone-lien { position: relative; }
+	a.icone-lien span.icone-loupe {
+		height: 16px; width: 16px;
+		background: url('../img/img-sprites.png') no-repeat -48px -32px;
+		position: absolute;
+		right: 0; bottom: 0; }
+
+
 /* -------------------------------- */
 /*	hentry	(styles communs)		*/
 /* -------------------------------- */
@@ -393,6 +405,7 @@ a.logo-article:hover { background-color: transparent; }
 	.hentry .entry-content {  }
 	.hentry.item .entry-content p, .sites .introduction p { float: right; }
 	.hentry.item .entry-content p { width: 460px; }
+	
 	/* #slider > exposition > entry-content */
 	.hentry .oeuvreConteneur .entry-content p { 
 		float: none;
@@ -407,6 +420,7 @@ a.logo-article:hover { background-color: transparent; }
 		.entry-content ul.meta-publi, .sites .introduction ul.meta-publi { 
 			float: right;
 			margin-top: .75em; }
+		
 		/* #slider > exposition > entry-content */
 		.oeuvreConteneur .entry-content ul.meta-publi { float: none; }
 		.hentry.majeur .entry-content ul.meta-publi { width: 460px; }
