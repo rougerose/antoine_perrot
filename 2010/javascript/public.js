@@ -7,7 +7,9 @@ $(document).ready(function(){
 	$("#grille").click(function(){
 		$("body").toggleClass("grille");
 	});
-	*/// $("body").toggleClass("grille");
+	*/
+	
+	// $("body").toggleClass("grille");
 	
 	/**
 	 *	Plugin Mediabox (colorbox)

@@ -141,8 +141,7 @@ h1,h2,h3,h4,h5,h6,
 	font-style: italic; font-weight: 400; }
 
 .texte blockquote p i,
-textarea, input,
-#pied h3 {
+textarea, input {
 	font-family: "HelveticaNeue", "Helvetica Neue";
 	font-style: normal; font-weight: 400;
 }
@@ -158,7 +157,7 @@ textarea, input,
 #hierarchie a,
 p.pagination a,
 .formulaire_spip a,
-#pied a, 
+#pied dl dt,
 .texte p strong,
 .entry-content .infos,
 .vevent .summary,
@@ -846,14 +845,18 @@ p.pagination {
 		border-bottom: 2px solid #000;
 		margin: 0 10px 0 10px;
 		padding: 2em 0;  }
-		#pied ul {  }
-		#pied .raccourcis ul {
-			float: left;
-			margin-right: 20px;
-			width: 160px; }
-		#pied ul.liens { margin-left: 180px; }
-		#pied ul.communication { margin-right: 0; }
-			#pied ul li { text-align: left; }
+	#pied .raccourcis dl {
+		float: left;
+		margin-right: 20px;
+		width: 160px; }
+		#pied dl.derniers { margin-left: 180px; }
+		#pied dl.communication { margin-right: 0; width: 160px; }
+			#pied dl dt { font-size: 12px; color: #000; }
+			#pied dl.derniers dt.expos { margin-top: 1.5em; }
+			#pied dl dd { 
+				text-align: left;
+				xtext-indent: -11px;
+				margin-left: 11px; }
 	#pied #copyright { 
 		font-size: 10px;
 		text-align: right;
@@ -888,7 +891,6 @@ p.pagination {
 #colorBox {}
 		#cboxContent {  }
 		#cboxLoadedContent {
-			xmargin: 12px 8px 40px 8px;
 			margin-bottom: 40px;
 			padding: 20px;
 			background-color: #000; }
