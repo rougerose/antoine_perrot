@@ -18,11 +18,10 @@
 			[(#REM) les aperçus des œuvres : 12 images au maximum ]
 			<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,12}>
 			[<li id="img-#ID_DOCUMENT">
-				<a href="[(#FICHIER|image_reduire{450,0}|extraire_attribut{src})]"class="[(#COMPTEUR_BOUCLE|=={1}|?{'actif '})]mediabox slider" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE"[ title="(#TITRE|textebrut|sinon{'document sans titre'})[*(#DESCRIPTIF|textebrut)][(#DATE|affdate)]"]>
+				<a href="[(#FICHIER|image_reduire{450,0}|extraire_attribut{src})]"class="[(#COMPTEUR_BOUCLE|=={1}|?{'actif '})]mediabox slider icone-lien" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE" rel="portfolio#ID_ARTICLE">
 					(#FICHIER|image_reduire{200,0}
 						|image_recadre{56,56,center}
 						|inserer_attribut{alt,[(#TITRE|textebrut)]}
-						|inserer_attribut{title,[(#DESCRIPTIF|textebrut)]}
 					)
 				</a>
 				<div class="imgDesc">
@@ -43,7 +42,6 @@
 		[<div class="imgAgrandissement">
 			(#FICHIER|image_reduire{450,0}
 				|inserer_attribut{alt,[(#TITRE|textebrut)]}
-				|inserer_attribut{title,[(#DESCRIPTIF|textebrut)]}
 			)
 			<div class="conteneurDesc">
 				<div class="imgDesc">
