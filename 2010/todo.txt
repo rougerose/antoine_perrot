@@ -11,6 +11,8 @@ TODO liens réseaux sociaux
 
 TODO modeles images et doc ajouter fonction pour récupérer les titre et descriptif = modifier la fonction déjà utilisée pour le div.imgDesc qui n'existe pas dans ce cas.
 
+TODO ajouter l'icone loupe pour les images slider
+
 
 TODO documentation > page d'accueil : si une expo avec une date de fin passée, l'expo ne sera affichée nulle part, même si elle fait partie de la sélection
 
