@@ -7,7 +7,7 @@ TODO favicon
 TODO slider : ajouter nombre de photos disponible avant le lien suite (et aussi dans la rubrique oeuvres) => SI ÇA RESTE EN L'ÉTAT
 TODO page sommaire > 3 œuvres présentées : la hauteur ne s'ajuste pas comme il faut : à revoir => SI ÇA RESTE EN L'ÉTAT ?
 TODO liens réseaux sociaux
-
+TODO établir les liens dans le pied de page
 
 TODO modeles images et doc ajouter fonction pour récupérer les titre et descriptif = modifier la fonction déjà utilisée pour le div.imgDesc qui n'existe pas dans ce cas.
 

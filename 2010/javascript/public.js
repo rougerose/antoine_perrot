@@ -11,13 +11,45 @@ $(document).ready(function(){
 	
 	/**
 	 *	Plugin Mediabox (colorbox)
-	 *	petite fonction pour afficher titre et descriptif de l'image 
+	 *	pour afficher titre et descriptif de l'image
 	 */
-	$("a.mediabox").colorbox({title: function(){
-		description = $(this).next(".imgDesc");
-		var titre = description.html();
-		return titre;
-	}});
+	$("a.mediabox").colorbox({
+		title: function(){
+			// différentes hypothèses : 
+			// - ou bien l'image vient d'un modèle image ou img, 
+			// - ou bien d'un modèle doc, 
+			// - ou bien encore vient du slider (forme utilisée pour le slider mais aussi par inclure/documents.html)
+			if ($(this).hasClass("modeleImg")) {
+				var description = $(this).children("img[title]");
+				var titre = description.attr("title");
+			
+				// l'image a un descriptif (précédé de *) ?
+				if(titre.match(/\*/)) { 
+					titre = titre.match(/^(.+)\*(.+)$/);
+					return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
+				} else { 
+					// on ne prend que le titre + [date]
+					titre = titre.match(/^(.+)(\[.+\])$/);
+					return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
+				}
+			} 
+			else  if ($(this).hasClass("modeleDoc")) {
+				var titre = $(this).parent().parent("dl").children("dd.spip_doc_titre");
+				var description = titre.next("dd.spip_doc_descriptif");
+				titre = titre.html(); description = description.html();
+			
+				// au cas où le titre ou descriptif serait vide
+				if (titre == null) { titre = ''; }
+				if (description == null) { description = ''; }
+				return titre + description;
+			} 
+			else if ($(this).hasClass("slider")) {
+				var titre = $(this).next(".imgDesc").html();
+				if (titre == null) { titre = ''; }
+				return titre;
+			}
+		}
+	});
 	
 	/**
 	 *	Affichage des titre et descriptif des œuvres 

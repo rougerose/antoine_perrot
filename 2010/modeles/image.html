@@ -6,10 +6,10 @@
 <span class='spip_document_#ID_DOCUMENT spip_documents[ spip_documents_(#ENV{align})][ (#ENV{class})] spip_lien_ok'[
 	 style='float:(#ENV{align}|match{left|right});[ width:(#LARGEUR)px;]']>[
 	<a href="(#ENV{lien})"
-		class="[(#ENV{lien_class}) ]lien-icone mediabox" type="#MIME_TYPE">]<img src='#URL_DOCUMENT'
+		class="[(#ENV{lien_class}) ]lien-icone mediabox modeleImg" type="#MIME_TYPE">]<img src='#URL_DOCUMENT'
 		[ width="(#LARGEUR)"][ height="(#HAUTEUR)"][
-			title="(#TITRE|attribut_html)"]
-			alt="[(#TITRE|attribut_html)]" />[(#ENV{lien}|?{</a>})]</span>
+			title="(#TITRE|texte_backend|sinon{<:document_sans_titre:>})[ * (#DESCRIPTIF|PtoBR)][ &#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]"]
+			alt="[(#TITRE|texte_backend|sinon{<:document_sans_titre:>})]" />[(#ENV{lien}|?{</a>})]</span>
 ][
 
 (#REM) Cas <embXX> : on est appele ici avec emb=' ' : on veut la legende
@@ -20,17 +20,17 @@ equivalent a un <docXX> pour une image en mode image
 #SET{width,#LARGEUR}
 #SET{height,#HAUTEUR}
 #SET{url,#ENV{lien}}
-<dl class='image2 spip_document_#ID_DOCUMENT spip_documents[ spip_documents_(#ENV{align})][ (#ENV{class})] spip_lien_ok'[ style='float:(#ENV{align}|match{left|right});[width:(#GET{width}|min{350}|max{120})]px;']>
-<dt>[<a href="(#GET{url})" class="[(#ENV{lien_class}) ]lien-icone mediabox" title='#TYPE_DOCUMENT - [(#TAILLE|taille_en_octets|texte_backend)]'[ type="(#ENV{lien}|?{#ENV{lien_mime},#MIME_TYPE})"]>]<img src='#GET{fichier}' width='#GET{width}' height='#GET{height}' alt='#TYPE_DOCUMENT - [(#TAILLE|taille_en_octets|texte_backend)]' />[(#GET{url}|?{</a>})]</dt>[
+<dl class='spip_document_#ID_DOCUMENT spip_documents[ spip_documents_(#ENV{align})][ (#ENV{class})] spip_lien_ok'[ style='float:(#ENV{align}|match{left|right});[width:(#GET{width}|min{350}|max{120})]px;']>
+<dt>[<a href="(#GET{url})" class="[(#ENV{lien_class}) ]lien-icone mediaboxDoc" title='#TYPE_DOCUMENT - [(#TAILLE|taille_en_octets|texte_backend)]'[ type="(#ENV{lien}|?{#ENV{lien_mime},#MIME_TYPE})"]>]<img src='#GET{fichier}' width='#GET{width}' height='#GET{height}' alt='#TYPE_DOCUMENT - [(#TAILLE|taille_en_octets|texte_backend)]' />[(#GET{url}|?{</a>})]</dt>[
 <dd class='#EDIT{titre} spip_doc_titre'[ style='width:(#GET{width}|min{350}|max{120})px;']><h3>(#TITRE)</h3></dd>][
-<dd class='#EDIT{descriptif} spip_doc_descriptif'[ style='width:(#GET{width}|min{350}|max{120})px;']>(#DESCRIPTIF|PtoBR)[(#NOTES|PtoBR)]</dd>]
+<dd class='#EDIT{descriptif} spip_doc_descriptif'[ style='width:(#GET{width}|min{350}|max{120})px;']>(#DESCRIPTIF|PtoBR)[ &#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]</dd>]
 </dl>
 ][
 
 (#REM) Cas des images qu'il faut embed (svg)
 ][
 (#INCLUS|=={embed}|oui)
-<div class='image3 spip_document_#ID_DOCUMENT spip_documents[ spip_documents_(#ENV{align})]'[
+<div class='spip_document_#ID_DOCUMENT spip_documents[ spip_documents_(#ENV{align})]'[
 style='[(#ENV{align}|match{^(left|right)$}|?{' '})float:#ENV{align};] (#ENV{align,center}|=={center}|?{'',' '})']>
 <object	data='#URL_DOCUMENT' 
 	type='#MIME_TYPE'[
@@ -42,6 +42,6 @@ style='[(#ENV{align}|match{^(left|right)$}|?{' '})float:#ENV{align};] (#ENV{alig
 </object>[
 <div class='spip_doc_titre'><strong>(#TITRE)</strong></div>
 ][
-<div class='spip_doc_descriptif'>(#DESCRIPTIF|PtoBR)[(#NOTES|PtoBR)]</div>
+<div class='spip_doc_descriptif'>(#DESCRIPTIF|PtoBR)[ &#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]</div>
 ]</div>]
 </BOUCLE_tous>
