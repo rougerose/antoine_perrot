@@ -127,7 +127,8 @@ body {
 	color: #555; }
 
 h1,h2,h3,h4,h5,h6,
-.titre p.surtitre, .titre p.soustitre { 
+.titre p.surtitre, .titre p.soustitre,
+.page_sommaire .item a, .page_rubrique .item a, .page_recherche .item h3 a { 
 	font-family: "HelveticaNeue-Light", "Helvetica Neue";
 	font-weight: 200; /* equivalent du light pour Firefox */
 	text-rendering: optimizeLegibility; }
@@ -153,7 +154,7 @@ textarea, input,
 	
 .texte a, 
 .auteurs a,
-.item a,
+.item a, .rubrique_biographie .item a, .rubrique_liens .item .introduction a,
 #hierarchie a,
 p.pagination a,
 .formulaire_spip a,
@@ -700,7 +701,7 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 		.resultats ul li h3.spip {
 			font-size: 18px; 
 			text-indent: -33px; 
-			margin-left: 33px; margin-top: 0; margin-bottom: .5em;
+			margin-left: 33px; margin-top: 0; margin-bottom: .5em; margin-right: 0;
 			border-bottom: none;
 			float: right; clear: none;
 			width: 531px; }
