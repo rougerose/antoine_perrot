@@ -860,7 +860,7 @@ p.pagination {
 	#pied #copyright { 
 		font-size: 10px;
 		text-align: right;
-		margin-top: 2em; }
+		margin: 2em 10px 0; }
 
 /* -------------------------------- */
 /*	ColorBox						*/
