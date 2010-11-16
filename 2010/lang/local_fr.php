@@ -25,6 +25,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'ecrire' => '&eacute;crire',
 	'expo_precedente' => 'exposition pr&eacute;c&eacute;dente',
 	'expo_suivante' => 'exposition suivante',
+	'expo' => 'exposition',
 	
 	// F
 	'fichier' => 'fichier',

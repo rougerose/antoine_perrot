@@ -7,16 +7,14 @@
 		</BOUCLE_une>
 
 		<ul class="navigation">	
-
 			<BOUCLE_navigation(ARTICLES){id_article IN #GET{une}}>
 			<B_ex><BOUCLE_ex(EVENEMENTS){id_article}{id_rubrique=2}{age_fin<=0}>
-			<li><a href="#exposition-#ID_ARTICLE">exposition #COMPTEUR_BOUCLE</a></li>
+			<li><a href="#exposition-#ID_ARTICLE"><:expo:></a></li>
 			</BOUCLE_ex></B_ex>
 			<B_oe><BOUCLE_oe(ARTICLES){id_article}{id_rubrique=1}>
-			<li><a href="#image-#ID_ARTICLE">image #COMPTEUR_BOUCLE</a></li>
+			<li><a href="#image-#ID_ARTICLE"><:image:></a></li>
 			</BOUCLE_oe></B_oe>
 			</BOUCLE_navigation>
-
 		</ul><!-- .navigation -->
 
 		<div class="scroll">
