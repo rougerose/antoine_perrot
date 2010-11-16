@@ -118,3 +118,16 @@ hr.spip {
 	height: 1px; width: 60%;
 	margin: 3em auto; }
 .spip_code { font-family: "Lucida Grande"; font-size: 90%; }
+
+
+/* boutons d'administration */
+/* Boutons d'admin SPIP */
+.spip-admin-bloc,
+.spip-admin-float { position: fixed !important; top: 0; right: 5px !important; white-space: nowrap; }
+.spip-admin-bloc, .spip-admin-bloc *,
+.spip-admin-float, .spip-admin-float * { font-size: 95% !important; }
+a.spip-admin-boutons, a:hover.spip-admin-boutons { margin: 0 !important; padding: 4px 6px !important; background: #666 !important; border: 0 !important; color: #fff !important; text-decoration: none; }
+a.spip-admin-boutons { margin: auto !important; opacity: .7; -moz-border-radius-bottomleft: .3em; -moz-border-radius-bottomright: .3em; }
+a:hover.spip-admin-boutons { opacity: 1; }
+@media handheld { .spip-admin-float, .spip-admin-boutons { display: none !important; } }
+@media print { .spip-admin-float, .spip-admin-boutons { display: none !important; } }
