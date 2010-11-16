@@ -133,8 +133,8 @@ h1,h2,h3,h4,h5,h6,
 	font-weight: 200; /* equivalent du light pour Firefox */
 	text-rendering: optimizeLegibility; }
 
-.texte p i,
-.texte p q,
+p i,
+p q,
 .texte blockquote, .texte blockquote:before,
 #hierarchie p strong {
 	font-family: "HelveticaNeue-Italic", "Helvetica Neue";
@@ -143,8 +143,9 @@ h1,h2,h3,h4,h5,h6,
 .texte blockquote p i,
 textarea, input {
 	font-family: "HelveticaNeue", "Helvetica Neue";
-	font-style: normal; font-weight: 400;
-}
+	font-style: normal; font-weight: 400; }
+
+blockquote p strong { font-weight: 800; }
 
 .documents dd h3,
 .spip_documents dd h3, #cboxTitle h3, #cboxTitle h4 { 
@@ -158,7 +159,7 @@ textarea, input {
 p.pagination a,
 .formulaire_spip a,
 #pied dl dt,
-.texte p strong,
+.texte p strong, .texte blockquote p strong i, .texte blockquote p i strong,
 .entry-content .infos,
 .vevent .summary,
 .label,
@@ -168,12 +169,14 @@ table.spip th,
 .formulaire_spip legend,
 .formulaire_login input.submit { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
 
+p strong i, p i strong
+.chapo i { font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue"; font-weight: 500; font-style: italic; }
+
 
 .reponse_formulaire_erreur,
 .erreur_message {
 	font-family: "HelveticaNeue-Bold", "Helvetica Neue Bold", "Helvetica Neue";
-	font-weight: 800;
-}
+	font-weight: 800; }
 
 .contenu-principal p { font-size: 13px; margin-bottom: 1.5em; }
 

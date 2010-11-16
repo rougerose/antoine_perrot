@@ -1,20 +1,13 @@
-TODO menu principal : couleur des entrées -> virer inversion et caler tout sur le blanc
-TODO style gras > italique à corriger
+
 TODO style surlignable
-TODO loupe et agrandissement des images = colorbox
-TODO plan du site ?
+
 TODO favicon
-TODO slider : ajouter nombre de photos disponible avant le lien suite (et aussi dans la rubrique oeuvres) => SI ÇA RESTE EN L'ÉTAT
-TODO page sommaire > 3 œuvres présentées : la hauteur ne s'ajuste pas comme il faut : à revoir => SI ÇA RESTE EN L'ÉTAT ?
+
 TODO liens réseaux sociaux
-TODO établir les liens dans le pied de page
-
-TODO modeles images et doc ajouter fonction pour récupérer les titre et descriptif = modifier la fonction déjà utilisée pour le div.imgDesc qui n'existe pas dans ce cas.
-
-TODO ajouter l'icone loupe pour les images slider
-
 
 TODO documentation > page d'accueil : si une expo avec une date de fin passée, l'expo ne sera affichée nulle part, même si elle fait partie de la sélection
+
+
 
 DONE gestion des couleurs via l'interface privée (id des rubriques dans le menu)
 DONE styles des documents autre que le portfolio
@@ -28,3 +21,11 @@ DONE pied de page
 DONE rubrique liens : captures sites en grisé, puis couleurs en hover ? => non
 DONE gestion du tooltip next lorsqu'il n'y a pas d'article suivant (fleche grisée ?) => NON
 DONE styles sur la page d'identification ecrire
+DONE ajouter l'icone loupe pour les images slider
+DONE menu principal : couleur des entrées -> virer inversion et caler tout sur le blanc
+DONE style gras > italique à corriger
+DONE loupe et agrandissement des images = colorbox
+DONE plan du site ?
+DONE établir les liens dans le pied de page
+
+DONE modeles images et doc ajouter fonction pour récupérer les titre et descriptif = modifier la fonction déjà utilisée pour le div.imgDesc qui n'existe pas dans ce cas.
