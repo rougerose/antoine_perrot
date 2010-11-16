@@ -673,8 +673,7 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 		float: left; }
 	#formulaire_recherche #recherche {
 		background: transparent url(../img/icones.png) no-repeat 2px 4px;
-		padding: 0.4em 0 0.4em 2.5em;
-		width: 11em; }
+		padding: 0.4em 0 0.4em 2.5em; }
 	#formulaire_recherche #recherche:focus { 
 		background-position: 2px -28px; }
 	#formulaire_recherche .bouton { 
