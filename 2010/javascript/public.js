@@ -65,6 +65,20 @@ $(document).ready(function(){
 		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
 	});
 	
+	$(".rubrique_oeuvres .ajaxbloc").ajaxSuccess(function(){
+		$(".imgAgrandissement .conteneurDesc").append('<span class="afficheInfos" />').find(".imgDesc").hide();
+		// affichage
+		$("span.afficheInfos").click(function(){
+			$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
+		});
+	});
+	
+	
+	// affichage
+	$("span.afficheInfos").click(function(){
+		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
+	});
+	
 	/**
 	 *	Ajout d'une icone "loupe" sur les images cliquables
 	 *
