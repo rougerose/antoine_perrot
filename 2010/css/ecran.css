@@ -234,7 +234,7 @@ a.logo-article:hover { background-color: transparent; }
 /*  Entete								*/
 /* ------------------------------------ */
 #entete { margin-left: 40px; float: left; }
-	#entete #logo { font-size: 30px; line-height: 36px; }
+	#entete #logo { font-size: 30px; line-height: 36px; color: #000; }
 		#entete #logo a { color:#000; }
 
 
