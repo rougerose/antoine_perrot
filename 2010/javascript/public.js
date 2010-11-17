@@ -254,7 +254,7 @@ $(document).ready(function(){
  */
 
 var initDescriptifOeuvres = function() {
-	var $descriptif = $(".visuOeuvres .imgAgrandissement .conteneurDesc");
+	var $descriptif = $(".oeuvreConteneur .imgAgrandissement .conteneurDesc");
 	var $bouton = '<span class="afficheInfos" />';
 	$descriptif.append($bouton).children(".imgDesc").hide();
 	$("span.afficheInfos").click(function(){
