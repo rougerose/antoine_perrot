@@ -1,29 +1,29 @@
 <div class="raccourcis groupe clearfix">
 	<dl class="derniers">
 		<B_oeuvres>
-		<dt class="oeuvres">&#x2192; <:oeuvres_recentes:></dt>
+		<dt class="oeuvres"><:oeuvres_recentes:></dt>
 		<BOUCLE_oeuvres(ARTICLES){id_rubrique=1}{!par date}{0,3}>
 		<dd><a href="#URL_ARTICLE">#TITRE</a></dd>
 		</BOUCLE_oeuvres>
 		</B_oeuvres>
 		<B_expo>
-		<dt class="expos">&#x2192; <:prochaine_expos:></dt>
+		<dt class="expos"><:prochaine_expos:></dt>
 		<BOUCLE_expo(EVENEMENTS){id_rubrique=2}{age_fin<=0}{0,3}>
 		<dd><a href="#URL_ARTICLE">#TITRE</a></dd>
 		</BOUCLE_expo>
 	</dl>
 	<dl class="liens">
-		<dt>&#x2192; <:plan_site:></dt>
+		<dt><:plan_site:></dt>
 		<BOUCLE_secteurs(RUBRIQUES){racine}{par num titre, titre}>
 		<dd><a href="#URL_RUBRIQUE">#TITRE</a></dd>
 		</BOUCLE_secteurs>
 	</dl>
 	
 	<dl class="communication">
-		<dt>&#x2192; <:gardons_contact:></dt>
+		<dt><:gardons_contact:></dt>
 		<dd><a href="http://www.facebook.com/pages/Antoine-Perrot/173570883725">Facebook &#x2192; Antoine Perrot</a></dd>
 		<BOUCLE_contact(RUBRIQUES){id_rubrique=7}>
-		<dd><a href="#URL_RUBRIQUE"><:mail:> &#x2192; <:ecrire:></a></dd>
+		<dd><a href="#URL_RUBRIQUE"><:mail:> &#x2192;<:ecrire:></a></dd>
 		</BOUCLE_contact>
 		<dd><a href="#URL_PAGE{backend}" rel="alternate">RSS &#x2192; <:abonner:></a></dd>
 	</dl>
