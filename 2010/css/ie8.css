@@ -1,0 +1,21 @@
+/* ------------------------------------ */
+/*	Site : Antoine Perrot				*/
+/*	URL : www.antoineperrot.net			*/
+/*	Auteur : christophe le drean		*/
+/*	Date :								*/
+/*	Version : 2 						*/
+/*	(styles pour IE 8					*/
+/* ------------------------------------ */
+
+
+
+/* visualisation des œuvres */
+.imgAgrandissement .imgDesc { background-color: #000; }
+
+/* formulaire recherche */
+#formulaire_recherche #recherche { width: 9em; }
+#formulaire_recherche .bouton { width: auto; margin-right: 2px; }
+
+
+/* pied de page */
+#pied dl dt { font-weight: 800; }
