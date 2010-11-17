@@ -1,4 +1,9 @@
 $(document).ready(function(){
+	// pour l'affichage et le masquage des descriptifs d'œuvres y compris après chargement d'un page en ajax
+	initDescriptifOeuvres();
+	onAjaxLoad(initDescriptifOeuvres);
+	
+	
 	/**
 	 * Grille de mise en page ajoutée aux boutons d'administration de spip
 	 */
@@ -11,73 +16,37 @@ $(document).ready(function(){
 	
 	// $("body").toggleClass("grille");
 	
-	/**
-	 *	Plugin Mediabox (colorbox)
-	 *	pour afficher titre et descriptif de l'image
-	 */
-	$("a.mediabox").colorbox({
-		title: function(){
-			// différentes hypothèses : 
-			// - ou bien l'image vient d'un modèle image ou img, 
-			// - ou bien d'un modèle doc, 
-			// - ou bien encore vient du slider (forme utilisée pour le slider mais aussi par inclure/documents.html)
-			if ($(this).hasClass("modeleImg")) {
-				var description = $(this).children("img[title]");
-				var titre = description.attr("title");
-			
-				// l'image a un descriptif (précédé de *) ?
-				if(titre.match(/\*/)) { 
-					titre = titre.match(/^(.+)\*(.+)$/);
-					return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
-				} else { 
-					// on ne prend que le titre + [date]
-					titre = titre.match(/^(.+)(\[.+\])$/);
-					return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
-				}
-			} 
-			else  if ($(this).hasClass("modeleDoc")) {
-				var titre = $(this).parent().parent("dl").children("dd.spip_doc_titre");
-				var description = titre.next("dd.spip_doc_descriptif");
-				titre = titre.html(); description = description.html();
-			
-				// au cas où le titre ou descriptif serait vide
-				if (titre == null) { titre = ''; }
-				if (description == null) { description = ''; }
-				return titre + description;
-			} 
-			else if ($(this).hasClass("slider")) {
-				var titre = $(this).next(".imgDesc").html();
-				if (titre == null) { titre = ''; }
-				return titre;
-			}
-		}
-	});
+	
 	
 	/**
 	 *	Affichage des titre et descriptif des œuvres 
 	 *
 	 **/
 	// ajout d'un bouton et on masque le descriptif
-	$(".imgAgrandissement .conteneurDesc").append('<span class="afficheInfos" />').find(".imgDesc").hide();
+/*	$(".imgAgrandissement .conteneurDesc").append('<span class="afficheInfos" />').find(".imgDesc").hide();
 	
 	// affichage
 	$("span.afficheInfos").click(function(){
 		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
 	});
-	
-	$(".rubrique_oeuvres .ajaxbloc").ajaxSuccess(function(){
+*/	
+/*	$(".rubrique_oeuvres .ajaxbloc").ajaxComplete(function(){
 		$(".imgAgrandissement .conteneurDesc").append('<span class="afficheInfos" />').find(".imgDesc").hide();
 		// affichage
 		$("span.afficheInfos").click(function(){
 			$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
 		});
 	});
+*/	
 	
-	
-	// affichage
+/*	// affichage
 	$("span.afficheInfos").click(function(){
 		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
-	});
+	});*/
+	
+	
+	
+	
 	
 	/**
 	 *	Ajout d'une icone "loupe" sur les images cliquables
@@ -308,6 +277,62 @@ $(document).ready(function(){
 	});
 	
 });
+
+/**
+ * Descriptif des œuvres (page accueil et rubrique Oeuvres)
+ * Permet d'être disponible y compris après un chargement de la page en ajax
+ */
+
+var initDescriptifOeuvres = function() {
+	var $descriptif = $(".visuOeuvres .imgAgrandissement .conteneurDesc");
+	var $bouton = '<span class="afficheInfos" />';
+	$descriptif.append($bouton).children(".imgDesc").hide();
+	$("span.afficheInfos").click(function(){
+		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
+	});
+	
+	/**
+	 *	Plugin Mediabox (colorbox)
+	 *	pour afficher titre et descriptif de l'image
+	 */
+	$("a.mediabox").colorbox({
+		title: function(){
+			// différentes hypothèses : 
+			// - ou bien l'image vient d'un modèle image ou img, 
+			// - ou bien d'un modèle doc, 
+			// - ou bien encore vient du slider (forme utilisée pour le slider mais aussi par inclure/documents.html)
+			if ($(this).hasClass("modeleImg")) {
+				var description = $(this).children("img[title]");
+				var titre = description.attr("title");
+			
+				// l'image a un descriptif (précédé de *) ?
+				if (titre.match(/\*/)) { 
+					titre = titre.match(/^(.+)\*(.+)$/);
+					return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
+				} else { 
+					// on ne prend que le titre + [date]
+					titre = titre.match(/^(.+)(\[.+\])$/);
+					return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
+				}
+			} 
+			else  if ($(this).hasClass("modeleDoc")) {
+				var titre = $(this).parent().parent("dl").children("dd.spip_doc_titre");
+				var description = titre.next("dd.spip_doc_descriptif");
+				titre = titre.html(); description = description.html();
+			
+				// au cas où le titre ou descriptif serait vide
+				if (titre == null) { titre = ''; }
+				if (description == null) { description = ''; }
+				return titre + description;
+			} 
+			else if ($(this).hasClass("slider")) {
+				var titre = $(this).next(".imgDesc").html();
+				if (titre == null) { titre = ''; }
+				return titre;
+			}
+		}
+	});
+}
 
 /**
  * @method getStyleProperty
