@@ -7,10 +7,21 @@
 /*	(styles pour IE 7 et inférieures)	*/
 /* ------------------------------------ */
 
+
+/* structure de la page */
 #entete { position: absolute; left: 0; }
 #nav { position: absolute; left: 0; }
 
+
+/* navigation entre les articles */
 #navigation { left: 0; }
 	#navigation ul { width: 720px; }
 		#navigation li.back div.info { margin-left: 0; }
 		#navigation li.next div.info { right: 16px; }
+
+/* visualisation des œuvres */
+.imgAgrandissement .imgDesc { background-color: #000; }
+
+/* formulaire recherche */
+#formulaire_recherche #recherche { width: 9em; }
+#formulaire_recherche .bouton { width: auto; margin-right: 2px; }
