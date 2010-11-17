@@ -9,3 +9,8 @@
 
 #entete { position: absolute; }
 #nav { position: absolute; }
+
+#navigation { left: 0; }
+	#navigation ul { width: 720px; }
+		#navigation li.back div.info { margin-left: 0; }
+		#navigation li.next div.info { right: 16px; }

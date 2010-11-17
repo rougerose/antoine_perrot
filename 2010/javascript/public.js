@@ -216,7 +216,6 @@ $(document).ready(function(){
 				beingShown = true;
 				
 				info.show().animate({
-					display: 'block',
 					top:0,
 					opacity: 1
 				}, delai, 'swing', function(){
