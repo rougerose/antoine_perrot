@@ -853,11 +853,10 @@ p.pagination {
 		#pied dl.derniers { margin-left: 180px; }
 		#pied dl.communication { margin-right: 0; width: 160px; }
 			#pied dl dt { font-size: 12px; color: #000; }
-			#pied dl dt:before { content: "\2192\2009"; }
 			#pied dl.derniers dt.expos { margin-top: 1.5em; }
-			#pied dl dd { margin-left: .7em;
-				text-align: left;
-				 }
+			#pied dl dd { 
+				
+				text-align: left; }
 	#pied #copyright { 
 		font-size: 10px;
 		text-align: right;
