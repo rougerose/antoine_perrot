@@ -856,7 +856,6 @@ p.pagination {
 			#pied dl.derniers dt.expos { margin-top: 1.5em; }
 			#pied dl dd { 
 				text-align: left;
-				xtext-indent: -11px;
 				margin-left: 11px; }
 	#pied #copyright { 
 		font-size: 10px;
