@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	// pour l'affichage et le masquage des descriptifs d'œuvres y compris après chargement d'un page en ajax
+	// http://www.mail-archive.com/spip-zone@rezo.net/msg08173.html
 	initDescriptifOeuvres();
 	onAjaxLoad(initDescriptifOeuvres);
 	
@@ -15,37 +16,6 @@ $(document).ready(function(){
 	*/
 	
 	// $("body").toggleClass("grille");
-	
-	
-	
-	/**
-	 *	Affichage des titre et descriptif des œuvres 
-	 *
-	 **/
-	// ajout d'un bouton et on masque le descriptif
-/*	$(".imgAgrandissement .conteneurDesc").append('<span class="afficheInfos" />').find(".imgDesc").hide();
-	
-	// affichage
-	$("span.afficheInfos").click(function(){
-		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
-	});
-*/	
-/*	$(".rubrique_oeuvres .ajaxbloc").ajaxComplete(function(){
-		$(".imgAgrandissement .conteneurDesc").append('<span class="afficheInfos" />').find(".imgDesc").hide();
-		// affichage
-		$("span.afficheInfos").click(function(){
-			$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
-		});
-	});
-*/	
-	
-/*	// affichage
-	$("span.afficheInfos").click(function(){
-		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
-	});*/
-	
-	
-	
 	
 	
 	/**
