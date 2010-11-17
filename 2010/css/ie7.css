@@ -7,8 +7,8 @@
 /*	(styles pour IE 7 et inférieures)	*/
 /* ------------------------------------ */
 
-#entete { position: absolute; }
-#nav { position: absolute; }
+#entete { position: absolute; left: 0; }
+#nav { position: absolute; left: 0; }
 
 #navigation { left: 0; }
 	#navigation ul { width: 720px; }
