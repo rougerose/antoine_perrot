@@ -21,7 +21,7 @@
 			<div class="scrollConteneur clearfix">
 				<div class="visuOeuvres clearfix">
 					<BOUCLE_affichage(ARTICLES){id_article IN #GET{une}}>
-					<B_expos><BOUCLE_expos(EVENEMENTS){id_article}{id_rubrique=2}{age_debut<=0}>
+					<B_expos><BOUCLE_expos(EVENEMENTS){id_article}{id_rubrique=2}{age_fin<=0}>
 					[(#INCLURE{fond=inclure/slider-exposition,env,id_article,id_rubrique})]
 					</BOUCLE_expos></B_expos>
 					<B_oeuvres><BOUCLE_oeuvres(ARTICLES){id_article}{id_rubrique=1}>
