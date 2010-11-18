@@ -568,9 +568,9 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 	.item .info-publi,
 	.page_article .hentry .info-publi,
 	.rubrique_biographie .hentry .info-publi,
-	.hentry .st { margin-left: 480px; margin-bottom: 1em; margin-top: .5em; }
+	.hentry .st { margin-left: 480px; margin-bottom: 1.5em; }
 	
-	.hentry .st { border-top: 1px dotted #666; padding-top: .5em; }
+	.hentry .st { border-top: 1px dotted #666; padding-top: .5em; margin-bottom: 1em; margin-top: .5em; }
 		.hentry .st h3 { 
 			font-size: 12px; font-weight: 500;
 			float: left;
