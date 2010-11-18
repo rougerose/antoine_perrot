@@ -57,6 +57,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'page' => 'page',
 	'page_indisponible_404' => 'La page demand&eacute;e n&#x27;est pas disponible.',
 	'page_indisponible_401' => 'La page demand&eacute;e n&#x27;est pas disponible.',
+	'partagez' => 'partagez',
 	'plan_site' => 'plan du site',
 	'prochaines_expos' => 'prochaines expositions',
 	'publie' => 'publi&eacute; le',

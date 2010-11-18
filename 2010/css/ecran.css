@@ -141,7 +141,8 @@ p q,
 	font-style: italic; font-weight: 400; }
 
 .texte blockquote p i,
-textarea, input {
+textarea, input,
+.st h3 {
 	font-family: "HelveticaNeue", "Helvetica Neue";
 	font-style: normal; font-weight: 400; }
 
@@ -566,7 +567,17 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 	
 	.item .info-publi,
 	.page_article .hentry .info-publi,
-	.rubrique_biographie .hentry .info-publi { margin-left: 480px; margin-bottom: 1.5em; }
+	.rubrique_biographie .hentry .info-publi,
+	.hentry .st { margin-left: 480px; margin-bottom: 1em; margin-top: .5em; }
+	
+	.hentry .st { border-top: 1px dotted #666; padding-top: .5em; }
+		.hentry .st h3 { 
+			font-size: 12px; font-weight: 500;
+			float: left;
+		 	margin-right: 5px; }
+		.hentry .st ul { float: left;  }
+			.hentry .st ul li { float: left; }
+				.item .st li a { padding: 2px; display: block; }
 	
 	.item .info-publi p { margin-bottom: 0; font-size:11px; }
 	
@@ -581,7 +592,7 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 	.item .chapo p, 
 	.item .texte p,
 	.item .ps p,
-	.item .notes p { padding-left: 20px; padding-right: 60px; }
+	.item .notes p { padding-left: 20px; padding-right: 120px; }
 	
 	.item .texte p.logo { 
 		float:left;

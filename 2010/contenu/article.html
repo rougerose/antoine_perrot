@@ -24,7 +24,9 @@
 
 		</div><!-- .info-publi -->
 		]
-
+		
+		[(#MODELE{socialtags}{position=Haut})]
+		
 		<B_evenement>
 		<div class="evenement vcalendar section">
 			<BOUCLE_evenement(EVENEMENTS){id_article}>
@@ -55,8 +57,9 @@
 
 		[<div class="notes surlignable section"><h3 class="spip pas_surlignable"><:info_notes:></h3>(#NOTES)</div>]
 		
+		[(#MODELE{socialtags}{position=Bas})]
+		
 	</div><!-- .hentry -->
-	
 </div><!-- .hfeed -->
 
 </BOUCLE_contenu>

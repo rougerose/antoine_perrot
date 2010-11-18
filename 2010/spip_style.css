@@ -31,7 +31,7 @@ h6.spip { font-size: 14px; }
 /* Listes */
 ul.spip, ol.spip {
 	font-size: 13px; }
-.item ul.spip, .item ol.spip { margin: 0 60px 1.5em 22px; } /* uniquement pour l'espace public */
+.item ul.spip, .item ol.spip { margin: 0 120px 1.5em 22px; } /* uniquement pour l'espace public */
 ul.spip {
 	list-style-image: url(img/puce.png);
 	list-style-position: outside; }
@@ -71,11 +71,11 @@ table.spip {
 .texte blockquote { 
 	background-color: rgba(253,253,253,0.7);
 	display: block; }
-.item blockquote { margin: 0 60px 0 20px; }
+.item blockquote { margin: 0 120px 0 20px; background-color: #f0f0f0; }
 .texte blockquote:before {
 	content: '“';
 	font-size: 700%; line-height: 80%;
-	color: #ddd;
+	color: #ccc;
 	height:0;
 	display: inline-block; }
 .item .texte blockquote p { padding-left: 50px; padding-right: 0; }
@@ -95,6 +95,7 @@ dl.spip_documents { padding-left: 20px; }
 
 .spip_documents_left { float: left; margin-right: 20px; margin-bottom: 5px; }
 .spip_documents_center { display: block; display: table; clear: both; margin: 0 auto 1.5em; }
+dl.spip_document_center { padding-right: 120px; }
 .spip_documents_right { float: right; margin-left: 20px; margin-bottom: 5px; }
 .spip_doc_titre { background-color: #fff; }
 .spip_doc_descriptif { background-color: #fff; clear: both; }
