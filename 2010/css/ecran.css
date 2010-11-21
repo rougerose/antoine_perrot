@@ -270,7 +270,7 @@ a.logo-article:hover { background-color: transparent; }
 #slider {
 	position: relative;
 	width: 700px; }
-	#slider h2.titre { font-size: 28px; line-height: 36px; }
+	#slider h2.titre { font-size: 20px; line-height: 36px; }
 	#slider .navigation { 
 		position:absolute; right: 0; top: 9px;
 		padding-right: 40px;
