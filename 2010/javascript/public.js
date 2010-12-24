@@ -33,7 +33,7 @@ $(document).ready(function(){
 			$(this).children("span.icone-loupe").stop().animate({
 				opacity: 0
 			}, 500);
-		}).hide;
+		}).hide();
 	
 	/**
 	 *	Les messages d'informations sur les erreurs de saisies
