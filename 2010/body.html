@@ -6,23 +6,27 @@
 		<INCLURE{fond=inclure/barre-nav,env}>
 		#FORMULAIRE_RECHERCHE
 	</div>
-	
-	<div id="conteneur" class="clearfix">	
+
+	<div id="conteneur">
 		<div id="contenu">
 			<INCLURE{fond=contenu/#ENV{type},env}>
 		</div>
 
+		[(#REM) ce bloc n'est pas nécessaire pour tous gabarits (sommaire, )]
 		<div id="navigation">
 			<INCLURE{fond=navigation/#ENV{type},env}>
 			<INCLURE{fond=extra/#ENV{type},env}>
 		</div>
-		
+
 		<div id="hierarchie">
 			<INCLURE{fond=hierarchie/#ENV{type},env}>
 		</div>
-	</div>
 
-	<div id="pied" class="clearfix">
-		<INCLURE{fond=inclure/pied,env}>
+		<div id="pied">
+			<INCLURE{fond=inclure/pied,env}>
+		</div>
+	</div>
+	<div id="copyright">
+		<INCLURE{fond=inclure/copyright,env}>
 	</div>
 </div>

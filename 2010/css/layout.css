@@ -1,0 +1,25 @@
+/*	Layout style cheet
+	Updated:	2010-12-24
+	Author:		christophe le drean / rouge-rose.net
+	----------------------------------------------------*/
+
+/*	=STRUCTURE
+	------------------------------------------------------ */
+/* body.page_sommaire { padding-top: 14px; }*/
+
+#page {
+	position: relative;
+	margin-left: 270px; margin-top: 3em; }
+	#entete { position: fixed; top: 36px; left: 0; z-index: 0; }
+	#nav { position: fixed; top:108px; left: 0; z-index: 0; }
+	#conteneur {
+		width: 720px;
+		position: relative; z-index: 10; }
+		#conteneur #contenu {  }
+		#conteneur #navigation {
+			position:absolute; top: -2em; z-index:0;
+			width: 720px; }
+		#conteneur #hierarchie { clear: both; }
+		#pied {
+			position: relative;
+			margin-bottom: 3em; }
