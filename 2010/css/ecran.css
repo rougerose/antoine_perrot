@@ -7,55 +7,19 @@
 .grille { background: url('../img/960_grid_16_col.png') repeat-y 0 0; }
 
 
-/* ------------------------------------ */
-/*  Structure des pages					*/
-/* ------------------------------------ */
-body { position: relative; padding-top: 36px; }
-body.page_sommaire { padding-top: 14px; }
-	#page {  }
-		#entete { position: fixed; top: 36px; }
-		#nav { position: fixed; top:108px; z-index:0; }
-		#conteneur {
-			position: relative;
-			margin-left:270px;
-			width: 720px; }
-			#conteneur #contenu {
-				position:relative; z-index:20;
-				float: left;
-				padding: 0 10px 0;
-				width: 700px; }
-			#conteneur #navigation {
-				position:absolute; top: -2em; z-index:0;
-				width: 720px; }
-			#conteneur #hierarchie { clear: both; }
-			#pied {
-				position: relative;
-				text-align:center;
-				margin-left:270px; margin-bottom: 3em;
-				width: 720px;
-				z-index: 20; }
+
 
 /* ------------------------------------ */
 /*  mise en page : principes généraux	*/
 /* ------------------------------------ */
 
-.item,
-#slider { xborder-top: 1px solid #333; }
 
-#conteneur, #pied { background-color: #fff; xopacity: 0.8;
-	box-shadow: 0px 0px 2px #999;
-	-moz-box-shadow: 2px 2px 6px #ccc;
-	-webkit-box-shadow: 2px 2px 2px #999; }
 
 
 /* ------------------------------------ */
 /*  Typographie					*/
 /* ------------------------------------ */
-html { font-size: 100.01%; /* pour IE */ }
 
-body {
-	font: 400 75%/1.5 "HelveticaNeue","Helvetica Neue", "Helvetica", Arial, sans-serif;
-	color: #555; }
 
 h1,h2,h3,h4,h5,h6,
 .titre p.surtitre, .titre p.soustitre,

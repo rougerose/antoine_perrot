@@ -3,4 +3,11 @@
 	Author:		christophe le drean / rouge-rose.net
 	----------------------------------------------------*/
 
+html { font-size: 100.01%; /* pour IE */ }
+
+body {
+	text-rendering: optimizeLegibility; /* Safari 5 & Chrome */
+	font: 400 75%/1.5 "HelveticaNeue","Helvetica Neue", "Helvetica", Arial, sans-serif;
+	color: #555; }
+
 h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal; }

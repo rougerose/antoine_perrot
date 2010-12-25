@@ -30,8 +30,6 @@ del { text-decoration: line-through; }
 table { border-collapse: collapse; border-spacing: 0; }
 
 /* ajouts */
-body{text-rendering: optimizeLegibility;}
-
 a img { border:none; }
 
 /* http://perishablepress.com/press/2009/12/06/new-clearfix-hack/ */
