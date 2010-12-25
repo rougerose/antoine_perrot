@@ -3,21 +3,19 @@ $(document).ready(function(){
 	// http://www.mail-archive.com/spip-zone@rezo.net/msg08173.html
 	initDescriptifOeuvres();
 	onAjaxLoad(initDescriptifOeuvres);
-	
-	
+
+
 	/**
 	 * Grille de mise en page ajoutée aux boutons d'administration de spip
 	 */
-	/*
 	$("#spip-admin").append("<a id='grille' class='spip-admin-boutons' href='#'>Grille</a>");
 	$("#grille").click(function(){
 		$("body").toggleClass("grille");
 	});
-	*/
-	
+
 	// $("body").toggleClass("grille");
-	
-	
+
+
 	/**
 	 *	Ajout d'une icone "loupe" sur les images cliquables
 	 *
@@ -34,24 +32,24 @@ $(document).ready(function(){
 				opacity: 0
 			}, 500);
 		}).hide();
-	
+
 	/**
 	 *	Les messages d'informations sur les erreurs de saisies
-	 *	des formulaires masque les champs. 
+	 *	des formulaires masque les champs.
 	 *	Lorsque l'utilisateur clique dans le champ pour corriger,
 	 *	le message d'erreur est automatique masqué.
 	 */
-	
+
 	$(".formulaire_spip").delegate("li.erreur","click",function(){
 		$(this).find("span").hide();
 		$(this).removeClass("erreur");
 	});
-	
-	
+
+
 	/**
 	 * transitions CSS3 non disponibles dans Firefox 3 (max)
 	 */
-	
+
 	if (typeof getStyleProperty('transition') == 'undefined') {
 		// property is unsupported
 		// simulation CSS3 pour firefox 3
@@ -69,12 +67,12 @@ $(document).ready(function(){
 
 	/**
 	 * Slider
-	 * script est un mix entre deux sources principales : 
+	 * script est un mix entre deux sources principales :
 	 * http://jqueryfordesigners.com/coda-slider-effect/
 	 * et
 	 * http://jqueryfordesigners.com/jquery-infinite-carousel/
 	 */
-	
+
 	$("#slider").each(function(){
 		var slider = $(this),
 			scroll = $(".scroll"),
@@ -87,33 +85,33 @@ $(document).ready(function(){
 			panneauLargeur = panneaux.outerWidth(),
 			horizontal = true,
 			delai = 700;
-		
+
 		// pas de barre défilement sur le div.scroll
 		scroll.css("overflow","hidden");
-		
-		
+
+
 		// défilement horizontal du slider
 		if (horizontal) {
 			panneaux.css({ 'float': 'left', 'position' : 'relative' });
 			conteneur.css('width', panneauLargeur * pages);
 		}
-		
+
 		// hauteur du premier panneau
 		var panneauHauteur = panneaux.eq((pageCourante - 1)).outerHeight();
-		
+
 		// premier bouton de la navigation sélectionné
 		nav.eq(0).addClass("actif");
-		
+
 		// boutons de navigation gauche et droite
 		// et application de la hauteur du premier panneau
 		scroll
 			.before('<span id="sbg" class="scrollBouton gauche">&nbsp;</span>')
 			.after('<span id="sbd" class="scrollBouton droite">&nbsp;</span>')
 			.css({ height:panneauHauteur });
-		
+
 		// ajustement du positionnement en hauteur des boutons de navigation
 	//	$("span.scrollBouton").css({ top: Math.round(panneauHauteur/2) })
-		
+
 		// navigation via les boutons
 		$('span.scrollBouton.gauche', this).click(function () {
 			p--; if (p < 1) p = pages;
@@ -125,12 +123,12 @@ $(document).ready(function(){
 			var el = nav.eq(p-1); selectNav.call(el);
 			return gotoPage(pageCourante + 1);
 		});
-		
+
 		function gotoPage(page) {
 			var dir = page < pageCourante ? -1 : 1,
 				n = Math.abs(pageCourante - page),
 				left = panneauLargeur * dir * n;
-				
+
 			if (page < 1) {
 				left = Math.abs(left*pages);
 				page = pages;
@@ -140,23 +138,23 @@ $(document).ready(function(){
 			}
 			p = page;
 			pageCourante = page;
-			
+
 			// modification de la hauteur du scroll en fonction de celle du panneau affiché
 			var hauteurPanneau = panneaux.eq(pageCourante-1).outerHeight();
-			
+
 			scroll.animate({
 				scrollLeft: '+=' + left,
 				height: hauteurPanneau
 			},delai);
 		}
-		
+
 		nav.each(function (a) {
 			$(this).bind("click",function(){
 				selectNav.call($(this));
 				gotoPage(a + 1);
 			});
 		});
-		
+
 		function selectNav () {
 			$(this)
 				.parents("ul")
@@ -166,14 +164,14 @@ $(document).ready(function(){
 				.end()
 			.addClass("actif");
 		}
-		
+
 		// l'url comporte un hash, on affiche l'œuvre directement
 		if (window.location.hash) {
 			var afficher = '[hash=' + window.location.hash + ']';
 			$("#slider .navigation a").filter(afficher).click();
 		}
 	});
-	
+
 	/**
 	 * Animation de pseudo tooltips
 	 * inspiré de http://jqueryfordesigners.com/coda-popup-bubbles/
@@ -181,7 +179,7 @@ $(document).ready(function(){
 	$(".tooltip").each(function(){
 		var trigger = $("a",this);
 		var texteInfo = trigger.html();
-		
+
 		var delai = 250;
 		var hideDelay = 500;
 		var hideDelayTimer = null;
@@ -189,7 +187,7 @@ $(document).ready(function(){
 		var shown = false;
 		var direction;
 		var marge;
-		
+
 		if ($(this).is(".next")) {
 			$(this).prepend('<div class="next info">'+ texteInfo +'</div>');
 			largeurNext = $(".next.info").outerWidth();
@@ -203,9 +201,9 @@ $(document).ready(function(){
 			largeurBack = $(".back.info").outerWidth();
 			$(".back.info").css({top:30});
 		}
-		
+
 		var info = $(".info",this).css('opacity',0);
-		
+
 		trigger.mouseover(function(){
 			if (hideDelayTimer) clearTimeout(hideDelayTimer);
 			if (beingShown || shown) {
@@ -214,7 +212,7 @@ $(document).ready(function(){
 			} else {
 				// reset position of info box
 				beingShown = true;
-				
+
 				info.show().animate({
 					top:0,
 					opacity: 1
@@ -227,13 +225,13 @@ $(document).ready(function(){
 			if (hideDelayTimer) clearTimeout(hideDelayTimer);
 			hideDelayTimer = setTimeout(function () {
 				hideDelayTimer = null;
-				
+
 				if (info.is(".next")) {
 					direction = '+=';
 				} else {
 					direction = '-='
 				}
-				
+
 				info.animate({
 					top:30,
 					opacity: 0
@@ -244,7 +242,7 @@ $(document).ready(function(){
 			}, hideDelay);
 		});
 	});
-	
+
 });
 
 /**
@@ -259,41 +257,41 @@ var initDescriptifOeuvres = function() {
 	$("span.afficheInfos").click(function(){
 		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
 	});
-	
+
 	/**
 	 *	Plugin Mediabox (colorbox)
 	 *	pour afficher titre et descriptif de l'image
 	 */
 	$("a.mediabox").colorbox({
 		title: function(){
-			// différentes hypothèses : 
-			// - ou bien l'image vient d'un modèle image ou img, 
-			// - ou bien d'un modèle doc, 
+			// différentes hypothèses :
+			// - ou bien l'image vient d'un modèle image ou img,
+			// - ou bien d'un modèle doc,
 			// - ou bien encore vient du slider (forme utilisée pour le slider mais aussi par inclure/documents.html)
 			if ($(this).hasClass("modeleImg")) {
 				var description = $(this).children("img[title]");
 				var titre = description.attr("title");
-			
+
 				// l'image a un descriptif (précédé de *) ?
-				if (titre.match(/\*/)) { 
+				if (titre.match(/\*/)) {
 					titre = titre.match(/^(.+)\*(.+)$/);
 					return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
-				} else { 
+				} else {
 					// on ne prend que le titre + [date]
 					titre = titre.match(/^(.+)(\[.+\])$/);
 					return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
 				}
-			} 
+			}
 			else  if ($(this).hasClass("modeleDoc")) {
 				var titre = $(this).parent().parent("dl").children("dd.spip_doc_titre");
 				var description = titre.next("dd.spip_doc_descriptif");
 				titre = titre.html(); description = description.html();
-			
+
 				// au cas où le titre ou descriptif serait vide
 				if (titre == null) { titre = ''; }
 				if (description == null) { description = ''; }
 				return titre + description;
-			} 
+			}
 			else if ($(this).hasClass("slider")) {
 				var titre = $(this).next(".imgDesc").html();
 				if (titre == null) { titre = ''; }
