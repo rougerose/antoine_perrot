@@ -3,8 +3,13 @@
 	Author:		christophe le drean / rouge-rose.net
 	----------------------------------------------------*/
 
-#conteneur {
+.item {
 	background-color: #fff;
+	xborder: 1px solid #666;
 	box-shadow: 1px 1px 3px #888;
 	-moz-box-shadow: 1px 1px 3px #888;
-	-webkit-box-shadow: 1px 1px 3px #888; }
+	-webkit-box-shadow: 1px 1px 3px #aaa; }
+
+.item { background-color: #fff; }
+
+#slider { margin-bottom: 1.5em; }

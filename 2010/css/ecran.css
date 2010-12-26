@@ -284,14 +284,14 @@ a.icone-lien { position: relative; }
 /* -------------------------------- */
 /*	hentry	(styles communs)		*/
 /* -------------------------------- */
-.hfeed .item { border-top: 0; }
+.hfeed .item { xborder-top: 0; }
 .hentry, .sites .item, .oeuvres .item { margin-bottom: 1.5em; padding-bottom: 1.5em; }
-.hentry.mineur, .sites .mineur { float: left; width: 340px; }
+.hentry.mineur, .sites .mineur { float: left; width: 338px; }
 .hentry.mineur.numero-1, .sites .numero-1 { clear:left; }
 .hentry.mineur.numero-0, .sites .numero-0 { margin-left:20px; }
 	.hentry .titre-rubrique { /* titre de la rubrique parente */ font-size:15px; margin-bottom: .5em; }
 	#slider .hentry .titre-rubrique { margin-bottom: 0; }
-	.hentry.mineur .titre-rubrique { border-top: 1px solid #666; }
+	.hentry.mineur .titre-rubrique { xborder-top: 1px solid #666; }
 	.hentry div.titre { margin-bottom: 1em; }
 		.hentry .entry-title, .sites .titre { font-size: 20px; line-height: 1.2em; }
 		.page_rubrique .hentry .entry-title, .sites h3.titre {

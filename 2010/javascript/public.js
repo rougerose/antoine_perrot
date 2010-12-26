@@ -20,7 +20,7 @@ $(document).ready(function(){
 	 *	Ajout d'une icone "loupe" sur les images cliquables
 	 *
 	 **/
-	$("a.icone-lien").append('<span class="icone-loupe"></span>').children("span").css({ 'opacity':0 });
+/*	$("a.icone-lien").append('<span class="icone-loupe"></span>').children("span").css({ 'opacity':0 });
 	$("a.icone-lien").hover(
 		function(){
 			$(this).children("span.icone-loupe").stop().show().animate({
@@ -32,7 +32,7 @@ $(document).ready(function(){
 				opacity: 0
 			}, 500);
 		}).hide();
-
+*/
 	/**
 	 *	Les messages d'informations sur les erreurs de saisies
 	 *	des formulaires masque les champs.

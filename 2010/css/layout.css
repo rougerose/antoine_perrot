@@ -9,11 +9,11 @@
 
 #page {
 	position: relative;
-	margin-left: 270px; margin-top: 3em; }
+	margin-left: 280px; margin-top: 3em; }
 	#entete { position: fixed; top: 36px; left: 0; z-index: 0; }
 	#nav { position: fixed; top:108px; left: 0; z-index: 0; }
 	#conteneur {
-		width: 720px;
+		width: 700px;
 		position: relative; z-index: 10; }
 		#conteneur #contenu {  }
 		#conteneur #navigation {

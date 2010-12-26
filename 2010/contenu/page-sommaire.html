@@ -2,17 +2,29 @@
 	[(#REM) la page d'accueil ne contient que des articles en sélection ]
 
 	[(#REM) slider = les articles en sélection qui ont également le mot-clé "sommaire grand format" ]
+
 	#SET{slider,''}
 
 	<B_slider>
-	<div id="slider" class="hfeed section">
+	<div id="slider" class="hfeed item">
 		<BOUCLE_slider(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{id_mot=21}{doublons}>
 		[(#SET_PUSH{slider,#ID_ARTICLE})]
 		</BOUCLE_slider>
 
 		<ul class="navigation">
 			<BOUCLE_navigation(ARTICLES){id_article IN #GET{slider}}>
-			<li><a href="#article-#ID_ARTICLE"><:article:></a></li>
+			[(#REM)
+				1 		oeuvre
+				2 		expo
+				3,4,5,6	article
+			]
+			#SET{titre_rubrique,''}
+			[(#ID_RUBRIQUE|match{^(1)$}|?{[(#SET{titre_rubrique,oeuvre})]})]
+			[(#ID_RUBRIQUE|match{^(2)$}|?{[(#SET{titre_rubrique,expo})]})]
+			[(#ID_RUBRIQUE|match{^(3|4|5|6)$}|?{[(#SET{titre_rubrique,article})]})]
+
+
+			<li><a href="#GET{titre_rubrique}-#ID_ARTICLE">#GET{titre_rubrique}</a></li>
 			</BOUCLE_navigation>
 		</ul><!-- .navigation -->
 

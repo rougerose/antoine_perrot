@@ -3,13 +3,22 @@
 	[(#SET{titre-serie,h3})] [(#SET{titre-image,h4})]
 ]
 <BOUCLE_article(ARTICLES){id_article}>
-<div id="image-#ID_ARTICLE" class="hentry panneau item">
-	<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
-	[(#ENV{composition}|=={sommaire}|oui)
-	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE</a></h3>
-	]
-	</BOUCLE_rubrique>
-	<[(#GET{titre-serie}) ]class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></[(#GET{titre-serie})]>
+
+[(#REM)
+	1 		oeuvre
+	2 		expo
+	3,4,5,6	article
+]
+#SET{titre_rubrique,''}
+[(#ID_RUBRIQUE|match{^(1)$}|?{[(#SET{titre_rubrique,oeuvre})]})]
+[(#ID_RUBRIQUE|match{^(2)$}|?{[(#SET{titre_rubrique,expo})]})]
+[(#ID_RUBRIQUE|match{^(3|4|5|6)$}|?{[(#SET{titre_rubrique,article})]})]
+
+<div id="#GET{titre_rubrique}-#ID_ARTICLE" class="hentry panneau item">
+	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE_PARENT</a></h3>
+
+	<h2 class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
+
 	<div class="oeuvreConteneur entry-content clearfix">
 
 		[(#REM) zone apercu]
