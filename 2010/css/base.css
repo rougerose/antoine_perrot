@@ -31,3 +31,106 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	Author:		christophe le drean / rouge-rose.net
 	----------------------------------------------------*/
 
+	.item {
+		background-color: #fff;
+		box-shadow: 1px 1px 3px #888;
+		-moz-box-shadow: 1px 1px 3px #888;
+		-webkit-box-shadow: 1px 1px 3px #aaa; }
+
+/*	=logos
+	------------------------------------------------------ */
+	a.logo-article { display: block; float: left; }
+
+	img.spip_logos {
+		background-color: #fff;
+		padding: 3px; margin-right: 20px; }
+
+/*	=Vcalendar
+	------------------------------------------------------ */
+	.vcalendar {
+		float:right; width: 580px;
+		margin-bottom: 3em; }
+	.vevent { width: 340px;  }
+		.summary {
+			border-bottom:1px solid #666;
+			font-size: 15px; }
+		.vevent dt, .vevent dd {  }
+		.dateEvenement {  }
+		.locationEvenement {  }
+		.dateEvenement, .locationEvenement {  }
+		.infos {
+			border-bottom:1px dotted #888;
+			margin: 0 0 0.25em; }
+		.vevent .infos { padding-left: 6.5em; padding-bottom: .25em; }
+			.vevent .infos .label {
+				display: block; float: left;
+				width:6.5em; margin-left:-6.5em; }
+
+
+/*	=Meta infos contenus :
+	date, point de suite, période des expos
+	------------------------------------------------------ */
+	ul.meta-publi { margin-top: 1em; }
+		.meta-publi li {
+			font-size: 11px; line-height: 1.2em;
+			border-right: 1px solid #888;
+			display: inline; float: left;
+			margin-right: 5px; padding-right: 5px; }
+			.meta-publi .lire-suite { margin-right: 0; padding-right: 0; border-right: none; }
+			.meta-publi .lire-suite a {
+				text-indent: -9999px;
+				outline:0;
+				background: #fff url(../img/img-sprites.png) no-repeat -16px -50px;
+				display: block;
+				padding: 0;
+				height: 13px; width: 16px; }
+			.meta-publi .lire-suite a:hover { background-position: -16px -66px; background-color: #000; }
+
+	h3.titre-rubrique span.periode-expo {
+		font-size: 10px; xline-height: .8em; text-transform: uppercase;
+		color:#c9f; background: #000 url('../img/img-sprites.png') no-repeat 0 -82px;
+		padding: 1px 4px 1px 12px; }
+
+/*	=Hentry
+	------------------------------------------------------ */
+	.entry-content {  }
+	.hentry h3 { margin-top: .5em; }
+
+/*	=Hentry (slider)
+	------------------------------------------------------ */
+	#slider {  }
+		.imgAgrandissement .imgDesc h3 { font-size: 12px; margin-bottom: 9px; }
+		.imgAgrandissement .imgDesc p { font-size: 10px; }
+
+/*	=Hentry en liste (sommaire, rubriques...)
+	------------------------------------------------------ */
+	.liste .entry-content p { margin-bottom: 0; }
+
+
+/*	=Hentry format grid (2 colonnes)
+	------------------------------------------------------ */
+	.grid {
+		margin-right: 20px; margin-bottom: 2em;
+		padding: 0 10px 1em;
+		float: left;
+		width: 330px; }
+		.grid h2 { margin-bottom: .5em; }
+		/* entry-content contient un logo */
+		.logo p, .logo ul.meta-publi { float: right; width: 220px; }
+
+
+/*	=Pagination
+	------------------------------------------------------ */
+	p.pagination {
+		font-size: 12px; color: #000; text-align: right;
+		border: 1px dotted #888;
+		float: right;
+		width: 700px;
+		margin: 0; padding: .25em 10px 1.25em; }
+	p.haut { border-width: 1px 0 0; margin-top: 1em; }
+	p.bas { border-width: 0 0 1px; }
+	.contenu-principal p.bas:last-child { padding: 0 10px 1em; margin-bottom: 2em; }
+		p.pagination strong {
+			font-size: 1em;
+			color: #fff; background-color: #000;
+			padding: 0 2px 2px; }

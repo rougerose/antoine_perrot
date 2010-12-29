@@ -251,13 +251,13 @@ $(document).ready(function(){
  */
 
 var initDescriptifOeuvres = function() {
-	var $descriptif = $(".oeuvreConteneur .imgAgrandissement .conteneurDesc");
+/*	var $descriptif = $(".oeuvreConteneur .imgAgrandissement .conteneurDesc");
 	var $bouton = '<span class="afficheInfos" />';
 	$descriptif.append($bouton).children(".imgDesc").hide();
 	$("span.afficheInfos").click(function(){
 		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
 	});
-
+*/
 	/**
 	 *	Plugin Mediabox (colorbox)
 	 *	pour afficher titre et descriptif de l'image

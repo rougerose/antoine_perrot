@@ -1,46 +1,22 @@
-<div class="contenu-principal">
+<div class="contenu-principal hfeed">
 	[(#REM) la page d'accueil ne contient que des articles en sélection ]
 
-	[(#REM) slider = les articles en sélection qui ont également le mot-clé "sommaire grand format" ]
+	[(#REM) les articles dans la slider sont ceux en sélection qui ont également le mot-clé "sommaire grand format" ]
 
-	#SET{slider,''}
+	#SET{articles_slider,''}
 
 	<B_slider>
-	<div id="slider" class="hfeed item">
+	<div id="slider" class="item">
 		<BOUCLE_slider(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{id_mot=21}{doublons}>
-		[(#SET_PUSH{slider,#ID_ARTICLE})]
+		[(#SET_PUSH{articles_slider,#ID_ARTICLE})]
 		</BOUCLE_slider>
 
-		<ul class="navigation">
-			<BOUCLE_navigation(ARTICLES){id_article IN #GET{slider}}>
-			[(#REM)
-				1 		oeuvre
-				2 		expo
-				3,4,5,6	article
-			]
-			#SET{titre_rubrique,''}
-			[(#ID_RUBRIQUE|match{^(1)$}|?{[(#SET{titre_rubrique,oeuvre})]})]
-			[(#ID_RUBRIQUE|match{^(2)$}|?{[(#SET{titre_rubrique,expo})]})]
-			[(#ID_RUBRIQUE|match{^(3|4|5|6)$}|?{[(#SET{titre_rubrique,article})]})]
+		<INCLURE{fond=inclure/slider,articles_slider=#GET{articles_slider}}>
 
-
-			<li><a href="#GET{titre_rubrique}-#ID_ARTICLE">#GET{titre_rubrique}</a></li>
-			</BOUCLE_navigation>
-		</ul><!-- .navigation -->
-
-		<div class="scroll">
-			<div class="scrollConteneur clearfix">
-				<div class="visuOeuvres clearfix">
-					<BOUCLE_affichage(ARTICLES){id_article IN #GET{slider}}>
-					[(#INCLURE{fond=inclure/slider,env,id_article,id_rubrique})]
-					</BOUCLE_affichage>
-				</div><!-- .visuOeuvres -->
-			</div><!-- .scrollConteneur -->
-		</div><!-- .scroll -->
 	</div><!-- #slider -->
 	</B_slider>
 
 	[(#REM) tous les autres articles en sélection, au format hentry également ]
-	<INCLURE{fond=inclure/articles-sommaire-hentry,env,ajax,doublons,format=mineur,tailleImage=94}>
+	<INCLURE{fond=inclure/articles-sommaire-hentry,env,ajax,doublons,format=grid,tailleImage=84}>
 
 </div><!-- .contenu-principal -->

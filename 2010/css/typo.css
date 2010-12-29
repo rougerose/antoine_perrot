@@ -3,11 +3,35 @@
 	Author:		christophe le drean / rouge-rose.net
 	----------------------------------------------------*/
 
-html { font-size: 100.01%; /* pour IE */ }
+	html { font-size: 100.01%; /* pour IE */ }
 
-body {
-	text-rendering: optimizeLegibility; /* Safari 5 & Chrome */
-	font: 400 75%/1.5 "HelveticaNeue","Helvetica Neue", "Helvetica", Arial, sans-serif;
-	color: #555; }
+	body {
+		text-rendering: optimizeLegibility; /* Safari 5 & Chrome */
+		font: 400 75%/1.5 "HelveticaNeue","Helvetica Neue", "Helvetica", Arial, sans-serif;
+		color: #555; }
 
-h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal; }
+	h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal; }
+
+	h2 {
+		font-size: 20px; line-height: 1.2em;
+		margin-bottom: 1em; }
+	h3 {
+		font-size:15px; line-height: 1em;
+		margin-bottom: .5em; }
+
+	p { font-size: 13px; margin-bottom: 1.5em; }
+
+/*	=Polices
+	------------------------------------------------------ */
+	/* Helvetica Neue Light */
+	h1,h2,h3,h4,h5,h6 {
+		font-family: "HelveticaNeue-Light", "Helvetica Neue";
+		font-weight: 200; /* equivalent du light pour Firefox */ }
+
+	/* Helvetica Neue standard */
+	#slider h3 span { font-family: "HelveticaNeue", "Helvetica Neue"; font-style: normal; font-weight: 400; }
+
+	/* Helvetica Neue Medium */
+	.infos { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
+
+

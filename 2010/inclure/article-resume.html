@@ -1,20 +1,21 @@
-[(#REM)
-
-Squelette Presentation d'un article dans une liste
-(c) 2009 Zpip
-Distribue sous licence GPL
-
-]
+[(#REM) s'il existe un événement lié à l'article, on détermine les variables de texte ]
+<BOUCLE_agenda_expo(EVENEMENTS){id_article}>
+[(#DATE_FIN|>={#ENV{date}}|?{
+	[(#DATE_DEBUT|>{#ENV{date}}|?{
+		#SET{periode_expo,<:prochainement:>}
+		,[(#DATE_DEBUT|<={#ENV{date}}|?{#SET{periode_expo,<:actuellement:>}})]
+	})]
+})]
+</BOUCLE_agenda_expo>
 
 <BOUCLE_articles(ARTICLES){id_article}{statut?}>
 <div id="article-#ID_ARTICLE" class="item hentry[ numero-(#ENV{compteur})][ (#ENV{format})]">
-	<BOUCLE_titre_rubrique(RUBRIQUES){id_rubrique}>
-	[(#ENV{composition}|match{sommaire}|oui)
-	<h4 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE</a></h4>
-	]
-	</BOUCLE_titre_rubrique>
-	<h3 class="entry-title titre"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
-	<div class="#EDIT{intro} introduction entry-content clearfix">
+	[(#ENV{composition}|match{^(sommaire)$}|oui)
+	<h3 class="titre-rubrique">
+		<a href="#URL_RUBRIQUE">#TITRE_PARENT</a>[ <span class="periode-expo">(#GET{periode_expo})</span>]
+	</h3>]
+	<h2 class="entry-title titre"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
+	<div class="#EDIT{intro} introduction entry-content clearfix[ (#LOGO_ARTICLE|oui)logo]">
 		[<a href="#URL_ARTICLE" class="logo-article">(#LOGO_ARTICLE|image_reduire{[(#ENV{tailleImage})],0}|inserer_attribut{alt,[(#TITRE|textebrut)]})</a>]
 		<BOUCLE_evenement(EVENEMENTS){id_article}>
 		[(#INCLURE{fond=inclure/article-evenement-resume,id_article,id_evenement})]

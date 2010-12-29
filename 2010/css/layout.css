@@ -3,23 +3,127 @@
 	Author:		christophe le drean / rouge-rose.net
 	----------------------------------------------------*/
 
-/*	=STRUCTURE
+/*	=Structure
 	------------------------------------------------------ */
-/* body.page_sommaire { padding-top: 14px; }*/
-
-#page {
-	position: relative;
-	margin-left: 280px; margin-top: 3em; }
-	#entete { position: fixed; top: 36px; left: 0; z-index: 0; }
-	#nav { position: fixed; top:108px; left: 0; z-index: 0; }
-	#conteneur {
-		width: 700px;
-		position: relative; z-index: 10; }
-		#conteneur #contenu {  }
-		#conteneur #navigation {
-			position:absolute; top: -2em; z-index:0;
+	#page {
+		position: relative;
+		margin-left: 270px; margin-top: 6em; }
+		#entete { position: fixed; top: 3em; left: 0; z-index: 0; }
+		#nav { position: fixed; top:108px; left: 0; z-index: 0; }
+		#conteneur {
+			width: 720px;
+			position: relative; z-index: 10; }
+			#conteneur #contenu {  }
+			#conteneur #navigation {
+				position:absolute; top: -2em; z-index:0;
+				width: 720px; }
+			#conteneur #hierarchie { clear: both; }
+			#conteneur #pied {  }
+		#copyright {
+			position: relative; z-index: 10;
+			margin: .5em 0 0;
 			width: 720px; }
-		#conteneur #hierarchie { clear: both; }
-		#pied {
+
+/*	=Formats
+	------------------------------------------------------ */
+	.numero-0 { margin-right: 0; }
+
+/*	=Entete
+	------------------------------------------------------ */
+	#entete { margin-left: 40px; float: left; }
+		#entete #logo { font-size: 30px; line-height: 1em; color: #000; }
+			#entete #logo a { color:#000; }
+
+/*	=Navigation principale
+	------------------------------------------------------ */
+	#nav { width: 100%; }
+		#nav ul {  }
+			#nav li {
+				font-size:16px; line-height: 18px;
+				margin-bottom: 9px; }
+				#nav li a {
+					display: block;
+					padding: 4px 0 5px 40px;
+					width: 220px;
+					/* 	CSS 3 transitions
+					 	non disponibles dans FF3, on utilise donc jQuery
+					 	pour ce navigateur */
+					transition: padding-left .6s ease-out;
+					-webkit-transition: padding-left .6s ease-out;
+					-o-transition: padding-left .6s ease-out;
+					-moz-transition: padding-left .6s ease-out; }
+				#nav li.on a { padding-left: 20px; }
+				#nav li.off a:hover { padding-left: 20px; }
+				#nav li.off a.ff3:hover { padding-left: 40px; }
+				#nav li a:active, #nav li a:focus { top: 0; }
+
+/*	=Hierarchie
+	------------------------------------------------------ */
+	#hierarchie {
+		padding: .5em 0;
+		xbackground: transparent url('../img/bordure-haut.png')repeat-x top left;
+		border-top: 1px solid #000;
+		border-bottom: 1px solid #000; }
+		#hierarchie p { color:#888; margin: 0; }
+
+/*	=Pied de page
+	------------------------------------------------------ */
+	#pied {
+		text-align: left; xfont-size: 11px;
+		border-bottom: 2px solid #000; }
+		#pied div.groupe { padding: 2em 0;  }
+		#pied .raccourcis dl {
+			float: left;
+			margin-right: 20px;
+			width: 160px; }
+			#pied dl.derniers { margin-left: 180px; }
+			#pied dl.communication { margin-right: 0; width: 160px; }
+				#pied dl dt { font-size: 12px; color: #000; }
+				#pied dl.derniers dt.expos { margin-top: 1.5em; }
+				#pied dl dd { text-align: left; }
+	#copyright p {
+		color: #888;
+		font-size: 9px;
+		text-align: right; }
+
+
+/*	=Slider
+	------------------------------------------------------ */
+	#slider { position: relative; margin-bottom: 1.5em; }
+		#slider .navigation {
+			position:absolute; right: 0; top: 4px;
+			padding-right: 50px;
+			z-index: 30; }
+			#slider .navigation li { display: inline; }
+				#slider .navigation li a {
+					display:block; float: left; }
+					#slider .navigation li a { padding: 2px; margin-left: 2px; }
+				#slider .navigation li a:hover, #slider .navigation li a.actif { background-color:#000; }
+		.scroll {
 			position: relative;
-			margin-bottom: 3em; }
+			overflow: auto; overflow-x: hidden;
+			clear: left;
+			width: 720px; }
+			.scrollConteneur {}
+			.scrollBouton {
+				display: block;
+				background: #fff url('../img/img-sprites.png') no-repeat -48px 0;
+				width: 17px; height: 17px;
+				position: absolute; z-index:33; right: 0; top: 6px;
+				cursor:pointer; }
+			.scrollBouton.gauche { right: 30px; background-position: -48px 0; }
+			.scrollBouton.droite { right: 10px; background-position: -64px 0; }
+			.scrollBouton.gauche:hover { background-position: -48px -16px; background-color: #000; }
+			.scrollBouton.droite:hover { background-position: -64px -16px; background-color: #000; }
+
+		/* Zone d'affichage des oeuvres */
+		.visuOeuvres {}
+			.panneau { padding: 0 10px; width: 700px; }
+				.imgAgrandissement {
+					float: left;
+					width: 460px;
+					margin-bottom: 1.5em; }
+					.imgAgrandissement img { margin:0 auto; }
+						.imgAgrandissement .imgDesc { margin-top: 1em; }
+
+

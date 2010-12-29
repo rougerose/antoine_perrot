@@ -1,63 +1,57 @@
-#SET{titre-serie,h2} #SET{titre-image,h3}
-[(#ENV{composition}|=={sommaire}|non)
-	[(#SET{titre-serie,h3})] [(#SET{titre-image,h4})]
-]
-<BOUCLE_article(ARTICLES){id_article}>
+[(#REM) variables ]
+	#SET{articles_slider,#ENV{articles_slider}}
+	[(#REM)
+		1 		oeuvre
+		2 		expo
+		3,4,5,6	article
+	]
 
-[(#REM)
-	1 		oeuvre
-	2 		expo
-	3,4,5,6	article
-]
-#SET{titre_rubrique,''}
-[(#ID_RUBRIQUE|match{^(1)$}|?{[(#SET{titre_rubrique,oeuvre})]})]
-[(#ID_RUBRIQUE|match{^(2)$}|?{[(#SET{titre_rubrique,expo})]})]
-[(#ID_RUBRIQUE|match{^(3|4|5|6)$}|?{[(#SET{titre_rubrique,article})]})]
+	#SET{titre_rubrique,#ARRAY}
 
-<div id="#GET{titre_rubrique}-#ID_ARTICLE" class="hentry panneau item">
-	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE_PARENT</a></h3>
+<ul class="navigation">
+	<BOUCLE_navigation(ARTICLES){id_article IN #GET{articles_slider}}>
 
-	<h2 class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
+	[(#ID_RUBRIQUE|match{^(1)$}|?{
+		[(#SET{titre_rubrique,#GET{titre_rubrique}|array_merge{#ARRAY{art#ID_ARTICLE,oeuvre}}})]
+	})]
+	[(#ID_RUBRIQUE|match{^(2)$}|?{
+		[(#SET{titre_rubrique,#GET{titre_rubrique}|array_merge{#ARRAY{art#ID_ARTICLE,expo}}})]
+	})]
+	[(#ID_RUBRIQUE|match{^(3|4|5|6)$}|?{
+		[(#SET{titre_rubrique,#GET{titre_rubrique}|array_merge{#ARRAY{art#ID_ARTICLE,article}}})]
+	})]
 
-	<div class="oeuvreConteneur entry-content clearfix">
+	[(#REM) fabrication du logo soit à partir de la première image du portfolio, soit d'une image vide ]
+		<BOUCLE_img_portfolio_1(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN jpg, gif, png}{vu=non}{0,1}>
+		[(#SET{logo_article,[(#LOGO_DOCUMENT|extraire_attribut{src})]})]
+		</BOUCLE_img_portfolio_1>
+		[(#GET{logo_article}|non)[(#SET{logo_article,[(#CHEMIN{img/img-vide.png})]})]]
+		<//B_img_portfolio_1>
 
-		[(#REM) zone apercu]
-		<B_apercu>
-		<ul class="imgApercu">
-			[(#REM) les aperçus des œuvres : 12 images au maximum ]
-			<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,12}>
-			[<li id="img-#ID_DOCUMENT">
-				<a href="[(#FICHIER|image_reduire{450,0}|extraire_attribut{src})]" class="[(#COMPTEUR_BOUCLE|=={1}|?{'actif '})]mediabox slider icone-lien" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE">(#FICHIER|image_reduire{200,0}|image_recadre{56,56,center}|inserer_attribut{alt,[(#TITRE|textebrut)]})</a>
-				<div class="imgDesc">
-					[<#GET{titre-image}>(#TITRE|sinon{<:document_sans_titre:>})</#GET{titre-image}>]
-					[<p>(#DESCRIPTIF|PtoBR)[
-						&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]
-					</p>]
-				</div><!-- .imgDesc -->
-			</li>]
-			</BOUCLE_apercu>
-			<li class="suite"><a href="#URL_ARTICLE#images" title="<:voir_serie:>"><span><:voir_serie:></span></a></li>
-		</ul><!-- .imgApercu -->
-		</B_apercu>
+	[(#REM) mais un vrai logo d'article, c'est toujours mieux ]
+		[(#LOGO_ARTICLE|oui)[(#SET{logo_article,[(#LOGO_ARTICLE|extraire_attribut{src})]})]]
 
-		<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,1}>
-		[(#REM) zone agrandissement]
-		[<div class="imgAgrandissement">
-			(#FICHIER|image_reduire{450,0}
-				|inserer_attribut{alt,[(#TITRE|textebrut)]}
-			)
-			<div class="conteneurDesc">
-				<div class="imgDesc">
-					[<#GET{titre-image}>(#TITRE)</#GET{titre-image}>]
-					[<p>
-						(#DESCRIPTIF|PtoBR)
-						[&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]
-					</p>]
-				</div><!-- .imgDesc -->
-			</div><!-- .conteneurDesc -->
-		</div><!-- .imgAgrandissement -->]
-		</BOUCLE_imagePrincipale>
+	<li>
+		<a href="[#(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE})]-#ID_ARTICLE">
+			[(#GET{logo_article}|balise_img|image_reduire{96,0}|image_recadre{16,16,center})]
+		</a>
+	</li>
+	</BOUCLE_navigation>
+</ul><!-- .navigation -->
 
-	</div><!-- .oeuvreConteneur -->
-</div><!-- #image-#ID_ARTICLE -->
-</BOUCLE_article>
+<B_affichage>
+<div class="scroll">
+	<div class="scrollConteneur clearfix">
+		<div class="visuOeuvres">
+			<BOUCLE_affichage(ARTICLES){id_article IN #GET{articles_slider}}>
+			[(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE}|match{^(oeuvre)$}|?{
+				[(#INCLURE{fond=inclure/slider-oeuvre,id_article,titre_rubrique=#GET{titre_rubrique}})]
+				,
+				[(#INCLURE{fond=inclure/slider-article,id_article,titre_rubrique=#GET{titre_rubrique}})]
+			})]
+			</BOUCLE_affichage>
+
+		</div><!-- .visuOeuvres -->
+	</div><!-- .scrollConteneur -->
+</div><!-- .scroll -->
+</B_affichage>

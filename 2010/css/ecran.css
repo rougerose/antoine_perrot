@@ -20,14 +20,14 @@
 /*  Typographie					*/
 /* ------------------------------------ */
 
-
+/*
 h1,h2,h3,h4,h5,h6,
 .titre p.surtitre, .titre p.soustitre,
 .page_sommaire .item a, .page_rubrique .item a, .page_recherche .item h3 a {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue";
 	font-weight: 200; /* equivalent du light pour Firefox */
-	text-rendering: optimizeLegibility; }
-
+	xtext-rendering: optimizeLegibility; }
+*/
 p i,
 p q,
 .texte blockquote, .texte blockquote:before,
@@ -47,7 +47,7 @@ blockquote p strong { font-weight: 800; }
 .spip_documents dd h3, #cboxTitle h3, #cboxTitle h4 {
 	font-family: "HelveticaNeue-LightItalic", "Helvetica Neue";
 	font-weight: 200; font-style:italic; }
-
+/*
 .texte a,
 .auteurs a,
 .item a, .rubrique_biographie .item a, .rubrique_liens .item .introduction a,
@@ -76,7 +76,7 @@ p strong i, p i strong
 
 .contenu-principal p { font-size: 13px; margin-bottom: 1.5em; }
 
-
+*/
 /* ------------------------------------ */
 /*  Liens (règles générales)			*/
 /* ------------------------------------ */
@@ -106,7 +106,7 @@ a[name] { color: transparent; }
 .item .spip_documents a,
 a.logo-article,
 a[name] { padding: 0; }
-a.logo-article { display: block; float: left; }
+
 
 .item a.spip_out, .item a.spip_glossaire {
 	padding-right: 14px;
@@ -114,7 +114,7 @@ a.logo-article { display: block; float: left; }
 .item a.spip_glossaire { background-position: right -96px; }
 
 .section .titre a:hover,
-.item a:hover,
+.item xa:hover,
 #hierarchie a:hover,
 #pied a:hover { color:#fff; background-color: #000; }
 
@@ -122,124 +122,41 @@ a.logo-article { display: block; float: left; }
 .item a.spip_glossaire:hover { background-position: right -112px; }
 
 a[name]:hover,
-a[type="image/jpeg"]:hover, a[type="image/gif"], a[type="image/png"],
+/*a[type="image/jpeg"]:hover, a[type="image/gif"], a[type="image/png"],*/
 a.logo-article:hover { background-color: transparent; }
 
 
 /* ------------------------------------ */
 /*  Entete								*/
 /* ------------------------------------ */
-#entete { margin-left: 40px; float: left; }
-	#entete #logo { font-size: 30px; line-height: 36px; color: #000; }
-		#entete #logo a { color:#000; }
+
 
 
 /* ------------------------------------ */
 /*	Navigation principale				*/
 /* ------------------------------------ */
-#nav { width: 100%; }
-	#nav ul {  }
-		#nav li {
-			font-size:16px; line-height: 18px;
-			margin-bottom: 9px; }
-			#nav li a {
-				display: block;
-				padding: 4px 0 5px 40px;
-				width: 220px;
-				/* 	CSS 3 transitions
-				 	non disponibles dans FF3,
-					on laisse entre commentaires et on utilise jQuery */
-				transition: padding-left .6s ease-out;
-				-webkit-transition: padding-left .6s ease-out;
-				-o-transition: padding-left .6s ease-out;
-				-moz-transition: padding-left .6s ease-out; }
-			#nav li.on a { padding-left: 20px; }
-			#nav li.off a:hover { padding-left: 20px; }
-			#nav li.off a.ff3:hover { padding-left: 40px; }
-			#nav li a:active, #nav li a:focus { top: 0; }
+
 
 
 /* ------------------------------------ */
 /*	Slider (sommaire)					*/
 /* ------------------------------------ */
-#slider {
-	position: relative;
-	width: 700px; }
-	#slider h2.titre { font-size: 20px; line-height: 36px; }
-	#slider .navigation {
-		position:absolute; right: 0; top: 9px;
-		padding-right: 40px;
-		z-index: 30; }
-		#slider .navigation li { display: inline; }
-			#slider .navigation li a {
-				text-indent: -9999px; outline: 0;
-				background: url('../img/img-sprites.png') no-repeat -32px -18px;
-				height: 9px; width: 9px;
-				float: left;
-				margin-right: 4px; }
-			#slider .navigation li a:hover { background-position: -32px -34px; }
-			#slider .navigation li a.actif { background-position: -32px -2px; }
-	.scroll {
-		position: relative;
-		overflow: auto; overflow-x: hidden;
-		clear: left;
-		width: 700px; }
-		.scrollConteneur {}
-		.scrollBouton {
-			display: block;
-			background: #fff url('../img/img-sprites.png') no-repeat -48px 0;
-			width: 17px; height: 17px;
-			position: absolute; z-index:33; right: 0; top: 5px;
-			cursor:pointer; }
-		.scrollBouton.gauche { right: 20px; background-position: -48px 0; }
-		.scrollBouton.droite { background-position: -64px 0; }
-		.scrollBouton.gauche:hover { background-position: -48px -16px; background-color: #000; }
-		.scrollBouton.droite:hover { background-position: -64px -16px; background-color: #000; }
 
 
 /* ------------------------------------ */
 /*	Visualisation des oeuvres 			*/
 /* ------------------------------------ */
-.visuOeuvres {}
-	.panneau { width: 700px; }
-	.panneau h3.titre {  }
-	#slider .panneau { border-top-width: 0; }
-		.visuOeuvres h3.titre {
+
+
+	/*	.visuOeuvres h3.titre {
 			font-size:22px; line-height: 1em;
 			border-top: 1px solid #666;
 			width: 460px;
-			margin-bottom:1.25em; padding-top: .25em; }
-		.oeuvreConteneur { padding-bottom: 20px; }
+			margin-bottom:1.25em; padding-top: .25em; }*/
+		.oeuvreConteneur { xpadding-bottom: 20px; }
 			/* zone agrandissement */
-			.imgAgrandissement {
-				text-align:center;
-				float: left;
-				position: relative;
-				margin-bottom: 20px;
-				width: 460px; }
-				.imgAgrandissement img { background-color: #fff; margin:0 auto; padding: 5px; }
-				.imgAgrandissement .conteneurDesc {
-					text-align:left;
-					width: 100%;
-					position: absolute; left:0px; bottom:-16px; }
-					.imgAgrandissement span.afficheInfos {
-						cursor: pointer;
-						background: url('../img/img-sprites.png') no-repeat -18px -2px;
-						border: 1px solid #fff;
-						display:block;
-						position: absolute; right:0; bottom: 0;
-						width:12px; height:12px; }
-					.imgAgrandissement span:hover { background-position: -2px -2px; }
-					.imgAgrandissement .afficheInfos.actif { background-position: -2px -18px; }
-					.imgAgrandissement .afficheInfos.actif:hover { background-position: -18px -18px; border-color:#000; }
-					.imgAgrandissement .afficheInfos:active { bottom:-1px; }
-					.imgAgrandissement .imgDesc {
-						color: #fff;
-						background-color: rgba(0,0,0,0.85);
-						padding: 3px 16px 3px 6px; }
-						.imgAgrandissement .imgDesc h3 { font-size: 12px; margin-bottom: 9px; }
-						.imgAgrandissement .imgDesc p { font-size: 10px; }
-						.page_sommaire .hentry .imgAgrandissement .imgDesc p, .rubrique_oeuvres .hentry .imgAgrandissement .imgDesc p { float: none; width: auto; }
+
+
 			/* zone aperçu pour les œuvres */
 			ul.imgApercu {
 				float: right; margin-top:5px;
@@ -284,29 +201,29 @@ a.icone-lien { position: relative; }
 /* -------------------------------- */
 /*	hentry	(styles communs)		*/
 /* -------------------------------- */
-.hfeed .item { xborder-top: 0; }
+/*.hfeed .item { xborder-top: 0; }
 .hentry, .sites .item, .oeuvres .item { margin-bottom: 1.5em; padding-bottom: 1.5em; }
 .hentry.mineur, .sites .mineur { float: left; width: 338px; }
-.hentry.mineur.numero-1, .sites .numero-1 { clear:left; }
-.hentry.mineur.numero-0, .sites .numero-0 { margin-left:20px; }
-	.hentry .titre-rubrique { /* titre de la rubrique parente */ font-size:15px; margin-bottom: .5em; }
-	#slider .hentry .titre-rubrique { margin-bottom: 0; }
+.hentry.mineur.numero-1, .sites .numero-1 { xclear:left; margin-right: 10px; }
+.hentry.mineur.numero-0, .sites .numero-0 { xmargin-left:10px; margin-left: 0; }
+	.hentry .titre-rubrique {   }
+	#slider .hentry .titre-rubrique {  }
 	.hentry.mineur .titre-rubrique { xborder-top: 1px solid #666; }
 	.hentry div.titre { margin-bottom: 1em; }
-		.hentry .entry-title, .sites .titre { font-size: 20px; line-height: 1.2em; }
+		.hentry .entry-title, .sites .titre {  }
 		.page_rubrique .hentry .entry-title, .sites h3.titre {
 			border-top: 1px solid #666;
 			padding-top: .5em; }
-		.hentry.item .entry-title, .sites .titre { margin-bottom: 1em; }
+		.hentry.item .entry-title, .sites .titre {  }
 	.hentry .info-publi {  }
 	.hentry span.info-publi { margin:0; }
 	.hentry .auteurs {  }
 	.hentry .entry-content {  }
-	.hentry.item .entry-content p, .sites .introduction p { float: right; }
-	.hentry.item .entry-content p { width: 460px; }
-
+	.hentry.item .entry-content p, .sites .introduction p {  }
+	.hentry.item .entry-content p { xwidth: 460px; }
+*/
 	/* #slider > exposition > entry-content */
-	.hentry .oeuvreConteneur .entry-content p {
+/*	.hentry .oeuvreConteneur .entry-content p {
 		float: none;
 		width: auto; }
 	.hentry.mineur .entry-content p, .sites .introduction p { width: 220px; }
@@ -319,9 +236,9 @@ a.icone-lien { position: relative; }
 		.entry-content ul.meta-publi, .sites .introduction ul.meta-publi {
 			float: right;
 			margin-top: .75em; }
-
+*/
 		/* #slider > exposition > entry-content */
-		.oeuvreConteneur .entry-content ul.meta-publi { float: none; }
+/*		.oeuvreConteneur .entry-content ul.meta-publi { float: none; }
 		.hentry.majeur .entry-content ul.meta-publi { width: 460px; }
 		.hentry.mineur .entry-content ul.meta-publi, .sites .introduction ul.meta-publi { width: 220px; }
 			.entry-content ul.meta-publi li, .sites .introduction ul.meta-publi li, .resultats ul li ul.meta-publi li {
@@ -348,36 +265,20 @@ a.icone-lien { position: relative; }
 .sites .item img.spip_logos,
 .item .texte p.logo img,
 .resultats li img.spip_logos {
-	background-color: #fff;
-	float:left;
-	padding: 3px; }
+	xbackground-color: #fff;
+	xfloat:left;
+	xpadding: 3px; }
 
 	.hentry .entry-content img.spip_logos,
 	.sites .item img.spip_logos { margin-right:20px; }
 
 	.sites .item img.spip_logos,
 	.item .texte p.logo img { border: 1px solid #eee; }
-
+*/
 /* -------------------------------- */
 /*	agenda (vcalendar)				*/
 /* -------------------------------- */
-.vcalendar {
-	float:right; width: 580px;
-	margin-bottom: 3em; }
-.vevent { width: 340px;  }
-	.vevent .summary {
-		border-bottom:1px solid #666;
-		font-size: 15px; }
-	.vevent dt, .vevent dd {  }
-	.vevent .dateEvenement {  }
-	.vevent .locationEvenement {  }
-	.vevent .dateEvenement, .locationEvenement {  }
-	.vevent .infos {
-		border-bottom:1px dotted #666;
-		margin: .25em 0; padding-left: 6.5em; padding-bottom: .25em; }
-		.vevent .infos .label {
-			display: block; float: left;
-			width:6.5em; margin-left:-6.5em; }
+
 
 
 /* -------------------------------- */
@@ -445,8 +346,8 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 /*	article							*/
 /* -------------------------------- */
-
-.item .hentry { margin: 0; padding: 0; }
+/*
+.item .hentry { xmargin: 0; xpadding: 0; }
 
 	.item div.titre {
 		background-color: #fff;
@@ -499,7 +400,7 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 	.item .notes h3 {
 		border-bottom: 1px solid #666;
 		margin-left: 0; }
-
+*/
 /* -------------------------------- */
 /*	documents						*/
 /* -------------------------------- */
@@ -719,7 +620,7 @@ fieldset.reponse_formulaire.reponse_formulaire legend { color: #F57900; } /* Pre
 /* -------------------------------- */
 /*	pagination						*/
 /* -------------------------------- */
-p.pagination {
+/*p.pagination {
 	font-size: 12px; color: #999;
 	border-top: 1px solid #bbb;
 	text-align: right;
@@ -731,22 +632,22 @@ p.pagination {
 		font-size: 1em;
 		color: #fff; background-color: #000;
 		padding: 0 2px 2px; }
-
+*/
 
 /* -------------------------------- */
 /*	hierarchie						*/
 /* -------------------------------- */
-#hierarchie { padding: 0 10px 0 10px; }
+/*#hierarchie { padding: 0 10px 0 10px; }
 	#hierarchie p {
 		color:#666;
 		border-top: 1px solid #666;
 		padding-bottom: 1em; padding-top: 1em; }
 
-
+*/
 /* -------------------------------- */
 /*	pied de page					*/
 /* -------------------------------- */
-#pied { text-align: left; font-size: 11px; }
+/*#pied { text-align: left; font-size: 11px; }
 	#pied div.groupe {
 		border-top: 1px solid #666;
 		border-bottom: 2px solid #000;
@@ -767,7 +668,7 @@ p.pagination {
 		font-size: 10px;
 		text-align: right;
 		margin: 2em 10px 0; }
-
+*/
 /* -------------------------------- */
 /*	ColorBox						*/
 /* -------------------------------- */

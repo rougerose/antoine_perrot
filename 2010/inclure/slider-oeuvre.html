@@ -1,17 +1,14 @@
-#SET{titre-serie,h2} #SET{titre-image,h3}
-[(#ENV{composition}|=={sommaire}|non)
-	[(#SET{titre-serie,h3})] [(#SET{titre-image,h4})]
-]
+#SET{titre_rubrique,#ENV{titre_rubrique}}
+
+
 <BOUCLE_article(ARTICLES){id_article}>
-<div id="image-#ID_ARTICLE" class="hentry panneau item">
-	<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
-	[(#ENV{composition}|=={sommaire}|oui)
-	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE</a></h3>
-	]
-	</BOUCLE_rubrique>
-	<[(#GET{titre-serie}) ]class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></[(#GET{titre-serie})]>
+<div id="[(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE})]-#ID_ARTICLE" class="hentry panneau item">
+	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE_PARENT</a></h3>
+
+	<h2 class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
+
 	<div class="oeuvreConteneur entry-content clearfix">
-		
+
 		[(#REM) zone apercu]
 		<B_apercu>
 		<ul class="imgApercu">
@@ -30,25 +27,24 @@
 			<li class="suite"><a href="#URL_ARTICLE#images" title="<:voir_serie:>"><span><:voir_serie:></span></a></li>
 		</ul><!-- .imgApercu -->
 		</B_apercu>
-		
+
 		<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,1}>
 		[(#REM) zone agrandissement]
 		[<div class="imgAgrandissement">
-			(#FICHIER|image_reduire{450,0}
-				|inserer_attribut{alt,[(#TITRE|textebrut)]}
-			)
-			<div class="conteneurDesc">
-				<div class="imgDesc">
-					[<#GET{titre-image}>(#TITRE)</#GET{titre-image}>]
-					[<p>
-						(#DESCRIPTIF|PtoBR)
-						[&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]
-					</p>]
-				</div><!-- .imgDesc -->
-			</div><!-- .conteneurDesc -->
+			<a href="#URL_ARTICLE" class="logo-article">
+			(#FICHIER|image_reduire{454,0}
+				|inserer_attribut{alt,[(#TITRE|textebrut)]}|inserer_attribut{class,spip_logos})
+			</a>
+			<div class="imgDesc">
+				[<h4>(#TITRE)</h4>]
+				[<p>
+					(#DESCRIPTIF|PtoBR)
+					[&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]
+				</p>]
+			</div><!-- .imgDesc -->
 		</div><!-- .imgAgrandissement -->]
 		</BOUCLE_imagePrincipale>
-		
+
 	</div><!-- .oeuvreConteneur -->
 </div><!-- #image-#ID_ARTICLE -->
 </BOUCLE_article>
