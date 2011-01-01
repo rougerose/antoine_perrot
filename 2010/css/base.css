@@ -98,6 +98,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 	.oeuvre .meta-publi li { margin: 0; padding: 0; }
 		.oeuvre .meta-publi li a { margin: 0 5px 5px 0; padding: 3px; }
+		.oeuvre .imgApercu li a {  padding:3px; margin: 0 11px 10px 0; }
+		.oeuvre .meta-publi li a.actif { background-color: #000; }
 		.oeuvre .meta-publi .suite a { padding: 0; margin: 3px 5px 3px 3px; }
 	.oeuvre .meta-publi .info-publi {
 		display: block; clear: left;
@@ -119,6 +121,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	#slider {  }
 		.imgAgrandissement .imgDesc h3 { font-size: 12px; margin-bottom: 9px; }
 		.imgAgrandissement .imgDesc p { font-size: 10px; }
+		#slider .entry-content, #slider .oeuvre .imgApercu  { float: right; width: 220px; }
+		#slider .oeuvre .entry-content { float: none; width: auto; }
 
 /*	=Hentry en liste (sommaire, rubriques...)
 	------------------------------------------------------ */
