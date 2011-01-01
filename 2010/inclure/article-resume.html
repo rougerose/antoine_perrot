@@ -9,7 +9,7 @@
 </BOUCLE_agenda_expo>
 
 <BOUCLE_articles(ARTICLES){id_article}{statut?}>
-<div id="article-#ID_ARTICLE" class="item hentry[ numero-(#ENV{compteur})][ (#ENV{format})]">
+<div id="article-#ID_ARTICLE" class="item hentry[ numero-(#ENV{compteur})][ (#ENV{format})][(#ID_RUBRIQUE|=={1}|?{' oeuvre'})]">
 	[(#ENV{composition}|match{^(sommaire)$}|oui)
 	<h3 class="titre-rubrique">
 		<a href="#URL_RUBRIQUE">#TITRE_PARENT</a>[ <span class="periode-expo">(#GET{periode_expo})</span>]
@@ -22,8 +22,23 @@
 		</BOUCLE_evenement>
 		[<p class="intro">(#INTRODUCTION|PtoBR)</p>]
 		<ul class="meta-publi">
+			[(#REM) différentes hypothèses :
+				- l'article appartient à la rubrique Oeuvres
+				- l'article appartient à l'une des autres rubriques ]
+			<BOUCLE_rubrique_oeuvre(RUBRIQUES){id_rubrique}{id_rubrique=1}>
+			<B_documents>
+				<BOUCLE_documents(DOCUMENTS){id_article}{extension IN jpg, png, gif}{mode=document}{vu=non}{par num titre, titre}{0,7}>
+				<li>
+					[<a href="#URL_ARTICLE#image-#ID_DOCUMENT">(#FICHIER|image_reduire{200,0}|image_recadre{40,40,center}|inserer_attribut{alt,[(#TITRE|textebrut)]})</a>]
+				</li>
+				</BOUCLE_documents>
+				<li class="suite"><a href="#URL_ARTICLE#images" title="<:voir_serie:>"><span><:voir_serie:></span></a></li>
+				<li class="info-publi updated published">[<span class="value" title="[(#DATE|date_iso)]">(#DATE|affdate)</span>]</li>
+			</B_documents>
+			</BOUCLE_rubrique_oeuvre>
 			<li class="info-publi updated published">[<span class="value" title="[(#DATE|date_iso)]">(#DATE|affdate)</span>]</li>
 			<li class="lire-suite"><a href="#URL_ARTICLE" title="<:lire_la_suite:>"><:lire_la_suite:></a></li>
+			<//B_rubrique_oeuvre>
 		</ul>
 	</div><!-- .entry-content -->
 </div><!-- #article-#ID_ARTICLE .hentry -->

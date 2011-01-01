@@ -1,11 +1,14 @@
-[(#SET{format,[(#ENV{format}|sinon{''})]})]
+[(#SET{format,
+	[(#ENV{format}|sinon{''})]
+})]
 
 <B_articles>
-#ANCRE_PAGINATION
-<div class="section clearfix">
+<div class="liste articles">
+	#ANCRE_PAGINATION
+	[<p class="pagination haut">(#PAGINATION{page})</p>]
 	<BOUCLE_articles(ARTICLES){id_rubrique}{pagination}{!par date}{doublons}>
-	[(#INCLURE{fond=inclure/article-resume,id_article,env,format=#GET{format},compteur=[(#COMPTEUR_BOUCLE|modulo{2})]})]
+	[(#INCLURE{fond=inclure/article-resume, id_article, env, format=#GET{format}, compteur=[(#COMPTEUR_BOUCLE|modulo{2})], tailleImage=#ENV{tailleImage}})]
 	</BOUCLE_articles>
-</div><!-- .section -->
-[<p class="pagination">(#PAGINATION{page})</p>]
+	[<p class="pagination bas">(#PAGINATION{page})</p>]
+</div><!-- liste articles -->
 </B_articles>

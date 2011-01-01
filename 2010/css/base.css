@@ -18,12 +18,11 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	colors.css: only for the main menu
 
 
-/* COLORS
-   Body Background:       #2F2C22
-   Main Text:             #B3A576
-   Links:                 #9C6D25
-   Dark Brown Border:     #222019
-   Green Headline:        #958944
+/* 	COLORS
+	texte courant:			#555
+	Titres: 				#333
+	Gris moyen :			#888
+
 */
 
 /*	Base style sheet
@@ -71,7 +70,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	date, point de suite (hentry, séries oeuvres),
 	période des expos
 	------------------------------------------------------ */
-	.meta-publi {  }
+	.meta-publi { margin-top: 1.5em; }
 		.meta-publi li {
 			font-size: 11px; line-height: 12px;
 			display: inline; float: left;
@@ -96,14 +95,16 @@ Visual design, layout and cascading style sheets may not be reused without permi
 				height: 54px; width: 54px;
 				margin: 3px; padding: 0; }
 
-	.oeuvre .meta-publi li { margin: 0; padding: 0; }
-		.oeuvre .meta-publi li a { margin: 0 5px 5px 0; padding: 3px; }
-		.oeuvre .imgApercu li a {  padding:3px; margin: 0 11px 10px 0; }
-		.oeuvre .meta-publi li a.actif { background-color: #000; }
-		.oeuvre .meta-publi .suite a { padding: 0; margin: 3px 5px 3px 3px; }
-	.oeuvre .meta-publi .info-publi {
-		display: block; clear: left;
-		border-right-width: 0; }
+	.oeuvre .meta-publi { margin-top: 3px; }
+		.oeuvre .meta-publi li { margin: 0; padding: 0; }
+			.oeuvre .meta-publi li a { margin: 0 5px 5px 0; padding: 3px; }
+			.oeuvre .imgApercu li a {  padding:3px; margin: 0 11px 10px 0; }
+			.oeuvre .meta-publi li a.actif { background-color: #000; }
+			.oeuvre .meta-publi .suite a { padding: 0; margin: 3px 5px 3px 3px; }
+		.oeuvre .meta-publi .info-publi {
+			display: block; clear: left;
+			border-right-width: 0;
+			margin-top: 1.5em; }
 
 
 	h3.titre-rubrique span.periode-expo {
@@ -119,8 +120,11 @@ Visual design, layout and cascading style sheets may not be reused without permi
 /*	=Hentry (slider)
 	------------------------------------------------------ */
 	#slider {  }
-		.imgAgrandissement .imgDesc h3 { font-size: 12px; margin-bottom: 9px; }
-		.imgAgrandissement .imgDesc p { font-size: 10px; }
+		.imgDesc { clear: both; }
+		.imgDesc h4 {
+			font-size: 12px;
+			padding: .5em 0 0em; }
+		.imgDesc p { font-size: 10px; color: #888; }
 		#slider .entry-content, #slider .oeuvre .imgApercu  { float: right; width: 220px; }
 		#slider .oeuvre .entry-content { float: none; width: auto; }
 

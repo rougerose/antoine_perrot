@@ -94,7 +94,7 @@ a:active { outline: none; }
 .item a,
 #hierarchie a,
 #pied a {
-	padding: 0 2px 2px;
+	xpadding: 0 2px 2px;
 	color:#000;
 	transition: color .6s ease-out, background-color .6s ease-out;
 	-webkit-transition: color .6s ease-out, background-color .6s ease-out;
