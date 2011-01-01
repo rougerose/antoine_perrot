@@ -11,32 +11,7 @@
 		</BOUCLE_selection>
 	</div><!-- .selection oeuvres -->
 
-	<B_articles>
-	<div class="liste oeuvres">
-		#ANCRE_PAGINATION
-		[<p class="pagination haut">(#PAGINATION{page})</p>]
-		<BOUCLE_articles(ARTICLES){id_rubrique}{!par date}{pagination}{doublons}>
-		<div id="article-#ID_ARTICLE" class="item hentry[ numero-(#COMPTEUR_BOUCLE|modulo{2})] grid oeuvre">
-			<h2 class="entry-title titre"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
-			<div class="#EDIT{intro} introduction entry-content clearfix[ (#LOGO_ARTICLE|oui)logo]">
-				[<a href="#URL_ARTICLE" class="logo-article">(#LOGO_ARTICLE|image_reduire{84,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})</a>]
-				[<p class="intro">(#INTRODUCTION|PtoBR)</p>]
-
-				[(#REM) vignettes ]
-				<ul class="meta-publi">
-					<BOUCLE_documents(DOCUMENTS){id_article}{extension IN jpg, png, gif}{mode=document}{vu=non}>
-					<li>[<a href="#">(#FICHIER|image_reduire{200,0}|image_recadre{40,40,center}|inserer_attribut{alt,[(#TITRE|textebrut)]})</a>]</li>
-					</BOUCLE_documents>
-					<li class="suite"><a href="#" title="<:voir_serie:>"><span><:voir_serie:></span></a></li>
-					<li class="info-publi updated published">[<span class="value" title="[(#DATE|date_iso)]">(#DATE|affdate)</span>]</li>
-				</ul>
-
-			</div><!-- .entry-content -->
-		</div><!-- #article-#ID_ARTICLE .hentry -->
-		</BOUCLE_articles>
-		[<p class="pagination bas">(#PAGINATION{page})</p>]
-	</div><!-- .liste .oeuvres -->
-	</B_articles>
+	<INCLURE{fond=inclure/articles-hentry,env,ajax,doublons,format=grid,tailleImage=84}>
 
 </div>
 [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
