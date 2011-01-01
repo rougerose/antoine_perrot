@@ -119,11 +119,26 @@
 		/* Zone d'affichage des oeuvres */
 		.visuOeuvres {}
 			.panneau { padding: 0 10px; width: 700px; }
+				/* image principale */
 				.imgAgrandissement {
 					float: left;
 					width: 460px;
 					margin-bottom: 1.5em; }
 					.imgAgrandissement img { margin:0 auto; }
 						.imgAgrandissement .imgDesc { margin-top: 1em; }
+				/* mini-liste des autres œuvres disponibles */
+				.imgApercu {
+					float: right;
+					margin-top:5px;
+					width: 220px; }
+					.imgApercu li { margin: 0; padding: 0; }
+						.imgApercu li a { padding:3px; margin: 0 11px 10px 0; }
+						.imgApercu li a.actif, .imgApercu li a:hover { background-color: #000; }
+
+
+/*	=Rubrique Oeuvres
+	------------------------------------------------------ */
+	/* ce qui suit est valable également pour le sommaire ? Si oui, à voir où mettre ces définitions */
+
 
 

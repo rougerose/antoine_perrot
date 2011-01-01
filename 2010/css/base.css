@@ -68,27 +68,45 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 
 /*	=Meta infos contenus :
-	date, point de suite, période des expos
+	date, point de suite (hentry, séries oeuvres),
+	période des expos
 	------------------------------------------------------ */
-	ul.meta-publi { margin-top: 1em; }
+	.meta-publi {  }
 		.meta-publi li {
-			font-size: 11px; line-height: 1.2em;
-			border-right: 1px solid #888;
+			font-size: 11px; line-height: 12px;
 			display: inline; float: left;
 			margin-right: 5px; padding-right: 5px; }
-			.meta-publi .lire-suite { margin-right: 0; padding-right: 0; border-right: none; }
-			.meta-publi .lire-suite a {
+			.meta-publi li a { display:block; outline: 0; }
+			.meta-publi li a:hover { background-color: #000; }
+		.meta-publi .info-publi { border-right: 1px solid #000; }
+		.meta-publi .lire-suite { margin-right: 0; padding-right: 0; }
+			.meta-publi .lire-suite a, .meta-publi .suite a span {
 				text-indent: -9999px;
-				outline:0;
-				background: #fff url(../img/img-sprites.png) no-repeat -16px -50px;
-				display: block;
-				padding: 0;
-				height: 13px; width: 16px; }
-			.meta-publi .lire-suite a:hover { background-position: -16px -66px; background-color: #000; }
+				height: 13px; width: 16px;
+				background: #fff url(../img/img-sprites.png) no-repeat -16px -50px; }
+			.meta-publi .suite a {
+				border: 1px solid #000;
+				height: 39px; width: 39px;
+				position: relative; }
+				.meta-publi .suite a span {
+					background-color: transparent;
+					position: absolute; bottom: 0; right: 0; }
+			.meta-publi .lire-suite a:hover, .meta-publi .suite a:hover span { background-position: -16px -66px; }
+			.imgApercu .suite a {
+				height: 54px; width: 54px;
+				margin: 3px; padding: 0; }
+
+	.oeuvre .meta-publi li { margin: 0; padding: 0; }
+		.oeuvre .meta-publi li a { margin: 0 5px 5px 0; padding: 3px; }
+		.oeuvre .meta-publi .suite a { padding: 0; margin: 3px 5px 3px 3px; }
+	.oeuvre .meta-publi .info-publi {
+		display: block; clear: left;
+		border-right-width: 0; }
+
 
 	h3.titre-rubrique span.periode-expo {
-		font-size: 10px; xline-height: .8em; text-transform: uppercase;
-		color:#c9f; background: #000 url('../img/img-sprites.png') no-repeat 0 -82px;
+		font-size: 12px;
+		color:#ff0; background: #000 url('../img/img-sprites.png') no-repeat 0 -81px;
 		padding: 1px 4px 1px 12px; }
 
 /*	=Hentry
@@ -116,7 +134,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		width: 330px; }
 		.grid h2 { margin-bottom: .5em; }
 		/* entry-content contient un logo */
-		.logo p, .logo ul.meta-publi { float: right; width: 220px; }
+		.logo p, .logo ul { float: right; width: 220px; }
 
 
 /*	=Pagination
