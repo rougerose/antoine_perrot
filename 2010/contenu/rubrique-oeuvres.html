@@ -6,12 +6,12 @@
 	</div><!-- .rubrique -->
 
 	<div class="selection oeuvres">
-		<BOUCLE_selection(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=#ID_RURIQUE}{doublons}>
+		<BOUCLE_selection(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=#ID_RUBRIQUE}{doublons}>
 		#INCLURE{fond=inclure/slider-oeuvre,env}
 		</BOUCLE_selection>
 	</div><!-- .selection oeuvres -->
 
-	<INCLURE{fond=inclure/articles-hentry,env,ajax,doublons,format=grid,tailleImage=84}>
+	<INCLURE{fond=inclure/articles-hentry,env,doublons,ajax,format=grid,tailleImage=84}>
 
 </div>
 [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]

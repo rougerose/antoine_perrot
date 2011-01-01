@@ -131,6 +131,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 /*	=Hentry en liste (sommaire, rubriques...)
 	------------------------------------------------------ */
 	.liste .entry-content p { margin-bottom: 0; }
+	.liste .entry-content p + ul.meta-publi { margin-top: 1.5em; }
 
 
 /*	=Hentry format grid (2 colonnes)
