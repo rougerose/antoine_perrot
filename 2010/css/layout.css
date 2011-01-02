@@ -170,11 +170,15 @@
 
 /*	=Slider (page article)
 	------------------------------------------------------ */
-	#images #slider .scroll { width: 700px; }
-		#images #slider .panneau { padding:0; }
-		#images #slider .imgAgrandissement {
-			text-align: center;
-			float:none;
-			width: 700px; }
-			#images #slider .imgDesc { margin: 0 auto; }
+	#images #slider {  }
+		#images #slider .navigation { padding-right: 40px; }
+		#images #slider .scroll { width: 700px; }
+			#images #slider .droite { right:0; }
+			#images #slider .gauche { right: 20px; }
+			#images #slider .panneau { padding:40px 0 0; }
+			#images #slider .imgAgrandissement {
+				text-align: center;
+				float:none;
+				width: 700px; }
+				#images #slider .imgDesc { margin: 0 auto; }
 

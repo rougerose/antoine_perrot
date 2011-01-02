@@ -164,10 +164,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	------------------------------------------------------ */
 	.documents { margin-bottom: 1.5em; }
 		.documents h3.spip {
-			border-bottom: 1px solid #666;
-			xfloat: left;
-			xmargin-bottom: 1em; xmargin-left: 0; xmargin-right: 240px;
-			xwidth: 460px; }
+			border-bottom: 1px dotted #ccc;
+			margin-bottom: 10px; }
 	/*	.documents ul.imgApercu { clear: left; }
 		.documents dl {
 			border-bottom: 1px solid #666;
