@@ -1,14 +1,10 @@
 <BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}>
 <div class="contenu-principal">
 	<div class="titre">
-		[(#LOGO_RUBRIQUE||image_reduire{200,200})]
 		<h2[ class="(#EDIT{titre})"]>#TITRE</h2>
 
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 	</div><!-- .rubrique -->
-	
-	[(#REM) Gestion du portfolio et des documents ]
-	[(#INCLURE{fond=inclure/documents}{id_rubrique})]
 	
 	
 	<div class="hfeed liste articles clearfix">
