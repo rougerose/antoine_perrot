@@ -2,7 +2,7 @@
 
 [(#SET{logoArticle,[(#LOGO_ARTICLE|image_reduire{94,0})]})]
 
-<div class="hfeed contenu-principal item">
+<div class="hfeed contenu-principal section item">
 	<div class="hentry">
 		[<p class="logo">(#GET{logoArticle})</p>]
 		<div class="titre section">
@@ -10,10 +10,10 @@
 			<h1 class="#EDIT{titre} entry-title">#TITRE</h1>
 			[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 		</div><!-- .titre -->
-		
+
 		[(#ID_RUBRIQUE|=={7}|non)
 		<div class="info-publi section">
-			
+
 			<p class="updated published">
 				<span class="value-title" title="[(#DATE|date_iso)]">[<:publie:> (#DATE|affdate{'d'})][/(#DATE|mois)][/(#DATE|annee)]</span>
 			</p>
@@ -24,9 +24,9 @@
 
 		</div><!-- .info-publi -->
 		]
-		
+
 		[(#MODELE{socialtags}{position=Haut})]
-		
+
 		<B_evenement>
 		<div class="evenement vcalendar section">
 			<BOUCLE_evenement(EVENEMENTS){id_article}>
@@ -38,9 +38,9 @@
 		[<div class="#EDIT{chapo} chapo surlignable section">
 			(#CHAPO|image_reduire{200,0})
 		</div>]
-		
+
 		[<div class="#EDIT{texte} texte entry-content surlignable section">(#TEXTE|image_reduire{200,0})</div>]
-		
+
 		[(#ID_RUBRIQUE|=={7}|oui)
 			#FORMULAIRE_ECRIRE_AUTEUR
 		]
@@ -51,14 +51,14 @@
 			<h3 class="spip"><:ps:></h3>
 			<div class="#EDIT{ps} surlignable">(#PS|image_reduire{200,0})</div>
 		</div><!-- .ps -->]
-		
+
 		[(#REM) Gestion du portfolio et des documents ]
 		[(#INCLURE{fond=inclure/documents}{id_article})]
 
 		[<div class="notes surlignable section"><h3 class="spip pas_surlignable"><:info_notes:></h3>(#NOTES)</div>]
-		
+
 		[(#MODELE{socialtags}{position=Bas})]
-		
+
 	</div><!-- .hentry -->
 </div><!-- .hfeed -->
 

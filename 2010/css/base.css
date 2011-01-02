@@ -129,7 +129,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		#slider .entry-content, #slider .oeuvre .imgApercu  { float: right; width: 220px; }
 		#slider .oeuvre .entry-content { float: none; width: auto; }
 
-/*	=Hentry en liste (sommaire, rubriques...)
+/*	=Hentry en liste (sommaire, rubriques)
 	------------------------------------------------------ */
 	.liste .introduction p { margin-bottom: 0; }
 	.liste .introduction p + ul.meta-publi { margin-top: 1.5em; }
