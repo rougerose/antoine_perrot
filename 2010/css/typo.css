@@ -24,10 +24,10 @@
 /*	=Polices
 	------------------------------------------------------ */
 	/* Helvetica Neue Light */
+	#logo,
 	h1,h2,h3,h4,h5,h6 {
 		font-family: "HelveticaNeue-Light", "Helvetica Neue";
-		font-weight: 200; /* equivalent du light pour Firefox */
-		color:#333; }
+		font-weight: 200; /* equivalent du light pour Firefox */ }
 
 	/* Helvetica Neue standard */
 	#slider h3 span,
