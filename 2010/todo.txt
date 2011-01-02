@@ -1,4 +1,5 @@
 TODO supprimer #navigation et #extra là ils ne sont pas utilisés
+TODO rubrique expos : il manque l'info sur la période de l'expo après le titre
 TODO style surlignable
 
 TODO favicon

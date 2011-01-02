@@ -83,10 +83,10 @@
 					outline: 0;
 					display: block; float: left;
 					height: 18px; width:16px; }
-				#navigation li.back a { background-position: 0 -48px; }
-				#navigation li.next a { background-position: -16px -48px; }
-				#navigation li.back a:hover { background-position: 0 -64px; background-color: #000; }
-				#navigation li.next a:hover { background-position: -16px -64px; background-color: #000; }
+				#navigation li.back a { background-position: 0 -80px; }
+				#navigation li.next a { background-position: 0 -96px; }
+				#navigation li.back a:hover { background-position: 0 -112px; background-color: #000; }
+				#navigation li.next a:hover { background-position: 0 -128px; background-color: #000; }
 
 
 /*	=Hierarchie

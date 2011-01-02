@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5,h6,
 	font-weight: 200; /* equivalent du light pour Firefox */
 	xtext-rendering: optimizeLegibility; }
 */
-p i,
+/*p i,
 p q,
 .texte blockquote, .texte blockquote:before,
 #hierarchie p strong {
@@ -80,17 +80,13 @@ p strong i, p i strong
 /* ------------------------------------ */
 /*  Liens (règles générales)			*/
 /* ------------------------------------ */
-a { color: #000; text-decoration: none; }
-a:visited {  }
-a:hover {  }
-a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
-a:active { outline: none; }
+
 
 
 /* ------------------------------------ */
 /*  Liens (règles spécifique)			*/
 /* ------------------------------------ */
-.section .titre a,
+/*.section .titre a,
 .item a,
 #hierarchie a,
 #pied a {
@@ -108,10 +104,7 @@ a.logo-article,
 a[name] { padding: 0; }
 
 
-.item a.spip_out, .item a.spip_glossaire {
-	padding-right: 14px;
-	background: url('../img/icones.png') no-repeat right -64px; }
-.item a.spip_glossaire { background-position: right -96px; }
+
 
 .section .titre a:hover,
 .item xa:hover,
@@ -124,7 +117,7 @@ a[name] { padding: 0; }
 a[name]:hover,
 /*a[type="image/jpeg"]:hover, a[type="image/gif"], a[type="image/png"],*/
 a.logo-article:hover { background-color: transparent; }
-
+*/
 
 /* ------------------------------------ */
 /*  Entete								*/
