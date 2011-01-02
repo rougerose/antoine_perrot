@@ -36,6 +36,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		-moz-box-shadow: 1px 1px 3px #888;
 		-webkit-box-shadow: 1px 1px 3px #aaa; }
 
+	.invisible { display: none; }
+
 /*	=logos
 	------------------------------------------------------ */
 	a.logo-article { display: block; float: left; }
@@ -155,6 +157,40 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 	.grid h2:first-child, #slider h2:first-child { margin-top: .5em; }
 
+
+/*	=Documents joints aux articles
+	------------------------------------------------------ */
+	.documents { margin-bottom: 1.5em; }
+		.documents h3.spip {
+			xborder-bottom: 1px solid #666;
+			xfloat: left;
+			xmargin-bottom: 1em; margin-left: 0; margin-right: 240px;
+			xwidth: 460px; }
+	/*	.documents ul.imgApercu { clear: left; }
+		.documents dl {
+			border-bottom: 1px solid #666;
+			float: left;
+			margin-right: 20px; margin-bottom: 1em;
+			width: 220px; }
+		.documents dl.numero-0 { margin-right: 0; }
+		.documents dl.numero-1 { clear: left; }
+			.documents dl a { padding:0; }
+			.documents_joints dl dt a { display: block; }
+				.documents_joints dl dt a img.spip_logos { float: none; background-color: transparent; }
+			.documents dl dt {
+				float: left;
+				margin-right: 2px; }
+			.documents dl dd { float: left; }
+				.documents dd h3 {
+					font-size: 12px;
+					margin-top: 3px;
+					float: left; }
+				.documents dd p.descriptif {
+					clear: left;
+					font-size: 10px;
+					margin-bottom:0; }
+					.documents_joints dl dd p.descriptif span { color:#666; display: block; }
+*/
 
 /*	=Pagination
 	------------------------------------------------------ */

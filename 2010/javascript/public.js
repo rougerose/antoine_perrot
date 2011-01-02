@@ -172,6 +172,7 @@ $(document).ready(function(){
 		}
 	});
 
+
 	/**
 	 * Animation de pseudo tooltips
 	 * inspiré de http://jqueryfordesigners.com/coda-popup-bubbles/

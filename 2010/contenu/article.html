@@ -12,14 +12,14 @@
 <div class="hfeed contenu-principal section item">
 	<div class="hentry">
 		[<p class="logo">(#GET{logoArticle})</p>]
-		<div class="titre section">
+		<div class="titre">
 			[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
 			<h1 class="#EDIT{titre} entry-title">#TITRE</h1>
 			[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 		</div><!-- .titre -->
 
 		[(#ID_RUBRIQUE|=={7}|non)
-		<div class="info-publi section">
+		<div class="info-publi">
 
 			<p class="updated published">
 				<span class="value-title" title="[(#DATE|date_iso)]">[<:publie:> (#DATE|affdate{'d'})][/(#DATE|mois)][/(#DATE|annee)]</span>
@@ -35,26 +35,26 @@
 		[(#MODELE{socialtags}{position=Haut})]
 
 		<B_evenement>
-		<div class="evenement vcalendar section">
+		<div class="evenement vcalendar">
 			<BOUCLE_evenement(EVENEMENTS){id_article}>
 			[(#INCLURE{fond=inclure/article-evenement,id_evenement,id_article})]
 			</BOUCLE_evenement>
 		</div><!-- .evenement -->
 		</B_evenement>
 
-		[<div class="#EDIT{chapo} chapo surlignable section">
+		[<div class="#EDIT{chapo} chapo surlignable">
 			(#CHAPO|image_reduire{200,0})
 		</div>]
 
-		[<div class="#EDIT{texte} texte entry-content surlignable section">(#TEXTE|image_reduire{200,0})</div>]
+		[<div class="#EDIT{texte} texte entry-content surlignable">(#TEXTE|image_reduire{200,0})</div>]
 
 		[(#ID_RUBRIQUE|=={7}|oui)
 			#FORMULAIRE_ECRIRE_AUTEUR
 		]
 
-		[<p class="#EDIT{hyperlien} hyperlien section"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+		[<p class="#EDIT{hyperlien} hyperlien"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
 
-		[<div class="ps section">
+		[<div class="ps">
 			<h3 class="spip"><:ps:></h3>
 			<div class="#EDIT{ps} surlignable">(#PS|image_reduire{200,0})</div>
 		</div><!-- .ps -->]
@@ -62,7 +62,7 @@
 		[(#REM) Gestion du portfolio et des documents ]
 		[(#INCLURE{fond=inclure/documents}{id_article})]
 
-		[<div class="notes surlignable section"><h3 class="spip pas_surlignable"><:info_notes:></h3>(#NOTES)</div>]
+		[<div class="notes surlignable"><h3 class="spip pas_surlignable"><:info_notes:></h3>(#NOTES)</div>]
 
 		[(#MODELE{socialtags}{position=Bas})]
 

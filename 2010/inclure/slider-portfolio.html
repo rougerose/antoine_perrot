@@ -1,0 +1,41 @@
+[(#REM) variables ]
+	#SET{documents_slider,#ENV{documents_slider}}
+
+<ul class="navigation">
+	<BOUCLE_navigation(DOCUMENTS){id_document IN #GET{documents_slider}}>
+	<li>
+		[<a href="#image-#ID_DOCUMENT">
+			(#LOGO_DOCUMENT|image_reduire{64,0}|image_recadre{16,16,center}|vider_attribut{class})
+		</a>]
+	</li>
+	</BOUCLE_navigation>
+</ul><!-- .navigation -->
+
+<B_affichage>
+<div class="scroll">
+	<div class="scrollConteneur clearfix">
+		<div class="visuOeuvres">
+			<BOUCLE_affichage(DOCUMENTS){id_document IN #GET{documents_slider}}>
+			#SET{largeur,#LARGEUR}
+			<div id="image-#ID_DOCUMENT" class="hentry panneau oeuvre">
+				<div class="oeuvreConteneur entry-content clearfix">
+					[(#REM) zone agrandissement]
+					[<div class="imgAgrandissement">
+						(#FICHIER|image_reduire{700,0}
+							|inserer_attribut{alt,[(#TITRE|textebrut)]}|inserer_attribut{class,spip_logos})
+						<div class="imgDesc"[ style="width:(#GET{largeur}|max{200})px;"]>
+							[<h4>(#TITRE)</h4>]
+							[<p>
+								(#DESCRIPTIF|PtoBR)
+								[&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]
+							</p>]
+						</div><!-- .imgDesc -->
+					</div><!-- .imgAgrandissement -->]
+				</div><!-- .oeuvreConteneur -->
+			</div><!-- #image-#ID_DOCUMENT -->
+
+			</BOUCLE_affichage>
+		</div><!-- .visuOeuvres -->
+	</div><!-- .scrollConteneur -->
+</div><!-- .scroll -->
+</B_affichage>

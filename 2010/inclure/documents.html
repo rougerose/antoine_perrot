@@ -2,7 +2,7 @@
 	Liste des autres documents joints
 ]
 <B_documents_joints>
-<div id="docs" class="liste documents documents_joints section clearfix">
+<div id="docs" class="liste documents documents_joints clearfix">
 	<h3 class="spip"><:titre_documents_joints:>[ / (#TOTAL_BOUCLE)[ (#TOTAL_BOUCLE|singulier_ou_pluriel{local:document,local:documents})]]</h3>
 	<BOUCLE_documents_joints(DOCUMENTS){id_article?}{id_rubrique?}{extension !IN gif,jpg,png}{vu=non}{par num titre, date}>
 	<dl id="document-#ID_DOCUMENT" class="document[ numero-(#COMPTEUR_BOUCLE|modulo{3})]">
@@ -25,48 +25,19 @@
 
 [(#REM) Portfolio : album d'images ]
 <B_documents_portfolio>
-<div id="images" class="documents documents_portfolio section clearfix">
+<div id="images" class="documents documents_portfolio">
 	<h3 class="spip"><:info_portfolio:>[ / (#TOTAL_BOUCLE)[ (#TOTAL_BOUCLE|singulier_ou_pluriel{local:image,local:images})]]</h3>
-	
-	<div class="oeuvreConteneur clearfix">
-		[(#REM) zone apercu]
-		<ul class="imgApercu">
-			[(#REM) les aperçus des œuvres : 12 images au maximum ]
-			<BOUCLE_documents_portfolio(DOCUMENTS){id_article}{par num titre, date}{mode=document}{extension IN png,jpg,gif}{vu=non}>
-			[<li id="document-#ID_DOCUMENT">
-				<a href="[(#FICHIER|image_reduire{450,0}|extraire_attribut{src})]" class="[(#COMPTEUR_BOUCLE|=={1}|?{'actif '})]mediabox slider icone-lien" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE">
-					(#FICHIER|image_reduire{200,0}
-						|image_recadre{56,56,center}
-						|inserer_attribut{alt,[(#TITRE|textebrut)]}
-					)
-				</a>
-				<div class="imgDesc">
-					[<h4>(#TITRE)</h4>]
-					[<p>
-						(#DESCRIPTIF|PtoBR)
-						[&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]
-					</p>]
-				</div><!-- .imgDesc -->
-			</li>]
-			</BOUCLE_documents_portfolio>
-		</ul><!-- .imgApercu -->
-		
-		<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, date}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,1}>
-		[(#REM) zone agrandissement]
-		[<div class="imgAgrandissement">
-				(#FICHIER|image_reduire{450,0}|inserer_attribut{alt,[(#TITRE|textebrut)]})
-			<div class="conteneurDesc">
-				<div class="imgDesc">
-					[<h4>(#TITRE|sinon{description})</h4>]
-					[<p>
-						(#DESCRIPTIF|PtoBR)
-						[&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]
-					</p>]
-				</div><!-- .imgDesc -->
-			</div><!-- .conteneurDesc -->
-		</div><!-- .imgAgrandissement -->]
-		</BOUCLE_imagePrincipale>
-		
-	</div><!-- .oeuvreConteneur -->
-</div>
+
+	<div id="slider">
+		[(#REM)
+		 -> ne pas oublier que l'url peut contenir le hash de l'image
+		]
+		<BOUCLE_documents_portfolio(DOCUMENTS){id_article}{par num titre, date}{mode=document}{extension IN png,jpg,gif}{vu=non}>
+		[(#SET_PUSH{documents_slider,#ID_DOCUMENT})]
+		</BOUCLE_documents_portfolio>
+
+		<INCLURE{fond=inclure/slider-portfolio,env,documents_slider=#GET{documents_slider}}>
+
+	</div><!-- #slider -->
+</div><!-- #images -->
 </B_documents_portfolio>
