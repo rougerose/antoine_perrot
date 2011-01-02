@@ -7,8 +7,8 @@
 	------------------------------------------------------ */
 	#page {
 		position: relative;
-		margin-left: 270px; margin-top: 6em; }
-		#entete { position: fixed; top: 3em; left: 0; z-index: 0; }
+		margin-left: 270px; margin-top: 3em; }
+		#entete { position: fixed; top:3em; left: 0; z-index: 0; }
 		#nav { position: fixed; top:108px; left: 0; z-index: 0; }
 		#conteneur {
 			width: 720px;
@@ -31,7 +31,9 @@
 /*	=Entete
 	------------------------------------------------------ */
 	#entete { margin-left: 40px; float: left; }
-		#entete #logo { font-size: 30px; line-height: 1em; color: #000; }
+		#entete #logo {
+			font-size: 30px; line-height: 36px; color: #000;
+			margin-bottom: 0; }
 			#entete #logo a { color:#000; }
 
 /*	=Navigation principale
@@ -61,7 +63,6 @@
 	------------------------------------------------------ */
 	#hierarchie {
 		padding: .5em 0;
-		xbackground: transparent url('../img/bordure-haut.png')repeat-x top left;
 		border-top: 1px solid #000;
 		border-bottom: 1px solid #000; }
 		#hierarchie p { color:#888; margin: 0; }
@@ -85,6 +86,10 @@
 		color: #888;
 		font-size: 9px;
 		text-align: right; }
+
+/*	=page sommaire
+	------------------------------------------------------ */
+	.page_sommaire #page { margin-top: 6em; }
 
 
 /*	=Slider

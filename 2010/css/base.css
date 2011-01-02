@@ -147,7 +147,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Rubriques
 	------------------------------------------------------ */
-	.titre h2 { color: #000; }
+	.titre h2 { color: #000; line-height: 46px; margin-bottom: 0; }
 
 	.grid h2:first-child, #slider h2:first-child { margin-top: .5em; }
 
