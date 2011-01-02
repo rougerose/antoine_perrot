@@ -43,7 +43,12 @@
 			.parent().appendTo(ul);
 		}});
 
-		selector.after(ul.wrap('<div class="socialtags"><\/div>').parent());
+		// code original
+		// selector.after(ul.wrap('<div class="socialtags"><\/div>').parent());
+		// surcharge cld : les tags sont *dans* le sélecteur désigné dans la configuration
+		// (et non en-dessous)
+		selector.append(ul);
+
 
 		#CONFIG{socialtags/badgejs}
 	};
