@@ -1,6 +1,13 @@
 <BOUCLE_contenu(ARTICLES){id_article}>
+	[(#REM)
+		Variables :
+		- reduction du logo à 94 px
+		- pas de logo d'article s'il s'agit d'un article Oeuvre
 
-[(#SET{logoArticle,[(#LOGO_ARTICLE|image_reduire{94,0})]})]
+	]
+	#SET{logoArticle,''}
+	[(#SET{logoArticle,[(#LOGO_ARTICLE|image_reduire{94,0})]})]
+	[(#ID_RUBRIQUE|=={1}|oui)[(#SET{logoArticle,''})]]
 
 <div class="hfeed contenu-principal section item">
 	<div class="hentry">
