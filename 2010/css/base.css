@@ -40,16 +40,16 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=logos
 	------------------------------------------------------ */
-	a.logo-article { display: block; float: left; }
+	.logo-article { display: block; float: left; }
 
-	img.spip_logos {
+	.spip_logos {
 		background-color: #fff;
 		padding: 3px; margin-right: 20px; }
 
 /*	=Vcalendar
 	------------------------------------------------------ */
 	.vcalendar {
-		float:right; width: 580px;
+		xfloat:right; xwidth: 580px;
 		margin-bottom: 3em; }
 	.vevent { width: 340px;  }
 		.summary {
@@ -79,13 +79,13 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			margin-right: 5px; padding-right: 5px; }
 			.meta-publi li a { display:block; outline: 0; }
 			.meta-publi li a:hover { background-color: #000; }
-		.meta-publi .info-publi { border-right: 1px solid #000; }
+		.meta-publi .info-publi { border-right: 1px solid #8c8b99; color: #8c8b99; }
 		.meta-publi .lire-suite { margin-right: 0; padding-right: 0; }
 			.meta-publi .lire-suite a, .meta-publi .suite a span {
 				text-indent: -9999px;
 				height: 13px; width: 16px;
 				padding:0;
-				background: #fff url(../img/img-sprites.png) no-repeat -16px -50px; }
+				background: #fff url('../img/img-sprites.png') no-repeat -16px -50px; }
 			.meta-publi .suite a {
 				border: 1px solid #000;
 				height: 39px; width: 39px;
@@ -137,7 +137,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Page sommaire
 	------------------------------------------------------ */
-	h3.titre-rubrique { font-size: 15px; margin-top: .5em; }
+	h3.titre-rubrique { font-size: 15px; margin: .5em 0 0; }
 
 /*	=Rubriques
 	------------------------------------------------------ */
@@ -147,6 +147,37 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		margin-bottom: 0; }
 
 	.grid h2:first-child, #slider h2:first-child { margin-top: .5em; }
+
+/*	=Articles
+	------------------------------------------------------ */
+	/* titre */
+	.section .titre h1 {
+		font-size: 22px; line-height: 26px;
+		padding-top: 10px; }
+	.titre .surtitre + h1 { padding-top: 0; }
+	.titre p.surtitre, .titre p.soustitre {
+		font-size: 14px;
+		margin-bottom: 0; }
+	.titre p.soustitre { margin-top: .5em; }
+	p.surtitre, p.soustitre {
+		color: #8c8b99; }
+
+	/* date */
+	.section .info-publi { margin-left: 480px; }
+		.section .info-publi p {
+			font-size: 12px;
+			color: #8c8b99;
+			margin-bottom: 0; }
+			/* socialtags */
+			.section .info-publi .socialtags { margin:1em 0 0; clear: none; }
+			.section .info-publi .socialtags h3 {
+				font-size: 12px;
+				color: #8c8b99;
+				float: left; margin: 0; }
+				.info-publi .socialtags ul {
+					background: #fff url('../img/img-sprites.png') no-repeat 0 -111px;
+					float: left; margin-left: 2px !important; padding-left: 18px !important; }
+					.socialtags a { display:block; float: left;}
 
 
 /*	=Slider (pages sommaire, rubriques)
