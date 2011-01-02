@@ -5,12 +5,14 @@
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 	</div><!-- .rubrique -->
 
+	<B_selection>
 	<div id="slider" class="item">
 		<BOUCLE_selection(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=#ID_RUBRIQUE}{doublons}>
 		[(#SET_PUSH{articles_slider,#ID_ARTICLE})]
 		</BOUCLE_selection>
 		<INCLURE{fond=inclure/slider,env,articles_slider=#GET{articles_slider}}>
 	</div><!-- #slider -->
+	</B_selection>
 
 	<INCLURE{fond=inclure/articles-hentry,env,doublons,ajax,format=grid,tailleImage=84}>
 
