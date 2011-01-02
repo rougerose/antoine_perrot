@@ -1,0 +1,18 @@
+/*	Spip style sheet
+	Updated:	2010-12-24
+	Author:		christophe le drean / rouge-rose.net
+	----------------------------------------------------*/
+
+
+/* boutons d'administration de Spip */
+/* uniquement surcharge de quelques règles de spip_admin.css */
+
+html .spip-admin-float { right: 5px; }
+html .spip-admin-float { font-size: 11px; }
+html a.spip-admin-boutons { display:block; margin-bottom: 5px; }
+@media handheld {
+	.spip-admin-float, .spip-admin-boutons { display: none; }
+}
+@media print {
+	.spip-admin-float, .spip-admin-boutons { display: none; }
+}

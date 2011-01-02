@@ -117,8 +117,6 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Hentry
 	------------------------------------------------------ */
-	.entry-content {  }
-	.hentry h3 { margin-top: .5em; }
 
 /*	=Hentry (slider)
 	------------------------------------------------------ */
@@ -148,6 +146,10 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		/* entry-content contient un logo */
 		.logo p, .logo ul { float: right; width: 220px; }
 
+/*	=Page sommaire
+	------------------------------------------------------ */
+	h3.titre-rubrique { font-size: 15px; margin-top: .5em; }
+
 /*	=Rubriques
 	------------------------------------------------------ */
 	.titre h1 {
@@ -162,9 +164,9 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	------------------------------------------------------ */
 	.documents { margin-bottom: 1.5em; }
 		.documents h3.spip {
-			xborder-bottom: 1px solid #666;
+			border-bottom: 1px solid #666;
 			xfloat: left;
-			xmargin-bottom: 1em; margin-left: 0; margin-right: 240px;
+			xmargin-bottom: 1em; xmargin-left: 0; xmargin-right: 240px;
 			xwidth: 460px; }
 	/*	.documents ul.imgApercu { clear: left; }
 		.documents dl {
