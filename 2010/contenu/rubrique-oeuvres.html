@@ -9,7 +9,7 @@
 		<BOUCLE_selection(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=#ID_RUBRIQUE}{doublons}>
 		[(#SET_PUSH{articles_slider,#ID_ARTICLE})]
 		</BOUCLE_selection>
-		<INCLURE{fond=inclure/slider,articles_slider=#GET{articles_slider}}>
+		<INCLURE{fond=inclure/slider,env,articles_slider=#GET{articles_slider}}>
 	</div><!-- #slider -->
 
 	<INCLURE{fond=inclure/articles-hentry,env,doublons,ajax,format=grid,tailleImage=84}>

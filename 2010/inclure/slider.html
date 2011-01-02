@@ -1,6 +1,8 @@
 [(#REM) variables ]
 	#SET{articles_slider,#ENV{articles_slider}}
+	
 	[(#REM)
+		équivalences entre id_rubrique et un titre
 		1 		oeuvre
 		2 		expo
 		3,4,5,6	article
@@ -45,9 +47,9 @@
 		<div class="visuOeuvres">
 			<BOUCLE_affichage(ARTICLES){id_article IN #GET{articles_slider}}>
 			[(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE}|match{^(oeuvre)$}|?{
-				[(#INCLURE{fond=inclure/slider-oeuvre,id_article,titre_rubrique=#GET{titre_rubrique}})]
+				[(#INCLURE{fond=inclure/slider-oeuvre,id_article,env,titre_rubrique=#GET{titre_rubrique}})]
 				,
-				[(#INCLURE{fond=inclure/slider-article,id_article,titre_rubrique=#GET{titre_rubrique}})]
+				[(#INCLURE{fond=inclure/slider-article,id_article,env,titre_rubrique=#GET{titre_rubrique}})]
 			})]
 			</BOUCLE_affichage>
 

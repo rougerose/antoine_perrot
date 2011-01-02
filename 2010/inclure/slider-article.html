@@ -1,18 +1,23 @@
 #SET{titre_rubrique,#ENV{titre_rubrique}}
+#SET{periode-expo,''}
 
 <BOUCLE_article(ARTICLES){id_article}>
+
+<BOUCLE_agenda_expo(EVENEMENTS){id_article}>
+[(#DATE_FIN|>={#ENV{date}}|?{
+	[(#DATE_DEBUT|>{#ENV{date}}|?{
+		[(#SET{periode-expo,<span class="periode-expo"><:prochainement:></span>})]
+		,[(#DATE_DEBUT|<={#ENV{date}}|?{[(#SET{periode-expo,<span class="periode-expo"><:actuellement:></span>})]})]
+	})]
+})]
+</BOUCLE_agenda_expo>
+
 <div id="[(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE})]-#ID_ARTICLE" class="hentry panneau">
+	[(#ENV{composition}|match{^(sommaire)$}|oui)
 	<h3 class="titre-rubrique">
-		<a href="#URL_RUBRIQUE">#TITRE_PARENT</a>
-		<BOUCLE_agenda_expo(EVENEMENTS){id_article}>
-		[<span class="periode-expo">(#DATE_FIN|>={#ENV{date}}|?{
-			[(#DATE_DEBUT|>{#ENV{date}}|?{
-				<:prochainement:>
-				,[(#DATE_DEBUT|<={#ENV{date}}|?{<:actuellement:>})]
-			})]
-		})</span>]
-		</BOUCLE_agenda_expo>
+		<a href="#URL_RUBRIQUE">#TITRE_PARENT</a>[ (#GET{periode-expo})]
 	</h3>
+	]
 	<h2 class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
 	<div class="oeuvreConteneur clearfix">
 		[(#REM) zone agrandissement]
