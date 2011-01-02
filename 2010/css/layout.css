@@ -15,7 +15,7 @@
 			position: relative; z-index: 10; }
 			#conteneur #contenu {  }
 			#conteneur #navigation {
-				position:absolute; top: -2em; z-index:0;
+				position:absolute; top: -2em;
 				width: 720px; }
 			#conteneur #hierarchie { clear: both; }
 			#conteneur #pied {  }
@@ -58,6 +58,36 @@
 				#nav li.off a:hover { padding-left: 20px; }
 				#nav li.off a.ff3:hover { padding-left: 40px; }
 				#nav li a:active, #nav li a:focus { top: 0; }
+
+/*	=Navigation secondaire (article, site)
+	------------------------------------------------------ */
+	#navigation {  }
+		#navigation ul { position: relative; }
+			#navigation li {
+				position: absolute; right: 10px;
+				font-size: 12px; line-height:14px;
+				float:left;
+				display:inline; }
+			#navigation li.back { left: 0; }
+			#navigation li.next { right: 0; }
+				#navigation li div.info {
+					color: #fff; background-color: #000;
+					white-space: nowrap; margin-top:0;
+					padding:1px 4px 3px;
+					position:absolute; z-index:-10; }
+				#navigation li.back div.info { margin-left:16px; }
+				#navigation li.next div.info {  }
+				#navigation li a {
+					text-indent: -99999px;
+					background: #fff url('../img/img-sprites.png') no-repeat 0 0;
+					outline: 0;
+					display: block; float: left;
+					height: 18px; width:16px; }
+				#navigation li.back a { background-position: 0 -48px; }
+				#navigation li.next a { background-position: -16px -48px; }
+				#navigation li.back a:hover { background-position: 0 -64px; background-color: #000; }
+				#navigation li.next a:hover { background-position: -16px -64px; background-color: #000; }
+
 
 /*	=Hierarchie
 	------------------------------------------------------ */

@@ -439,32 +439,7 @@ ul.optionsTri { position:absolute; right: 0; top: -4.25em; z-index:99; }
 /* -------------------------------- */
 /*	#navigation					*/
 /* -------------------------------- */
-#navigation {  }
-	#navigation ul { position: relative; }
-		#navigation li {
-			position: absolute; right: 10px; z-index: 4;
-			font-size: 12px; line-height:14px;
-			float:left;
-			display:inline; }
-		#navigation li.back { left: 10px; }
-		#navigation li.next { right: 10px; }
-			#navigation li div.info {
-				color: #fff; background-color: #000;
-				white-space: nowrap; margin-top:0;
-				padding:1px 4px 3px;
-				position:absolute; }
-			#navigation li.back div.info { margin-left:16px; }
-			#navigation li.next div.info {  }
-			#navigation li a {
-				text-indent: -99999px;
-				background: #fff url('../img/img-sprites.png') no-repeat 0 0;
-				outline: 0;
-				display: block; float: left;
-				height: 18px; width:16px; }
-			#navigation li.back a { background-position: 0 -48px; }
-			#navigation li.next a { background-position: -16px -48px; }
-			#navigation li.back a:hover { background-position: 0 -64px; background-color: #000; }
-			#navigation li.next a:hover { background-position: -16px -64px; background-color: #000; }
+
 
 /* -------------------------------- */
 /*	Recherche (formulaire)			*/
