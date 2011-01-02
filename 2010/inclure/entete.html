@@ -1,8 +1,8 @@
-[(#ENV{composition}|match{^(sommaire)$}|?{'<h1 id="logo">','<p id="logo">'})]
-	[(#ENV{composition}|match{^(sommaire)$}|non)
-	<a href="#URL_SITE_SPIP/" rel="start home" title="<:accueil_site:>">]
+[(#ENV{composition}|match{^(sommaire)$}|?{
+	'<h1 id="logo">'
+	,'<p id="logo"><a href="#URL_SITE_SPIP/" rel="start home" title="<:accueil_site:>">'})]
 	[(#NOM_SITE_SPIP)]
-	[(#ENV{composition}|match{^(sommaire)$}|non)
-	</a>]
-[(#ENV{composition}|match{^(sommaire)$}|?{'</h1>','</p>'})]
+[(#ENV{composition}|match{^(sommaire)$}|?{
+	'</h1>'
+	,'</a></p>'})]
 [<div id="slogan">(#SLOGAN_SITE_SPIP|PtoBR)</div>]
