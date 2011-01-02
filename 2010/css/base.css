@@ -82,6 +82,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			.meta-publi .lire-suite a, .meta-publi .suite a span {
 				text-indent: -9999px;
 				height: 13px; width: 16px;
+				padding:0;
 				background: #fff url(../img/img-sprites.png) no-repeat -16px -50px; }
 			.meta-publi .suite a {
 				border: 1px solid #000;
@@ -130,8 +131,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Hentry en liste (sommaire, rubriques...)
 	------------------------------------------------------ */
-	.liste .entry-content p { margin-bottom: 0; }
-	.liste .entry-content p + ul.meta-publi { margin-top: 1.5em; }
+	.liste .introduction p { margin-bottom: 0; }
+	.liste .introduction p + ul.meta-publi { margin-top: 1.5em; }
 
 
 /*	=Hentry format grid (2 colonnes)
