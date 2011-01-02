@@ -4,10 +4,10 @@
 		<h2[ class="(#EDIT{titre})"]>#TITRE</h2>
 		[<div class="#EDIT{texte} chapo">(#TEXTE)</div>]
 	</div><!-- .rubrique -->
-	
+
 	[(#REM) Sites de la rubrique ]
-	<INCLURE{fond=inclure/sites-resume,env,ajax,format=mineur,tailleImage=92}>
-	
+	<INCLURE{fond=inclure/sites-resume,env,ajax,format=grid,tailleImage=92}>
+
 </div>
 [<div class="notes"><h2 class="h2"><:info_notes:></h2>(#NOTES)</div>]
 </BOUCLE_contenu_rubrique>
