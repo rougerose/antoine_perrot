@@ -285,11 +285,11 @@ a.icone-lien { position: relative; }
 /*	rubriques						*/
 /* -------------------------------- */
 .page_rubrique .titre {
-	border-top: 1px solid #333; }
+	xborder-top: 1px solid #333; }
 	.page_rubrique .titre h2 {
-		color: #000;
-		font-size: 28px; line-height:36px;
-		margin-bottom: 1em; }
+		xcolor: #000;
+		xfont-size: 28px; xline-height:36px;
+		xmargin-bottom: 1em; }
 
 .rubrique_biographie .hentry .entry-title,
 .rubrique_biographie .titre,

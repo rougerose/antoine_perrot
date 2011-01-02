@@ -69,7 +69,7 @@
 /*	=Pied de page
 	------------------------------------------------------ */
 	#pied {
-		text-align: left; xfont-size: 11px;
+		text-align: left;
 		border-bottom: 2px solid #000; }
 		#pied div.groupe { padding: 2em 0;  }
 		#pied .raccourcis dl {
@@ -125,7 +125,7 @@
 					width: 460px;
 					margin-bottom: 1.5em; }
 					.imgAgrandissement img { margin:0 auto; }
-						.imgAgrandissement .imgDesc { margin-top: 1em; }
+						.imgAgrandissement .imgDesc { clear:both; }
 				/* mini-liste des autres œuvres disponibles */
 				.imgApercu { margin-top:3px; }
 

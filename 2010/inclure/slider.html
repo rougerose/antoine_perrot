@@ -11,10 +11,10 @@
 <ul class="navigation">
 	<BOUCLE_navigation(ARTICLES){id_article IN #GET{articles_slider}}>
 
-	[(#ID_RUBRIQUE|match{^(1)$}|?{
+	[(#ID_RUBRIQUE|=={1}|?{
 		[(#SET{titre_rubrique,#GET{titre_rubrique}|array_merge{#ARRAY{art#ID_ARTICLE,oeuvre}}})]
 	})]
-	[(#ID_RUBRIQUE|match{^(2)$}|?{
+	[(#ID_RUBRIQUE|=={2}|?{
 		[(#SET{titre_rubrique,#GET{titre_rubrique}|array_merge{#ARRAY{art#ID_ARTICLE,expo}}})]
 	})]
 	[(#ID_RUBRIQUE|match{^(3|4|5|6)$}|?{

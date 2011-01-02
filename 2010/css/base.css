@@ -120,11 +120,11 @@ Visual design, layout and cascading style sheets may not be reused without permi
 /*	=Hentry (slider)
 	------------------------------------------------------ */
 	#slider {  }
-		.imgDesc { clear: both; }
+		.imgDesc {  }
 		.imgDesc h4 {
 			font-size: 12px;
 			padding: .5em 0 0em; }
-		.imgDesc p { font-size: 10px; color: #888; }
+		.imgDesc p { font-size: 10px; color: #888; margin-bottom: 0; }
 		#slider .entry-content, #slider .oeuvre .imgApercu  { float: right; width: 220px; }
 		#slider .oeuvre .entry-content { float: none; width: auto; }
 
@@ -142,8 +142,13 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		float: left;
 		width: 330px; }
 		.grid h2 { margin-bottom: .5em; }
+		.grid h2:first-child { margin-top: .5em; }
 		/* entry-content contient un logo */
 		.logo p, .logo ul { float: right; width: 220px; }
+
+/*	=Rubriques
+	------------------------------------------------------ */
+	.titre h2 { color: #000; }
 
 
 /*	=Pagination

@@ -3,7 +3,7 @@
 <BOUCLE_article(ARTICLES){id_article}>
 <div id="[(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE})]-#ID_ARTICLE" class="hentry panneau">
 	<h3 class="titre-rubrique">
-		<a href="#URL_RUBRIQUE">#TITRE</a>
+		<a href="#URL_RUBRIQUE">#TITRE_PARENT</a>
 		<BOUCLE_agenda_expo(EVENEMENTS){id_article}>
 		[<span class="periode-expo">(#DATE_FIN|>={#ENV{date}}|?{
 			[(#DATE_DEBUT|>{#ENV{date}}|?{
