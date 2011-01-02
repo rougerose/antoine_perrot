@@ -46,27 +46,6 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		background-color: #fff;
 		padding: 3px; margin-right: 20px; }
 
-/*	=Vcalendar
-	------------------------------------------------------ */
-	.vcalendar {
-		xfloat:right; xwidth: 580px;
-		margin-bottom: 3em; }
-	.vevent { width: 340px;  }
-		.summary {
-			border-bottom:1px solid #666;
-			font-size: 15px; }
-		.vevent dt, .vevent dd {  }
-		.dateEvenement {  }
-		.locationEvenement {  }
-		.dateEvenement, .locationEvenement {  }
-		.infos {
-			border-bottom:1px dotted #888;
-			margin: 0 0 0.25em; }
-		.vevent .infos { padding-left: 6.5em; padding-bottom: .25em; }
-			.vevent .infos .label {
-				display: block; float: left;
-				width:6.5em; margin-left:-6.5em; }
-
 
 /*	=Meta infos contenus :
 	date, point de suite (hentry, séries oeuvres),
@@ -110,13 +89,14 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			margin-top: 1.5em; }
 
 
-	h3.titre-rubrique span.periode-expo {
+	h3.titre-rubrique span.periode-expo, dt.summary span.periode-expo {
 		font-size: 12px;
 		color:#ff0; background: #000 url('../img/img-sprites.png') no-repeat 0 -81px;
 		padding: 1px 4px 1px 12px; }
 
 /*	=Hentry
 	------------------------------------------------------ */
+	.hentry .intro { margin-top: 1em; }
 
 /*	=Hentry en liste (sommaire, rubriques)
 	------------------------------------------------------ */
@@ -151,9 +131,11 @@ Visual design, layout and cascading style sheets may not be reused without permi
 /*	=Articles
 	------------------------------------------------------ */
 	/* titre */
+	.section .logo-article { margin-top: 10px; }
+	.section .titre { padding-top: 10px; }
 	.section .titre h1 {
 		font-size: 22px; line-height: 26px;
-		padding-top: 10px; }
+		xpadding-top: 10px; }
 	.titre .surtitre + h1 { padding-top: 0; }
 	.titre p.surtitre, .titre p.soustitre {
 		font-size: 14px;
@@ -169,16 +151,33 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			color: #8c8b99;
 			margin-bottom: 0; }
 			/* socialtags */
-			.section .info-publi .socialtags { margin:1em 0 0; clear: none; }
+			.section .info-publi .socialtags { margin:1em 0 2em; clear: none; }
 			.section .info-publi .socialtags h3 {
 				font-size: 12px;
 				color: #8c8b99;
 				float: left; margin: 0; }
 				.info-publi .socialtags ul {
-					background: #fff url('../img/img-sprites.png') no-repeat 0 -111px;
-					float: left; margin-left: 2px !important; padding-left: 18px !important; }
+					background: #fff url('../img/img-sprites.png') no-repeat 0 -110px;
+					float: left; margin-left: 2px !important; padding-left: 16px !important; }
+					.socialtags li { float:left; margin: 0 3px 0 0; padding: 0; }
 					.socialtags a { display:block; float: left;}
 
+
+/*	=Vcalendar
+	------------------------------------------------------ */
+	.vcalendar {
+		width: 460px;
+		margin-bottom: 3em; }
+	.vevent {}
+		.summary {
+			font-size: 15px; color: #333;
+			border-bottom: 1px dotted #000;
+			margin-bottom: .25em; }
+		.infos {
+			color: #8c8b99;
+			border-bottom: 1px dotted #8c8b99;
+			margin: 0; }
+		.vevent .infos { padding-bottom: .25em; }
 
 /*	=Slider (pages sommaire, rubriques)
 	------------------------------------------------------ */

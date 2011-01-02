@@ -28,7 +28,8 @@
 	/* Helvetica Neue Light */
 	#logo,
 	h1,h2,h3,h4,h5,h6,
-	.soustitre {
+	.soustitre,
+	.location, .description .infos {
 		font-family: "HelveticaNeue-Light", "Helvetica Neue";
 		font-weight: 200; /* equivalent du light pour Firefox */ }
 
@@ -37,6 +38,6 @@
 	.imgDesc h4 { font-family: "HelveticaNeue", "Helvetica Neue"; font-style: normal; font-weight: 400; }
 
 	/* Helvetica Neue Medium */
-	.infos { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
+	.date { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
 
 
