@@ -13,9 +13,11 @@
 </BOUCLE_agenda_expo>
 
 <div id="[(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE})]-#ID_ARTICLE" class="hentry panneau">
-	[(#ENV{composition}|match{^(sommaire)$}|oui)
-	<h3 class="titre-rubrique[(#GET{periode-expo}|oui) pe]"><a href="#URL_RUBRIQUE">#TITRE_PARENT</a>[<span class="periode-expo"> (#GET{periode-expo})</span>]</h3>
-	]
+	[(#ENV{composition}|match{^(sommaire)$}|?{
+		<h3 class="titre-rubrique[(#GET{periode-expo}|oui) pe]"><a href="#URL_RUBRIQUE">#TITRE_PARENT</a>[<span class="periode-expo"> (#GET{periode-expo})</span>]</h3>
+		,
+		[<h3 class="pe"><span class="periode-expo">(#GET{periode-expo})</span></h3>]
+	})]
 	<h2 class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
 	<div class="oeuvreConteneur clearfix">
 		[(#REM) zone agrandissement]

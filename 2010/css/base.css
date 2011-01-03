@@ -105,17 +105,26 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			border-right-width: 0;
 			margin-top: 1.5em; }
 
-	h3 { float: left; }
+	/* periode expo pour la page sommaire */
+	h3.titre-rubrique.pe { float: left; }
 		h3.pe a {
 			background: url('../img/img-sprites.png') no-repeat right -176px;
 			padding-right: 10px; padding: 1px 10px 3px 0;
 			float: left; }
-		h3.pe a:hover { background-color: #000; }
+		.pe a:hover { background-color: #000; }
 			span.periode-expo {
-				font-size: 10px; line-height: 16px; text-transform: uppercase;
+				font-size: 9px; line-height: 15px;
+				text-transform: uppercase; letter-spacing: .05em;
 				background-color: #000; color: #ff0;
-				padding: 1px 5px 2px;
+				padding: 2px 5px 2px; }
+			h3.titre-rubrique span.periode-expo {
 				display: block; float: right; }
+	h3[class='pe'] {
+		float: right;
+		background: url('../img/img-sprites.png') no-repeat left -226px;
+		padding-left: 10px; }
+	h3[class='pe'] + h2.titre { clear: right; }
+
 
 /*	=Hentry
 	------------------------------------------------------ */
@@ -123,7 +132,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Hentry en liste (sommaire, rubriques)
 	------------------------------------------------------ */
-	.liste h2.titre { clear: left; }
+	.liste h2.titre { clear: left; line-height: 20px; }
 	.liste .introduction p { margin-bottom: 0; }
 	.liste .introduction p + ul.meta-publi { margin-top: 1.5em; }
 
@@ -141,7 +150,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Page sommaire
 	------------------------------------------------------ */
-	h3.titre-rubrique {
+	h3.titre-rubrique, h3.pe {
 		font-size: 15px; line-height: 1em;
 		margin: 10px 0 .5em; }
 
