@@ -1,0 +1,41 @@
+
+/*	=Liens
+	------------------------------------------------------ */
+	a.spip_out, a.spip_glossaire {
+		padding-right: 14px;
+		background: url('img/icones.png') no-repeat right -64px; }
+	a.spip_glossaire { background-position: right -96px; }
+
+
+/*	=Intertitres
+	------------------------------------------------------ */
+h2.spip, h3.spip, h4.spip, h5.spip, h6.spip {
+	border-bottom: 1px solid #000;
+	line-height: 1.5em;
+	color: #000;
+	margin-bottom: 1em;}
+
+h2.spip { font-size: 20px; }
+
+h3.spip {
+	font-size: 18px;
+	border-color: #555;
+	color: #555;
+	margin-bottom: 1em; }
+
+h4.spip {
+	font-size: 16px;
+	color: #555;
+	border-color: #555;
+	margin-bottom: .5em; }
+
+h5.spip {
+	font-size: 15px;
+	color: #777;
+	border-color: #777;
+	margin-bottom: .5em; }
+
+h6.spip {
+	font-size: 14px; xline-height: 1.2em;
+	color: #888;
+	border-color: #888; }

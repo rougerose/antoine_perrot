@@ -41,17 +41,19 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Liens
 	------------------------------------------------------ */
-	a { color: #000; text-decoration: none; }
-	a:visited {  }
-	a:hover { color: #ffff33; background-color: #000; }
-	a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
-	a:active { outline: none; }
-
 	a {
+		color: #000; text-decoration: none;
 		transition: color .6s ease-out, background-color .6s ease-out;
 		-webkit-transition: color .6s ease-out, background-color .6s ease-out;
 		-o-transititon: color .6s ease-out, background-color .6s ease-out;
 		-moz-transition: color .6s ease-out, background-color .6s ease-out; }
+	a:visited {  }
+	a:hover { color: #fff; background-color: #000; }
+	a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
+	a:active { outline: none; }
+
+	a {
+		 }
 
 /*	=logos
 	------------------------------------------------------ */
@@ -104,13 +106,20 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			margin-top: 1.5em; }
 
 
-	h3.titre-rubrique span.periode-expo, dt.summary span.periode-expo {
-		font-size: 12px;
-		color:#ff0; xbackground: #000 url('../img/img-sprites.png') no-repeat 0 -81px;
-		xpadding: 1px 4px 1px 12px; }
-	h3.titre-rubrique {
-		background: url('../img/img-sprites.png') no-repeat 0 -81px;
+	h3.titre-rubrique { float:left; line-height: 18px; }
+	p.periode-expo {
+		float: left;
+		margin: 10px 0 0; }
+	p.periode-expo, dt.summary span.periode-expo {
+		font-size: 12px; line-height: 18px;
+		color:#ff0; background-color: #000;
+		padding: 0 4px 0 5px; }
+	h3.titre-rubrique a {
+		background: transparent url('../img/img-sprites.png') no-repeat right -176px;
+		padding-right: 12px;
 	}
+	h3.titre-rubrique a {  -webkit-transition: color .6s ease-out, background-color .6s ease-out;  }
+	h3.titre-rubrique a:hover { background-color: #000; }
 
 /*	=Hentry
 	------------------------------------------------------ */
@@ -118,6 +127,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Hentry en liste (sommaire, rubriques)
 	------------------------------------------------------ */
+	.liste h2.titre { clear: left; }
 	.liste .introduction p { margin-bottom: 0; }
 	.liste .introduction p + ul.meta-publi { margin-top: 1.5em; }
 
@@ -135,7 +145,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Page sommaire
 	------------------------------------------------------ */
-	h3.titre-rubrique { font-size: 15px; margin: .5em 0 0; }
+	h3.titre-rubrique { font-size: 15px; margin: 10px 0 0; }
 
 /*	=Rubriques
 	------------------------------------------------------ */
