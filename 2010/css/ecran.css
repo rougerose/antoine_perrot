@@ -111,12 +111,6 @@ a[name] { padding: 0; }
 #hierarchie a:hover,
 #pied a:hover { color:#fff; background-color: #000; }
 
-.item a.spip_out:hover { background-position: right -80px; }
-.item a.spip_glossaire:hover { background-position: right -112px; }
-
-a[name]:hover,
-/*a[type="image/jpeg"]:hover, a[type="image/gif"], a[type="image/png"],*/
-a.logo-article:hover { background-color: transparent; }
 */
 
 /* ------------------------------------ */

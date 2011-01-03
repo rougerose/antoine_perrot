@@ -1,14 +1,15 @@
+#SET{periode-expo,''}
 <BOUCLE_evenement(EVENEMENTS){id_evenement}>
+[(#DATE_FIN|>={#ENV{date}}|?{
+	[(#DATE_DEBUT|>{#ENV{date}}|?{
+		[(#SET{periode-expo,<:prochainement:>})]
+		,[(#DATE_DEBUT|<={#ENV{date}}|?{[(#SET{periode-expo,<:actuellement:>})]})]
+	})]
+})]
 <dl id="id-#ID_EVENEMENT" class="vevent">
-	<dt class="summary #EDIT{titre}">
-		[(#TITRE)
-			[(#DATE_FIN|>={#ENV{date}}|?{
-				[(#DATE_DEBUT|>{#ENV{date}}|?{
-					<span class="periode-expo"><:prochainement:></span>
-					,[(#DATE_DEBUT|<={#ENV{date}}|?{<span class="periode-expo"><:actuellement:></span>})]
-				})]
-			})]
-		]
+	<dt class="summary #EDIT{titre} clearfix">
+		[[(#GET{periode-expo}|oui)<span class="pe">](#TITRE)[(#GET{periode-expo}|oui)</span>]]
+		[<span class="periode-expo">(#GET{periode-expo})</span>]
 	</dt>
 	<dd>
 		[(#DATE_DEBUT|jour|=={[(#DATE_FIN|jour)]}|oui)

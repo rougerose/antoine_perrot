@@ -28,17 +28,29 @@
 	/* Helvetica Neue Light */
 	#logo,
 	h1,h2,h3,h4,h5,h6,
+	.liste .titre-rubrique a, .liste .titre a,
 	.soustitre,
-	.location, .description .infos {
-		font-family: "HelveticaNeue-Light", "Helvetica Neue";
-		font-weight: 200; /* equivalent du light pour Firefox */ }
+	.location, .description .infos { font-family: "HelveticaNeue-Light", "Helvetica Neue"; font-weight: 200; /* equivalent du light pour Firefox */ }
+
+	/* Helvetica Neue Light Italic */
+	p i,
+	p q,
+	blockquote, blockquote:before,
+	#hierarchie p strong { font-family: "HelveticaNeue-Italic", "Helvetica Neue"; font-style: italic; font-weight: 400; }
 
 	/* Helvetica Neue standard */
+	#nav a,
 	#slider h3 span,
-	.imgDesc h4 { font-family: "HelveticaNeue", "Helvetica Neue"; font-style: normal; font-weight: 400; }
+	.imgDesc h4,
+	blockquote p i,
+	textarea, input { font-family: "HelveticaNeue", "Helvetica Neue"; font-style: normal; font-weight: 400; }
 
 	/* Helvetica Neue Medium */
+	a,
 	.date,
 	.chapo { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
+
+	/* Helvetica Neue Gras */
+	blockquote p strong { font-family:"HelveticaNeue-Bold", "Helvetica Neue"; font-weight: 800; }
 
 

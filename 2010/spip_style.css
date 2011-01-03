@@ -36,6 +36,97 @@ h5.spip {
 	margin-bottom: .5em; }
 
 h6.spip {
-	font-size: 14px; xline-height: 1.2em;
+	font-size: 14px;
 	color: #888;
 	border-color: #888; }
+
+/*	=Listes
+	------------------------------------------------------ */
+	ul.spip, ol.spip { margin-bottom: 1.5em; }
+	ul.spip {
+		list-style-image: url('img/puce.png');
+		list-style-position: outside; }
+		ul.spip ul.spip { margin-bottom: 0; margin-left: 20px; }
+	ol.spip {
+		list-style-type: decimal;
+		list-style-position: outside; }
+		ul.spip li, ol.spip li { margin-left: 1.4em; }
+
+/*	=Tableaux
+	------------------------------------------------------ */
+	table.spip {
+		margin:0 0 1.5em;
+		border-collapse: collapse; border-spacing: 0;
+		width: 100%; }
+
+		table.spip caption {
+			caption-side: top; /* bottom pas pris en compte par IE */
+			text-align: left; font-size: 14px;
+			margin-bottom: .5em; }
+		table.spip tr.row_first {  }
+		table.spip tr.row_odd { background: rgb(240,240,240); }
+		table.spip tr.row_even {  }
+		table.spip th, table.spip td {
+			text-align: left;
+			padding: 0.20em 0.40em;
+			border: 1px solid #444; border-width: 1px 0; }
+		table.spip th:first-child, table.spip td:first-child { border-left-width: 1px; }
+		table.spip th:last-child, table.spip td:last-child { border-right-width: 1px; }
+		table.spip th {
+			vertical-align: bottom;
+			color: #fff; background-color: #444; }
+		table.spip td { vertical-align: top; }
+
+/*	=Citations
+	------------------------------------------------------ */
+	p q { }
+	blockquote {
+		background-color: #f0f0f0;
+		display: block; }
+	blockquote:before {
+		content: '“';
+		font-size: 700%; line-height: 80%;
+		color: #ccc;
+		height:0;
+		display: inline-block; }
+	blockquote p { padding-left: 50px; padding-right: 10px; }
+	blockquote p:first-child { padding-top: .5em; }
+	blockquote p:last-child { padding-bottom: .5em; }
+
+
+/* =Logos, documents et images */
+	img, .spip_logos { margin: 0; padding: 0; border: 0; }
+	.spip_documents { text-align: left; line-height: 18px; margin-top: .25em; }
+	dl.spip_documents { padding-left: 20px; }
+		dl.spip_documents dd:first-child { padding-top: 5px; background-color: red; }
+			dl.spip_documents dd { font-size: 10px; padding: 0 3px; }
+				dl.spip_documents dd h3 { font-size: 11px; }
+
+		.spip_documents a { display:block; }
+		.spip_documents img { background-color: #fff; padding: 3px;}
+		.spip_documents p { margin: 0.10em; padding: 0; }
+
+	.spip_documents_left { float: left; margin-right: 20px; margin-bottom: 5px; }
+	.spip_documents_center { display: block; display: table; clear: both; margin: 0 auto 1.5em; }
+	dl.spip_document_center { padding-right: 120px; }
+	.spip_documents_right { float: right; margin-left: 20px; margin-bottom: 5px; }
+	.spip_doc_titre { background-color: #fff; }
+	.spip_doc_descriptif { background-color: #fff; clear: both; }
+
+
+/* =Divers */
+	.invisible { display: none; }
+	.texte abbr, .texte acronym { border-bottom: 1px dotted #444; }
+	.texte sub {
+		font-size: 80%;
+		vertical-align: sub; }
+	.texte sup {
+		font-size: 80%;
+		vertical-align: super; }
+	.hyperlien { margin-left: 120px; margin-right: 60px; }
+	hr.spip {
+		background-color: #000;
+		border: none;
+		height: 2px; width: 60%;
+		margin: 3em auto; }
+	.spip_code { font-family: "Lucida Grande"; font-size: 90%; }

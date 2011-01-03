@@ -33,7 +33,7 @@ ul.spip, ol.spip {
 	font-size: 13px; }
 .item ul.spip, .item ol.spip { margin: 0 120px 1.5em 22px; } /* uniquement pour l'espace public */
 ul.spip {
-	list-style-image: url(img/puce.png);
+	list-style-image: url('img/puce.png');
 	list-style-position: outside; }
 	ul.spip ul.spip { margin-bottom: 0; margin-left: 20px; }
 ol.spip {

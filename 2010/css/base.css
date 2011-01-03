@@ -36,8 +36,6 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		-moz-box-shadow: 1px 1px 3px #888;
 		-webkit-box-shadow: 1px 1px 3px #aaa; }
 
-	.invisible { display: none; }
-
 
 /*	=Liens
 	------------------------------------------------------ */
@@ -47,13 +45,18 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		-webkit-transition: color .6s ease-out, background-color .6s ease-out;
 		-o-transititon: color .6s ease-out, background-color .6s ease-out;
 		-moz-transition: color .6s ease-out, background-color .6s ease-out; }
-	a:visited {  }
+	a:visited {}
 	a:hover { color: #fff; background-color: #000; }
 	a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
 	a:active { outline: none; }
 
-	a {
-		 }
+	a.spip_out:hover { background-position: right -80px; }
+	a.spip_glossaire:hover { background-position: right -112px; }
+
+	#nav a,
+	a[name]:hover,
+	a[type="image/jpeg"]:hover, a[type="image/gif"], a[type="image/png"],
+	a.logo-article:hover { background-color: transparent; }
 
 /*	=logos
 	------------------------------------------------------ */
@@ -119,11 +122,20 @@ Visual design, layout and cascading style sheets may not be reused without permi
 				padding: 2px 5px 2px; }
 			h3.titre-rubrique span.periode-expo {
 				display: block; float: right; }
+	/* periode expo pour la rubrique expo */
 	h3[class='pe'] {
 		float: right;
 		background: url('../img/img-sprites.png') no-repeat left -226px;
 		padding-left: 10px; }
 	h3[class='pe'] + h2.titre { clear: right; }
+	/* periode expo pour l'article expo */
+	dt.summary span.pe {
+		display: block; float: left;
+		background: url('../img/img-sprites.png') no-repeat right -176px;
+		padding-right: 10px; padding-bottom: 1px; }
+	dt.summary span.periode-expo {
+		display: block; float: left;
+		font-size: 9px; }
 
 
 /*	=Hentry
@@ -167,7 +179,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	------------------------------------------------------ */
 	/* titre */
 	.section .logo-article { margin-top: 10px; }
-	.section .titre { margin-left: 120px; padding-top: 10px; }
+	.section .titre { margin-bottom: 2em; margin-left: 120px; padding-top: 10px; }
 	.section .titre h1 {
 		font-size: 22px; line-height: 26px; }
 	.titre .surtitre + h1 { padding-top: 0; }
@@ -185,7 +197,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			color: #8c8b99;
 			margin-bottom: 0; }
 			/* socialtags */
-			.section .info-publi .socialtags { margin:1em 0 2em; clear: none; }
+			.section .info-publi .socialtags { margin: 1em 0; clear: none; }
 			.section .info-publi .socialtags h3 {
 				font-size: 12px;
 				color: #8c8b99;
@@ -197,24 +209,22 @@ Visual design, layout and cascading style sheets may not be reused without permi
 					.socialtags a { display:block; float: left;}
 
 	/* chapo */
-	.chapo, .texte { margin-left: 120px; margin-right: 60px; }
-
+	.chapo, .texte, .hyperlien, .ps { margin-left: 120px; margin-right: 60px; }
 
 /*	=Vcalendar
 	------------------------------------------------------ */
-	.vcalendar {
-		xwidth: 460px;
-		margin-right: 60px; margin-bottom: 3em; }
-	.vevent { margin-left: 120px;}
+	.vcalendar { margin-right: 60px; margin-bottom: 2em; }
+	.vevent { margin-left: 120px; line-height: 18px;}
 		.summary {
 			font-size: 15px; color: #333;
 			border-bottom: 1px dotted #000;
-			margin-bottom: .25em; }
+			padding-bottom: .25em; }
 		.infos {
 			color: #8c8b99;
 			border-bottom: 1px dotted #8c8b99;
 			margin: 0; }
 		.vevent .infos { padding-bottom: .25em; }
+		.vevent dt + dd { clear: left; }
 
 /*	=Slider (pages sommaire, rubriques)
 	------------------------------------------------------ */
@@ -281,7 +291,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Documents joints aux articles
 	------------------------------------------------------ */
-	.documents { margin-bottom: 1.5em; }
+	.documents { margin-top: 3em; margin-bottom: 1.5em; }
 		.documents h3.spip {
 			border-bottom: 1px dotted #ccc;
 			margin-bottom: 10px; }
