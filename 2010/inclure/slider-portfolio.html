@@ -20,10 +20,12 @@
 			<div id="image-#ID_DOCUMENT" class="hentry panneau oeuvre">
 				<div class="oeuvreConteneur entry-content clearfix">
 					[(#REM) zone agrandissement]
-					[<div class="imgAgrandissement">
-						(#FICHIER|image_reduire{700,0}
-							|inserer_attribut{alt,[(#TITRE|textebrut)]}|inserer_attribut{class,spip_logos})
-						<div class="imgDesc"[ style="width:(#GET{largeur}|max{200})px;"]>
+					[<div id="document-#ID_DOCUMENT" class="imgAgrandissement">
+						<a href="[(#FICHIER|image_reduire{800,0}|extraire_attribut{src})]" class="mediabox icone-lien" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE">
+							(#FICHIER|image_reduire{580}
+								|inserer_attribut{alt,[(#TITRE|textebrut)]}|inserer_attribut{class,spip_logos})
+						</a>
+						<div class="imgDesc"[ style="width:(#GET{largeur}|min{350}|max{200})px;"]>
 							[<h4>(#TITRE)</h4>]
 							[<p>
 								(#DESCRIPTIF|PtoBR)

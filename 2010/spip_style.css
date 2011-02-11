@@ -95,7 +95,6 @@ h6.spip {
 
 
 /* =Logos, documents et images */
-	img, .spip_logos { margin: 0; padding: 0; border: 0; }
 	.spip_documents { text-align: left; line-height: 18px; margin-top: .25em; }
 	dl.spip_documents { padding-left: 20px; }
 		dl.spip_documents dd:first-child { padding-top: 5px; background-color: red; }

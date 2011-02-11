@@ -20,7 +20,7 @@ $(document).ready(function(){
 	 *	Ajout d'une icone "loupe" sur les images cliquables
 	 *
 	 **/
-/*	$("a.icone-lien").append('<span class="icone-loupe"></span>').children("span").css({ 'opacity':0 });
+	$("a.icone-lien").append('<span class="icone-loupe"></span>').children("span").css({ 'opacity':0 });
 	$("a.icone-lien").hover(
 		function(){
 			$(this).children("span.icone-loupe").stop().show().animate({
@@ -31,8 +31,8 @@ $(document).ready(function(){
 			$(this).children("span.icone-loupe").stop().animate({
 				opacity: 0
 			}, 500);
-		}).hide();
-*/
+		});
+
 	/**
 	 *	Les messages d'informations sur les erreurs de saisies
 	 *	des formulaires masque les champs.
@@ -172,7 +172,6 @@ $(document).ready(function(){
 		}
 	});
 
-
 	/**
 	 * Animation de pseudo tooltips
 	 * inspiré de http://jqueryfordesigners.com/coda-popup-bubbles/
@@ -244,6 +243,34 @@ $(document).ready(function(){
 		});
 	});
 
+	/**
+	 *	Plugin Mediabox (colorbox)
+	 *	pour afficher titre et descriptif de l'image
+	 */
+	$("a.mediabox").colorbox({
+		title: function(){
+			var $id = $(this).parent().attr("id").slice(9);
+			var titre = "";
+			// $.getJSON est asynchrone,
+			// du coup il faut utiliser $.ajax avec async:false en paramètre pour récupérer les données
+			// voir http://stackoverflow.com/questions/31129/how-can-i-return-a-variable-from-a-getjson-function
+			$.ajax({
+				url: 'spip.php?page=liste-documents.json',
+				async: false,
+				dataType: 'json',
+				success: function (json) {
+					for (var i=0; i < json.total_documents; i++){
+						var obj = json.document[i];
+						if (obj.id == $id) {
+							titre = '<h3>' + obj.titre + '</h3>' + '<p>' + obj.descriptif + obj.date + '</p>';
+							return titre;
+						}
+					}
+				}
+			});
+			return titre;
+		}
+	});
 });
 
 /**
@@ -252,54 +279,7 @@ $(document).ready(function(){
  */
 
 var initDescriptifOeuvres = function() {
-/*	var $descriptif = $(".oeuvreConteneur .imgAgrandissement .conteneurDesc");
-	var $bouton = '<span class="afficheInfos" />';
-	$descriptif.append($bouton).children(".imgDesc").hide();
-	$("span.afficheInfos").click(function(){
-		$(this).toggleClass("actif").prev(".imgDesc").toggleClass("actif").slideToggle(500);
-	});
-*/
-	/**
-	 *	Plugin Mediabox (colorbox)
-	 *	pour afficher titre et descriptif de l'image
-	 */
-	$("a.mediabox").colorbox({
-		title: function(){
-			// différentes hypothèses :
-			// - ou bien l'image vient d'un modèle image ou img,
-			// - ou bien d'un modèle doc,
-			// - ou bien encore vient du slider (forme utilisée pour le slider mais aussi par inclure/documents.html)
-			if ($(this).hasClass("modeleImg")) {
-				var description = $(this).children("img[title]");
-				var titre = description.attr("title");
 
-				// l'image a un descriptif (précédé de *) ?
-				if (titre.match(/\*/)) {
-					titre = titre.match(/^(.+)\*(.+)$/);
-					return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
-				} else {
-					// on ne prend que le titre + [date]
-					titre = titre.match(/^(.+)(\[.+\])$/);
-					return '<h3>' + titre[1] + '</h3>' + '<p>' + titre[2] + '</p>';
-				}
-			}
-			else  if ($(this).hasClass("modeleDoc")) {
-				var titre = $(this).parent().parent("dl").children("dd.spip_doc_titre");
-				var description = titre.next("dd.spip_doc_descriptif");
-				titre = titre.html(); description = description.html();
-
-				// au cas où le titre ou descriptif serait vide
-				if (titre == null) { titre = ''; }
-				if (description == null) { description = ''; }
-				return titre + description;
-			}
-			else if ($(this).hasClass("slider")) {
-				var titre = $(this).next(".imgDesc").html();
-				if (titre == null) { titre = ''; }
-				return titre;
-			}
-		}
-	});
 }
 
 /**

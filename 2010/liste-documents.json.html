@@ -1,0 +1,16 @@
+#CACHE{3600,cache-client}
+#HTTP_HEADER{Content-Type: application/json; charset=utf-8}
+#HTTP_HEADER{Vary: Accept-Encoding}
+[(#REM) données des documents du site en json. utilisée par colorbox pour afficher titre et descriptif ]
+
+{<B_documents>
+	"total_documents":"#TOTAL_BOUCLE",
+	"document":[<BOUCLE_documents(DOCUMENTS){","}>
+		{
+			"id":"#ID_DOCUMENT",
+			"titre":"[(#TITRE|texte_backend|sinon{<:document_sans_titre:>})]",
+			"descriptif":"[(#DESCRIPTIF|PtoBR|attribut_html)]",
+			"date":"[&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]"
+		}</BOUCLE_documents>
+	]
+}</B_documents>

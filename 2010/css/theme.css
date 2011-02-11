@@ -2,3 +2,67 @@
 	Updated:	2010-12-24
 	Author:		christophe le drean / rouge-rose.net
 	----------------------------------------------------*/
+/*	=color box (surcharge des css)
+	------------------------------------------------------ */
+
+
+	/*
+		ColorBox Core Style
+		The following rules are the styles that are consistant between themes.
+		Avoid changing this area to maintain compatability with future versions of ColorBox.
+	*/
+	#colorbox, #cboxOverlay, #cboxWrapper {position:absolute; top:0; left:0; z-index:9999; overflow:hidden;}
+	#cboxOverlay {position:fixed; width:100%; height:100%;}
+	#cboxMiddleLeft, #cboxBottomLeft {clear:left;}
+	#cboxContent {position:relative; overflow:hidden;}
+	#cboxLoadedContent {overflow:auto;}
+	#cboxLoadedContent iframe {display:block; width:100%; height:100%; border:0;}
+	#cboxTitle {margin:0;}
+	#cboxLoadingOverlay, #cboxLoadingGraphic {position:absolute; top:0; left:0; width:100%;}
+	#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {cursor:pointer;}
+
+	/*
+	    ColorBox example user style
+	    The following rules are ordered and tabbed in a way that represents the
+	    order/nesting of the generated HTML, so that the structure easier to understand.
+	*/
+	#cboxOverlay {background:#000;}
+
+	#colorBox {}
+			#cboxContent {  }
+			#cboxLoadedContent {
+				margin-bottom: 40px;
+				padding: 20px;
+				background-color: #000; }
+	        #cboxTitle {
+				position:absolute; bottom:0; left:0;
+				color:#fff;
+				font-size: 11px;
+				margin: 0 8px 0 13px; }
+				#cboxTitle h3, #cboxTitle h4 { font-size: 13px; }
+	        #cboxCurrent {position:absolute; bottom:0px; left:100px; color:#ddd; display: none !important;}
+	        #cboxSlideshow {position:absolute; bottom:0px; right:42px; color:#444; display: none !important;}
+	        #cboxNext, #cboxPrevious {
+				position:absolute; top:50%;
+				color:#fff;
+				text-indent: -9999px;
+				background: transparent url('../img/fleches-sprites.png') no-repeat 0 -16px;
+				height: 17px; width: 17px;
+				margin-top: -22px; }
+			#cboxPrevious {
+				left: 0px; }
+	        #cboxNext {
+				right: 0px;
+		 		background-position: 0 -48px;}
+			#cboxPrevious:hover { background-position: 0 0; background-color: #fff; }
+			#cboxNext:hover { background-position: 0 -32px; background-color: #fff; }
+
+	        #cboxLoadingOverlay { background: #000 url('../img/loading.gif') 50% 40% no-repeat; }
+	        #cboxClose {
+				position:absolute; top: 0px; left: 0px;
+				display:block;
+				color:#ddd;
+				text-indent: -9999px;
+				height: 16px; width: 16px;
+				background: transparent url('../img/croix-sprites.png') no-repeat 0 -64px; }
+			#cboxClose:hover { background-position: 0 -80px; }

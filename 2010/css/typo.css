@@ -26,7 +26,7 @@
 /*	=Polices
 	------------------------------------------------------ */
 	/* Helvetica Neue Light */
-	#logo,
+	#logo, #logo a,
 	h1,h2,h3,h4,h5,h6,
 	.liste .titre-rubrique a, .liste .titre a,
 	.soustitre,
