@@ -123,6 +123,7 @@ h6.spip {
 		font-size: 80%;
 		vertical-align: super; }
 	.hyperlien { margin-left: 120px; margin-right: 60px; }
+	.introduction .hyperlien, .texte .hyperlien { margin-left: 0; margin-right: 0; }
 	hr.spip {
 		background-color: #000;
 		border: none;

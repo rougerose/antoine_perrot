@@ -50,8 +50,8 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	a:active, a:focus { position: relative; top: 1px; outline: thin dotted; }
 	a:active { outline: none; }
 
-	a.spip_out:hover { background-position: right -80px; }
-	a.spip_glossaire:hover { background-position: right -112px; }
+	a.spip_out:hover { background-color: #000; background-position: right -80px; }
+	a.spip_glossaire:hover { background-color: #000; background-position: right -112px; }
 
 	#logo a:hover, #nav a,
 	a[name]:hover,
@@ -179,7 +179,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	------------------------------------------------------ */
 	/* titre */
 	.section .logo-article { margin-top: 10px; }
-	.section .titre { margin-bottom: 2em; margin-left: 120px; padding-top: 10px; xoverflow: hidden; }
+	.section .titre { margin-bottom: 2em; margin-left: 120px; padding-top: 10px; }
 	.section .titre h1 {
 		font-size: 22px; line-height: 26px; }
 	.titre .surtitre + h1 { padding-top: 0; }
@@ -191,7 +191,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		color: #8c8b99; }
 
 	/* date */
-	.section .info-publi { margin-left: 480px; }
+	.section .info-publi { margin-left: 480px; margin-bottom: 1.5em; }
 		.section .info-publi p {
 			font-size: 12px;
 			color: #8c8b99;
@@ -322,6 +322,10 @@ Visual design, layout and cascading style sheets may not be reused without permi
 							float: none;
 							background-color: #fff;
 							margin: 3px; padding: 0; }
+
+/*	=sites web
+	------------------------------------------------------ */
+	.section .texte .logo-article { margin-top: 0; }
 
 
 /*	=Pagination
