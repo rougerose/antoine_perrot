@@ -301,35 +301,28 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Documents joints aux articles
 	------------------------------------------------------ */
-	.documents { margin-top: 3em; margin-bottom: 1.5em; margin: 3em 0 1.5em 120px; }
-		.documents h3.spip {
-			border-bottom: 1px dotted #ccc;
-			margin-bottom: 10px; }
-	/*	.documents ul.imgApercu { clear: left; }
-		.documents dl {
-			border-bottom: 1px solid #666;
+	/* documents y compris portfolio */
+	.documents { margin: 3em 0 1.5em 120px; }
+
+	/* tous les documents (sauf images) */
+		.documents_joints dl {
+			border-bottom: 1px solid #ccc;
 			float: left;
-			margin-right: 20px; margin-bottom: 1em;
-			width: 220px; }
-		.documents dl.numero-0 { margin-right: 0; }
-		.documents dl.numero-1 { clear: left; }
-			.documents dl a { padding:0; }
-			.documents_joints dl dt a { display: block; }
-				.documents_joints dl dt a img.spip_logos { float: none; background-color: transparent; }
-			.documents dl dt {
-				float: left;
-				margin-right: 2px; }
-			.documents dl dd { float: left; }
-				.documents dd h3 {
-					font-size: 12px;
-					margin-top: 3px;
-					float: left; }
-				.documents dd p.descriptif {
-					clear: left;
-					font-size: 10px;
-					margin-bottom:0; }
-					.documents_joints dl dd p.descriptif span { color:#666; display: block; }
-*/
+			margin-right: 20px; margin-bottom: 2.5em; padding-bottom: .5em;
+			width: 280px; }
+		.documents_joints dl.numero-0 { margin-right: 0; }
+		.documents_joints dl.numero-1 { clear: left; }
+			.documents_joints dt { float: left; margin-right: 10px; }
+			.documents_joints dl dd { overflow:hidden; }
+				.documents_joints dd h3 { font-size: 12px; margin: 0; }
+				.documents_joints dd p.descriptif { font-size: 10px; margin-bottom:0; }
+					.documents_joints dl dd p.descriptif span { color:#999; display: block; }
+					.documents_joints dl dt a { display: block; float: left; }
+						.documents_joints dl dt a img.spip_logos {
+							float: none;
+							background-color: #fff;
+							margin: 3px; padding: 0; }
+
 
 /*	=Pagination
 	------------------------------------------------------ */
@@ -346,3 +339,5 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			font-size: 1em;
 			color: #fff; background-color: #000;
 			padding: 0 2px 2px; }
+
+	.item { xbackground: none; }

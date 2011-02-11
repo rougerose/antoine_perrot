@@ -8,7 +8,7 @@
 	<a href="(#ENV{lien})"
 		class="[(#ENV{lien_class}) ]lien-icone mediabox modeleImg" type="#MIME_TYPE">]<img src='#URL_DOCUMENT'
 		[ width="(#LARGEUR)"][ height="(#HAUTEUR)"][
-			title="(#TITRE|texte_backend|sinon{<:document_sans_titre:>})[ * (#DESCRIPTIF|PtoBR|texte_backend)][ [(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]]"]
+			title="(#TITRE|texte_backend|sinon{<:document_sans_titre:>})"]
 			alt="[(#TITRE|texte_backend|sinon{<:document_sans_titre:>})]" />[(#ENV{lien}|?{</a>})]</span>
 ][
 

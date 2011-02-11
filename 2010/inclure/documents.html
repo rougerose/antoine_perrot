@@ -3,9 +3,9 @@
 ]
 <B_documents_joints>
 <div id="docs" class="liste documents documents_joints clearfix">
-	<h3 class="spip"><:titre_documents_joints:>[ / (#TOTAL_BOUCLE)[ (#TOTAL_BOUCLE|singulier_ou_pluriel{local:document,local:documents})]]</h3>
+	<h2 class="spip"><:documents:></h2>
 	<BOUCLE_documents_joints(DOCUMENTS){id_article?}{id_rubrique?}{extension !IN gif,jpg,png}{vu=non}{par num titre, date}>
-	<dl id="document-#ID_DOCUMENT" class="document[ numero-(#COMPTEUR_BOUCLE|modulo{3})]">
+	<dl id="document-#ID_DOCUMENT" class="document[ numero-(#COMPTEUR_BOUCLE|modulo{2})]">
 		<dt>[(#LOGO_DOCUMENT|#URL_DOCUMENT)]</dt>
 		<dd>
 			[<h3><a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:document_sans_titre:>})]</a></h3>]
@@ -26,7 +26,7 @@
 [(#REM) Portfolio : album d'images ]
 <B_documents_portfolio>
 <div id="images" class="documents documents_portfolio">
-	<h3 class="spip"><:info_portfolio:>[ / (#TOTAL_BOUCLE)[ (#TOTAL_BOUCLE|singulier_ou_pluriel{local:image,local:images})]]</h3>
+	<h2 class="spip"><:info_portfolio:></h2>
 
 	<div id="slider">
 		[(#REM)
