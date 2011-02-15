@@ -1,8 +1,8 @@
 $(document).ready(function(){
-	// pour l'affichage et le masquage des descriptifs d'œuvres y compris après chargement d'un page en ajax
+	// fonction(s) qui... fonctionne(nt) y compris après chargement d'un page en ajax
 	// http://www.mail-archive.com/spip-zone@rezo.net/msg08173.html
-	initDescriptifOeuvres();
-	onAjaxLoad(initDescriptifOeuvres);
+	initInlineForms();
+	onAjaxLoad(initInlineForms);
 
 
 	/**
@@ -274,12 +274,28 @@ $(document).ready(function(){
 });
 
 /**
- * Descriptif des œuvres (page accueil et rubrique Oeuvres)
- * Permet d'être disponible y compris après un chargement de la page en ajax
+ * Inline Forms :
+ * label dans les champs de saisie
+ * légèrement adapté à partir de http://www.zurb.com/playground/inline-form-labels
  */
 
-var initDescriptifOeuvres = function() {
-
+var initInlineForms = function() {
+	$(".formulaire_spip .text").each(function () {
+		if($(this).val() !== "") {
+			$(this).parent().find("label").addClass("has-text");
+		}
+		$(this).focus(function () {
+			$(this).parent().find("label").addClass("focus");
+		});
+		$(this).keypress(function () {
+			$(this).parent().find("label").addClass("has-text").removeClass("focus");
+		});
+		$(this).blur(function () {
+			if($(this).val() == "") {
+				$(this).parent().find("label").removeClass("has-text").removeClass("focus");
+			}
+		});
+	});
 }
 
 /**

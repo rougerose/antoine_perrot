@@ -32,9 +32,10 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 	.item {
 		background-color: #fff;
-		box-shadow: 1px 1px 3px #888;
-		-moz-box-shadow: 1px 1px 3px #888;
-		-webkit-box-shadow: 1px 1px 3px #aaa; }
+		-webkit-box-shadow: 1px 1px 3px #888;
+		   -moz-box-shadow: 1px 1px 3px #888;
+		     -o-box-shadow: 1px 1px 3px #888;
+		        box-shadow: 1px 1px 3px #888; }
 
 
 /*	=Liens
@@ -220,7 +221,6 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			border-bottom: 1px dotted #000;
 			padding-bottom: .25em; }
 		.infos {
-			xcolor: #8c8b99;
 			border-bottom: 1px dotted #000;
 			margin: 0; }
 		.vevent .infos { padding-bottom: .25em; }
@@ -344,4 +344,96 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			color: #fff; background-color: #000;
 			padding: 0 2px 2px; }
 
-	.item { xbackground: none; }
+/*	=formulaires
+	------------------------------------------------------ */
+	.formulaire_spip li { position: relative; }
+	.formulaire_spip label {
+		position: relative; z-index: 1;
+		padding-left: 6px;
+		font-size: 12px; line-height: 18px; color: #999;
+		padding: 3px 0 3px 6px;
+		-webkit-transition: opacity 0.15s linear;
+		display: block; }
+	.formulaire_spip input.text, .formulaire_spip textarea {
+		background: url('../img/input-bg.png') no-repeat -1px -1px;
+		border: 1px solid #ccc;
+		margin-top: -22px; margin-bottom: .5em;
+		position: relative; z-index: 2;
+		display: block;
+		width: 580px; }
+	.formulaire_spip label.focus { opacity: 0.35; }
+	.formulaire_spip label.has-text { opacity: 0.0; -webkit-transition-duration: 0s; }
+
+	.formulaire_spip input.text:focus, .formulaire_spip textarea:focus { border-color: #000; }
+
+	.formulaire_spip .boutons input {
+		border: 1px solid #ccc;
+		color: #999; background-color: #fff; }
+	.formulaire_spip .boutons input:hover { border-color: #000; color: #000; }
+
+	.contenu-principal .formulaire_spip .boutons input {
+		-webkit-box-shadow: 1px 1px 3px #ccc;
+		   -moz-box-shadow: 1px 1px 3px #ccc;
+		     -o-box-shadow: 1px 1px 3px #ccc;
+		        box-shadow: 1px 1px 3px #ccc; }
+
+	/* Reponses, previsu et erreurs */
+		/* Champs obligatoires */
+		.formulaire_spip li.obligatoire {}
+		.formulaire_spip li.obligatoire label {}
+
+		/* Previsualisation du message */
+		.formulaire_spip fieldset.previsu { margin-bottom: 2em; padding: 1em; border: 2px solid red; }
+		.formulaire_spip fieldset.previsu legend { padding: 0 0.50em; font-weight: bold; color: red	; }
+		.formulaire_spip fieldset.previsu li { padding: 3px; border: none; }
+		.formulaire_spip fieldset.previsu p { margin: 1em 0; }
+
+		/* Reponse du formulaire */
+		.reponse_formulaire { font-weight: bold; color: #e86519; font-size: 1.20em; }
+		fieldset.reponse_formulaire { border-color: #e86519; font-weight: normal; }
+		fieldset.reponse_formulaire.reponse_formulaire legend { color: #F57900; } /* Preciser la couleur des legend et du fond pour IE/Win */
+
+		/* * Erreurs */
+		.formulaire_spip li.erreur .erreur_message {
+			font-size: 12px; line-height: 18px;
+			padding-right: 5px ;
+			color: #c30;
+			font-weight: bold;
+			position: absolute; z-index: 2; top: -9px; right: 0; }
+		.formulaire_spip li.erreur input.text, .formulaire_spip li.erreur textarea { background-color: transparent; border-style: solid; border-color: #C30; }
+		.reponse_formulaire_erreur { margin: 0; color: #C30; font-weight: bold; }
+
+		/* * OK */
+		.reponse_formulaire_ok { margin: 0; color: #53AD20; font-weight: bold; }
+
+	/* formulaire ecrire auteur (contact) */
+	.formulaire_ecrire_auteur { margin-left: 120px; }
+
+	/* formulaire recherche */
+	#formulaire_recherche {
+		border:	1px solid #ccc;
+		background: url('../img/input-bg.png') no-repeat -1px -1px;
+		margin-left: 40px;
+		width:218px; }
+		#formulaire_recherche label { display:none; }
+		#formulaire_recherche #recherche, #formulaire_recherche .bouton {
+			border: none;
+			float: left;
+			margin-top: 0; }
+		#formulaire_recherche #recherche {
+			background: transparent url('../img/icones.png') no-repeat 2px 4px;
+			padding: 4px 0; margin: 0;
+			width: 125px; }
+		#formulaire_recherche #recherche:focus {
+			background-position: 2px -28px; }
+		#formulaire_recherche .bouton {
+			color: #999; background-color: #fff;
+			font-size: 9px; line-height: 18px;
+			text-transform: uppercase;
+			cursor: pointer;
+			overflow: visible;
+			float:right;
+			margin: .5em 0;
+			width: 7em;
+			 }
+		#formulaire_recherche .bouton:hover { color: #000; }

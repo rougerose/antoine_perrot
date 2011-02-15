@@ -48,7 +48,8 @@
 	/* Helvetica Neue Medium */
 	a,
 	.date,
-	.chapo { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
+	.chapo,
+	.formulaire_spip label, .formulaire_spip .boutons input { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
 
 	/* Helvetica Neue Gras */
 	blockquote p strong { font-family:"HelveticaNeue-Bold", "Helvetica Neue"; font-weight: 800; }
