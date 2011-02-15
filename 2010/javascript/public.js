@@ -280,7 +280,7 @@ $(document).ready(function(){
  */
 
 var initInlineForms = function() {
-	$(".formulaire_spip .text").each(function () {
+	$(".formulaire_spip .text, .formulaire_spip .password").each(function () {
 		if($(this).val() !== "") {
 			$(this).parent().find("label").addClass("has-text");
 		}

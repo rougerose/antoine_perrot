@@ -347,35 +347,35 @@ Visual design, layout and cascading style sheets may not be reused without permi
 /*	=formulaires
 	------------------------------------------------------ */
 	.formulaire_spip li { position: relative; }
-	.formulaire_spip label {
-		position: relative; z-index: 1;
-		padding-left: 6px;
-		font-size: 12px; line-height: 18px; color: #999;
-		padding: 3px 0 3px 6px;
-		-webkit-transition: opacity 0.15s linear;
-		display: block; }
-	.formulaire_spip input.text, .formulaire_spip textarea {
-		background: url('../img/input-bg.png') no-repeat -1px -1px;
-		border: 1px solid #ccc;
-		margin-top: -22px; margin-bottom: .5em;
-		position: relative; z-index: 2;
-		display: block;
-		width: 580px; }
-	.formulaire_spip label.focus { opacity: 0.35; }
-	.formulaire_spip label.has-text { opacity: 0.0; -webkit-transition-duration: 0s; }
+		.formulaire_spip label {
+			position: relative; z-index: 1;
+			padding-left: 6px;
+			font-size: 12px; line-height: 18px; color: #999;
+			padding: 3px 0 3px 6px;
+			-webkit-transition: opacity 0.15s linear;
+			display: block; }
+		.formulaire_spip input.text, .formulaire_spip textarea, .formulaire_spip input.password {
+			background: url('../img/input-bg.png') no-repeat -1px -1px;
+			border: 1px solid #ccc;
+			margin-top: -22px; margin-bottom: .5em;
+			position: relative; z-index: 2;
+			display: block;
+			width: 540px; }
+		.formulaire_spip label.focus { opacity: 0.35; }
+		.formulaire_spip label.has-text { opacity: 0.0; -webkit-transition-duration: 0s; }
 
-	.formulaire_spip input.text:focus, .formulaire_spip textarea:focus { border-color: #000; }
+		.formulaire_spip input.text:focus, .formulaire_spip textarea:focus, .formulaire_spip input.password:focus { border-color: #000; }
 
-	.formulaire_spip .boutons input {
-		border: 1px solid #ccc;
-		color: #999; background-color: #fff; }
-	.formulaire_spip .boutons input:hover { border-color: #000; color: #000; }
+		.formulaire_spip .boutons input {
+			border: 1px solid #ccc;
+			color: #999; background-color: #fff; }
+		.formulaire_spip .boutons input:hover { border-color: #000; color: #000; }
 
-	.contenu-principal .formulaire_spip .boutons input {
-		-webkit-box-shadow: 1px 1px 3px #ccc;
-		   -moz-box-shadow: 1px 1px 3px #ccc;
-		     -o-box-shadow: 1px 1px 3px #ccc;
-		        box-shadow: 1px 1px 3px #ccc; }
+		.contenu-principal .formulaire_spip .boutons input {
+			-webkit-box-shadow: 1px 1px 3px #ccc;
+			   -moz-box-shadow: 1px 1px 3px #ccc;
+			     -o-box-shadow: 1px 1px 3px #ccc;
+			        box-shadow: 1px 1px 3px #ccc; }
 
 	/* Reponses, previsu et erreurs */
 		/* Champs obligatoires */
@@ -406,8 +406,11 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		/* * OK */
 		.reponse_formulaire_ok { margin: 0; color: #53AD20; font-weight: bold; }
 
-	/* formulaire ecrire auteur (contact) */
-	.formulaire_ecrire_auteur { margin-left: 120px; }
+	/* formulaire ecrire auteur (contact) et login (/ecrire) */
+	.formulaire_ecrire_auteur, .formulaire_login { margin-left: 120px; margin-right: 40px; }
+
+	/* formulaire login */
+	#pass_securise { position: absolute; right: 5px; top: 10px;  }
 
 	/* formulaire recherche */
 	#formulaire_recherche {
