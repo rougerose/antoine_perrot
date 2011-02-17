@@ -95,15 +95,15 @@
 
 /*	=Hierarchie
 	------------------------------------------------------ */
-	#hierarchie {
+	#hierarchie {background-color: #fff;
 		padding: .5em 0;
 		border-top: 1px solid #000;
 		border-bottom: 1px solid #000; }
-		#hierarchie p { color:#888; margin: 0; }
+		#hierarchie p { color:#888; margin: 0 2px; }
 
 /*	=Pied de page
 	------------------------------------------------------ */
-	#pied {
+	#pied { background-color: #fff;
 		text-align: left;
 		border-bottom: 2px solid #000; }
 		#pied div.groupe { padding: 2em 0;  }
