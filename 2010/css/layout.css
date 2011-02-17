@@ -99,21 +99,22 @@
 		padding: .5em 0;
 		border-top: 1px solid #000;
 		border-bottom: 1px solid #000; }
-		#hierarchie p { color:#888; margin: 0 2px; }
+		#hierarchie p { color:#888; margin: 0 10px; }
 
 /*	=Pied de page
 	------------------------------------------------------ */
 	#pied { background-color: #fff;
 		text-align: left;
 		border-bottom: 2px solid #000; }
-		#pied div.groupe { padding: 2em 0;  }
+		#pied div.groupe { padding: 2em 10px;  }
+		#pied .raccourcis dl { margin-bottom: 1.5em; }
 		#pied .raccourcis dl {
 			float: left;
 			margin-right: 20px;
-			width: 160px; }
-			#pied dl.derniers { margin-left: 180px; }
-			#pied dl.communication { margin-right: 0; width: 160px; }
-				#pied dl dt { font-size: 12px; color: #000; }
+			width: 340px; }
+			#pied dl.communication { float: right; margin-right: 0; }
+
+				#pied dl dt { font-size: 14px; color: #000; margin-bottom: .5em; }
 				#pied dl.derniers dt.expos { margin-top: 1.5em; }
 				#pied dl dd { text-align: left; }
 	#copyright p {
