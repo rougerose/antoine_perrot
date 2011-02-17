@@ -425,18 +425,16 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			margin-top: 0; }
 		#formulaire_recherche #recherche {
 			background: transparent url('../img/icones.png') no-repeat 2px 4px;
-			padding: 4px 0; margin: 0;
-			width: 125px; }
+			padding: 4px 0 4px 20px; margin: 0.15em 0;
+			width: 120px; }
 		#formulaire_recherche #recherche:focus {
 			background-position: 2px -28px; }
 		#formulaire_recherche .bouton {
-			color: #999; background-color: #fff;
+			color: #999; background-color: transparent;
 			font-size: 9px; line-height: 18px;
 			text-transform: uppercase;
 			cursor: pointer;
 			overflow: visible;
 			float:right;
-			margin: .5em 0;
-			width: 7em;
-			 }
+			padding: 6px 0 4px; }
 		#formulaire_recherche .bouton:hover { color: #000; }
