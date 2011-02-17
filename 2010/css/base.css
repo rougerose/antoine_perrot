@@ -328,21 +328,36 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	.section .texte .logo-article { margin-top: 0; }
 
 
+/*	=page résultats recherche
+	------------------------------------------------------ */
+	.resultats { margin-left: 0; }
+		.resultats .liste li { margin-bottom: 3em; }
+		.resultats .liste li:last-child { margin-bottom: 0; }
+			.resultats .liste h3,
+			.resultats .liste .intro,
+			.resultats .liste .meta-publi  { margin-left: 120px; }
+			.resultats .liste .logo-article { margin-top: 0; }
+			.resultats .liste .meta-publi .info-publi { margin-left: 0; }
+
+
+
 /*	=Pagination
 	------------------------------------------------------ */
 	p.pagination {
 		font-size: 12px; color: #000; text-align: right;
 		border: 1px dotted #888;
-		float: right;
+		float: right; clear: both;
 		width: 700px;
 		margin: 0; padding: .25em 10px 1.25em; }
 	p.haut { border-width: 1px 0 0; margin-top: 1em; }
 	p.bas { border-width: 0 0 1px; }
-	.contenu-principal p.bas:last-child { padding: 0 10px 1em; margin-bottom: 2em; }
+	.contenu-principal p.bas:last-child { padding-top: 0; padding-bottom: 1em; margin-bottom: 2em; }
 		p.pagination strong {
 			font-size: 1em;
 			color: #fff; background-color: #000;
 			padding: 0 2px 2px; }
+
+	.resultats p.pagination { padding-right: 0; padding-left: 0; }
 
 /*	=formulaires
 	------------------------------------------------------ */

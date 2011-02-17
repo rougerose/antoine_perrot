@@ -1,17 +1,17 @@
-<div class="contenu-principal item">
-	<div class="titre section">
-		<h1><:resultats_recherche:>&nbsp;: #RECHERCHE</h1>
+<div class="contenu-principal item section">
+	<div class="titre">
+		<h1><:resultats_recherche:> "#RECHERCHE"</h1>
 	</div><!-- .titre -->
-	
+
 	[(#REM) Articles trouves ]
 	 <INCLURE{fond=inclure/recherche-articles,env,ajax}>
-	
+
 	[(#REM) Images trouvees ]
 	<INCLURE{fond=inclure/recherche-images,env,ajax}>
-	
+
 	[(#REM) Rubriques trouvees ]
 	<INCLURE{fond=inclure/recherche-rubriques,env,ajax}>
-	
+
 	[(#REM) Documents trouves ]
 	<INCLURE{fond=inclure/recherche-documents,env,ajax}>
 
