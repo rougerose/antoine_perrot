@@ -130,3 +130,9 @@ h6.spip {
 		height: 2px; width: 60%;
 		margin: 3em auto; }
 	.spip_code { font-family: "Lucida Grande"; font-size: 90%; }
+
+	/* espace privé > article. champs extra pour déterminer le format d'affichage de l'article en page d'accueil */
+	.format_une {
+		background-color: #eee;
+		border: 1px solid #ccc;
+		margin: 3em 0 1em; padding: 6px; }
