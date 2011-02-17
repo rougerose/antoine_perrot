@@ -1,15 +1,13 @@
-<div class="contenu-principal item">
-	<div class="titre section">
+<div class="contenu-principal item section">
+	<div class="titre">
 		<h1><:pass_erreur:>[ (#ENV{status})]</h1>
 	</div><!-- .titre -->
-	
-	<div class="chapo surlignable section">
+
+	<div class="chapo surlignable">
 		[(#ENV*{erreur}|propre)]
 		<p><:page_indisponible_401:></p>
 	</div>
-	
-	<div class="ajax section">
-		[(#FORMULAIRE_LOGIN{#ENV{cible},'',0})]
-	</div>
+
+	[(#FORMULAIRE_LOGIN{#ENV{cible},'',0})]
 
 </div><!-- .contenu-principal -->
