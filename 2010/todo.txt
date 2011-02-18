@@ -1,6 +1,6 @@
-TODO supprimer #navigation et #extra là ils ne sont pas utilisés
-TODO rubrique expos : il manque l'info sur la période de l'expo après le titre
-TODO style surlignable
+DONE supprimer #navigation et #extra là ils ne sont pas utilisés
+DONE rubrique expos : il manque l'info sur la période de l'expo après le titre
+DONE style surlignable
 TODO mettre en forme les légendes images dans colorbox
 TODO opera : les éléments fixed sautent quand on actionne l'ascenseur de la fenêtre
 

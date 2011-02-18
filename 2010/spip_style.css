@@ -131,6 +131,8 @@ h6.spip {
 		margin: 3em auto; }
 	.spip_code { font-family: "Lucida Grande"; font-size: 90%; }
 
+	.spip_surligne { background-color: #ffed2a; padding: 2px; border: 1px solid #000; border-color: #fffbcc #e5d526 #e5d526 #fffbcc; }
+
 	/* espace privé > article. champs extra pour déterminer le format d'affichage de l'article en page d'accueil */
 	.format_une {
 		background-color: #eee;
