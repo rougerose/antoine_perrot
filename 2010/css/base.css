@@ -258,9 +258,9 @@ Visual design, layout and cascading style sheets may not be reused without permi
 					.imgAgrandissement img { margin:0 auto; }
 						.imgAgrandissement .imgDesc { clear:both; text-align:left; }
 							.imgDesc h4 {
-								font-size: 12px;
+								font-size: 13px;
 								padding: .5em 0 0em; }
-							.imgDesc p { font-size: 10px; color: #888; margin-bottom: 0; }
+							.imgDesc p { font-size: 11px; color: #8c8b99; margin-bottom: 0; }
 				/* mini-liste des autres œuvres disponibles */
 				.imgApercu { margin-top:3px; }
 
@@ -308,7 +308,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			.documents_joints dl dd { overflow:hidden; }
 				.documents_joints dd h3 { font-size: 12px; margin: 0; }
 				.documents_joints dd p.descriptif { font-size: 10px; margin-bottom:0; }
-					.documents_joints dl dd p.descriptif span { color:#999; display: block; }
+					.documents_joints dl dd p.descriptif span { color:#888; display: block; }
 					.documents_joints dl dt a { display: block; float: left; }
 						.documents_joints dl dt a img.spip_logos {
 							float: none;

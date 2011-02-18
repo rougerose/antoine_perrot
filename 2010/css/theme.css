@@ -37,9 +37,11 @@
 	        #cboxTitle {
 				position:absolute; bottom:0; left:0;
 				color:#fff;
-				font-size: 11px;
 				margin: 0 8px 0 13px; }
-				#cboxTitle h3, #cboxTitle h4 { font-size: 13px; }
+				#cboxTitle h3, #cboxTitle h4 {
+					color: #fff; font-size: 15px;
+					margin: 0; }
+				#cboxTitle p { margin: 0; font-size: 11px; }
 	        #cboxCurrent {position:absolute; bottom:0px; left:100px; color:#ddd; display: none !important;}
 	        #cboxSlideshow {position:absolute; bottom:0px; right:42px; color:#444; display: none !important;}
 	        #cboxNext, #cboxPrevious {
