@@ -55,7 +55,7 @@ p { margin-bottom: 1.5em; }
 /*	=rubrique
 	------------------------------------------------------ */
 	.liste .logo-article { float: none; margin: 0; }
-
+	.hentry { margin-bottom: 3em; }
 
 	span.periode-expo:before { content: "("; }
 	span.periode-expo:after { content: ")"; }
@@ -79,7 +79,7 @@ p { margin-bottom: 1.5em; }
 /*	=pied de page : copyright
 	------------------------------------------------------ */
 	#copyright {
-		font-size: 9pt;
+		font-size: 8.5pt;
 		text-align: right;
 		margin-top: 3em; }
 		#copyright p:before { content:'http://www.antoineperrot.net'; }
