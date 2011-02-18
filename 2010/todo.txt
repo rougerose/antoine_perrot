@@ -1,10 +1,10 @@
 DONE supprimer #navigation et #extra là ils ne sont pas utilisés
 DONE rubrique expos : il manque l'info sur la période de l'expo après le titre
 DONE style surlignable
-TODO mettre en forme les légendes images dans colorbox
+DONE mettre en forme les légendes images dans colorbox
 TODO opera : les éléments fixed sautent quand on actionne l'ascenseur de la fenêtre
 
-TODO favicon
+DONE favicon
 
 TODO documentation > page d'accueil : si une expo avec une date de fin passée, l'expo ne sera affichée nulle part, même si elle fait partie de la sélection
 
