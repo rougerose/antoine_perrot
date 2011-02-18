@@ -1,0 +1,96 @@
+/*
+Theme Name: Antoine Perrot
+Theme URI: wwww.antoine-perrot.net
+Description: print css
+Author: christophe le drean
+Author URI: rouge-rose.net
+Version: 2.0
+.
+Visual design, layout and cascading style sheets may not be reused without permission.
+.
+*/
+
+body {
+	font: 12pt/1.5 "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-align: left;
+	background: #fff; color: #111;
+	margin: 5% 5% 10% 15%; }
+
+p { margin-bottom: 1.5em; }
+
+/*	=typo
+	------------------------------------------------------ */
+	#logo {
+		font-size: 20pt;
+		border-bottom: 1px solid #111; }
+
+	h1,h2,h3,h4,h4,h5,h6
+	#logo, #logo a,
+	.vcalendar dt span.periode-expo { font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 200; }
+
+	a, a:link,
+	.vcalendar dt,
+	.chapo { font-family:"HelveticaNeue-Medium", "Helvetica Neue"; font-weight: 500; }
+
+
+/*	=liens
+	------------------------------------------------------ */
+	a img { border:none; }
+	a:link, a { text-decoration: underline; color: #000; }
+
+	#logo a { text-decoration:none; }
+
+	a.spip_out:after, a.spip_glossaire:after, a.spip_mail:after { display: inline; content: " [" attr(href) "]"; }
+
+/*	=article
+	------------------------------------------------------ */
+	.logo-article { float: right; margin-top: 0; margin-left: 10pt; }
+	.logo-article + .titre { overflow: hidden; }
+	.surtitre, .soustitre { color: #888; }
+	div.info-publi {
+		text-align: right; clear: both;
+		font-size: 10pt; }
+	.vcalendar { margin-bottom: 3em; }
+
+/*	=rubrique
+	------------------------------------------------------ */
+	.liste .logo-article { float: none; margin: 0; }
+
+
+	span.periode-expo:before { content: "("; }
+	span.periode-expo:after { content: ")"; }
+
+/*	=slider
+	------------------------------------------------------ */
+	#slider .scroll { overflow: visible !important; height: auto !important; }
+		#slider .scrollConteneur { width: auto !important; }
+		#slider .panneau {
+			float: none !important;
+			page-break-after:always }
+			#slider .imgDesc { width: auto !important; }
+
+
+	hr {
+		background-color: #000;
+		border: none;
+		height: 1px; width: 60%;
+		margin: 3em auto; }
+
+/*	=pied de page : copyright
+	------------------------------------------------------ */
+	#copyright {
+		font-size: 9pt;
+		text-align: right;
+		margin-top: 3em; }
+		#copyright p:before { content:'http://www.antoineperrot.net'; }
+
+
+/*	=éléments invisibles
+	------------------------------------------------------ */
+	#nav,
+	#pied .raccourcis,
+	.socialtags,
+	#slider .navigation,
+	#navigation,
+	#hierarchie,
+	.spip-admin-float, .spip-admin-boutons { display: none; }

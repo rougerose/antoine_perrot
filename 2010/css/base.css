@@ -9,25 +9,17 @@ Visual design, layout and cascading style sheets may not be reused without permi
 .
 */
 
-/*	STYLE SHEETS
+/*	=CSS ecran
+	------------------------------------------------------
 	reset.css
 	base.css
 	layout.css
 	typo.css
 	spip.css
 	colors.css: only for the main menu
-
-
-/* 	COLORS
-	texte courant:			#555
-	Titres: 				#333
-	Gris moyen :			#888
-
 */
 
-/*	Base style sheet
-	Updated:	2010-12-24
-	Author:		christophe le drean / rouge-rose.net
+/*	=Base
 	----------------------------------------------------*/
 
 	.item {
@@ -117,7 +109,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			float: left; }
 		.pe a:hover { background-color: #000; }
 			span.periode-expo {
-				font-size: 9px; xline-height: 15px;
+				font-size: 9px; line-height: 15px;
 				text-transform: uppercase; letter-spacing: .05em;
 				background-color: #000; color: #fff;
 				padding: 2px 5px 2px; }
@@ -164,7 +156,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 /*	=Page sommaire
 	------------------------------------------------------ */
 	h3.titre-rubrique, h3.pe {
-		font-size: 14px; line-height: 1em;
+		font-size: 14px; line-height: 15px;
 		margin: 10px 0 .5em; }
 
 /*	=Rubriques
