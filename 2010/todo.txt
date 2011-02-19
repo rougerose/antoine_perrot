@@ -1,3 +1,6 @@
+TODO mettre au format les notes
+TODO slider vue miniature des œuvres : la loupe apparait au survol
+
 DONE supprimer #navigation et #extra là ils ne sont pas utilisés
 DONE rubrique expos : il manque l'info sur la période de l'expo après le titre
 DONE style surlignable

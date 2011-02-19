@@ -31,7 +31,7 @@
 			[(#REM) les aperçus des œuvres : 12 images au maximum ]
 			<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,12}>
 			[<li id="image-#ID_DOCUMENT">
-				<a href="#URL_ARTICLE#image-#ID_DOCUMENT" class="[(#COMPTEUR_BOUCLE|=={1}|?{'actif '})]slider icone-lien" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE">(#FICHIER|image_reduire{200,0}|image_recadre{56,56,center}|inserer_attribut{alt,[(#TITRE|textebrut)]})</a>
+				<a href="#URL_ARTICLE#image-#ID_DOCUMENT" class="[(#COMPTEUR_BOUCLE|=={1}|?{'actif '})]slider" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE">(#FICHIER|image_reduire{200,0}|image_recadre{56,56,center}|inserer_attribut{alt,[(#TITRE|textebrut)]})</a>
 			</li>]
 			</BOUCLE_apercu>
 			<li class="suite"><a href="#URL_ARTICLE#images" title="<:voir_serie:>"><span><:voir_serie:></span></a></li>
