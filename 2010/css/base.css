@@ -359,7 +359,10 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			padding-left: 6px;
 			font-size: 12px; line-height: 18px; color: #999;
 			padding: 3px 0 3px 6px;
+			transition: opacity 0.15s linear;
 			-webkit-transition: opacity 0.15s linear;
+			-o-transititon: opacity 0.15s linear;
+			-moz-transition: opacity 0.15s linear;
 			display: block; }
 		.formulaire_spip input.text, .formulaire_spip textarea, .formulaire_spip input.password {
 			background: url('../img/input-bg.png') no-repeat -1px -1px;
