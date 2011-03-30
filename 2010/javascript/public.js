@@ -109,13 +109,12 @@ $(document).ready(function(){
 				.before('<span id="sbg" class="scrollBouton gauche">&nbsp;</span>')
 				.after('<span id="sbd" class="scrollBouton droite">&nbsp;</span>');
 		}
-
-		scroll
-		//	.before('<span id="sbg" class="scrollBouton gauche">&nbsp;</span>')
-		//	.after('<span id="sbd" class="scrollBouton droite">&nbsp;</span>')
-			.css({ height:panneauHauteur });
-
-
+		else {
+			scroll
+				.before('<span id="sbg" class="scrollBouton gauche off">&nbsp;</span>')
+				.after('<span id="sbd" class="scrollBouton droite off">&nbsp;</span>');
+		}
+		scroll.css({height:panneauHauteur});
 
 		// navigation via les boutons
 		$('span.scrollBouton.gauche', this).click(function () {

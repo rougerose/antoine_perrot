@@ -74,15 +74,12 @@ Visual design, layout and cascading style sheets may not be reused without permi
 		.meta-publi .info-publi {
 			display: none;
 			border-right: 1px solid #8c8b99; color: #8c8b99; }
-		.meta-publi .lire-suite {
-			xborder-left: 1px solid #8c8b99;
-			xpadding-left: 5px;
-			margin-right: 0; padding-right: 0; }
+		.meta-publi .lire-suite { margin-right: 0; padding-right: 0; }
 			.meta-publi .lire-suite a, .meta-publi .suite a span {
 				text-indent: -9999px;
 				height: 13px; width: 16px;
 				padding:0;
-				background: #fff url('../img/img-sprites.png') no-repeat 0 -98px; }
+				background: #fff url('../img/img-sprites.png') no-repeat 0 -130px; }
 			.meta-publi .suite a {
 				border: 1px solid #000;
 				height: 39px; width: 39px;
@@ -109,7 +106,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	/* periode expo pour la page sommaire */
 	h3.titre-rubrique.pe { float: left; }
 		h3.pe a {
-			background: url('../img/img-sprites.png') no-repeat right -177px;
+			background: url('../img/img-sprites.png') no-repeat right -209px;
 			padding-right: 10px; padding: 1px 10px 3px 0;
 			float: left; }
 		.pe a:hover { background-color: #000; }
@@ -123,13 +120,13 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	/* periode expo pour la rubrique expo */
 	h3[class='pe'] {
 		float: right;
-		background: url('../img/img-sprites.png') no-repeat left -226px;
+		background: url('../img/img-sprites.png') no-repeat left -258px;
 		padding-left: 10px; }
 	h3[class='pe'] + h2.titre { clear: right; }
 	/* periode expo pour l'article expo */
 	dt.summary span.pe {
 		display: block; float: left;
-		background: url('../img/img-sprites.png') no-repeat right -176px;
+		background: url('../img/img-sprites.png') no-repeat right -208px;
 		padding-right: 10px; padding-bottom: 1px; }
 	dt.summary span.periode-expo {
 		display: block; float: left;
@@ -203,7 +200,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 				color: #8c8b99;
 				float: left; margin: 0; }
 				.info-publi .socialtags ul {
-					background: #fff url('../img/img-sprites.png') no-repeat 0 -142px;
+					background: #fff url('../img/img-sprites.png') no-repeat 0 -174px;
 					float: left; margin-left: 2px !important; padding-left: 16px !important; }
 					.socialtags li { float:left; margin: 0 3px 0 0; padding: 0; }
 					.socialtags a { display:block; float: left;}
@@ -245,14 +242,20 @@ Visual design, layout and cascading style sheets may not be reused without permi
 			.scrollConteneur {}
 			.scrollBouton {
 				display: block;
-				background: #fff url('../img/img-sprites.png') no-repeat 0 0;
+				background: #fff url('../img/img-sprites.png') no-repeat 0 -32px;
 				width: 17px; height: 17px;
 				position: absolute; z-index:33; right: 0; top: 6px;
 				cursor:pointer; }
 			.scrollBouton.gauche { right: 30px; }
-			.scrollBouton.droite { right: 10px; background-position: 0 -32px; }
-			.scrollBouton.gauche:hover { background-position: 0 -16px; background-color: #000; }
-			.scrollBouton.droite:hover { background-position: 0 -48px; background-color: #000; }
+			.scrollBouton.droite { right: 10px; background-position: 0 -64px; }
+			.scrollBouton.gauche:hover { background-position: 0 -48px; background-color: #000; }
+			.scrollBouton.droite:hover { background-position: 0 -80px; background-color: #000; }
+			/* bouton désactivé */
+			.scrollBouton.off, .scrollBouton.gauche.off:hover {
+				cursor: auto;
+				background-color: #fff;
+				background-position: 0 0; }
+			.scrollBouton.droite.off, .scrollBouton.droite.off:hover { background-color: #fff; background-position: 0 -16px; }
 
 		/* Zone d'affichage des oeuvres */
 		.visuOeuvres {}
@@ -293,7 +296,7 @@ Visual design, layout and cascading style sheets may not be reused without permi
 	a.icone-lien { position: relative; }
 		a.icone-lien span.icone-loupe {
 			height: 16px; width: 16px;
-			background: url('../img/loupes-sprites.png') no-repeat 0 -16px;
+			background: url('../img/loupes-sprites.png') no-repeat 0 -48px;
 			position: absolute;
 			right: 16px; bottom: 16px; }
 
