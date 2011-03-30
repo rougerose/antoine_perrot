@@ -14,7 +14,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// C
 	'conception_christophe_le_drean' => 'conception graphique par christophe le drean',
-	'credits' => 'cr&eacute;dits',
+	'credits' => 'Cr&eacute;dits',
 
 	// D
 	'date' => 'date',
@@ -80,7 +80,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// T
 	'titre' => 'titre',
-	'top' => 'haut de page',
+	'top' => 'Haut de page',
 	'toutes_les_oeuvres' => 'toutes les &oelig;uvres',
 	'trier_par' => 'trier par',
 
