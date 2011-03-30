@@ -20,7 +20,7 @@ $(document).ready(function(){
 	 *	Ajout d'une icone "loupe" sur les images cliquables
 	 *
 	 **/
-/*	$("a.icone-lien").append('<span class="icone-loupe"></span>').children("span").css({ 'opacity':0 });
+	$("a.icone-lien").append('<span class="icone-loupe"></span>').children("span").css({ 'opacity':0 });
 	$("a.icone-lien").hover(
 		function(){
 			$(this).children("span.icone-loupe").stop().show().animate({
@@ -32,7 +32,7 @@ $(document).ready(function(){
 				opacity: 0
 			}, 500);
 		});
-*/
+
 	/**
 	 *	Les messages d'informations sur les erreurs de saisies
 	 *	des formulaires masque les champs.
@@ -251,7 +251,7 @@ $(document).ready(function(){
 	 *	Plugin Mediabox (colorbox)
 	 *	pour afficher titre et descriptif de l'image
 	 */
-/*	$("a.mediabox").colorbox({
+	$("a.mediabox").colorbox({
 		title: function(){
 			var $id = $(this).parent().attr("id").slice(9);
 			var titre = "";
@@ -275,7 +275,6 @@ $(document).ready(function(){
 			return titre;
 		}
 	});
-*/
 });
 
 /**
