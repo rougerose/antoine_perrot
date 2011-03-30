@@ -10,16 +10,14 @@
 ]
 <B_premier_doc_portfolio><BOUCLE_premier_doc_portfolio(DOCUMENTS){id_article}{par date}{0,1}>
 [(#LOGO_ARTICLE|non)
-	#SET{logo, logo}
+	#SET{logo,logo}
 	[(#SET{image_logo,
 		[(#LOGO_DOCUMENT
 				|image_reduire{[(#ENV{tailleImage})],0}
 				|inserer_attribut{alt,[(#TITRE|textebrut)]})]
 	})]
 ]
-</BOUCLE_premier_doc_portfolio></B_premier_doc_portfolio>
-#SET{logo,''}
-<//B_premier_doc_portfolio>
+</BOUCLE_premier_doc_portfolio>
 
 [(#REM) s'il existe un événement lié à l'article, on détermine les variables de texte ]
 <BOUCLE_agenda_expo(EVENEMENTS){id_article}>

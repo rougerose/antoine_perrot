@@ -138,13 +138,14 @@ Visual design, layout and cascading style sheets may not be reused without permi
 
 /*	=Hentry
 	------------------------------------------------------ */
-	.hentry .intro { margin-top: 1em; }
+	.hentry .intro { xmargin-top: 1em; }
 
 /*	=Hentry en liste (sommaire, rubriques)
 	------------------------------------------------------ */
 	.liste h2.titre { clear: left; line-height: 20px; }
 	.liste .introduction p { margin-bottom: 0; }
 	.liste .introduction p + ul.meta-publi { margin-top: 1.5em; }
+	.liste .introduction p.infos + p.infos { margin-bottom: 1em; }
 
 
 /*	=Hentry format grid (2 colonnes)

@@ -104,13 +104,18 @@ $(document).ready(function(){
 
 		// boutons de navigation gauche et droite
 		// et application de la hauteur du premier panneau
+		if (pages > 1) {
+			scroll
+				.before('<span id="sbg" class="scrollBouton gauche">&nbsp;</span>')
+				.after('<span id="sbd" class="scrollBouton droite">&nbsp;</span>');
+		}
+
 		scroll
-			.before('<span id="sbg" class="scrollBouton gauche">&nbsp;</span>')
-			.after('<span id="sbd" class="scrollBouton droite">&nbsp;</span>')
+		//	.before('<span id="sbg" class="scrollBouton gauche">&nbsp;</span>')
+		//	.after('<span id="sbd" class="scrollBouton droite">&nbsp;</span>')
 			.css({ height:panneauHauteur });
 
-		// ajustement du positionnement en hauteur des boutons de navigation
-	//	$("span.scrollBouton").css({ top: Math.round(panneauHauteur/2) })
+
 
 		// navigation via les boutons
 		$('span.scrollBouton.gauche', this).click(function () {
