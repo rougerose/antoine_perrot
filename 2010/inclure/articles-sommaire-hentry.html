@@ -6,7 +6,7 @@
 <div class="liste articles sommaire">
 	#ANCRE_PAGINATION
 	[<p class="pagination haut">(#PAGINATION{page})</p>]
-	<BOUCLE_articles(ARTICLES pb_selection){spip_pb_selection.id_rubrique=0}{par id_secteur}{par ordre}{pagination}{doublons}>
+	<BOUCLE_articles(ARTICLES pb_selection){spip_pb_selection.id_rubrique=0}{par ordre}{pagination}{doublons}>
 	[(#INCLURE{fond=inclure/article-resume, id_article, env, format=#GET{format}, compteur=[(#COMPTEUR_BOUCLE|modulo{2})], tailleImage=#ENV{tailleImage}})]
 	</BOUCLE_articles>
 	[<p class="pagination bas">(#PAGINATION{page})</p>]
