@@ -1,8 +1,0 @@
-            
-            <BOUCLE_themes(ARTICLES){id_article}{id_mot}><BOUCLE_documents_theme(DOCUMENTS){id_article}{mode=document}{extension IN png,jpg,gif}>
-            <div class="vignettes[(#COMPTEUR_BOUCLE|>{1}|?{' invisible',''})]">
-              <a href="[(#URL_DOCUMENT)]" rel="lightbox_art#ID_ARTICLE" type="#MIME_TYPE" [title="(#TITRE|supprimer_numero|texte_backend)[, (#DATE|annee)] [&lt;span&gt;(#DESCRIPTIF|PtoBR|entites_html)&lt;/span&gt;]"]>[(#LOGO_DOCUMENT||image_reduire{200,0})]</a>
-            </div>
-            </BOUCLE_documents_theme></BOUCLE_themes>
-            
-           

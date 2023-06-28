@@ -1,9 +1,0 @@
-      #CACHE{86400}
-      <div id="navigationPrincipale">
-        <ul id="navigation">
-          <BOUCLE_rubriques_principales(RUBRIQUES){racine}{par num titre}><?php $rang=#COMPTEUR_BOUCLE-1; $valeur_marge=10; $marge=$rang*$valeur_marge+30; ?>
-          <li style="background-color:<BOUCLE_couleurs_navigation(MOTS){id_rubrique}{type=@couleurs}>[(#TITRE|supprimer_numero)]</BOUCLE_couleurs_navigation>;"[ class="(#EXPOSE{actif,})"]><a href="#URL_RUBRIQUE" [title="(#DESCRIPTIF)"]<B_test_rub_contact><BOUCLE_test_rub_contact(RUBRIQUES){id_rubrique}{titre_mot=rubriques contact liens}> </BOUCLE_test_rub_contact></B_test_rub_contact> style="padding-left:<?php echo $marge;?>px;"<//B_test_rub_contact>>[(#TITRE|supprimer_numero)]</a></li>
-          </BOUCLE_rubriques_principales>
-        </ul>
-      </div>
-      
