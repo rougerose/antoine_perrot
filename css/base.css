@@ -705,7 +705,7 @@ p.pagination strong {
 .formulaire_spip input.password {
 	background: url("../img/input-bg.png") no-repeat -1px -1px;
 	border: 1px solid #ccc;
-	margin-top: -22px;
+	/* margin-top: -22px; */
 	margin-bottom: 0.5em;
 	position: relative;
 	z-index: 2;
