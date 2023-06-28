@@ -1,0 +1,43 @@
+#SET{titre_rubrique,#ENV{titre_rubrique}}
+<BOUCLE_article(ARTICLES){id_article}>
+<div id="[(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE})]-#ID_ARTICLE" class="hentry panneau obj oeuvre">
+	[(#ENV{composition}|match{^(sommaire)$}|oui)
+	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">[(#INFO_TITRE{rubrique,#ID_RUBRIQUE})]</a></h3>
+	]
+	<h2 class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
+
+	<div class="oeuvreConteneur entry-content clearfix">
+
+		<BOUCLE_imagePrincipale(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,1}>
+		[(#REM) zone agrandissement]
+		[<div class="imgAgrandissement">
+			<a href="#URL_ARTICLE" class="logo-article">
+			(#FICHIER|image_reduire{454,0}
+				|inserer_attribut{alt,[(#TITRE|textebrut)]}|inserer_attribut{class,spip_logos})
+			</a>
+			<div class="imgDesc">
+				[<h4>(#TITRE)</h4>]
+				[<p>
+					(#DESCRIPTIF|PtoBR)
+					[&#091;[(#DATE|affdate{'d'}|!={01}|?{[(#DATE|jour) ]})][(#DATE|affdate{'m'}|!={01}|?{[(#DATE|nom_mois) ]})](#DATE|annee)[ - (#CREDIT)]&#093;]
+				</p>]
+			</div><!-- .imgDesc -->
+		</div><!-- .imgAgrandissement -->]
+		</BOUCLE_imagePrincipale>
+
+		[(#REM) zone apercu]
+		<B_apercu>
+		<ul class="imgApercu meta-publi">
+			[(#REM) les aperçus des œuvres : 12 images au maximum ]
+			<BOUCLE_apercu(DOCUMENTS){id_article}{par num titre, titre}{mode=document}{extension IN png,jpg,gif}{vu=non}{0,12}>
+			[<li id="image-#ID_DOCUMENT">
+				<a href="#URL_ARTICLE#image-#ID_DOCUMENT" class="[(#COMPTEUR_BOUCLE|=={1}|?{'actif '})]slider" rel="portfolio#ID_ARTICLE" type="#MIME_TYPE">(#FICHIER|image_reduire{200,0}|image_recadre{56,56,center}|inserer_attribut{alt,[(#TITRE|textebrut)]})</a>
+			</li>]
+			</BOUCLE_apercu>
+			<li class="suite"><a href="#URL_ARTICLE#images" title="<:voir_serie:>"><span><:voir_serie:></span></a></li>
+		</ul><!-- .imgApercu -->
+		</B_apercu>
+
+	</div><!-- .oeuvreConteneur -->
+</div><!-- #image-#ID_ARTICLE -->
+</BOUCLE_article>

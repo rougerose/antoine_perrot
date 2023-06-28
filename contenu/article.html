@@ -1,0 +1,69 @@
+<BOUCLE_contenu(ARTICLES){id_article}>
+	[(#REM)
+		Variables :
+		- reduction du logo à 94 px
+		- pas de logo d'article s'il s'agit d'un article Oeuvre
+
+	]
+	#SET{logoArticle,''}
+	[(#SET{logoArticle,[(#LOGO_ARTICLE|image_reduire{94,0})]})]
+	[(#ID_RUBRIQUE|=={1}|oui)[(#SET{logoArticle,''})]]
+
+<div class="hfeed contenu-principal section obj">
+	<div class="hentry">
+		[<p class="logo-article">(#GET{logoArticle})</p>]
+		<div class="titre">
+			[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
+			<h1 class="#EDIT{titre} entry-title">#TITRE</h1>
+			[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
+		</div><!-- .titre -->
+
+		[(#ID_RUBRIQUE|=={7}|non)
+		<div class="info-publi clearfix">
+
+			<p class="updated published">
+				<span class="value-title" title="[(#DATE|date_iso)]">[<:publie:> (#DATE|affdate{'d'})][/(#DATE|mois)][/(#DATE|annee)]</span>
+			</p>
+			[<p class="auteurs"><:par_auteur:> (#MODELE{auteurs})</p>]
+
+			[(#REM) Inclure le modele des liens de traductions ]
+			#MODELE{article_traductions}
+
+			[(#MODELE{socialtags})]
+		</div><!-- .info-publi -->
+		]
+
+		<B_evenement>
+		<div class="evenement vcalendar">
+			<BOUCLE_evenement(EVENEMENTS){id_article}>
+			[(#INCLURE{fond=inclure/article-evenement,id_evenement,id_article,env})]
+			</BOUCLE_evenement>
+		</div><!-- .evenement -->
+		</B_evenement>
+
+		[<div class="#EDIT{chapo} chapo surlignable">
+			(#CHAPO|image_reduire{200,0})
+		</div>]
+
+		[<div class="#EDIT{texte} texte entry-content surlignable">(#TEXTE|image_reduire{200,0})</div>]
+
+		<BOUCLE_ecrire_auteur(AUTEURS){id_article}{si #ID_RUBRIQUE|=={7}}>
+			#FORMULAIRE_ECRIRE_AUTEUR
+		</BOUCLE_ecrire_auteur>
+
+		[<p class="#EDIT{hyperlien} hyperlien"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+
+		[<div class="ps">
+			<h3 class="spip"><:ps:></h3>
+			<div class="#EDIT{ps} surlignable">(#PS|image_reduire{200,0})</div>
+		</div><!-- .ps -->]
+
+		[(#REM) Gestion du portfolio et des documents ]
+		[(#INCLURE{fond=inclure/documents}{id_article})]
+
+		[<div class="notes surlignable"><h3 class="spip pas_surlignable"><:info_notes:></h3>(#NOTES)</div>]
+
+	</div><!-- .hentry -->
+</div><!-- .hfeed -->
+
+</BOUCLE_contenu>

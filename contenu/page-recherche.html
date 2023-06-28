@@ -1,0 +1,12 @@
+<div class="contenu-principal obj section">
+	<div class="titre">
+		<h1><:resultats_recherche:> "#RECHERCHE"</h1>
+	</div><!-- .titre -->
+
+	[(#REM) Articles trouves ]
+	 <INCLURE{fond=inclure/recherche-articles,env,ajax}>
+
+	[(#REM) Rubriques trouvees ]
+	<INCLURE{fond=inclure/recherche-rubriques,env,ajax}>
+
+</div><!-- .contenu-principal -->
