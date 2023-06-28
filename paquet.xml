@@ -2,11 +2,22 @@
   categorie="squelette"
   compatibilite="[3.1.15;4.2.*]"
   etat="dev"
-  logo="antoine_perrot-128.png"
+  logo="antoine_perrot-260.png"
   prefix="antoine_perrot"
   version="3.0.0"
 >
   <nom>Antoine Perrot</nom>
   <auteur lien="http://rouge-rose.net">christophe le drean</auteur>
   <licence>GNU/GPL</licence>
+  <necessite nom="z" />
+  <necessite nom="pb_selection" />
+  <necessite nom="pb_couleur_rubrique" />
+  <necessite nom="compositions" />
+  <necessite nom="menus" />
+  <necessite nom="pages" />
+  <necessite nom="article_accueil" />
+  <necessite nom="cextras" />
+  <necessite nom="agenda" />
+  <necessite nom="cextras" />
+  <necessite nom="ck" />
 </paquet>
