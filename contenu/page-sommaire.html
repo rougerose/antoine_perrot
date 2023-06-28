@@ -6,7 +6,7 @@
 	#SET{articles_slider,''}
 
 	<B_slider>
-	<div id="slider" class="liste item">
+	<div id="slider" class="liste obj">
 		<BOUCLE_slider(ARTICLES pb_selection){par ordre}{spip_pb_selection.id_rubrique=0}{doublons}{format_une=true}>
 		[(#SET_PUSH{articles_slider,#ID_ARTICLE})]
 		</BOUCLE_slider>

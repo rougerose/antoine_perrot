@@ -30,7 +30,7 @@
 </BOUCLE_agenda_expo>
 
 
-<div id="article-#ID_ARTICLE" class="item hentry[ numero-(#ENV{compteur})][ (#ENV{format})]">
+<div id="article-#ID_ARTICLE" class="obj hentry[ numero-(#ENV{compteur})][ (#ENV{format})]">
 	[(#ENV{composition}|match{^(sommaire)$}|?{
 		<h3 class="titre-rubrique[(#GET{periode-expo}|oui) pe]"><a href="#URL_RUBRIQUE">#TITRE_PARENT</a>[ <span class="periode-expo">(#GET{periode-expo})</span>]</h3>
 		,

@@ -17,6 +17,6 @@
 
 <BOUCLE_principale(RUBRIQUES){racine}{par num titre, titre}>
 	[(#SET{couleur,[(#ID_RUBRIQUE|couleur_rubrique|sinon{[(#GET{couleur})]})]})]
-	[#nav #rubrique-#ID_RUBRIQUE { background-color:#(#GET{couleur}); }]
-	#nav #rubrique-#ID_RUBRIQUE a { color: #fff; }
+	[#nav .rub#ID_RUBRIQUE { background-color:#(#GET{couleur}); }]
+	#nav .rub#ID_RUBRIQUE a { color: #fff; }
 </BOUCLE_principale>

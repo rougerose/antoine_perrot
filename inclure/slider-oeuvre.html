@@ -1,6 +1,6 @@
 #SET{titre_rubrique,#ENV{titre_rubrique}}
 <BOUCLE_article(ARTICLES){id_article}>
-<div id="[(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE})]-#ID_ARTICLE" class="hentry panneau item oeuvre">
+<div id="[(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE})]-#ID_ARTICLE" class="hentry panneau obj oeuvre">
 	[(#ENV{composition}|match{^(sommaire)$}|oui)
 	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE_PARENT</a></h3>
 	]
