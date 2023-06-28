@@ -1,0 +1,12 @@
+<paquet
+  categorie="squelette"
+  compatibilite="[3.1.*;4.2.*]"
+  etat="dev"
+  logo="antoine_perrot-128.png"
+  prefix="antoine_perrot"
+  version="3.0.0"
+>
+  <nom>Antoine Perrot</nom>
+  <auteur lien="http://rouge-rose.net">christophe le drean</auteur>
+  <licence>GNU/GPL</licence>
+</paquet>
