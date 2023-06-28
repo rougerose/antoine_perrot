@@ -2,7 +2,7 @@
 <BOUCLE_article(ARTICLES){id_article}>
 <div id="[(#GET{titre_rubrique}|table_valeur{art#ID_ARTICLE})]-#ID_ARTICLE" class="hentry panneau obj oeuvre">
 	[(#ENV{composition}|match{^(sommaire)$}|oui)
-	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">#TITRE_PARENT</a></h3>
+	<h3 class="titre-rubrique"><a href="#URL_RUBRIQUE">[(#INFO_TITRE{rubrique,#ID_RUBRIQUE})]</a></h3>
 	]
 	<h2 class="titre entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h2>
 
