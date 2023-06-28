@@ -47,9 +47,9 @@
 
 		[<div class="#EDIT{texte} texte entry-content surlignable">(#TEXTE|image_reduire{200,0})</div>]
 
-		[(#ID_RUBRIQUE|=={7}|oui)
+		<BOUCLE_ecrire_auteur(AUTEURS){id_article}{si #ID_RUBRIQUE|=={7}}>
 			#FORMULAIRE_ECRIRE_AUTEUR
-		]
+		</BOUCLE_ecrire_auteur>
 
 		[<p class="#EDIT{hyperlien} hyperlien"><span class="label"><:voir_en_ligne:> : </span><a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
 
