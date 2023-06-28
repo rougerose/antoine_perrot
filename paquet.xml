@@ -1,7 +1,7 @@
 <paquet
   categorie="squelette"
-  compatibilite="[3.1.15;4.2.*]"
-  etat="dev"
+  compatibilite="[3.1.15;3.2.*]"
+  etat="stable"
   logo="antoine_perrot-260.png"
   prefix="antoine_perrot"
   version="3.0.0"
